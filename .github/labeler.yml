@@ -1,0 +1,15 @@
+feature:
+- head-branch: ['^feature', 'feature', '^feat', 'feat']
+
+bug:
+- head-branch: ['^bugfix', 'bugfix', '^bug', 'bug']
+
+hotfix:
+- head-branch: ['^hotfix', 'hotfix']
+
+enhancement:
+- head-branch: ['^enhancement', 'enhancement', '^improvement', 'improvement']
+
+documentation:
+- changed-files:
+  - any-glob-to-any-file: ['docs/**', 'documentation/**', 'guides/*', '**/*.md']
