@@ -3,6 +3,6 @@ import { AppComponent } from './app/app.component';
 import { config } from './app/app.config.server';
 
 const bootstrap = () =>
-  bootstrapApplication(AppComponent, config).catch((err) => console.error(err));
+  bootstrapApplication(AppComponent, config);
 
 export default bootstrap;
