@@ -13,6 +13,9 @@ RUN npm install -g @angular/cli@17.1.3
 # Copy the rest of the application code
 COPY . .
 
+# Install dependencies
+RUN npm install
+
 # Build the Angular application with server-side rendering
 RUN ng build --prod --ssr
 
