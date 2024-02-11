@@ -17,7 +17,7 @@ COPY . .
 RUN npm install
 
 # Build the Angular application with server-side rendering
-RUN ng build --prod --ssr
+RUN ng build --configuration production --ssr
 
 # Stage 2: Serve Angular Application using Node.js
 FROM node:20.11.0 AS serve
