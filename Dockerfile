@@ -29,10 +29,10 @@ COPY --from=build /app/dist /app/dist
 RUN npm install express
 
 # Copy server.js (or whatever your SSR server file is named) to the working directory
-COPY server.js .
+COPY server.ts .
 
 # Expose the port that express server will run on
-EXPOSE 4200
+EXPOSE 4000
 
 # Command to run the SSR server
-CMD ["node", "server.js"]
+CMD ["node", "server.ts"]
