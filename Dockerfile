@@ -13,8 +13,11 @@ RUN npm install -g @angular/cli@17.1.3
 # Copy the rest of the application code
 COPY . .
 
+# Install dependencies
+RUN npm install
+
 # Build the Angular application with server-side rendering
-RUN ng build --prod --ssr
+RUN ng build --configuration production --ssr
 
 # Stage 2: Serve Angular Application using Node.js
 FROM node:20.11.0 AS serve
@@ -29,10 +32,10 @@ COPY --from=build /app/dist /app/dist
 RUN npm install express
 
 # Copy server.js (or whatever your SSR server file is named) to the working directory
-COPY server.js .
+COPY server.ts .
 
 # Expose the port that express server will run on
-EXPOSE 4200
+EXPOSE 4000
 
 # Command to run the SSR server
-CMD ["node", "server.js"]
+CMD ["node", "server.ts"]
