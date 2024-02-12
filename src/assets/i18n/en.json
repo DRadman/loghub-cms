@@ -1,0 +1,15 @@
+{
+  "auth": {
+    "login": {
+        "welcome_message": "Welcome to ",
+        "sign_in_to_continue": "Sign in to continue",
+        "username_label": "Username [REQUIRED]",
+        "password_label": "Password [REQUIRED]",
+        "username": "Username",
+        "password": "Password",
+        "sign_in_label": "Sign In",
+        "forgot_password": "Forgot Password?",
+        "register": "Register"
+    }
+  }
+}

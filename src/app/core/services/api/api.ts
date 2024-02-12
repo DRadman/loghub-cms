@@ -1,7 +1,7 @@
 import { HttpContext, HttpContextToken, HttpHeaders } from "@angular/common/http";
 import { environment } from "../../../../environments/environment";
 
-export const AUTHENTICATE = new HttpContextToken<boolean>(() => true);
+export const AUTHENTICATE = new HttpContextToken<boolean>(() => false);
 
 export const api = {
     url: environment.apiUrl,

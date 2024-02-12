@@ -1,5 +1,4 @@
 import {
-  HttpContextToken,
   HttpErrorResponse,
   HttpHandlerFn,
   HttpRequest,
@@ -56,7 +55,6 @@ export function authInterceptor(
     const accessToken = inject(JwtService).getToken();
     if (accessToken && accessToken != null) {
       //We have token lets append it to headers
-      req.headers.append('Authorization', `Bearer ${accessToken}`);
       const newReq = req.clone({
         headers: req.headers.append('Authorization', `Bearer ${accessToken}`),
       });
