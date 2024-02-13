@@ -1,0 +1,21 @@
+{
+  "auth": {
+    "login": {
+        "welcome_message": "Welcome to ",
+        "sign_in_to_continue": "Sign in to continue",
+        "username_label": "Username [REQUIRED]",
+        "password_label": "Password [REQUIRED]",
+        "username": "Username",
+        "password": "Password",
+        "sign_in_label": "Sign In",
+        "forgot_password": "Forgot Password?",
+        "register": "Register",
+        "username_is_required": "Username is required",
+        "username_length": "Username minimum length is 3",
+        "password_is_required": "Password is required",
+        "password_length": "Password minimum length is 8",
+        "authorization_error": "Authorization Error",
+        "wrong_username_or_password": "Incorrect username or password"
+    }
+  }
+}
