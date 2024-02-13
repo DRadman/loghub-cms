@@ -13,7 +13,6 @@ export class LocalStorage implements Storage {
     if (isPlatformBrowser(platformId) && window?.localStorage) {
       this.storage = window.localStorage;
     } else {
-      console.log('Initializing storage')
       this.storage = new MemoryStorage();
     }
   }

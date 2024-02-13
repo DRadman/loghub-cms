@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
-import { AppState } from '../app.state';
-import { Store } from '@ngrx/store';
-import { AuthService } from '../../services/api/auth.api.service';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { catchError, map, of, switchMap } from 'rxjs';
+import { catchError, map, of, switchMap, tap } from 'rxjs';
+import { AuthService } from '../../services/api/auth.api.service';
+import { JwtService } from '../../services/token-storage.service';
 import {
   authenticate,
   authenticationFailure,
@@ -11,13 +10,12 @@ import {
   loadCurrentUser,
   loadCurrentUserFailure,
   loadCurrentUserSuccess,
+  signOut,
 } from './auth.actions';
-import { JwtService } from '../../services/token-storage.service';
 
 @Injectable()
 export class AuthEffects {
   constructor(
-    private store: Store<AppState>,
     private authService: AuthService,
     private jwtService: JwtService,
     private actions$: Actions
@@ -62,9 +60,20 @@ export class AuthEffects {
       switchMap(() =>
         this.authService.me().pipe(
           map((user) => loadCurrentUserSuccess(user)),
-          catchError((error) => of(loadCurrentUserFailure({ error })))
+          catchError((error) => of(authenticationFailure({ error })))
         )
       )
     )
+  );
+
+  signOut$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(signOut),
+        tap(() => {
+          this.jwtService.clear();
+        })
+      ),
+    { dispatch: false }
   );
 }

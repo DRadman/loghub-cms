@@ -8,20 +8,26 @@ import {
 } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { InputMaskModule } from 'primeng/inputmask';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
+import { ToastModule } from 'primeng/toast';
+import { Subscription } from 'rxjs';
 import { environment } from '../../../../../environments/environment';
 import { AuthService } from '../../../../core/services/api/auth.api.service';
 import { AppState } from '../../../../core/state/app.state';
 import {
   authenticate,
-  setCurrentUser,
+  loadCurrentUser
 } from '../../../../core/state/auth/auth.actions';
-import { isLoading } from '../../../../core/state/auth/auth.selectors';
-import { AuthState } from '../../../../core/state/auth/auth.reducer';
+import {
+  isLoadingAuthState,
+  selectAuthorizationError,
+  selectCurrentUser,
+} from '../../../../core/state/auth/auth.selectors';
 
 @Component({
   selector: 'app-login',
@@ -36,7 +42,9 @@ import { AuthState } from '../../../../core/state/auth/auth.reducer';
     InputTextModule,
     PasswordModule,
     RouterModule,
+    ToastModule,
   ],
+  providers: [MessageService],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
@@ -44,8 +52,9 @@ export class LoginComponent {
   constructor(
     private formBuilder: FormBuilder,
     private store: Store<AppState>,
-    private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private messageService: MessageService,
+    private translateService: TranslateService
   ) {}
 
   loginForm = this.formBuilder.group({
@@ -53,15 +62,37 @@ export class LoginComponent {
     password: ['', [Validators.required, Validators.minLength(8)]],
   });
 
-  isLoading = this.store.select(isLoading);
+  isLoading = this.store.select(isLoadingAuthState);
+
+  private userSubscription?: Subscription;
+  private errorSubscription?: Subscription;
 
   ngOnInit() {
-    this.authService.me().subscribe((dto) => {
-      this.store.dispatch(setCurrentUser(dto));
-    });
-    this.store.select(isLoading).subscribe((isLoading) => {
-      console.log("Loading: "+isLoading)
-    })
+    this.store.dispatch(loadCurrentUser());
+
+    this.userSubscription = this.store
+      .select(selectCurrentUser)
+      .subscribe((user) => {
+        if (user != null) {
+          this.router.navigate(['/home']);
+        }
+      });
+
+    this.errorSubscription = this.store
+      .select(selectAuthorizationError)
+      .subscribe((error) => {
+        if (error != null) {
+          this.messageService.add({
+            severity: 'error',
+            summary: this.translateService.instant(
+              'auth.login.authorization_error'
+            ),
+            detail: this.translateService.instant(
+              'auth.login.wrong_username_or_password'
+            ),
+          });
+        }
+      });
   }
 
   login() {
@@ -71,6 +102,11 @@ export class LoginComponent {
         password: this.loginForm.get('password')?.value!,
       })
     );
+  }
+
+  ngOnDestroy() {
+    this.userSubscription?.unsubscribe();
+    this.errorSubscription?.unsubscribe();
   }
 
   getApplicationName() {

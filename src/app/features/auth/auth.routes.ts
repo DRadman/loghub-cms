@@ -48,8 +48,8 @@ export const routes: Routes = [
             (c) => c.ResetPasswordComponent
           ),
       },
+      { path: '**', redirectTo: 'login', pathMatch: 'full' },
     ],
   },
-  { path: '**', redirectTo: '', pathMatch: 'full' },
 
 ];

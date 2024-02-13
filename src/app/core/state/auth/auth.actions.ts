@@ -17,6 +17,11 @@ export const setCurrentUser = createAction(
   props<User>()
 );
 
+export const setToken = createAction(
+  '[Login Page] Set current user',
+  props<Token>()
+);
+
 export const loadCurrentUserSuccess = createAction(
   '[Auth API] Get authenticated user success',
   props<User>()
@@ -35,4 +40,8 @@ export const authenticationSuccess = createAction(
 export const authenticationFailure = createAction(
   '[Auth API] Authentication failure',
   props<{ error: string }>()
+);
+
+export const signOut = createAction(
+  '[Home Page] Sign Out',
 );

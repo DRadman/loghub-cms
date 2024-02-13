@@ -6,4 +6,6 @@ export interface AppState {
 }
 
 export const appEfects = [AuthEffects];
-export const appReducers = [authReducer];
+export const appStore = {
+  authState: authReducer,
+};
