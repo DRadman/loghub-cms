@@ -276,25 +276,31 @@
                 <tr>
                     <td class="col-md-4">
                         <i>Default value : </i><code>{
-    url: environment.apiUrl,
-    teamUrl: environment.apiUrl + &#x27;/v1/team&#x27;,
-    projectUrl: environment.apiUrl + &#x27;/v1/project&#x27;,
-    profileUrl: environment.apiUrl + &#x27;/v1/user-profile&#x27;,
-    platformUrl: environment.apiUrl + &#x27;/v1/platform&#x27;,
-    organizationUrl: environment.apiUrl + &#x27;/v1/organization&#x27;,
-    invitationUrl: environment.apiUrl + &#x27;/v1/invitation&#x27;,
-    deviceUrl: environment.apiUrl + &#x27;/v1/device&#x27;,
-    membersUrl: environment.apiUrl + &#x27;/v1/members&#x27;,
-    filesUrl: environment.apiUrl + &#x27;/v1/files&#x27;,
-    authUrl: environment.apiUrl + &#x27;/v1/auth&#x27;,
-    authOptions: {
-        headers: new HttpHeaders({ &#x27;Content-Type&#x27;: &#x27;application/json&#x27;, &#x27;ngrok-skip-browser-warning&#x27;:&#x27;true&#x27; }),
-        context: new HttpContext().set(AUTHENTICATE, true)
-    },
-    noAuthOptions: {
-        headers: new HttpHeaders({ &#x27;Content-Type&#x27;: &#x27;application/json&#x27; }),
-        context: new HttpContext().set(AUTHENTICATE, false)
-    }
+  url: environment.apiUrl,
+  teamUrl: environment.apiUrl + &#x27;/v1/team&#x27;,
+  projectUrl: environment.apiUrl + &#x27;/v1/project&#x27;,
+  profileUrl: environment.apiUrl + &#x27;/v1/user-profile&#x27;,
+  platformUrl: environment.apiUrl + &#x27;/v1/platform&#x27;,
+  organizationUrl: environment.apiUrl + &#x27;/v1/organization&#x27;,
+  invitationUrl: environment.apiUrl + &#x27;/v1/invitation&#x27;,
+  deviceUrl: environment.apiUrl + &#x27;/v1/device&#x27;,
+  membersUrl: environment.apiUrl + &#x27;/v1/members&#x27;,
+  filesUrl: environment.apiUrl + &#x27;/v1/files&#x27;,
+  authUrl: environment.apiUrl + &#x27;/v1/auth&#x27;,
+  authOptions: {
+    headers: new HttpHeaders({
+      &#x27;Content-Type&#x27;: &#x27;application/json&#x27;,
+      &#x27;ngrok-skip-browser-warning&#x27;: &#x27;true&#x27;,
+    }),
+    context: new HttpContext().set(AUTHENTICATE, true),
+  },
+  noAuthOptions: {
+    headers: new HttpHeaders({
+      &#x27;Content-Type&#x27;: &#x27;application/json&#x27;,
+      &#x27;ngrok-skip-browser-warning&#x27;: &#x27;true&#x27;,
+    }),
+    context: new HttpContext().set(AUTHENTICATE, false),
+  },
 }</code>
                     </td>
                 </tr>
