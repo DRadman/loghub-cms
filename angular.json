@@ -3,7 +3,11 @@
   "version": 1,
   "cli": {
     "packageManager": "npm",
-    "analytics": "a3856c08-986e-4b43-be78-9da6e5a3ae28"
+    "analytics": "a3856c08-986e-4b43-be78-9da6e5a3ae28",
+    "schematicCollections": [
+      "@angular-eslint/schematics",
+      "@schematics/angular"
+    ]
   },
   "newProjectRoot": "projects",
   "projects": {
@@ -114,6 +118,56 @@
               "src/styles.scss"
             ],
             "scripts": []
+          },
+          "configurations": {
+            "ci": {
+              "watch": false,
+              "progress": false,
+              "browsers": "ChromeHeadlessCI"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
+        },
+        "cypress-run": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "loghub-cms:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "loghub-cms:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "watch": true,
+            "headless": false
+          }
+        },
+        "e2e": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "loghub-cms:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "loghub-cms:serve:production"
+            },
+            "ci": {
+              "devServerTarget": "loghub-cms:serve:production"
+            }
           }
         }
       }

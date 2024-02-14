@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import {
   FormBuilder,
   FormsModule,
@@ -50,7 +50,7 @@ import { AuthService } from '../../../../core/services/api/auth.api.service';
   templateUrl: './forgot-password.component.html',
   styleUrl: './forgot-password.component.scss',
 })
-export class ForgotPasswordComponent {
+export class ForgotPasswordComponent implements AfterViewInit, OnInit, OnDestroy {
   @ViewChild('username') usernameInput!: ElementRef;
 
   constructor(
@@ -75,6 +75,7 @@ export class ForgotPasswordComponent {
   private usernameCheckSubscription?: Subscription;
 
   ngAfterViewInit(): void {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     fromEvent<any>(this.usernameInput.nativeElement, 'input')
       .pipe(
         map((event: Event) => (event.target as HTMLInputElement).value),
@@ -147,10 +148,11 @@ export class ForgotPasswordComponent {
     this.usernameCheckSubscription?.unsubscribe();
   }
 
+  // eslint-disable no-non-null-asserted-optional-chain
   forgotPassword() {
     this.store.dispatch(
       forgotPassword({
-        username: this.forgotPasswordForm.get('username')?.value!,
+        username: this.forgotPasswordForm.get('username')?.value ?? '',
       })
     );
   }

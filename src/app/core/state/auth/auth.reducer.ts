@@ -21,6 +21,7 @@ import {
 import { StateStatus } from '../../domain/models/enums/state-status.enum';
 import { AuthenticateRequestDto } from '../../domain/dto/requests/authenticate-request.dto';
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export interface AuthState {
   user: User | null;
   error: any | null;
