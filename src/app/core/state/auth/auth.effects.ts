@@ -7,9 +7,15 @@ import {
   authenticate,
   authenticationFailure,
   authenticationSuccess,
+  forgotPassword,
+  forgotPasswordFailure,
+  forgotPasswordSuccess,
   loadCurrentUser,
   loadCurrentUserFailure,
   loadCurrentUserSuccess,
+  resetPassword,
+  resetPasswordFailure,
+  resetPasswordSuccess,
   signOut,
 } from './auth.actions';
 
@@ -50,6 +56,34 @@ export class AuthEffects {
             }),
             catchError((error) => of(authenticationFailure({ error })))
           )
+      )
+    )
+  );
+
+  forgotPassword$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(forgotPassword),
+      switchMap((request) =>
+        this.authService.forgotPassword(request.username).pipe(
+          map(() => {
+            return forgotPasswordSuccess();
+          }),
+          catchError((error) => of(forgotPasswordFailure({ error })))
+        )
+      )
+    )
+  );
+
+  resetPassword$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(resetPassword),
+      switchMap((request) =>
+        this.authService.resetPassword(request).pipe(
+          map(() => {
+            return resetPasswordSuccess();
+          }),
+          catchError((error) => of(resetPasswordFailure({ error })))
+        )
       )
     )
   );

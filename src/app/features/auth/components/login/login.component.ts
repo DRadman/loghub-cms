@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import {
   FormBuilder,
   FormsModule,
@@ -15,9 +15,8 @@ import { InputMaskModule } from 'primeng/inputmask';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { ToastModule } from 'primeng/toast';
-import { Subscription } from 'rxjs';
+import { Subscription, debounceTime, distinctUntilChanged, fromEvent, map } from 'rxjs';
 import { environment } from '../../../../../environments/environment';
-import { AuthService } from '../../../../core/services/api/auth.api.service';
 import { AppState } from '../../../../core/state/app.state';
 import {
   authenticate,
@@ -28,6 +27,7 @@ import {
   selectAuthorizationError,
   selectCurrentUser,
 } from '../../../../core/state/auth/auth.selectors';
+import { AuthService } from '../../../../core/services/api/auth.api.service';
 
 @Component({
   selector: 'app-login',
@@ -49,12 +49,15 @@ import {
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
+  @ViewChild('username') usernameInput!: ElementRef;
+  
   constructor(
     private formBuilder: FormBuilder,
     private store: Store<AppState>,
     private router: Router,
     private messageService: MessageService,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private authService: AuthService,
   ) {}
 
   loginForm = this.formBuilder.group({
@@ -63,9 +66,21 @@ export class LoginComponent {
   });
 
   isLoading = this.store.select(isLoadingAuthState);
+  isUsernameTaken: boolean | null = null;
 
   private userSubscription?: Subscription;
   private errorSubscription?: Subscription;
+  private usernameCheckSubscription?: Subscription;
+
+  ngAfterViewInit(): void {
+    fromEvent<any>(this.usernameInput.nativeElement, 'input')
+      .pipe(
+        map((event: Event) => (event.target as HTMLInputElement).value),
+        debounceTime(500),
+        distinctUntilChanged()
+      )
+      .subscribe(data => this.checkUsername(data));
+  }
 
   ngOnInit() {
     this.store.dispatch(loadCurrentUser());
@@ -107,6 +122,7 @@ export class LoginComponent {
   ngOnDestroy() {
     this.userSubscription?.unsubscribe();
     this.errorSubscription?.unsubscribe();
+    this.usernameCheckSubscription?.unsubscribe();
   }
 
   getApplicationName() {
@@ -115,5 +131,17 @@ export class LoginComponent {
 
   isRegistrationEnabled() {
     return environment.enableRegistration;
+  }
+
+  private checkUsername(username: string) {
+    this.usernameCheckSubscription?.unsubscribe();
+    this.usernameCheckSubscription = this.authService.isUsernameTaken(username).subscribe({
+      next: (result) => {
+        this.isUsernameTaken = result;
+      },
+      error: () => {
+        this.isUsernameTaken = null;
+      }
+    })
   }
 }

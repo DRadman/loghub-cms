@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { AuthenticateRequestDto } from '../../domain/dto/requests/authenticate-request.dto';
 import { UserDto } from '../../domain/dto/user.dto';
 import { RegisterRequestDto } from '../../domain/dto/requests/register-request.dto';
+import { ResetPasswordRequestDto } from '../../domain/dto/requests/reset-password-request.dto';
 
 @Injectable({
   providedIn: 'root',
@@ -45,6 +46,14 @@ export class AuthService {
     return this.http.post<UserDto>(
       api.authUrl + '/forgot-password',
       { username: username },
+      api.noAuthOptions
+    );
+  }
+
+  resetPassword(dto: ResetPasswordRequestDto): Observable<UserDto> {
+    return this.http.post<UserDto>(
+      api.authUrl + '/reset-password',
+      dto,
       api.noAuthOptions
     );
   }

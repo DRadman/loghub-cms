@@ -2,6 +2,7 @@ import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import {
   PreloadAllModules,
   provideRouter,
+  withComponentInputBinding,
   withPreloading,
 } from '@angular/router';
 import { APP_INITIALIZER, isDevMode } from '@angular/core';
@@ -31,7 +32,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes, withPreloading(PreloadAllModules)),
+    provideRouter(routes, withPreloading(PreloadAllModules), withComponentInputBinding()),
     provideHttpClient(withInterceptors([authInterceptor, unauthErrorInterceptor]), withFetch()),
     provideClientHydration(),
     {

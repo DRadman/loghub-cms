@@ -10,6 +10,11 @@ export const isLoadingAuthState = createSelector(
   (state: AuthState) => state.status == StateStatus.LOADING
 );
 
+export const isSuccess = createSelector(
+  selectAuth,
+  (state: AuthState) => state.status == StateStatus.SUCCESS
+);
+
 export const selectCurrentUser = createSelector(
   selectAuth,
   (state: AuthState) => state.user
@@ -28,4 +33,14 @@ export const selectAuthorizationError = createSelector(
       return null;
     }
   }
+);
+
+export const selectForgotPasswordError = createSelector(
+  selectAuth,
+  (state: AuthState) => state.forgotPasswordError
+);
+
+export const selectResetPasswordError = createSelector(
+  selectAuth,
+  (state: AuthState) => state.resetPasswordError
 );
