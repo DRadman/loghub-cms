@@ -1,0 +1,15 @@
+services:
+  loghub-cms:
+      image: 'ghcr.io/dradman/loghub-cms:latest'
+      ports:
+        - "80:4000"
+      environment:
+        - 'DB_HOST:mongodb'
+        - 'DB_PORT:27017'
+        - 'DB_NAME:loghub-database'
+        - 'DB_USERNAME:dbUser'
+        - 'DB_PASSWORD:dbPassword'
+        - 'MINIO_HOST:minio:9000'
+        - 'MINIO_ACCESS_KEY:yourMinioAccessKey'
+        - 'MINIO_SECRET_KEY:yourMinioSecretKey'
+        - 'MINIO_BUCKET:loghub-bucket'
