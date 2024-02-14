@@ -30,7 +30,4 @@ jobs:
     - name: E2E
       run: npm run e2e -- --configuration=ci --headless --watch=false
     - name: Upload coverage reports to Codecov
-      uses: codecov/codecov-action@v4.0.1
-      env:
-        token: ${{ secrets.CODECOV_TOKEN }}
-        slug: DRadman/loghub-cms
+      uses: codecov/codecov-action@v3
