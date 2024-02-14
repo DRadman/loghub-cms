@@ -129,6 +129,14 @@
 
 
 
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+                <code>AfterViewInit</code>
+                <code>OnDestroy</code>
+    </p>
 
 
 <section data-compodoc="block-metadata">
@@ -428,8 +436,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="136"
-                                    class="link-to-prism">src/app/features/auth/components/login/login.component.ts:136</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="138"
+                                    class="link-to-prism">src/app/features/auth/components/login/login.component.ts:138</a></div>
                         </td>
                     </tr>
 
@@ -495,8 +503,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="128"
-                                    class="link-to-prism">src/app/features/auth/components/login/login.component.ts:128</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="130"
+                                    class="link-to-prism">src/app/features/auth/components/login/login.component.ts:130</a></div>
                         </td>
                     </tr>
 
@@ -532,8 +540,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="132"
-                                    class="link-to-prism">src/app/features/auth/components/login/login.component.ts:132</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="134"
+                                    class="link-to-prism">src/app/features/auth/components/login/login.component.ts:134</a></div>
                         </td>
                     </tr>
 
@@ -569,8 +577,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="113"
-                                    class="link-to-prism">src/app/features/auth/components/login/login.component.ts:113</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="115"
+                                    class="link-to-prism">src/app/features/auth/components/login/login.component.ts:115</a></div>
                         </td>
                     </tr>
 
@@ -643,8 +651,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="122"
-                                    class="link-to-prism">src/app/features/auth/components/login/login.component.ts:122</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="124"
+                                    class="link-to-prism">src/app/features/auth/components/login/login.component.ts:124</a></div>
                         </td>
                     </tr>
 
@@ -680,8 +688,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="85"
-                                    class="link-to-prism">src/app/features/auth/components/login/login.component.ts:85</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="86"
+                                    class="link-to-prism">src/app/features/auth/components/login/login.component.ts:86</a></div>
                         </td>
                     </tr>
 
@@ -914,7 +922,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { CommonModule } from &#x27;@angular/common&#x27;;
-import { Component, ElementRef, ViewChild } from &#x27;@angular/core&#x27;;
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
 import {
   FormBuilder,
   FormsModule,
@@ -963,7 +971,7 @@ import { AuthService } from &#x27;../../../../core/services/api/auth.api.service
   templateUrl: &#x27;./login.component.html&#x27;,
   styleUrl: &#x27;./login.component.scss&#x27;,
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild(&#x27;username&#x27;) usernameInput!: ElementRef;
   
   constructor(
@@ -988,6 +996,7 @@ export class LoginComponent {
   private usernameCheckSubscription?: Subscription;
 
   ngAfterViewInit(): void {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     fromEvent&lt;any&gt;(this.usernameInput.nativeElement, &#x27;input&#x27;)
       .pipe(
         map((event: Event) &#x3D;&gt; (event.target as HTMLInputElement).value),
@@ -1025,6 +1034,7 @@ export class LoginComponent {
       });
   }
 
+  /* eslint-disable @typescript-eslint/no-non-null-asserted-optional-chain */
   login() {
     this.store.dispatch(
       authenticate({
@@ -1081,7 +1091,7 @@ export class LoginComponent {
       &gt;{{ &quot;auth.login.username_label&quot; | translate }}&lt;/label
     &gt;
     &lt;span class&#x3D;&quot;p-input-icon-right&quot;&gt;
-      @if(isUsernameTaken &#x3D;&#x3D; null) {
+      @if(isUsernameTaken &#x3D;&#x3D;&#x3D; null) {
         &lt;i class&#x3D;&quot;pi pi-user&quot;&gt;&lt;/i&gt;
         } @else if (isUsernameTaken) {
         &lt;i class&#x3D;&quot;pi pi-check text-green-500&quot;&gt;&lt;/i&gt;
@@ -1205,7 +1215,7 @@ export class LoginComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><p-toast /><div class="text-center mb-5">  <div class="text-900 text-3xl font-medium mb-3">    {{ "auth.login.welcome_message" | translate }}{{ getApplicationName() }},  </div>  <span class="text-600 font-medium">{{    "auth.login.sign_in_to_continue" | translate  }}</span></div><div>  <form [formGroup]="loginForm">    <label      for="username"      class="block text-900 font-medium text-md mb-2 mt-5"      >{{ "auth.login.username_label" | translate }}</label    >    <span class="p-input-icon-right">      @if(isUsernameTaken == null) {        <i class="pi pi-user"></i>        } @else if (isUsernameTaken) {        <i class="pi pi-check text-green-500"></i>        } @else {        <i class="pi pi-times text-red-500"></i>        }      <input        #username        id="username"        type="text"        formControlName="username"        [placeholder]="\'auth.login.username\' | translate"        pInputText        class="w-full md:w-30rem"        style="padding: 1rem"      />    </span>    <small      *ngIf="        loginForm.get(\'username\')?.hasError(\'required\') &&        loginForm.get(\'username\')?.dirty      "      class="p-error block"      >{{ "auth.login.username_is_required" | translate }}</small    >    <small      *ngIf="        loginForm.get(\'username\')?.hasError(\'minlength\') &&        loginForm.get(\'username\')?.dirty      "      class="p-error block"      >{{ "auth.login.username_length" | translate }}</small    >    <label      for="password"      class="block text-900 font-medium text-md mb-2 mt-5"      >{{ "auth.login.password_label" | translate }}</label    >    <p-password      id="password"      formControlName="password"      [placeholder]="\'auth.login.password\' | translate"      [toggleMask]="true"      [feedback]="false"      inputStyleClass="w-full p-3 md:w-30rem"    />    <small      *ngIf="        loginForm.get(\'password\')?.hasError(\'required\') &&        loginForm.get(\'password\')?.dirty      "      class="p-error block"      >{{ "auth.login.password_is_required" | translate }}</small    >    <small      *ngIf="        loginForm.get(\'password\')?.hasError(\'minlength\') &&        loginForm.get(\'password\')?.dirty      "      class="p-error block"      >{{ "auth.login.password_length" | translate }}</small    >    <div      class="flex align-items-center justify-content-between mb-5 mt-5 gap-5"    >      <a        class="font-medium no-underline ml-2 text-right cursor-pointer"        style="color: var(--primary-color)"        [routerLink]="[\'/auth/forgot-password\']"        >{{ "auth.login.forgot_password" | translate }}</a      >      <a        *ngIf="isRegistrationEnabled()"        class="font-medium no-underline ml-2 text-right cursor-pointer"        style="color: var(--primary-color)"        [routerLink]="[\'/auth/register\']"        >{{ "auth.login.register" | translate }}</a      >    </div>    <button      pButton      pRipple      [label]="\'auth.login.sign_in_label\' | translate"      class="w-full p-3 mt-5"      [disabled]="loginForm.invalid"      [loading]="(isLoading | async) ?? false"      (click)="login()"      type="submit"    ></button>  </form></div></div>'
+        var COMPONENT_TEMPLATE = '<div><p-toast /><div class="text-center mb-5">  <div class="text-900 text-3xl font-medium mb-3">    {{ "auth.login.welcome_message" | translate }}{{ getApplicationName() }},  </div>  <span class="text-600 font-medium">{{    "auth.login.sign_in_to_continue" | translate  }}</span></div><div>  <form [formGroup]="loginForm">    <label      for="username"      class="block text-900 font-medium text-md mb-2 mt-5"      >{{ "auth.login.username_label" | translate }}</label    >    <span class="p-input-icon-right">      @if(isUsernameTaken === null) {        <i class="pi pi-user"></i>        } @else if (isUsernameTaken) {        <i class="pi pi-check text-green-500"></i>        } @else {        <i class="pi pi-times text-red-500"></i>        }      <input        #username        id="username"        type="text"        formControlName="username"        [placeholder]="\'auth.login.username\' | translate"        pInputText        class="w-full md:w-30rem"        style="padding: 1rem"      />    </span>    <small      *ngIf="        loginForm.get(\'username\')?.hasError(\'required\') &&        loginForm.get(\'username\')?.dirty      "      class="p-error block"      >{{ "auth.login.username_is_required" | translate }}</small    >    <small      *ngIf="        loginForm.get(\'username\')?.hasError(\'minlength\') &&        loginForm.get(\'username\')?.dirty      "      class="p-error block"      >{{ "auth.login.username_length" | translate }}</small    >    <label      for="password"      class="block text-900 font-medium text-md mb-2 mt-5"      >{{ "auth.login.password_label" | translate }}</label    >    <p-password      id="password"      formControlName="password"      [placeholder]="\'auth.login.password\' | translate"      [toggleMask]="true"      [feedback]="false"      inputStyleClass="w-full p-3 md:w-30rem"    />    <small      *ngIf="        loginForm.get(\'password\')?.hasError(\'required\') &&        loginForm.get(\'password\')?.dirty      "      class="p-error block"      >{{ "auth.login.password_is_required" | translate }}</small    >    <small      *ngIf="        loginForm.get(\'password\')?.hasError(\'minlength\') &&        loginForm.get(\'password\')?.dirty      "      class="p-error block"      >{{ "auth.login.password_length" | translate }}</small    >    <div      class="flex align-items-center justify-content-between mb-5 mt-5 gap-5"    >      <a        class="font-medium no-underline ml-2 text-right cursor-pointer"        style="color: var(--primary-color)"        [routerLink]="[\'/auth/forgot-password\']"        >{{ "auth.login.forgot_password" | translate }}</a      >      <a        *ngIf="isRegistrationEnabled()"        class="font-medium no-underline ml-2 text-right cursor-pointer"        style="color: var(--primary-color)"        [routerLink]="[\'/auth/register\']"        >{{ "auth.login.register" | translate }}</a      >    </div>    <button      pButton      pRipple      [label]="\'auth.login.sign_in_label\' | translate"      class="w-full p-3 mt-5"      [disabled]="loginForm.invalid"      [loading]="(isLoading | async) ?? false"      (click)="login()"      type="submit"    ></button>  </form></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InvitationComponent', 'selector': 'app-invitation'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LoginComponent'};

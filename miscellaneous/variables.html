@@ -346,29 +346,36 @@
                     <td class="col-md-4">
                         <i>Default value : </i><code>{
   providers: [
-    provideRouter(routes, withPreloading(PreloadAllModules), withComponentInputBinding()),
-    provideHttpClient(withInterceptors([authInterceptor, unauthErrorInterceptor]), withFetch()),
+    provideRouter(
+      routes,
+      withPreloading(PreloadAllModules),
+      withComponentInputBinding(),
+    ),
+    provideHttpClient(
+      withInterceptors([authInterceptor, unauthErrorInterceptor]),
+      withFetch(),
+    ),
     provideClientHydration(),
     {
-        provide: APP_INITIALIZER,
-        useFactory: () &#x3D;&gt; {
-            inject({ mode: isDevMode() ? &#x27;development&#x27; : &#x27;production&#x27; });
-            injectSpeedInsights();
-        },
+      provide: APP_INITIALIZER,
+      useFactory: () &#x3D;&gt; {
+        inject({ mode: isDevMode() ? &#x27;development&#x27; : &#x27;production&#x27; });
+        injectSpeedInsights();
+      },
     },
     provideAnimations(),
     TranslateModule.forRoot({
-        defaultLanguage: &#x27;en&#x27;,
-        loader: {
-            provide: TranslateLoader,
-            useFactory: HttpLoaderFactory,
-            deps: [HttpClient],
-        },
+      defaultLanguage: &#x27;en&#x27;,
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
     }).providers!,
     provideStore(appStore),
     provideEffects(appEfects),
-    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() })
-],
+    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
+  ],
 }</code>
                     </td>
                 </tr>
@@ -474,6 +481,7 @@
                     <td class="col-md-4">
                         <i>Default value : </i><code>createAction(
   &#x27;[Auth API] Authentication failure&#x27;,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   props&lt;{ error: any }&gt;()
 )</code>
                     </td>
@@ -543,6 +551,7 @@
                     <td class="col-md-4">
                         <i>Default value : </i><code>createAction(
   &#x27;[Auth Api] Forgot password failure&#x27;,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   props&lt;{ error: any }&gt;()
 )</code>
                     </td>
@@ -610,6 +619,7 @@
                     <td class="col-md-4">
                         <i>Default value : </i><code>createAction(
   &#x27;[Auth API] Get authenticated user failure&#x27;,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   props&lt;{ error: any }&gt;()
 )</code>
                     </td>
@@ -679,6 +689,7 @@
                     <td class="col-md-4">
                         <i>Default value : </i><code>createAction(
   &#x27;[Auth Api] Reset password failure&#x27;,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   props&lt;{ error: any }&gt;()
 )</code>
                     </td>
@@ -1568,8 +1579,8 @@
                 <tr>
                     <td class="col-md-4">
                         <i>Default value : </i><code>(
-  next: ActivatedRouteSnapshot,
-  state: RouterStateSnapshot) &#x3D;&gt; {
+  _next: ActivatedRouteSnapshot,
+  _state: RouterStateSnapshot) &#x3D;&gt; {
     return environment.enableRegistration;
 }</code>
                     </td>
