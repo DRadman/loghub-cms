@@ -16,7 +16,7 @@ export const api = {
     filesUrl: environment.apiUrl + '/v1/files',
     authUrl: environment.apiUrl + '/v1/auth',
     authOptions: {
-        headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+        headers: new HttpHeaders({ 'Content-Type': 'application/json', 'ngrok-skip-browser-warning':'true' }),
         context: new HttpContext().set(AUTHENTICATE, true)
     },
     noAuthOptions: {
