@@ -5,9 +5,15 @@ import {
   authenticate,
   authenticationFailure,
   authenticationSuccess,
+  forgotPassword,
+  forgotPasswordFailure,
+  forgotPasswordSuccess,
   loadCurrentUser,
   loadCurrentUserFailure,
   loadCurrentUserSuccess,
+  resetPassword,
+  resetPasswordFailure,
+  resetPasswordSuccess,
   setCurrentUser,
   setToken,
   signOut,
@@ -18,6 +24,11 @@ import { AuthenticateRequestDto } from '../../domain/dto/requests/authenticate-r
 export interface AuthState {
   user: User | null;
   error: any | null;
+  forgotPasswordError: null | any;
+  resetPasswordError: null | any;
+  registrationError: null | any;
+  usernameCheckError: null | any;
+  isUsernameAvialable: boolean | null,
   token: Token | null;
   credentials: AuthenticateRequestDto | null;
   status: StateStatus;
@@ -26,6 +37,11 @@ export interface AuthState {
 export const initialState: AuthState = {
   user: null,
   error: null,
+  forgotPasswordError: null,
+  resetPasswordError: null,
+  registrationError: null,
+  usernameCheckError: null,
+  isUsernameAvialable: null,
   token: null,
   credentials: null,
   status: StateStatus.PENDING,
@@ -97,11 +113,45 @@ export const authReducer = createReducer(
   })),
 
   // Handle SignOut
-  on(signOut, () => ({
-    user: null,
-    error: null,
-    token: null,
-    credentials: null,
-    status: StateStatus.PENDING,
-  }))
+  on(signOut, () => initialState),
+
+  // Handle Forgot Password
+  on(forgotPassword, (state) => ({
+    ...state,
+    status: StateStatus.LOADING,
+  })),
+
+  // Handle Forgot Password Success
+  on(forgotPasswordSuccess, (state) => ({
+    ...state,
+    forgotPasswordError: null,
+    status: StateStatus.SUCCESS,
+  })),
+
+  // Handle Forgot Password Failure
+  on(forgotPasswordFailure, (state, {error}) => ({
+    ...state,
+    forgotPasswordError: error,
+    status: StateStatus.ERROR,
+  })),
+
+   // Handle Reset Password
+   on(resetPassword, (state) => ({
+    ...state,
+    status: StateStatus.LOADING,
+  })),
+
+  // Handle Reset Password Success
+  on(resetPasswordSuccess, (state) => ({
+    ...state,
+    resetPasswordError: null,
+    status: StateStatus.SUCCESS,
+  })),
+
+  // Handle Reset Password Failure
+  on(resetPasswordFailure, (state, {error}) => ({
+    ...state,
+    resetPasswordError: error,
+    status: StateStatus.ERROR,
+  })),
 );

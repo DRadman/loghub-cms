@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 import { AppState } from '../../core/state/app.state';
-import { loadCurrentUser } from '../../core/state/auth/auth.actions';
+import { loadCurrentUser, signOut } from '../../core/state/auth/auth.actions';
 import { selectCurrentUser } from '../../core/state/auth/auth.selectors';
 
 @Component({

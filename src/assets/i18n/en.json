@@ -1,21 +1,48 @@
 {
   "auth": {
     "login": {
-        "welcome_message": "Welcome to ",
-        "sign_in_to_continue": "Sign in to continue",
-        "username_label": "Username [REQUIRED]",
-        "password_label": "Password [REQUIRED]",
-        "username": "Username",
-        "password": "Password",
-        "sign_in_label": "Sign In",
-        "forgot_password": "Forgot Password?",
-        "register": "Register",
-        "username_is_required": "Username is required",
-        "username_length": "Username minimum length is 3",
-        "password_is_required": "Password is required",
-        "password_length": "Password minimum length is 8",
-        "authorization_error": "Authorization Error",
-        "wrong_username_or_password": "Incorrect username or password"
+      "welcome_message": "Welcome to ",
+      "sign_in_to_continue": "Sign in to continue",
+      "username_label": "Username [REQUIRED]",
+      "password_label": "Password [REQUIRED]",
+      "username": "Username",
+      "password": "Password",
+      "sign_in_label": "Sign In",
+      "forgot_password": "Forgot Password?",
+      "register": "Register",
+      "username_is_required": "Username is required",
+      "username_length": "Username minimum length is 3",
+      "password_is_required": "Password is required",
+      "password_length": "Password minimum length is 8",
+      "authorization_error": "Authorization Error",
+      "wrong_username_or_password": "Incorrect username or password"
+    },
+    "forgot-password": {
+      "welcome_message": "Forgot your password?",
+      "welcome_description": "No problem, we will send you reset link",
+      "error": "Error",
+      "error_description": "Something went wrong while trying to send reset password email",
+      "success": "Success",
+      "check_your_email": "Reset Password request has been sent to your email",
+      "username_is_required": "Username is required",
+      "username_length": "Username minimum length is 3",
+      "back_to_login": "Back to Login",
+      "submit": "Submit",
+      "user_does_not_exist": "User with provided username does not exist"
+    },
+    "reset-password": {
+      "welcome_message": "Reset your password",
+      "new_password": "New Password",
+      "new_password_label": "New Password [REQUIRED]",
+      "password_is_required": "Password is required",
+      "password_length": "Password minimum length is 8",
+      "password_not_strong": "Password needs at least 1 capital case, 1 digit and 1 special character",
+      "error": "API Error",
+      "wrong_hash": "Wrong hash in reset password request",
+      "submit": "Reset",
+      "success": "Success",
+      "success_message": "You have reseted your password",
+      "back_to_login": "Back to Login"
     }
   }
 }

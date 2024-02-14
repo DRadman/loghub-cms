@@ -14,6 +14,7 @@ import { AuthService } from '../services/api/auth.api.service';
 import { JwtService } from '../services/token-storage.service';
 import { AppState } from '../state/app.state';
 import { setToken, signOut } from '../state/auth/auth.actions';
+import { url } from 'inspector';
 
 export const authInterceptor: HttpInterceptorFn = (
   request: HttpRequest<unknown>,
@@ -74,14 +75,15 @@ export const unauthErrorInterceptor: HttpInterceptorFn = (
                 if (error.status === '401') {
                   jwtService.clear();
                   store.dispatch(signOut());
+                  if(!router.url.startsWith('/auth')) {
+                    router.navigate(['/auth'])
+                  }
                 }
                 return throwError(() => error);
               })
             );
           }
         }
-        router.navigate(['/auth'])
-        store.dispatch(signOut());
         return throwError(() => new Error('Unauthorized Exception'));
       })
     );
