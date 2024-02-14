@@ -1,0 +1,5 @@
+services:
+  loghub-cms:
+      image: 'ghcr.io/dradman/loghub-cms:latest'
+      ports:
+        - "80:4000"

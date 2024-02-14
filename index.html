@@ -1,0 +1,231 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>loghub-cms documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	   <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="./" class="navbar-brand">loghub-cms documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<p><img src="https://github.com/DRadman/loghub-cms/actions/workflows/docker-publish.yml/badge.svg?branch=master" alt="Docker" class="img-responsive">
+<a href="https://github.com/DRadman/loghub-cms/releases"><img src="https://img.shields.io/github/v/release/DRadman/loghub-cms?logo=github" alt="GitHub Latest Release)" class="img-responsive"></a>
+<a href="LICENSE"><img src="https://img.shields.io/badge/License-GPL%20v3-yellow.svg" alt="GPLv3 License" class="img-responsive"></a>
+<a href="https://codecov.io/gh/DRadman/loghub-cms"><img src="https://codecov.io/gh/DRadman/loghub-cms/graph/badge.svg?token=SWF5VXNMAF" alt="codecov" class="img-responsive"></a>
+<img src="https://img.shields.io/github/downloads/DRadman/loghub-cms/total.svg?style=flat&logo=github" alt="Github All Releases" class="img-responsive">
+<a href="https://DRadman.github.io/loghub-cms/"><img src="https://dradman.github.io/loghub-cms/images/coverage-badge-documentation.svg" alt="Documentation Coverage" class="img-responsive"></a></p>
+<p><a href="https://opensource.org/"><img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103" alt="Open Source" class="img-responsive"></a></p>
+<p><a href="https://github.com/Dradman/loghub-cms/issues"><img src="https://img.shields.io/github/issues-raw/DRadman/loghub-cms.svg?style=flat&logo=github" alt="Issues" class="img-responsive"></a>
+<a href="https://github.com/Dradman/loghub-cms/pulls"><img src="https://img.shields.io/github/issues-pr/DRadman/loghub-cms.svg?style=flat&logo=github" alt="GitHub pull requests" class="img-responsive"></a>
+<img src="https://img.shields.io/github/contributors/DRadman/loghub-cms.svg?style=flat&logo=github" alt="GitHub contributors" class="img-responsive">
+<img src="https://img.shields.io/github/last-commit/DRadman/loghub-cms.svg?style=flat&logo=github" alt="GitHub last commit" class="img-responsive"></p>
+<h1>LogHub - Remote Centralized Logging Solution (CMS)</h1>
+<p>This project is a Angular CMS application that provides an UI for LogHub (remote centralized logging solution). It allows you to collect and manage logs from distributed applications in a centralized location, enhancing troubleshooting and monitoring capabilities.</p>
+<p>This project was generated with <a href="https://github.com/angular/angular-cli">Angular CLI</a> version 17.1.3.</p>
+<p>This project utilizes next features of angular:</p>
+<ul>
+<li>Angular 17</li>
+<li>SSR (Server Side Rendering)</li>
+<li>Standalone Components</li>
+<li>Router (For url routing)</li>
+<li>HTTP Client (For api calls)</li>
+<li>NGRX (For state management)</li>
+<li>PrimeNG (For UI Components)</li>
+</ul>
+<h2>Technologies Used</h2>
+<p><img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular" class="img-responsive">
+<img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" class="img-responsive">
+<img src="https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" class="img-responsive">
+<img src="https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" class="img-responsive">
+<img src="https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E" alt="Pretier" class="img-responsive">
+<img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" alt="Node" class="img-responsive">
+<img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel" class="img-responsive">
+<img src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white" alt="Git" class="img-responsive">
+<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" class="img-responsive">
+<img src="https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" class="img-responsive"></p>
+<h2>Development server</h2>
+<p>Run <code>ng serve</code> for a dev server. Navigate to <code>http://localhost:4200/</code>. The application will automatically reload if you change any of the source files.</p>
+<h2>Code scaffolding</h2>
+<p>Run <code>ng generate component component-name</code> to generate a new component. You can also use <code>ng generate directive|pipe|service|class|guard|interface|enum|module</code>.</p>
+<h2>Build</h2>
+<p>Run <code>ng build</code> to build the project. The build artifacts will be stored in the <code>dist/</code> directory.</p>
+<h2>Build Docker Image</h2>
+<p>You can deploy the application using Docker. First, build your own image:</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">docker build -t your-domain/your-image-name:your-version .</code></pre></div><p>Here is the full example:</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">docker build -t dradman/loghub-cms:1 .</code></pre></div><h3></h3>
+<p>Then you can run your own image with command:</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">docker run -p 80:4000 your-full-image-name </code></pre></div><p>Here is the full example:</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">docker run -p 80:4000 dradman/loghub-cms:1 . </code></pre></div><h2>Running unit tests</h2>
+<p>Run <code>ng test</code> to execute the unit tests via <a href="https://karma-runner.github.io">Karma</a>.</p>
+<h2>Running end-to-end tests</h2>
+<p>Run <code>ng e2e</code> to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.</p>
+<h2>Deploying with Docker</h2>
+<p>You can deploy the application using Docker. First, pull the latest Docker image from the GitHub Container Registry:</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">docker pull ghcr.io/dradman/loghub-cms:latest</code></pre></div><p>Then, run the Docker container:</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">docker run -p 80:4000 ghcr.io/dradman/loghub-cms:latest</code></pre></div><p><em><strong>Important:</strong></em> Make sure that all environment variables are set correctly.</p>
+<h3>Docker-Compose</h3>
+<p>You can also run application using docker compose. See an example <a href="docs/examples/docker-compose.yaml">here</a></p>
+<h2>Environment Variables</h2>
+<p><em><strong>Important:</strong></em> Due to angular &amp; general limitation since application is served to local browser you can&#39;t use standard .env to update environment varaibles.</p>
+<p>If you wish to change any of the variables you <em><strong>will have to</strong></em> build your own version of application where will change <a href="src/environments/">these files</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+
+       <script src="./js/menu-wc.js" defer></script>
+       <script nomodule src="./js/menu-wc_es5.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
