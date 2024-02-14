@@ -1,8 +1,9 @@
 ![Docker](https://github.com/DRadman/loghub-cms/actions/workflows/docker-publish.yml/badge.svg?branch=master)
 [![GitHub Latest Release)](https://img.shields.io/github/v/release/DRadman/loghub-cms?logo=github)](https://github.com/DRadman/loghub-cms/releases)
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](LICENSE)
-[![codecov](https://codecov.io/gh/DRadman/loghub-cms/graph/badge.svg?token=TJV9QZPTNR)](https://codecov.io/gh/DRadman/loghub-cms)
+[![codecov](https://codecov.io/gh/DRadman/loghub-cms/graph/badge.svg?token=SWF5VXNMAF)](https://codecov.io/gh/DRadman/loghub-cms)
 ![Github All Releases](https://img.shields.io/github/downloads/DRadman/loghub-cms/total.svg?style=flat&logo=github)
+[![Documentation Coverage](https://dradman.github.io/loghub-cms/images/coverage-badge-documentation.svg)](https://DRadman.github.io/loghub-cms/)
 
 [![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://opensource.org/)
 
