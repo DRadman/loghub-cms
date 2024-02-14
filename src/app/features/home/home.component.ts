@@ -1,10 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 import { AppState } from '../../core/state/app.state';
-import { loadCurrentUser, signOut } from '../../core/state/auth/auth.actions';
+import { loadCurrentUser } from '../../core/state/auth/auth.actions';
 import { selectCurrentUser } from '../../core/state/auth/auth.selectors';
 
 @Component({
@@ -14,8 +13,8 @@ import { selectCurrentUser } from '../../core/state/auth/auth.selectors';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent {
-  constructor(private store: Store<AppState>, private router: Router) {}
+export class HomeComponent implements OnInit, OnDestroy {
+  constructor(private store: Store<AppState>) {}
 
   private currentUserErrorSubscription?: Subscription;
 

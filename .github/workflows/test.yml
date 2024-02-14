@@ -1,0 +1,33 @@
+name: Test
+
+on:
+  push:
+    branches: [ "master" ]
+    # Publish semver tags as releases.
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    # Machine environment:
+    # https://help.github.com/en/articles/software-in-virtual-environments-for-github-actions#ubuntu-1804-lts
+    # We specify the Node.js version manually below, and use versioned Chrome from Puppeteer.
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js 20.11.0
+      uses: actions/setup-node@v1
+      with:
+        node-version: 20.11.0
+    - name: Install dependencies
+      run: npm install
+    - name: Lint
+      run: npm run lint
+    - name: Test
+      run: npm test -- --configuration=ci --code-coverage --watch=false
+    - name: E2E
+      run: npm run e2e -- --configuration=ci --headless --watch=false
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v3

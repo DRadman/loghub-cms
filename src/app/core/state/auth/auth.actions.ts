@@ -30,6 +30,7 @@ export const loadCurrentUserSuccess = createAction(
 
 export const loadCurrentUserFailure = createAction(
   '[Auth API] Get authenticated user failure',
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   props<{ error: any }>()
 );
 
@@ -40,6 +41,7 @@ export const authenticationSuccess = createAction(
 
 export const authenticationFailure = createAction(
   '[Auth API] Authentication failure',
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   props<{ error: any }>()
 );
 
@@ -58,6 +60,7 @@ export const forgotPasswordSuccess = createAction(
 
 export const forgotPasswordFailure = createAction(
   '[Auth Api] Forgot password failure',
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   props<{ error: any }>()
 )
 
@@ -72,5 +75,6 @@ export const resetPasswordSuccess = createAction(
 
 export const resetPasswordFailure = createAction(
   '[Auth Api] Reset password failure',
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   props<{ error: any }>()
 )

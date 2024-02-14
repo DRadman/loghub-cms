@@ -14,7 +14,6 @@ import { AuthService } from '../services/api/auth.api.service';
 import { JwtService } from '../services/token-storage.service';
 import { AppState } from '../state/app.state';
 import { setToken, signOut } from '../state/auth/auth.actions';
-import { url } from 'inspector';
 
 export const authInterceptor: HttpInterceptorFn = (
   request: HttpRequest<unknown>,

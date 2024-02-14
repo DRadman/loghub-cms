@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import {
   FormBuilder,
   FormsModule,
@@ -48,7 +48,7 @@ import { AuthService } from '../../../../core/services/api/auth.api.service';
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('username') usernameInput!: ElementRef;
   
   constructor(
@@ -73,6 +73,7 @@ export class LoginComponent {
   private usernameCheckSubscription?: Subscription;
 
   ngAfterViewInit(): void {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     fromEvent<any>(this.usernameInput.nativeElement, 'input')
       .pipe(
         map((event: Event) => (event.target as HTMLInputElement).value),
@@ -110,6 +111,7 @@ export class LoginComponent {
       });
   }
 
+  /* eslint-disable @typescript-eslint/no-non-null-asserted-optional-chain */
   login() {
     this.store.dispatch(
       authenticate({

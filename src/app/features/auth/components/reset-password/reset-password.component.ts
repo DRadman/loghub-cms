@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormsModule,
@@ -7,25 +7,24 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { PasswordModule } from 'primeng/password';
 import { ToastModule } from 'primeng/toast';
+import { Subscription } from 'rxjs';
 import { AppState } from '../../../../core/state/app.state';
-import { Store } from '@ngrx/store';
-import { AuthService } from '../../../../core/services/api/auth.api.service';
+import {
+  loadCurrentUser,
+  resetPassword,
+} from '../../../../core/state/auth/auth.actions';
 import {
   isLoadingAuthState,
   isSuccess,
   selectCurrentUser,
   selectResetPasswordError,
 } from '../../../../core/state/auth/auth.selectors';
-import { Subscription } from 'rxjs';
-import {
-  loadCurrentUser,
-  resetPassword,
-} from '../../../../core/state/auth/auth.actions';
 import { securePasswordRegex } from '../../../../core/utils/regex.constants';
 
 @Component({
@@ -45,7 +44,7 @@ import { securePasswordRegex } from '../../../../core/utils/regex.constants';
   templateUrl: './reset-password.component.html',
   styleUrl: './reset-password.component.scss',
 })
-export class ResetPasswordComponent {
+export class ResetPasswordComponent implements OnInit, OnDestroy {
   @Input()
   private secret?: string;
 
@@ -55,11 +54,17 @@ export class ResetPasswordComponent {
     private router: Router,
     private messageService: MessageService,
     private translateService: TranslateService,
-    private authService: AuthService
   ) {}
 
   resetPasswordForm = this.formBuilder.group({
-    password: ['', [Validators.required, Validators.minLength(8), Validators.pattern(securePasswordRegex)]],
+    password: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(8),
+        Validators.pattern(securePasswordRegex),
+      ],
+    ],
   });
 
   isLoading = this.store.select(isLoadingAuthState);
@@ -93,7 +98,7 @@ export class ResetPasswordComponent {
             severity: 'error',
             summary: this.translateService.instant('auth.reset-password.error'),
             detail: this.translateService.instant(
-              'auth.reset-password.wrong_hash'
+              'auth.reset-password.wrong_hash',
             ),
           });
         }
@@ -106,10 +111,10 @@ export class ResetPasswordComponent {
           this.messageService.add({
             severity: 'success',
             summary: this.translateService.instant(
-              'auth.reset-password.success'
+              'auth.reset-password.success',
             ),
             detail: this.translateService.instant(
-              'auth.reset-password.success_message'
+              'auth.reset-password.success_message',
             ),
           });
           this.router.navigate(['/auth']);
@@ -119,9 +124,9 @@ export class ResetPasswordComponent {
 
   resetPassword() {
     if (this.secret) {
-      const newPassword = this.resetPasswordForm.get('password')?.value!;
+      const newPassword = this.resetPasswordForm.get('password')?.value ?? '';
       this.store.dispatch(
-        resetPassword({ newPassword: newPassword, hash: this.secret })
+        resetPassword({ newPassword: newPassword, hash: this.secret }),
       );
     }
   }

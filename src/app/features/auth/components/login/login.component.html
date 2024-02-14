@@ -15,7 +15,7 @@
       >{{ "auth.login.username_label" | translate }}</label
     >
     <span class="p-input-icon-right">
-      @if(isUsernameTaken == null) {
+      @if(isUsernameTaken === null) {
         <i class="pi pi-user"></i>
         } @else if (isUsernameTaken) {
         <i class="pi pi-check text-green-500"></i>
