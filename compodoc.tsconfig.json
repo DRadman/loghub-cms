@@ -1,0 +1,19 @@
+{
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        ".angular/",
+        ".github/",
+        "./vscode",
+        ".e2e",
+        "tailwind.config.js",
+        "node_modules/",
+        "src/migrations/*",
+        "src/migrations/**/*",
+        "docs/",
+        "dist/",
+        "coverage/",
+        "**/*.spec.ts"
+    ]
+}
