@@ -70,5 +70,19 @@
       "registration_error": "API Error",
       "registration_error_description": "Failed to register new user (Username exists)"
     }
+  },
+  "config": {
+    "scale": "Scale",
+    "menu_type": "Menu Type",
+    "static": "Static",
+    "overlay": "Overlay",
+    "input_style": "Input Style",
+    "outlined": "Outlined",
+    "filled": "Filled",
+    "ripple_effect": "Ripple Effect"
+  },
+  "sidenav": {
+    "General": "General",
+    "Home": "Home"
   }
 }
