@@ -65,6 +65,12 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/AuthComponent.html" data-type="entity-link" >AuthComponent</a>
                             </li>
                             <li class="link">
+                                <a href="components/ConfigComponent.html" data-type="entity-link" >ConfigComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/FooterComponent.html" data-type="entity-link" >FooterComponent</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/ForgotPasswordComponent.html" data-type="entity-link" >ForgotPasswordComponent</a>
                             </li>
                             <li class="link">
@@ -77,10 +83,19 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/LoginComponent.html" data-type="entity-link" >LoginComponent</a>
                             </li>
                             <li class="link">
+                                <a href="components/MenuitemComponent.html" data-type="entity-link" >MenuitemComponent</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/RegisterComponent.html" data-type="entity-link" >RegisterComponent</a>
                             </li>
                             <li class="link">
                                 <a href="components/ResetPasswordComponent.html" data-type="entity-link" >ResetPasswordComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/SidebarComponent.html" data-type="entity-link" >SidebarComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/TopbarComponent.html" data-type="entity-link" >TopbarComponent</a>
                             </li>
                         </ul>
                     </li>
@@ -102,10 +117,16 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     <a href="injectables/JwtService.html" data-type="entity-link" >JwtService</a>
                                 </li>
                                 <li class="link">
+                                    <a href="injectables/LayoutService.html" data-type="entity-link" >LayoutService</a>
+                                </li>
+                                <li class="link">
                                     <a href="injectables/LocalStorage.html" data-type="entity-link" >LocalStorage</a>
                                 </li>
                                 <li class="link">
                                     <a href="injectables/MemoryStorage.html" data-type="entity-link" >MemoryStorage</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/MenuService.html" data-type="entity-link" >MenuService</a>
                                 </li>
                                 <li class="link">
                                     <a href="injectables/SessionStorage.html" data-type="entity-link" >SessionStorage</a>
@@ -121,6 +142,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? ' id="interfaces-links"' : 'id="xs-interfaces-links"' }>
                             <li class="link">
+                                <a href="interfaces/AppConfig.html" data-type="entity-link" >AppConfig</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/AppState.html" data-type="entity-link" >AppState</a>
                             </li>
                             <li class="link">
@@ -131,6 +155,12 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/ForgotPasswordRequestDto.html" data-type="entity-link" >ForgotPasswordRequestDto</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/LayoutState.html" data-type="entity-link" >LayoutState</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/MenuChangeEvent.html" data-type="entity-link" >MenuChangeEvent</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/RegisterRequestDto.html" data-type="entity-link" >RegisterRequestDto</a>

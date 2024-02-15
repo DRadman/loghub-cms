@@ -96,7 +96,7 @@
   <li class="breadcrumb-item">Components</li>
   <li class="breadcrumb-item"
   >
-  AuthComponent</li>
+  FooterComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -123,7 +123,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/features/auth/auth.component.ts</code>
+    <code>src/app/features/home/components/footer/footer.component.ts</code>
 </p>
 
 
@@ -149,7 +149,7 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-auth</code></td>
+                <td class="col-md-9"><code>app-footer</code></td>
             </tr>
 
             <tr>
@@ -157,26 +157,20 @@
                 <td class="col-md-9"><code>true</code></td>
             </tr>
 
-            <tr>
-                <td class="col-md-3">imports</td>
-                <td class="col-md-9">
-                            <code>RouterOutlet</code>
-                </td>
-            </tr>
 
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./auth.component.html</code></td>
+                <td class="col-md-9"><code>./footer.component.html</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">styleUrl</td>
-                <td class="col-md-9"><code>./auth.component.scss</code></td>
+                <td class="col-md-9"><code>./footer.component.scss</code></td>
             </tr>
 
 
@@ -200,48 +194,24 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
-import { RouterOutlet } from &#x27;@angular/router&#x27;;
 
 @Component({
-  selector: &#x27;app-auth&#x27;,
+  selector: &#x27;app-footer&#x27;,
   standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: &#x27;./auth.component.html&#x27;,
-  styleUrl: &#x27;./auth.component.scss&#x27;,
+  imports: [],
+  templateUrl: &#x27;./footer.component.html&#x27;,
+  styleUrl: &#x27;./footer.component.scss&#x27;
 })
-export class AuthComponent {}
+export class FooterComponent {
+
+}
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div
-  class&#x3D;&quot;surface-ground flex align-items-center justify-content-center min-w-screen min-h-screen overscroll-none&quot;
-&gt;
-  &lt;div class&#x3D;&quot;flex flex-column align-items-center justify-content-center&quot;&gt;
-    &lt;img
-      src&#x3D;&quot;assets/images/log-hub-no-bg.png&quot;
-      alt&#x3D;&quot;LogHub logo&quot;
-      class&#x3D;&quot;mb-5 w-6rem flex-shrink-0&quot;
-    /&gt;
-    &lt;div
-      style&#x3D;&quot;
-        border-radius: 56px;
-        padding: 0.3rem;
-        background: linear-gradient(
-          180deg,
-          var(--primary-color) 10%,
-          rgba(33, 150, 243, 0) 30%
-        );
-      &quot;
-    &gt;
-      &lt;div
-        class&#x3D;&quot;w-full surface-card py-6 px-5 sm:px-8&quot;
-        style&#x3D;&quot;border-radius: 53px&quot;
-      &gt;
-        &lt;router-outlet /&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;layout-footer&quot;&gt;
+  by
+  &lt;span class&#x3D;&quot;font-medium ml-2 mr-2&quot;&gt;DRadman&lt;/span&gt;
 &lt;/div&gt;
 </code></pre>
     </div>
@@ -272,10 +242,10 @@ export class AuthComponent {}
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div  class="surface-ground flex align-items-center justify-content-center min-w-screen min-h-screen overscroll-none">  <div class="flex flex-column align-items-center justify-content-center">    <img      src="assets/images/log-hub-no-bg.png"      alt="LogHub logo"      class="mb-5 w-6rem flex-shrink-0"    />    <div      style="        border-radius: 56px;        padding: 0.3rem;        background: linear-gradient(          180deg,          var(--primary-color) 10%,          rgba(33, 150, 243, 0) 30%        );      "    >      <div        class="w-full surface-card py-6 px-5 sm:px-8"        style="border-radius: 53px"      >        <router-outlet />      </div>    </div>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="layout-footer">  by  <span class="font-medium ml-2 mr-2">DRadman</span></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'ConfigComponent', 'selector': 'app-config'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InvitationComponent', 'selector': 'app-invitation'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuitemComponent', 'selector': '[app-menuitem]'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'TopbarComponent', 'selector': 'app-topbar'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'AuthComponent'};
+    var ACTUAL_COMPONENT = {'name': 'FooterComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -321,7 +291,7 @@ export class AuthComponent {}
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'AuthComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'FooterComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

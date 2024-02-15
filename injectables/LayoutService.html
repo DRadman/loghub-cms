@@ -1,0 +1,1074 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>loghub-cms documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">loghub-cms documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >LayoutService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/core/services/layout.service.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>The <code>LayoutService</code> class in TypeScript defines the default configuration and state of a layout,
+provides functions to toggle menu and sidebar visibility, and emits events through observables.</p>
+
+            </p>
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#config" >config</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#configUpdate" >configUpdate</a>
+                            </li>
+                            <li>
+                                <a href="#configUpdate$" >configUpdate$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#overlayOpen" >overlayOpen</a>
+                            </li>
+                            <li>
+                                <a href="#overlayOpen$" >overlayOpen$</a>
+                            </li>
+                            <li>
+                                <a href="#state" >state</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#isDesktop" >isDesktop</a>
+                            </li>
+                            <li>
+                                <a href="#isMobile" >isMobile</a>
+                            </li>
+                            <li>
+                                <a href="#isOverlay" >isOverlay</a>
+                            </li>
+                            <li>
+                                <a href="#onConfigUpdate" >onConfigUpdate</a>
+                            </li>
+                            <li>
+                                <a href="#onMenuToggle" >onMenuToggle</a>
+                            </li>
+                            <li>
+                                <a href="#showConfigSidebar" >showConfigSidebar</a>
+                            </li>
+                            <li>
+                                <a href="#showProfileSidebar" >showProfileSidebar</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isDesktop"></a>
+                    <span class="name">
+                        <span ><b>isDesktop</b></span>
+                        <a href="#isDesktop"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isDesktop()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="209"
+                                    class="link-to-prism">src/app/core/services/layout.service.ts:209</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>This function checks if the current window width is greater than 991 pixels, indicating if the
+user is on a desktop device.
+greater than 991 pixels, indicating that the device is a desktop or a tablet in landscape mode.
+Otherwise, it returns <code>false</code>, indicating that the device is a mobile or a tablet in portrait
+mode.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>The function <code>isDesktop()</code> returns a boolean value <code>true</code> if the width of the window is
+greater than 991 pixels, indicating that the device is a desktop or a tablet in landscape mode.
+Otherwise, it returns <code>false</code>, indicating that the device is a mobile or a tablet in portrait
+mode.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isMobile"></a>
+                    <span class="name">
+                        <span ><b>isMobile</b></span>
+                        <a href="#isMobile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isMobile()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="218"
+                                    class="link-to-prism">src/app/core/services/layout.service.ts:218</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>The function checks if the device is not a desktop and returns a boolean value.
+will return <code>true</code> if the device is not a desktop and <code>false</code> if it is a desktop.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>The <code>isMobile()</code> function is returning the opposite of the <code>isDesktop()</code> function. It
+will return <code>true</code> if the device is not a desktop and <code>false</code> if it is a desktop.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isOverlay"></a>
+                    <span class="name">
+                        <span ><b>isOverlay</b></span>
+                        <a href="#isOverlay"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isOverlay()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="197"
+                                    class="link-to-prism">src/app/core/services/layout.service.ts:197</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>This function checks if the menu mode is set to &#39;overlay&#39;.
+<code>menuMode</code> property of the object&#39;s <code>config</code> property is equal to the string <code>&#39;overlay&#39;</code>.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>The function <code>isOverlay()</code> is returning a boolean value that indicates whether the
+<code>menuMode</code> property of the object&#39;s <code>config</code> property is equal to the string <code>&#39;overlay&#39;</code>.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onConfigUpdate"></a>
+                    <span class="name">
+                        <span ><b>onConfigUpdate</b></span>
+                        <a href="#onConfigUpdate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onConfigUpdate()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="225"
+                                    class="link-to-prism">src/app/core/services/layout.service.ts:225</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>The function updates the configuration and emits the updated configuration through a subject.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onMenuToggle"></a>
+                    <span class="name">
+                        <span ><b>onMenuToggle</b></span>
+                        <a href="#onMenuToggle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onMenuToggle()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="154"
+                                    class="link-to-prism">src/app/core/services/layout.service.ts:154</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>The function toggles the visibility of a menu based on the device type.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showConfigSidebar"></a>
+                    <span class="name">
+                        <span ><b>showConfigSidebar</b></span>
+                        <a href="#showConfigSidebar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>showConfigSidebar()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="188"
+                                    class="link-to-prism">src/app/core/services/layout.service.ts:188</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>This function sets the state of the configSidebarVisible property to true.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showProfileSidebar"></a>
+                    <span class="name">
+                        <span ><b>showProfileSidebar</b></span>
+                        <a href="#showProfileSidebar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>showProfileSidebar()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="178"
+                                    class="link-to-prism">src/app/core/services/layout.service.ts:178</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>The function toggles the visibility of a profile sidebar and opens an overlay if the sidebar is
+visible.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="config"></a>
+                    <span class="name">
+                        <span ><b>config</b></span>
+                        <a href="#config"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/AppConfig.html" target="_self" >AppConfig</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    ripple: false,
+    inputStyle: &#x27;outlined&#x27;,
+    menuMode: &#x27;static&#x27;,
+    colorScheme: &#x27;light&#x27;,
+    theme: &#x27;lara-light-blue&#x27;,
+    scale: 14,
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="98" class="link-to-prism">src/app/core/services/layout.service.ts:98</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>The <code>config</code> property is initializing an object of type <code>AppConfig</code> with default values for
+various configuration options. These options include <code>ripple</code>, <code>inputStyle</code>, <code>menuMode</code>,
+<code>colorScheme</code>, <code>theme</code>, and <code>scale</code>. The <code>=</code> operator is assigning this object to the <code>config</code>
+property of the <code>LayoutService</code> class. This object represents the default configuration for the
+layout.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="configUpdate"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>configUpdate</b></span>
+                        <a href="#configUpdate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subject&lt;AppConfig&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="128" class="link-to-prism">src/app/core/services/layout.service.ts:128</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p><code>private configUpdate = new Subject&lt;AppConfig&gt;();</code> is creating a new instance of the <code>Subject</code>
+class from the <code>rxjs</code> library and assigning it to the <code>configUpdate</code> property of the
+<code>LayoutService</code> class. This <code>Subject</code> instance is used to emit events when the configuration is
+updated. Other parts of the application can subscribe to these events using the <code>configUpdate$</code>
+observable created from this <code>Subject</code>. The <code>AppConfig</code> type parameter in <code>Subject&lt;AppConfig&gt;</code>
+indicates that the <code>Subject</code> can emit values of type <code>AppConfig</code>.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="configUpdate$"></a>
+                    <span class="name">
+                        <span ><b>configUpdate$</b></span>
+                        <a href="#configUpdate$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.configUpdate.asObservable()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="143" class="link-to-prism">src/app/core/services/layout.service.ts:143</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p><code>configUpdate$</code> is creating an observable from the <code>configUpdate</code> subject. This allows other parts
+of the application to subscribe to changes in the <code>configUpdate</code> subject and react accordingly.
+The <code>$</code> at the end of the variable name is a convention in RxJS to indicate that the variable is
+an observable.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="overlayOpen"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>overlayOpen</b></span>
+                        <a href="#overlayOpen"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subject&lt;any&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="137" class="link-to-prism">src/app/core/services/layout.service.ts:137</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p><code>private overlayOpen = new Subject&lt;any&gt;();</code> is creating a new instance of the <code>Subject</code> class from
+the <code>rxjs</code> library and assigning it to the <code>overlayOpen</code> property of the <code>LayoutService</code> class.
+This <code>Subject</code> instance is used to emit events when the overlay menu is opened or closed. Other
+parts of the application can subscribe to these events using the <code>overlayOpen$</code> observable created
+from this <code>Subject</code>. The <code>any</code> type parameter in <code>Subject&lt;any&gt;</code> indicates that the <code>Subject</code> can
+emit values of any type.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="overlayOpen$"></a>
+                    <span class="name">
+                        <span ><b>overlayOpen$</b></span>
+                        <a href="#overlayOpen$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.overlayOpen.asObservable()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="149" class="link-to-prism">src/app/core/services/layout.service.ts:149</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p><code>overlayOpen$</code> is creating an observable from the <code>overlayOpen</code> subject. This allows other parts
+of the application to subscribe to changes in the <code>overlayOpen</code> subject and react accordingly. The
+<code>$</code> at the end of the variable name is a convention in RxJS to indicate that the variable is an
+observable.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="state"></a>
+                    <span class="name">
+                        <span ><b>state</b></span>
+                        <a href="#state"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/LayoutState.html" target="_self" >LayoutState</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    staticMenuDesktopInactive: false,
+    overlayMenuActive: false,
+    profileSidebarVisible: false,
+    configSidebarVisible: false,
+    staticMenuMobileActive: false,
+    menuHoverActive: false,
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="113" class="link-to-prism">src/app/core/services/layout.service.ts:113</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p><code>state: LayoutState</code> is declaring a property named <code>state</code> of type <code>LayoutState</code>. <code>LayoutState</code> is
+an interface that defines the shape of an object with boolean properties
+<code>staticMenuDesktopInactive</code>, <code>overlayMenuActive</code>, <code>profileSidebarVisible</code>, <code>configSidebarVisible</code>,
+<code>staticMenuMobileActive</code>, and <code>menuHoverActive</code>. The <code>=</code> operator is initializing the <code>state</code>
+property with an object that has all of these boolean properties set to <code>false</code>. This object
+represents the initial state of the layout.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { Subject } from &#x27;rxjs&#x27;;
+
+/** The above code is defining an interface named &#x60;AppConfig&#x60; in TypeScript. This interface has several
+properties such as &#x60;inputStyle&#x60;, &#x60;colorScheme&#x60;, &#x60;theme&#x60;, &#x60;ripple&#x60;, &#x60;menuMode&#x60;, and &#x60;scale&#x60;. These
+properties represent various configuration options for a layout and are used in various functions of
+the &#x60;LayoutService&#x60; class to determine the current configuration of the layout and apply appropriate
+styles. The comments above each property provide a description of what that property represents and
+how it is used. */
+export interface AppConfig {
+  /** &#x60;inputStyle: string;&#x60; is declaring a property named &#x60;inputStyle&#x60; of type &#x60;string&#x60; in the
+  &#x60;AppConfig&#x60; interface. This property represents the style of the input elements in the layout and
+  can have values such as &#x60;&#x27;outlined&#x27;&#x60; or &#x60;&#x27;filled&#x27;&#x60;. It is used in various functions of the
+  &#x60;LayoutService&#x60; class to determine the current input style of the layout and apply appropriate
+  styles. */
+  inputStyle: string;
+  /** &#x60;colorScheme: string;&#x60; is declaring a property named &#x60;colorScheme&#x60; of type &#x60;string&#x60; in the
+  &#x60;AppConfig&#x60; interface. This property represents the color scheme of the layout and can have values
+  such as &#x60;&#x27;light&#x27;&#x60; or &#x60;&#x27;dark&#x27;&#x60;. It is used in various functions of the &#x60;LayoutService&#x60; class to
+  determine the current color scheme of the layout and apply appropriate styles. */
+  colorScheme: string;
+  /** &#x60;theme: string;&#x60; is declaring a property named &#x60;theme&#x60; of type &#x60;string&#x60; in the &#x60;AppConfig&#x60;
+  interface. This property represents the theme of the layout and can have values such as
+  &#x60;&#x27;lara-light-blue&#x27;&#x60;, &#x60;&#x27;lara-dark-blue&#x27;&#x60;, or &#x60;&#x27;lara-green&#x27;&#x60;. It is used in various functions of the
+  &#x60;LayoutService&#x60; class to determine the current theme of the layout and apply appropriate styles. */
+  theme: string;
+  /** The &#x60;ripple: boolean;&#x60; property in the &#x60;AppConfig&#x60; interface represents a configuration option for
+  whether or not to enable ripple effects on UI elements. If &#x60;ripple&#x60; is set to &#x60;true&#x60;, then UI
+  elements such as buttons and links will have a ripple effect when clicked. If &#x60;ripple&#x60; is set to
+  &#x60;false&#x60;, then no ripple effect will be applied. */
+  ripple: boolean;
+  /** &#x60;menuMode: string;&#x60; is declaring a property named &#x60;menuMode&#x60; of type &#x60;string&#x60; in the &#x60;AppConfig&#x60;
+  interface. This property represents the mode of the menu and can have values such as &#x60;&#x27;static&#x27;&#x60;,
+  &#x60;&#x27;overlay&#x27;&#x60;, or &#x60;&#x27;horizontal&#x27;&#x60;. It is used in various functions of the &#x60;LayoutService&#x60; class to
+  determine the behavior of the menu based on the selected mode. */
+  menuMode: string;
+  /** &#x60;scale: number;&#x60; is declaring a property named &#x60;scale&#x60; of type &#x60;number&#x60; in the &#x60;AppConfig&#x60;
+  interface. This property represents the scale of the layout and is used to adjust the size of
+  various elements in the layout. The default value of &#x60;scale&#x60; is set to &#x60;14&#x60; in the &#x60;config&#x60; object
+  of the &#x60;LayoutService&#x60; class. */
+  scale: number;
+}
+
+/** The &#x60;interface LayoutState&#x60; is defining the shape of an object that represents the state of the
+layout. It declares several boolean properties such as &#x60;staticMenuDesktopInactive&#x60;,
+&#x60;overlayMenuActive&#x60;, &#x60;profileSidebarVisible&#x60;, &#x60;configSidebarVisible&#x60;, &#x60;staticMenuMobileActive&#x60;, and
+&#x60;menuHoverActive&#x60;. These properties are used in various functions of the &#x60;LayoutService&#x60; class to
+toggle the visibility of menus and sidebars and to keep track of the current state of the layout.
+The comments above each property provide a description of what the property represents and how it is
+used in the code. */
+interface LayoutState {
+  /** &#x60;staticMenuDesktopInactive: boolean;&#x60; is declaring a boolean property named
+  &#x60;staticMenuDesktopInactive&#x60; in the &#x60;LayoutState&#x60; interface. This property represents the state of
+  whether the static menu is currently inactive on a desktop device. It is used in the
+  &#x60;onMenuToggle()&#x60; function to toggle the visibility of the static menu and set the state of the
+  &#x60;staticMenuDesktopInactive&#x60; property to &#x60;true&#x60; when the static menu is hidden. */
+  staticMenuDesktopInactive: boolean;
+  /** &#x60;overlayMenuActive: boolean;&#x60; is declaring a boolean property named &#x60;overlayMenuActive&#x60; in the
+  &#x60;LayoutState&#x60; interface. This property represents the state of whether the overlay menu is
+  currently active or not. It is used in the &#x60;onMenuToggle()&#x60; function to toggle the visibility of
+  the overlay menu and set the state of the &#x60;overlayMenuActive&#x60; property to &#x60;true&#x60; when the overlay
+  menu is shown. It is also used in the &#x60;showProfileSidebar()&#x60; function to close the overlay menu
+  when the profile sidebar is shown. */
+  overlayMenuActive: boolean;
+  /** &#x60;profileSidebarVisible: boolean;&#x60; is declaring a boolean property named &#x60;profileSidebarVisible&#x60; in
+  the &#x60;LayoutState&#x60; interface. This property represents the state of whether the profile sidebar is
+  currently visible or not. It is used in the &#x60;showProfileSidebar()&#x60; function to toggle the
+  visibility of the profile sidebar and set the state of the &#x60;profileSidebarVisible&#x60; property to
+  &#x60;true&#x60; when the profile sidebar is shown. */
+  profileSidebarVisible: boolean;
+  /** &#x60;configSidebarVisible: boolean;&#x60; is declaring a boolean property named &#x60;configSidebarVisible&#x60; in
+  the &#x60;LayoutState&#x60; interface. This property represents the state of whether the configuration
+  sidebar is currently visible or not. It is used in the &#x60;showConfigSidebar()&#x60; function to set the
+  state of the &#x60;configSidebarVisible&#x60; property to &#x60;true&#x60; when the configuration sidebar is shown. */
+  configSidebarVisible: boolean;
+  /** &#x60;staticMenuMobileActive: boolean;&#x60; is declaring a boolean property named &#x60;staticMenuMobileActive&#x60;
+  in the &#x60;LayoutState&#x60; interface. This property represents the state of whether the static menu is
+  currently active on a mobile device. */
+  staticMenuMobileActive: boolean;
+  /** &#x60;menuHoverActive: boolean;&#x60; is declaring a boolean property named &#x60;menuHoverActive&#x60; in the
+  &#x60;LayoutState&#x60; interface. This property represents the state of whether the user is currently
+  hovering over the menu. */
+  menuHoverActive: boolean;
+}
+
+/** The &#x60;LayoutService&#x60; class in TypeScript defines the default configuration and state of a layout,
+provides functions to toggle menu and sidebar visibility, and emits events through observables. */
+@Injectable({
+  providedIn: &#x27;root&#x27;,
+})
+export class LayoutService {
+  //TODO: Move config to local storage
+  /** The &#x60;config&#x60; property is initializing an object of type &#x60;AppConfig&#x60; with default values for
+  various configuration options. These options include &#x60;ripple&#x60;, &#x60;inputStyle&#x60;, &#x60;menuMode&#x60;,
+  &#x60;colorScheme&#x60;, &#x60;theme&#x60;, and &#x60;scale&#x60;. The &#x60;&#x3D;&#x60; operator is assigning this object to the &#x60;config&#x60;
+  property of the &#x60;LayoutService&#x60; class. This object represents the default configuration for the
+  layout. */
+  config: AppConfig &#x3D; {
+    ripple: false,
+    inputStyle: &#x27;outlined&#x27;,
+    menuMode: &#x27;static&#x27;,
+    colorScheme: &#x27;light&#x27;,
+    theme: &#x27;lara-light-blue&#x27;,
+    scale: 14,
+  };
+
+  /** &#x60;state: LayoutState&#x60; is declaring a property named &#x60;state&#x60; of type &#x60;LayoutState&#x60;. &#x60;LayoutState&#x60; is
+  an interface that defines the shape of an object with boolean properties
+  &#x60;staticMenuDesktopInactive&#x60;, &#x60;overlayMenuActive&#x60;, &#x60;profileSidebarVisible&#x60;, &#x60;configSidebarVisible&#x60;,
+  &#x60;staticMenuMobileActive&#x60;, and &#x60;menuHoverActive&#x60;. The &#x60;&#x3D;&#x60; operator is initializing the &#x60;state&#x60;
+  property with an object that has all of these boolean properties set to &#x60;false&#x60;. This object
+  represents the initial state of the layout. */
+  state: LayoutState &#x3D; {
+    staticMenuDesktopInactive: false,
+    overlayMenuActive: false,
+    profileSidebarVisible: false,
+    configSidebarVisible: false,
+    staticMenuMobileActive: false,
+    menuHoverActive: false,
+  };
+
+  /** &#x60;private configUpdate &#x3D; new Subject&lt;AppConfig&gt;();&#x60; is creating a new instance of the &#x60;Subject&#x60;
+  class from the &#x60;rxjs&#x60; library and assigning it to the &#x60;configUpdate&#x60; property of the
+  &#x60;LayoutService&#x60; class. This &#x60;Subject&#x60; instance is used to emit events when the configuration is
+  updated. Other parts of the application can subscribe to these events using the &#x60;configUpdate$&#x60;
+  observable created from this &#x60;Subject&#x60;. The &#x60;AppConfig&#x60; type parameter in &#x60;Subject&lt;AppConfig&gt;&#x60;
+  indicates that the &#x60;Subject&#x60; can emit values of type &#x60;AppConfig&#x60;. */
+  private configUpdate &#x3D; new Subject&lt;AppConfig&gt;();
+
+  /** &#x60;private overlayOpen &#x3D; new Subject&lt;any&gt;();&#x60; is creating a new instance of the &#x60;Subject&#x60; class from
+  the &#x60;rxjs&#x60; library and assigning it to the &#x60;overlayOpen&#x60; property of the &#x60;LayoutService&#x60; class.
+  This &#x60;Subject&#x60; instance is used to emit events when the overlay menu is opened or closed. Other
+  parts of the application can subscribe to these events using the &#x60;overlayOpen$&#x60; observable created
+  from this &#x60;Subject&#x60;. The &#x60;any&#x60; type parameter in &#x60;Subject&lt;any&gt;&#x60; indicates that the &#x60;Subject&#x60; can
+  emit values of any type. */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  private overlayOpen &#x3D; new Subject&lt;any&gt;();
+
+  /** &#x60;configUpdate$&#x60; is creating an observable from the &#x60;configUpdate&#x60; subject. This allows other parts
+  of the application to subscribe to changes in the &#x60;configUpdate&#x60; subject and react accordingly.
+  The &#x60;$&#x60; at the end of the variable name is a convention in RxJS to indicate that the variable is
+  an observable. */
+  configUpdate$ &#x3D; this.configUpdate.asObservable();
+
+  /** &#x60;overlayOpen$&#x60; is creating an observable from the &#x60;overlayOpen&#x60; subject. This allows other parts
+  of the application to subscribe to changes in the &#x60;overlayOpen&#x60; subject and react accordingly. The
+  &#x60;$&#x60; at the end of the variable name is a convention in RxJS to indicate that the variable is an
+  observable. */
+  overlayOpen$ &#x3D; this.overlayOpen.asObservable();
+
+  /**
+   * The function toggles the visibility of a menu based on the device type.
+   */
+  onMenuToggle() {
+    if (this.isOverlay()) {
+      this.state.overlayMenuActive &#x3D; !this.state.overlayMenuActive;
+      if (this.state.overlayMenuActive) {
+        this.overlayOpen.next(null);
+      }
+    }
+
+    if (this.isDesktop()) {
+      this.state.staticMenuDesktopInactive &#x3D;
+        !this.state.staticMenuDesktopInactive;
+    } else {
+      this.state.staticMenuMobileActive &#x3D; !this.state.staticMenuMobileActive;
+
+      if (this.state.staticMenuMobileActive) {
+        this.overlayOpen.next(null);
+      }
+    }
+  }
+
+  /**
+   * The function toggles the visibility of a profile sidebar and opens an overlay if the sidebar is
+   * visible.
+   */
+  showProfileSidebar() {
+    this.state.profileSidebarVisible &#x3D; !this.state.profileSidebarVisible;
+    if (this.state.profileSidebarVisible) {
+      this.overlayOpen.next(null);
+    }
+  }
+
+  /**
+   * This function sets the state of the configSidebarVisible property to true.
+   */
+  showConfigSidebar() {
+    this.state.configSidebarVisible &#x3D; true;
+  }
+
+  /**
+   * This function checks if the menu mode is set to &#x27;overlay&#x27;.
+   * @returns The function &#x60;isOverlay()&#x60; is returning a boolean value that indicates whether the
+   * &#x60;menuMode&#x60; property of the object&#x27;s &#x60;config&#x60; property is equal to the string &#x60;&#x27;overlay&#x27;&#x60;.
+   */
+  isOverlay() {
+    return this.config.menuMode &#x3D;&#x3D;&#x3D; &#x27;overlay&#x27;;
+  }
+
+  /**
+   * This function checks if the current window width is greater than 991 pixels, indicating if the
+   * user is on a desktop device.
+   * @returns The function &#x60;isDesktop()&#x60; returns a boolean value &#x60;true&#x60; if the width of the window is
+   * greater than 991 pixels, indicating that the device is a desktop or a tablet in landscape mode.
+   * Otherwise, it returns &#x60;false&#x60;, indicating that the device is a mobile or a tablet in portrait
+   * mode.
+   */
+  isDesktop() {
+    return window.innerWidth &gt; 991;
+  }
+
+  /**
+   * The function checks if the device is not a desktop and returns a boolean value.
+   * @returns The &#x60;isMobile()&#x60; function is returning the opposite of the &#x60;isDesktop()&#x60; function. It
+   * will return &#x60;true&#x60; if the device is not a desktop and &#x60;false&#x60; if it is a desktop.
+   */
+  isMobile() {
+    return !this.isDesktop();
+  }
+
+  /**
+   * The function updates the configuration and emits the updated configuration through a subject.
+   */
+  onConfigUpdate() {
+    this.configUpdate.next(this.config);
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'LayoutService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

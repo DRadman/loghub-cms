@@ -1,0 +1,1543 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>loghub-cms documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">loghub-cms documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  MenuitemComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/features/home/components/menuitem/menuitem.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>The <code>MenuitemComponent</code> class is used to render a menu item in an Angular application and handle
+events such as clicking and updating the active state based on the current route.</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+                <code>OnDestroy</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>[app-menuitem]</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">Standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>TranslateModule</code>
+                            <code>CommonModule</code>
+                            <code>RippleModule</code>
+                            <code>RouterModule</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./menuitem.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./menuitem.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#active" >active</a>
+                            </li>
+                            <li>
+                                <a href="#key" >key</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#layoutService" >layoutService</a>
+                            </li>
+                            <li>
+                                <a href="#menuResetSubscription" >menuResetSubscription</a>
+                            </li>
+                            <li>
+                                <a href="#menuSourceSubscription" >menuSourceSubscription</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#router" >router</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#itemClick" >itemClick</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#updateActiveStateFromRoute" >updateActiveStateFromRoute</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#index" >index</a>
+                            </li>
+                            <li>
+                                <a href="#item" >item</a>
+                            </li>
+                            <li>
+                                <a href="#parentKey" >parentKey</a>
+                            </li>
+                            <li>
+                                <a href="#root" >root</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>HostBindings</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#class.active-menuitem" >class.active-menuitem</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#submenuAnimation" >submenuAnimation</a>
+                                </li>
+                                <li>
+                                    <a href="#activeClass" >activeClass</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(layoutService: <a href="../injectables/LayoutService.html" target="_self">LayoutService</a>, cd: ChangeDetectorRef, router: Router, menuService: <a href="../injectables/MenuService.html" target="_self">MenuService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="111" class="link-to-prism">src/app/features/home/components/menuitem/menuitem.component.ts:111</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>This is a constructor function that subscribes to menu and router events to update the active
+state of a menu item based on the current route.
+used to manage the layout of the application.
+which is used to manually trigger change detection in Angular. It is typically used when making
+changes to the component&#39;s state that may not be detected by Angular&#39;s default change detection
+mechanism.
+Angular. It is used to handle navigation and routing within the application.
+class, which is used to manage the application menu. It is injected into the constructor using
+Angular&#39;s dependency injection mechanism.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>layoutService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LayoutService.html" target="_self" >LayoutService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <ul>
+<li>An instance of the LayoutService class, which is likely
+used to manage the layout of the application.</li>
+</ul>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>cd</td>
+                                                  
+                                                        <td>
+                                                                    <code>ChangeDetectorRef</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <ul>
+<li>The &quot;cd&quot; parameter is an instance of the ChangeDetectorRef class,
+which is used to manually trigger change detection in Angular. It is typically used when making
+changes to the component&#39;s state that may not be detected by Angular&#39;s default change detection
+mechanism.</li>
+</ul>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <ul>
+<li>The <code>router</code> parameter is an instance of the <code>Router</code> service provided by
+Angular. It is used to handle navigation and routing within the application.</li>
+</ul>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>menuService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/MenuService.html" target="_self" >MenuService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <ul>
+<li>The <code>menuService</code> parameter is an instance of the <code>MenuService</code>
+class, which is used to manage the application menu. It is injected into the constructor using
+Angular&#39;s dependency injection mechanism.</li>
+</ul>
+
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="index"></a>
+                        <b>index</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/app/features/home/components/menuitem/menuitem.component.ts:69</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p><code>@Input() index!: number;</code> is defining an input property called <code>index</code> of type <code>number</code>. The <code>!</code>
+symbol after the <code>index</code> variable indicates that it is non-null and initialized in the constructor
+or ngOnInit method. This input property is used to pass the index of the current menu item to the
+<code>MenuitemComponent</code> class. The index is used to construct the unique identifier of the menu item
+and to determine the order of the menu items in the menu.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="item"></a>
+                        <b>item</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/features/home/components/menuitem/menuitem.component.ts:62</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p><code>@Input() item: any;</code> is defining an input property called <code>item</code> of type <code>any</code>. This input
+property is used to pass a menu item object to the <code>MenuitemComponent</code> class. The <code>item</code> object
+contains information about the menu item, such as its label, icon, command, and sub-items. By
+defining this input property, the <code>MenuitemComponent</code> class can receive the <code>item</code> object from its
+parent component and use it to render the menu item in the application menu.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="parentKey"></a>
+                        <b>parentKey</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/app/features/home/components/menuitem/menuitem.component.ts:83</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p><code>@Input() parentKey!: string;</code> is declaring an input property called <code>parentKey</code> of type <code>string</code>.
+This input property is used to pass the unique identifier of the parent menu item to the child
+menu items. If a menu item has a parent, its <code>key</code> property is set to a value that includes the
+parent key and the index of the item, separated by a hyphen. This allows the <code>MenuitemComponent</code>
+class to uniquely identify each menu item in the application menu. The <code>parentKey</code> input property
+is used to pass the parent key to the child menu items so that they can construct their own unique
+identifiers based on the parent key and their own index.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="root"></a>
+                        <b>root</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/app/features/home/components/menuitem/menuitem.component.ts:74</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The <code>@Input() @HostBinding(&#39;class.layout-root-menuitem&#39;) root!: boolean;</code> decorator is defining an
+input property called <code>root</code> of type <code>boolean</code> and also binding the <code>class.layout-root-menuitem</code>
+CSS class to the host element of the component.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-properties">
+    <h3>HostBindings</h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="class.active-menuitem"></a>
+                    <span class="name">
+                        <span ><b>class.active-menuitem</b></span>
+                        <a href="#class.active-menuitem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="234" class="link-to-prism">src/app/features/home/components/menuitem/menuitem.component.ts:234</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="itemClick"></a>
+                    <span class="name">
+                        <span ><b>itemClick</b></span>
+                        <a href="#itemClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>itemClick(event: Event)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="209"
+                                    class="link-to-prism">src/app/features/home/components/menuitem/menuitem.component.ts:209</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>This function handles the click event on a menu item, executing its command and toggling its
+active state if it has sub-items.
+the itemClick function. It contains information such as the type of event (e.g. click, hover), the
+target element that triggered the event, and any additional data related to the event.
+the item is not disabled, the function will execute the command associated with the item (if there
+is one), toggle the active state if the item has sub-items, and call the <code>onMenuStateChange</code>
+method of the <code>menuService</code>. However, the function does not explicitly return any value.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                        <code>Event</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The event parameter is an object that represents the event that triggered
+the itemClick function. It contains information such as the type of event (e.g. click, hover), the
+target element that triggered the event, and any additional data related to the event.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>If the item is disabled, the function will return without executing any further code. If
+the item is not disabled, the function will execute the command associated with the item (if there
+is one), toggle the active state if the item has sub-items, and call the <code>onMenuStateChange</code>
+method of the <code>menuService</code>. However, the function does not explicitly return any value.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="241"
+                                    class="link-to-prism">src/app/features/home/components/menuitem/menuitem.component.ts:241</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>The ngOnDestroy function unsubscribes from two subscriptions if they exist.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="171"
+                                    class="link-to-prism">src/app/features/home/components/menuitem/menuitem.component.ts:171</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>The ngOnInit function sets the key and updates the active state from the route if the item has a
+routerLink.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateActiveStateFromRoute"></a>
+                    <span class="name">
+                        <span ><b>updateActiveStateFromRoute</b></span>
+                        <a href="#updateActiveStateFromRoute"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateActiveStateFromRoute()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="185"
+                                    class="link-to-prism">src/app/features/home/components/menuitem/menuitem.component.ts:185</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>This function updates the active state of a menu item based on the current route in a TypeScript
+application.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="active"></a>
+                    <span class="name">
+                        <span ><b>active</b></span>
+                        <a href="#active"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="89" class="link-to-prism">src/app/features/home/components/menuitem/menuitem.component.ts:89</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p><code>active = false;</code> is initializing the <code>active</code> property of the <code>MenuitemComponent</code> class to
+<code>false</code>. This property is used to track whether or not a menu item is currently active (i.e.
+selected or expanded). By default, when a new instance of the <code>MenuitemComponent</code> class is
+created, no menu item is active, so the <code>active</code> property is set to <code>false</code>.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="key"></a>
+                    <span class="name">
+                        <span ><b>key</b></span>
+                        <a href="#key"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="111" class="link-to-prism">src/app/features/home/components/menuitem/menuitem.component.ts:111</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p><code>key: string = &quot;&quot;;</code> is declaring a property called <code>key</code> with an initial value of an empty string.
+This property is used to uniquely identify each menu item in the application menu. It is set to a
+value that includes the parent key and the index of the item, separated by a hyphen, if the item
+has a parent. Otherwise, it is set to the index of the item as a string. This property is used to
+update the active state of a menu item based on the current route and to toggle the active state
+of a menu item if it has sub-items.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="layoutService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>layoutService</b></span>
+                        <a href="#layoutService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/LayoutService.html" target="_self" >LayoutService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="129" class="link-to-prism">src/app/features/home/components/menuitem/menuitem.component.ts:129</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description">- An instance of the LayoutService class, which is likely
+used to manage the layout of the application.</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="menuResetSubscription"></a>
+                    <span class="name">
+                        <span ><b>menuResetSubscription</b></span>
+                        <a href="#menuResetSubscription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subscription</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="103" class="link-to-prism">src/app/features/home/components/menuitem/menuitem.component.ts:103</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p><code>menuResetSubscription: Subscription;</code> is declaring a property called <code>menuResetSubscription</code> of
+type <code>Subscription</code>. This property is used to store a subscription to the <code>resetSource$</code>
+observable of the <code>MenuService</code> class. This subscription is used to reset the active state of a
+menu item when the menu is closed or reset. The <code>unsubscribe()</code> method is called on this
+subscription in the <code>ngOnDestroy()</code> method to prevent memory leaks.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="menuSourceSubscription"></a>
+                    <span class="name">
+                        <span ><b>menuSourceSubscription</b></span>
+                        <a href="#menuSourceSubscription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subscription</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="96" class="link-to-prism">src/app/features/home/components/menuitem/menuitem.component.ts:96</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p><code>menuSourceSubscription: Subscription;</code> is declaring a property called <code>menuSourceSubscription</code> of
+type <code>Subscription</code>. This property is used to store a subscription to the <code>menuSource$</code> observable
+of the <code>MenuService</code> class. This subscription is used to update the active state of a menu item
+based on events emitted by the <code>menuSource$</code> observable. The <code>unsubscribe()</code> method is called on
+this subscription in the <code>ngOnDestroy()</code> method to prevent memory leaks.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="router"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>router</b></span>
+                        <a href="#router"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Router</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="131" class="link-to-prism">src/app/features/home/components/menuitem/menuitem.component.ts:131</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description">- The `router` parameter is an instance of the `Router` service provided by
+Angular. It is used to handle navigation and routing within the application.</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-accessors">
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="submenuAnimation"></a>
+                        <span class="name"><b>submenuAnimation</b><a href="#submenuAnimation"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>submenuAnimation()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="229" class="link-to-prism">src/app/features/home/components/menuitem/menuitem.component.ts:229</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="activeClass"></a>
+                        <span class="name"><b>activeClass</b><a href="#activeClass"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>activeClass()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="234" class="link-to-prism">src/app/features/home/components/menuitem/menuitem.component.ts:234</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from &#x27;@angular/animations&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
+import {
+  ChangeDetectorRef,
+  Component,
+  HostBinding,
+  Input,
+  OnDestroy,
+  OnInit,
+} from &#x27;@angular/core&#x27;;
+import { NavigationEnd, Router, RouterModule } from &#x27;@angular/router&#x27;;
+import { TranslateModule } from &#x27;@ngx-translate/core&#x27;;
+import { RippleModule } from &#x27;primeng/ripple&#x27;;
+import { Subscription } from &#x27;rxjs&#x27;;
+import { filter } from &#x27;rxjs/operators&#x27;;
+import { LayoutService } from &#x27;../../../../core/services/layout.service&#x27;;
+import { MenuService } from &#x27;../../../../core/services/menu.service&#x27;;
+
+/** The &#x60;MenuitemComponent&#x60; class is used to render a menu item in an Angular application and handle
+events such as clicking and updating the active state based on the current route. */
+@Component({
+  // eslint-disable-next-line @angular-eslint/component-selector
+  selector: &#x27;[app-menuitem]&#x27;,
+  templateUrl: &#x27;./menuitem.component.html&#x27;,
+  styleUrls: [&#x27;./menuitem.component.scss&#x27;],
+  standalone: true,
+  imports: [TranslateModule, CommonModule, RippleModule, RouterModule],
+  animations: [
+    trigger(&#x27;children&#x27;, [
+      state(
+        &#x27;collapsed&#x27;,
+        style({
+          height: &#x27;0&#x27;,
+        }),
+      ),
+      state(
+        &#x27;expanded&#x27;,
+        style({
+          height: &#x27;*&#x27;,
+        }),
+      ),
+      transition(
+        &#x27;collapsed &lt;&#x3D;&gt; expanded&#x27;,
+        animate(&#x27;400ms cubic-bezier(0.86, 0, 0.07, 1)&#x27;),
+      ),
+    ]),
+  ],
+})
+export class MenuitemComponent implements OnInit, OnDestroy {
+  /** &#x60;@Input() item: any;&#x60; is defining an input property called &#x60;item&#x60; of type &#x60;any&#x60;. This input
+  property is used to pass a menu item object to the &#x60;MenuitemComponent&#x60; class. The &#x60;item&#x60; object
+  contains information about the menu item, such as its label, icon, command, and sub-items. By
+  defining this input property, the &#x60;MenuitemComponent&#x60; class can receive the &#x60;item&#x60; object from its
+  parent component and use it to render the menu item in the application menu. */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  @Input() item: any;
+
+  /** &#x60;@Input() index!: number;&#x60; is defining an input property called &#x60;index&#x60; of type &#x60;number&#x60;. The &#x60;!&#x60;
+  symbol after the &#x60;index&#x60; variable indicates that it is non-null and initialized in the constructor
+  or ngOnInit method. This input property is used to pass the index of the current menu item to the
+  &#x60;MenuitemComponent&#x60; class. The index is used to construct the unique identifier of the menu item
+  and to determine the order of the menu items in the menu. */
+  @Input() index!: number;
+
+  /** The &#x60;@Input() @HostBinding(&#x27;class.layout-root-menuitem&#x27;) root!: boolean;&#x60; decorator is defining an
+  input property called &#x60;root&#x60; of type &#x60;boolean&#x60; and also binding the &#x60;class.layout-root-menuitem&#x60;
+  CSS class to the host element of the component. */
+  @Input() @HostBinding(&#x27;class.layout-root-menuitem&#x27;) root!: boolean;
+
+  /** &#x60;@Input() parentKey!: string;&#x60; is declaring an input property called &#x60;parentKey&#x60; of type &#x60;string&#x60;.
+  This input property is used to pass the unique identifier of the parent menu item to the child
+  menu items. If a menu item has a parent, its &#x60;key&#x60; property is set to a value that includes the
+  parent key and the index of the item, separated by a hyphen. This allows the &#x60;MenuitemComponent&#x60;
+  class to uniquely identify each menu item in the application menu. The &#x60;parentKey&#x60; input property
+  is used to pass the parent key to the child menu items so that they can construct their own unique
+  identifiers based on the parent key and their own index. */
+  @Input() parentKey!: string;
+
+  /** &#x60;active &#x3D; false;&#x60; is initializing the &#x60;active&#x60; property of the &#x60;MenuitemComponent&#x60; class to
+  &#x60;false&#x60;. This property is used to track whether or not a menu item is currently active (i.e.
+  selected or expanded). By default, when a new instance of the &#x60;MenuitemComponent&#x60; class is
+  created, no menu item is active, so the &#x60;active&#x60; property is set to &#x60;false&#x60;. */
+  active &#x3D; false;
+
+  /** &#x60;menuSourceSubscription: Subscription;&#x60; is declaring a property called &#x60;menuSourceSubscription&#x60; of
+  type &#x60;Subscription&#x60;. This property is used to store a subscription to the &#x60;menuSource$&#x60; observable
+  of the &#x60;MenuService&#x60; class. This subscription is used to update the active state of a menu item
+  based on events emitted by the &#x60;menuSource$&#x60; observable. The &#x60;unsubscribe()&#x60; method is called on
+  this subscription in the &#x60;ngOnDestroy()&#x60; method to prevent memory leaks. */
+  menuSourceSubscription: Subscription;
+
+  /** &#x60;menuResetSubscription: Subscription;&#x60; is declaring a property called &#x60;menuResetSubscription&#x60; of
+  type &#x60;Subscription&#x60;. This property is used to store a subscription to the &#x60;resetSource$&#x60;
+  observable of the &#x60;MenuService&#x60; class. This subscription is used to reset the active state of a
+  menu item when the menu is closed or reset. The &#x60;unsubscribe()&#x60; method is called on this
+  subscription in the &#x60;ngOnDestroy()&#x60; method to prevent memory leaks. */
+  menuResetSubscription: Subscription;
+
+  /** &#x60;key: string &#x3D; &quot;&quot;;&#x60; is declaring a property called &#x60;key&#x60; with an initial value of an empty string.
+  This property is used to uniquely identify each menu item in the application menu. It is set to a
+  value that includes the parent key and the index of the item, separated by a hyphen, if the item
+  has a parent. Otherwise, it is set to the index of the item as a string. This property is used to
+  update the active state of a menu item based on the current route and to toggle the active state
+  of a menu item if it has sub-items. */
+  key: string &#x3D; &#x27;&#x27;;
+
+  /**
+   * This is a constructor function that subscribes to menu and router events to update the active
+   * state of a menu item based on the current route.
+   * @param {LayoutService} layoutService - An instance of the LayoutService class, which is likely
+   * used to manage the layout of the application.
+   * @param {ChangeDetectorRef} cd - The &quot;cd&quot; parameter is an instance of the ChangeDetectorRef class,
+   * which is used to manually trigger change detection in Angular. It is typically used when making
+   * changes to the component&#x27;s state that may not be detected by Angular&#x27;s default change detection
+   * mechanism.
+   * @param {Router} router - The &#x60;router&#x60; parameter is an instance of the &#x60;Router&#x60; service provided by
+   * Angular. It is used to handle navigation and routing within the application.
+   * @param {MenuService} menuService - The &#x60;menuService&#x60; parameter is an instance of the &#x60;MenuService&#x60;
+   * class, which is used to manage the application menu. It is injected into the constructor using
+   * Angular&#x27;s dependency injection mechanism.
+   */
+  constructor(
+    public layoutService: LayoutService,
+    private cd: ChangeDetectorRef,
+    public router: Router,
+    private menuService: MenuService,
+  ) {
+    this.menuSourceSubscription &#x3D; this.menuService.menuSource$.subscribe(
+      (value) &#x3D;&gt; {
+        Promise.resolve(null).then(() &#x3D;&gt; {
+          if (value.routeEvent) {
+            this.active &#x3D;
+              value.key &#x3D;&#x3D;&#x3D; this.key || value.key.startsWith(this.key + &#x27;-&#x27;)
+                ? true
+                : false;
+          } else {
+            if (
+              value.key !&#x3D;&#x3D; this.key &amp;&amp;
+              !value.key.startsWith(this.key + &#x27;-&#x27;)
+            ) {
+              this.active &#x3D; false;
+            }
+          }
+        });
+      },
+    );
+
+    this.menuResetSubscription &#x3D; this.menuService.resetSource$.subscribe(() &#x3D;&gt; {
+      this.active &#x3D; false;
+    });
+
+    this.router.events
+      .pipe(filter((event) &#x3D;&gt; event instanceof NavigationEnd))
+      .subscribe(() &#x3D;&gt; {
+        if (this.item.routerLink) {
+          this.updateActiveStateFromRoute();
+        }
+      });
+  }
+
+  /**
+   * The ngOnInit function sets the key and updates the active state from the route if the item has a
+   * routerLink.
+   */
+  ngOnInit() {
+    this.key &#x3D; this.parentKey
+      ? this.parentKey + &#x27;-&#x27; + this.index
+      : String(this.index);
+
+    if (this.item.routerLink) {
+      this.updateActiveStateFromRoute();
+    }
+  }
+
+  /**
+   * This function updates the active state of a menu item based on the current route in a TypeScript
+   * application.
+   */
+  updateActiveStateFromRoute() {
+    const activeRoute &#x3D; this.router.isActive(this.item.routerLink[0], {
+      paths: &#x27;exact&#x27;,
+      queryParams: &#x27;ignored&#x27;,
+      matrixParams: &#x27;ignored&#x27;,
+      fragment: &#x27;ignored&#x27;,
+    });
+
+    if (activeRoute) {
+      this.menuService.onMenuStateChange({ key: this.key, routeEvent: true });
+    }
+  }
+
+  /**
+   * This function handles the click event on a menu item, executing its command and toggling its
+   * active state if it has sub-items.
+   * @param {Event} event - The event parameter is an object that represents the event that triggered
+   * the itemClick function. It contains information such as the type of event (e.g. click, hover), the
+   * target element that triggered the event, and any additional data related to the event.
+   * @returns If the item is disabled, the function will return without executing any further code. If
+   * the item is not disabled, the function will execute the command associated with the item (if there
+   * is one), toggle the active state if the item has sub-items, and call the &#x60;onMenuStateChange&#x60;
+   * method of the &#x60;menuService&#x60;. However, the function does not explicitly return any value.
+   */
+  itemClick(event: Event) {
+    // avoid processing disabled items
+    if (this.item.disabled) {
+      event.preventDefault();
+      return;
+    }
+
+    // execute command
+    if (this.item.command) {
+      this.item.command({ originalEvent: event, item: this.item });
+    }
+
+    // toggle active state
+    if (this.item.items) {
+      this.active &#x3D; !this.active;
+    }
+
+    this.menuService.onMenuStateChange({ key: this.key });
+  }
+
+  get submenuAnimation() {
+    return this.root ? &#x27;expanded&#x27; : this.active ? &#x27;expanded&#x27; : &#x27;collapsed&#x27;;
+  }
+
+  @HostBinding(&#x27;class.active-menuitem&#x27;)
+  get activeClass() {
+    return this.active &amp;&amp; !this.root;
+  }
+
+  /**
+   * The ngOnDestroy function unsubscribes from two subscriptions if they exist.
+   */
+  ngOnDestroy() {
+    if (this.menuSourceSubscription) {
+      this.menuSourceSubscription.unsubscribe();
+    }
+
+    if (this.menuResetSubscription) {
+      this.menuResetSubscription.unsubscribe();
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;ng-container&gt;
+  &lt;div *ngIf&#x3D;&quot;root &amp;&amp; item.visible !&#x3D;&#x3D; false&quot; class&#x3D;&quot;layout-menuitem-root-text&quot;&gt;
+    {{ item.label | translate }}
+  &lt;/div&gt;
+  &lt;a
+    *ngIf&#x3D;&quot;(!item.routerLink || item.items) &amp;&amp; item.visible !&#x3D;&#x3D; false&quot;
+    [attr.href]&#x3D;&quot;item.url&quot;
+    (click)&#x3D;&quot;itemClick($event)&quot;
+    [ngClass]&#x3D;&quot;item.class&quot;
+    [attr.target]&#x3D;&quot;item.target&quot;
+    tabindex&#x3D;&quot;0&quot;
+    pRipple
+  &gt;
+    &lt;i [ngClass]&#x3D;&quot;item.icon&quot; class&#x3D;&quot;layout-menuitem-icon&quot;&gt;&lt;/i&gt;
+    &lt;span class&#x3D;&quot;layout-menuitem-text&quot;&gt;{{ item.label | translate }}&lt;/span&gt;
+    &lt;i
+      class&#x3D;&quot;pi pi-fw pi-angle-down layout-submenu-toggler&quot;
+      *ngIf&#x3D;&quot;item.items&quot;
+    &gt;&lt;/i&gt;
+  &lt;/a&gt;
+  &lt;a
+    *ngIf&#x3D;&quot;item.routerLink &amp;&amp; !item.items &amp;&amp; item.visible !&#x3D;&#x3D; false&quot;
+    (click)&#x3D;&quot;itemClick($event)&quot;
+    [ngClass]&#x3D;&quot;item.class&quot;
+    [routerLink]&#x3D;&quot;item.routerLink&quot;
+    routerLinkActive&#x3D;&quot;active-route&quot;
+    [routerLinkActiveOptions]&#x3D;&quot;
+      item.routerLinkActiveOptions || {
+        paths: &#x27;exact&#x27;,
+        queryParams: &#x27;ignored&#x27;,
+        matrixParams: &#x27;ignored&#x27;,
+        fragment: &#x27;ignored&#x27;
+      }
+    &quot;
+    [fragment]&#x3D;&quot;item.fragment&quot;
+    [queryParamsHandling]&#x3D;&quot;item.queryParamsHandling&quot;
+    [preserveFragment]&#x3D;&quot;item.preserveFragment&quot;
+    [skipLocationChange]&#x3D;&quot;item.skipLocationChange&quot;
+    [replaceUrl]&#x3D;&quot;item.replaceUrl&quot;
+    [state]&#x3D;&quot;item.state&quot;
+    [queryParams]&#x3D;&quot;item.queryParams&quot;
+    [attr.target]&#x3D;&quot;item.target&quot;
+    tabindex&#x3D;&quot;0&quot;
+    pRipple
+  &gt;
+    &lt;i [ngClass]&#x3D;&quot;item.icon&quot; class&#x3D;&quot;layout-menuitem-icon&quot;&gt;&lt;/i&gt;
+    &lt;span class&#x3D;&quot;layout-menuitem-text&quot;&gt;{{ item.label | translate }}&lt;/span&gt;
+    &lt;i
+      class&#x3D;&quot;pi pi-fw pi-angle-down layout-submenu-toggler&quot;
+      *ngIf&#x3D;&quot;item.items&quot;
+    &gt;&lt;/i&gt;
+  &lt;/a&gt;
+  &lt;ul
+    *ngIf&#x3D;&quot;item.items &amp;&amp; item.visible !&#x3D;&#x3D; false&quot;
+    [@children]&#x3D;&quot;submenuAnimation&quot;
+  &gt;
+    &lt;ng-template ngFor let-child let-i&#x3D;&quot;index&quot; [ngForOf]&#x3D;&quot;item.items&quot;&gt;
+      &lt;li
+        app-menuitem
+        [item]&#x3D;&quot;child&quot;
+        [index]&#x3D;&quot;i&quot;
+        [parentKey]&#x3D;&quot;key&quot;
+        [class]&#x3D;&quot;child.badgeClass&quot;
+      &gt;&lt;/li&gt;
+    &lt;/ng-template&gt;
+  &lt;/ul&gt;
+&lt;/ng-container&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./menuitem.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><ng-container>  <div *ngIf="root && item.visible !== false" class="layout-menuitem-root-text">    {{ item.label | translate }}  </div>  <a    *ngIf="(!item.routerLink || item.items) && item.visible !== false"    [attr.href]="item.url"    (click)="itemClick($event)"    [ngClass]="item.class"    [attr.target]="item.target"    tabindex="0"    pRipple  >    <i [ngClass]="item.icon" class="layout-menuitem-icon"></i>    <span class="layout-menuitem-text">{{ item.label | translate }}</span>    <i      class="pi pi-fw pi-angle-down layout-submenu-toggler"      *ngIf="item.items"    ></i>  </a>  <a    *ngIf="item.routerLink && !item.items && item.visible !== false"    (click)="itemClick($event)"    [ngClass]="item.class"    [routerLink]="item.routerLink"    routerLinkActive="active-route"    [routerLinkActiveOptions]="      item.routerLinkActiveOptions || {        paths: \'exact\',        queryParams: \'ignored\',        matrixParams: \'ignored\',        fragment: \'ignored\'      }    "    [fragment]="item.fragment"    [queryParamsHandling]="item.queryParamsHandling"    [preserveFragment]="item.preserveFragment"    [skipLocationChange]="item.skipLocationChange"    [replaceUrl]="item.replaceUrl"    [state]="item.state"    [queryParams]="item.queryParams"    [attr.target]="item.target"    tabindex="0"    pRipple  >    <i [ngClass]="item.icon" class="layout-menuitem-icon"></i>    <span class="layout-menuitem-text">{{ item.label | translate }}</span>    <i      class="pi pi-fw pi-angle-down layout-submenu-toggler"      *ngIf="item.items"    ></i>  </a>  <ul    *ngIf="item.items && item.visible !== false"    [@children]="submenuAnimation"  >    <ng-template ngFor let-child let-i="index" [ngForOf]="item.items">      <li        app-menuitem        [item]="child"        [index]="i"        [parentKey]="key"        [class]="child.badgeClass"      ></li>    </ng-template>  </ul></ng-container></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'ConfigComponent', 'selector': 'app-config'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InvitationComponent', 'selector': 'app-invitation'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuitemComponent', 'selector': '[app-menuitem]'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'TopbarComponent', 'selector': 'app-topbar'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'MenuitemComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'MenuitemComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

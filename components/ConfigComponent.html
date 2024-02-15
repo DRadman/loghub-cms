@@ -1,0 +1,2108 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>loghub-cms documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">loghub-cms documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  ConfigComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/features/home/components/config/config.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>The ConfigComponent class is a TypeScript class that provides functionality related to the
+configuration of an application&#39;s layout and menu settings.</p>
+
+    </p>
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-config</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">Standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>CommonModule</code>
+                            <code>ButtonModule</code>
+                            <code>RippleModule</code>
+                            <code>SidebarModule</code>
+                            <code>RadioButtonModule</code>
+                            <code>TranslateModule</code>
+                            <code>InputSwitchModule</code>
+                            <code>FormsModule</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./config.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./config.component.scss</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#layoutService" >layoutService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#menuService" >menuService</a>
+                            </li>
+                            <li>
+                                <a href="#scales" >scales</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#applyScale" >applyScale</a>
+                            </li>
+                            <li>
+                                <a href="#changeTheme" >changeTheme</a>
+                            </li>
+                            <li>
+                                <a href="#decrementScale" >decrementScale</a>
+                            </li>
+                            <li>
+                                <a href="#incrementScale" >incrementScale</a>
+                            </li>
+                            <li>
+                                <a href="#onConfigButtonClick" >onConfigButtonClick</a>
+                            </li>
+                            <li>
+                                <a href="#replaceThemeLink" >replaceThemeLink</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#minimal" >minimal</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#visible" >visible</a>
+                                </li>
+                                <li>
+                                    <a href="#scale" >scale</a>
+                                </li>
+                                <li>
+                                    <a href="#menuMode" >menuMode</a>
+                                </li>
+                                <li>
+                                    <a href="#inputStyle" >inputStyle</a>
+                                </li>
+                                <li>
+                                    <a href="#ripple" >ripple</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(layoutService: <a href="../injectables/LayoutService.html" target="_self">LayoutService</a>, menuService: <a href="../injectables/MenuService.html" target="_self">MenuService</a>, document: Document)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/features/home/components/config/config.component.ts:43</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>This is a constructor function that takes two parameters, a LayoutService and a MenuService.
+a service that provides functionality related to the layout of the application, such as managing
+the theme, language, and other UI-related settings. It is likely used to control the overall
+look and feel of the application.
+<code>MenuService</code> class, which is likely used to manage and manipulate the application&#39;s menu or
+navigation system. It may contain methods for adding, removing, or updating menu items, as well
+as handling user interactions with the menu.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>layoutService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LayoutService.html" target="_self" >LayoutService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <ul>
+<li>The layoutService parameter is a dependency injection of
+a service that provides functionality related to the layout of the application, such as managing
+the theme, language, and other UI-related settings. It is likely used to control the overall
+look and feel of the application.</li>
+</ul>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>menuService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/MenuService.html" target="_self" >MenuService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <ul>
+<li>The <code>menuService</code> parameter is an instance of the
+<code>MenuService</code> class, which is likely used to manage and manipulate the application&#39;s menu or
+navigation system. It may contain methods for adding, removing, or updating menu items, as well
+as handling user interactions with the menu.</li>
+</ul>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>document</td>
+                                                  
+                                                        <td>
+                                                                    <code>Document</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="minimal"></a>
+                        <b>minimal</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/features/home/components/config/config.component.ts:37</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p><code>@Input() minimal: boolean = false;</code> is a decorator that marks the <code>minimal</code> property as an input
+property, which means that it can be passed as a value from a parent component to this component.
+The <code>minimal</code> property is of type <code>boolean</code> and is initialized to <code>false</code> by default. This
+property can be used in the component&#39;s template to conditionally render certain elements or apply
+different styles based on its value.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="applyScale"></a>
+                    <span class="name">
+                        <span ><b>applyScale</b></span>
+                        <a href="#applyScale"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>applyScale()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="175"
+                                    class="link-to-prism">src/app/features/home/components/config/config.component.ts:175</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>This function sets the font size of the HTML document to a specified scale.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changeTheme"></a>
+                    <span class="name">
+                        <span ><b>changeTheme</b></span>
+                        <a href="#changeTheme"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>changeTheme(theme: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, colorScheme: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="117"
+                                    class="link-to-prism">src/app/features/home/components/config/config.component.ts:117</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>This function changes the theme and color scheme of a webpage by replacing the theme link and
+updating the layout service configuration.
+scheme to be applied to the theme. It is used in conjunction with the <code>theme</code> parameter to
+update the theme of the application.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>theme</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>a string representing the new theme to be applied.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>colorScheme</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The <code>colorScheme</code> parameter is a string that represents the color
+scheme to be applied to the theme. It is used in conjunction with the <code>theme</code> parameter to
+update the theme of the application.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="decrementScale"></a>
+                    <span class="name">
+                        <span ><b>decrementScale</b></span>
+                        <a href="#decrementScale"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>decrementScale()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="159"
+                                    class="link-to-prism">src/app/features/home/components/config/config.component.ts:159</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>This function decrements the scale property and applies the new scale value.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="incrementScale"></a>
+                    <span class="name">
+                        <span ><b>incrementScale</b></span>
+                        <a href="#incrementScale"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>incrementScale()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="167"
+                                    class="link-to-prism">src/app/features/home/components/config/config.component.ts:167</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>The function increments the scale property by 1 and applies the new scale value.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onConfigButtonClick"></a>
+                    <span class="name">
+                        <span ><b>onConfigButtonClick</b></span>
+                        <a href="#onConfigButtonClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onConfigButtonClick()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="105"
+                                    class="link-to-prism">src/app/features/home/components/config/config.component.ts:105</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>This function shows the configuration sidebar when the config button is clicked.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="replaceThemeLink"></a>
+                    <span class="name">
+                        <span ><b>replaceThemeLink</b></span>
+                        <a href="#replaceThemeLink"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>replaceThemeLink(href: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, onComplete: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" target="_blank">Function</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="139"
+                                    class="link-to-prism">src/app/features/home/components/config/config.component.ts:139</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>This function replaces the href attribute of a link element with a new value and removes the
+original link element once the new one has loaded.
+the new theme link has been loaded and applied. It is typically used to perform additional
+actions or update the UI after the theme has been changed.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>href</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>A string representing the URL of the new theme CSS file to be loaded.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>onComplete</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" target="_blank" >Function</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li><code>onComplete</code> is a callback function that will be executed once
+the new theme link has been loaded and applied. It is typically used to perform additional
+actions or update the UI after the theme has been changed.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="layoutService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>layoutService</b></span>
+                        <a href="#layoutService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/LayoutService.html" target="_self" >LayoutService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/features/home/components/config/config.component.ts:57</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description">- The layoutService parameter is a dependency injection of
+a service that provides functionality related to the layout of the application, such as managing
+the theme, language, and other UI-related settings. It is likely used to control the overall
+look and feel of the application.</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="menuService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>menuService</b></span>
+                        <a href="#menuService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/MenuService.html" target="_self" >MenuService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/features/home/components/config/config.component.ts:58</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description">- The `menuService` parameter is an instance of the
+`MenuService` class, which is likely used to manage and manipulate the application's menu or
+navigation system. It may contain methods for adding, removing, or updating menu items, as well
+as handling user interactions with the menu.</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="scales"></a>
+                    <span class="name">
+                        <span ><b>scales</b></span>
+                        <a href="#scales"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>number[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[12, 13, 14, 15, 16]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/features/home/components/config/config.component.ts:43</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p><code>scales</code> is an array of numbers that represents the available font sizes that can be applied to
+the HTML document. The default values are <code>[12, 13, 14, 15, 16]</code>. These values are used in
+conjunction with the <code>incrementScale()</code> and <code>decrementScale()</code> methods to adjust the font size of
+the document.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-accessors">
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="visible"></a>
+                        <span class="name"><b>visible</b><a href="#visible"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>visible()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/features/home/components/config/config.component.ts:62</a></div>
+                                </td>
+                            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>visible(_val: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/app/features/home/components/config/config.component.ts:66</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>_val</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="scale"></a>
+                        <span class="name"><b>scale</b><a href="#scale"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>scale()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/app/features/home/components/config/config.component.ts:70</a></div>
+                                </td>
+                            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>scale(_val: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/app/features/home/components/config/config.component.ts:74</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>_val</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="menuMode"></a>
+                        <span class="name"><b>menuMode</b><a href="#menuMode"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>menuMode()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/app/features/home/components/config/config.component.ts:78</a></div>
+                                </td>
+                            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>menuMode(_val: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/app/features/home/components/config/config.component.ts:82</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>_val</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="inputStyle"></a>
+                        <span class="name"><b>inputStyle</b><a href="#inputStyle"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>inputStyle()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">src/app/features/home/components/config/config.component.ts:86</a></div>
+                                </td>
+                            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>inputStyle(_val: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="90" class="link-to-prism">src/app/features/home/components/config/config.component.ts:90</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>_val</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ripple"></a>
+                        <span class="name"><b>ripple</b><a href="#ripple"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>ripple()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="94" class="link-to-prism">src/app/features/home/components/config/config.component.ts:94</a></div>
+                                </td>
+                            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>ripple(_val: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="98" class="link-to-prism">src/app/features/home/components/config/config.component.ts:98</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>_val</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { CommonModule, DOCUMENT } from &#x27;@angular/common&#x27;;
+import { Component, Inject, Input } from &#x27;@angular/core&#x27;;
+import { ButtonModule } from &#x27;primeng/button&#x27;;
+import { RadioButtonModule } from &#x27;primeng/radiobutton&#x27;;
+import { RippleModule } from &#x27;primeng/ripple&#x27;;
+import { SidebarModule } from &#x27;primeng/sidebar&#x27;;
+import { InputSwitchModule } from &#x27;primeng/inputswitch&#x27;;
+import { LayoutService } from &#x27;../../../../core/services/layout.service&#x27;;
+import { MenuService } from &#x27;../../../../core/services/menu.service&#x27;;
+import { TranslateModule } from &#x27;@ngx-translate/core&#x27;;
+import { FormsModule } from &#x27;@angular/forms&#x27;;
+
+/** The ConfigComponent class is a TypeScript class that provides functionality related to the
+configuration of an application&#x27;s layout and menu settings. */
+@Component({
+  selector: &#x27;app-config&#x27;,
+  standalone: true,
+  imports: [
+    CommonModule,
+    ButtonModule,
+    RippleModule,
+    SidebarModule,
+    RadioButtonModule,
+    TranslateModule,
+    InputSwitchModule,
+    FormsModule
+  ],
+  styleUrl: &#x27;./config.component.scss&#x27;,
+  templateUrl: &#x27;./config.component.html&#x27;,
+})
+export class ConfigComponent {
+  /** &#x60;@Input() minimal: boolean &#x3D; false;&#x60; is a decorator that marks the &#x60;minimal&#x60; property as an input
+  property, which means that it can be passed as a value from a parent component to this component.
+  The &#x60;minimal&#x60; property is of type &#x60;boolean&#x60; and is initialized to &#x60;false&#x60; by default. This
+  property can be used in the component&#x27;s template to conditionally render certain elements or apply
+  different styles based on its value. */
+  @Input() minimal: boolean &#x3D; false;
+
+  /** &#x60;scales&#x60; is an array of numbers that represents the available font sizes that can be applied to
+  the HTML document. The default values are &#x60;[12, 13, 14, 15, 16]&#x60;. These values are used in
+  conjunction with the &#x60;incrementScale()&#x60; and &#x60;decrementScale()&#x60; methods to adjust the font size of
+  the document. */
+  scales: number[] &#x3D; [12, 13, 14, 15, 16];
+
+  /**
+   * This is a constructor function that takes two parameters, a LayoutService and a MenuService.
+   * @param {LayoutService} layoutService - The layoutService parameter is a dependency injection of
+   * a service that provides functionality related to the layout of the application, such as managing
+   * the theme, language, and other UI-related settings. It is likely used to control the overall
+   * look and feel of the application.
+   * @param {MenuService} menuService - The &#x60;menuService&#x60; parameter is an instance of the
+   * &#x60;MenuService&#x60; class, which is likely used to manage and manipulate the application&#x27;s menu or
+   * navigation system. It may contain methods for adding, removing, or updating menu items, as well
+   * as handling user interactions with the menu.
+   */
+  constructor(
+    public layoutService: LayoutService,
+    public menuService: MenuService,
+    @Inject(DOCUMENT) private document: Document,
+  ) {}
+
+  get visible(): boolean {
+    return this.layoutService.state.configSidebarVisible;
+  }
+
+  set visible(_val: boolean) {
+    this.layoutService.state.configSidebarVisible &#x3D; _val;
+  }
+
+  get scale(): number {
+    return this.layoutService.config.scale;
+  }
+
+  set scale(_val: number) {
+    this.layoutService.config.scale &#x3D; _val;
+  }
+
+  get menuMode(): string {
+    return this.layoutService.config.menuMode;
+  }
+
+  set menuMode(_val: string) {
+    this.layoutService.config.menuMode &#x3D; _val;
+  }
+
+  get inputStyle(): string {
+    return this.layoutService.config.inputStyle;
+  }
+
+  set inputStyle(_val: string) {
+    this.layoutService.config.inputStyle &#x3D; _val;
+  }
+
+  get ripple(): boolean {
+    return this.layoutService.config.ripple;
+  }
+
+  set ripple(_val: boolean) {
+    this.layoutService.config.ripple &#x3D; _val;
+  }
+
+  /**
+   * This function shows the configuration sidebar when the config button is clicked.
+   */
+  onConfigButtonClick() {
+    this.layoutService.showConfigSidebar();
+  }
+
+  /**
+   * This function changes the theme and color scheme of a webpage by replacing the theme link and
+   * updating the layout service configuration.
+   * @param {string} theme - a string representing the new theme to be applied.
+   * @param {string} colorScheme - The &#x60;colorScheme&#x60; parameter is a string that represents the color
+   * scheme to be applied to the theme. It is used in conjunction with the &#x60;theme&#x60; parameter to
+   * update the theme of the application.
+   */
+  changeTheme(theme: string, colorScheme: string) {
+    const themeLink &#x3D; &lt;HTMLLinkElement&gt;this.document.getElementById(&#x27;theme-css&#x27;);
+    const newHref &#x3D; themeLink
+      .getAttribute(&#x27;href&#x27;)!
+      .replace(this.layoutService.config.theme, theme);
+    this.layoutService.config.colorScheme;
+    this.replaceThemeLink(newHref, () &#x3D;&gt; {
+      this.layoutService.config.theme &#x3D; theme;
+      this.layoutService.config.colorScheme &#x3D; colorScheme;
+      this.layoutService.onConfigUpdate();
+    });
+  }
+
+  /**
+   * This function replaces the href attribute of a link element with a new value and removes the
+   * original link element once the new one has loaded.
+   * @param {string} href - A string representing the URL of the new theme CSS file to be loaded.
+   * @param {Function} onComplete - &#x60;onComplete&#x60; is a callback function that will be executed once
+   * the new theme link has been loaded and applied. It is typically used to perform additional
+   * actions or update the UI after the theme has been changed.
+   */
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  replaceThemeLink(href: string, onComplete: Function) {
+    const id &#x3D; &#x27;theme-css&#x27;;
+    const themeLink &#x3D; &lt;HTMLLinkElement&gt;this.document.getElementById(&#x27;theme-css&#x27;);
+    const cloneLinkElement &#x3D; &lt;HTMLLinkElement&gt;themeLink.cloneNode(true);
+
+    cloneLinkElement.setAttribute(&#x27;href&#x27;, href);
+    cloneLinkElement.setAttribute(&#x27;id&#x27;, id + &#x27;-clone&#x27;);
+
+    themeLink.parentNode!.insertBefore(cloneLinkElement, themeLink.nextSibling);
+
+    cloneLinkElement.addEventListener(&#x27;load&#x27;, () &#x3D;&gt; {
+      themeLink.remove();
+      cloneLinkElement.setAttribute(&#x27;id&#x27;, id);
+      onComplete();
+    });
+  }
+
+  /**
+   * This function decrements the scale property and applies the new scale value.
+   */
+  decrementScale() {
+    this.scale--;
+    this.applyScale();
+  }
+
+  /**
+   * The function increments the scale property by 1 and applies the new scale value.
+   */
+  incrementScale() {
+    this.scale++;
+    this.applyScale();
+  }
+
+  /**
+   * This function sets the font size of the HTML document to a specified scale.
+   */
+  applyScale() {
+    this.document.documentElement.style.fontSize &#x3D; this.scale + &#x27;px&#x27;;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;button
+  class&#x3D;&quot;layout-config-button p-link&quot;
+  type&#x3D;&quot;button&quot;
+  (click)&#x3D;&quot;onConfigButtonClick()&quot;
+&gt;
+  &lt;i class&#x3D;&quot;pi pi-cog&quot;&gt;&lt;/i&gt;
+&lt;/button&gt;
+
+&lt;p-sidebar
+  [(visible)]&#x3D;&quot;visible&quot;
+  position&#x3D;&quot;right&quot;
+  [transitionOptions]&#x3D;&quot;&#x27;.3s cubic-bezier(0, 0, 0.2, 1)&#x27;&quot;
+  styleClass&#x3D;&quot;layout-config-sidebar w-20rem&quot;
+&gt;
+  &lt;h5&gt;{{ &quot;config.scale&quot; | translate }}&lt;/h5&gt;
+  &lt;div class&#x3D;&quot;flex align-items-center&quot;&gt;
+    &lt;button
+      icon&#x3D;&quot;pi pi-minus&quot;
+      type&#x3D;&quot;button&quot;
+      pButton
+      (click)&#x3D;&quot;decrementScale()&quot;
+      class&#x3D;&quot;p-button-rounded w-2rem h-2rem mr-2&quot;
+      [disabled]&#x3D;&quot;scale &#x3D;&#x3D;&#x3D; scales[0]&quot;
+    &gt;&lt;/button&gt;
+    &lt;div class&#x3D;&quot;flex gap-2 align-items-center&quot;&gt;
+      &lt;i
+        class&#x3D;&quot;pi pi-circle-fill text-300&quot;
+        *ngFor&#x3D;&quot;let s of scales&quot;
+        [ngClass]&#x3D;&quot;{ &#x27;text-primary-500&#x27;: s &#x3D;&#x3D;&#x3D; scale }&quot;
+      &gt;&lt;/i&gt;
+    &lt;/div&gt;
+    &lt;button
+      icon&#x3D;&quot;pi pi-plus&quot;
+      type&#x3D;&quot;button&quot;
+      pButton
+      pRipple
+      (click)&#x3D;&quot;incrementScale()&quot;
+      class&#x3D;&quot;p-button-rounded w-2rem h-2rem ml-2&quot;
+      [disabled]&#x3D;&quot;scale &#x3D;&#x3D;&#x3D; scales[scales.length - 1]&quot;
+    &gt;&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;ng-container *ngIf&#x3D;&quot;!minimal&quot;&gt;
+    &lt;h5&gt;{{ &quot;config.menu_type&quot; | translate }}&lt;/h5&gt;
+    &lt;div class&#x3D;&quot;field-radiobutton&quot;&gt;
+      &lt;p-radioButton
+        name&#x3D;&quot;menuMode&quot;
+        value&#x3D;&quot;static&quot;
+        [(ngModel)]&#x3D;&quot;menuMode&quot;
+        inputId&#x3D;&quot;mode1&quot;
+      &gt;&lt;/p-radioButton&gt;
+      &lt;label for&#x3D;&quot;mode1&quot;&gt;{{ &quot;config.static&quot; | translate }}&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;field-radiobutton&quot;&gt;
+      &lt;p-radioButton
+        name&#x3D;&quot;menuMode&quot;
+        value&#x3D;&quot;overlay&quot;
+        [(ngModel)]&#x3D;&quot;menuMode&quot;
+        inputId&#x3D;&quot;mode2&quot;
+      &gt;&lt;/p-radioButton&gt;
+      &lt;label for&#x3D;&quot;mode2&quot;&gt;{{ &quot;config.overlay&quot; | translate }}&lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/ng-container&gt;
+
+  &lt;ng-container *ngIf&#x3D;&quot;!minimal&quot;&gt;
+    &lt;h5&gt;{{ &quot;config.input_style&quot; | translate }}&lt;/h5&gt;
+    &lt;div class&#x3D;&quot;flex&quot;&gt;
+      &lt;div class&#x3D;&quot;field-radiobutton flex-1&quot;&gt;
+        &lt;p-radioButton
+          name&#x3D;&quot;inputStyle&quot;
+          value&#x3D;&quot;outlined&quot;
+          [(ngModel)]&#x3D;&quot;inputStyle&quot;
+          inputId&#x3D;&quot;outlined_input&quot;
+        &gt;&lt;/p-radioButton&gt;
+        &lt;label for&#x3D;&quot;outlined_input&quot;&gt;{{
+          &quot;config.outlined&quot; | translate
+        }}&lt;/label&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;field-radiobutton flex-1&quot;&gt;
+        &lt;p-radioButton
+          name&#x3D;&quot;inputStyle&quot;
+          value&#x3D;&quot;filled&quot;
+          [(ngModel)]&#x3D;&quot;inputStyle&quot;
+          inputId&#x3D;&quot;filled_input&quot;
+        &gt;&lt;/p-radioButton&gt;
+        &lt;label for&#x3D;&quot;filled_input&quot;&gt;{{
+          &quot;config.filled&quot; | translate
+        }}&lt;/label&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;h5&gt;{{ &quot;config.ripple_effect&quot; | translate }}&lt;/h5&gt;
+    &lt;p-inputSwitch [(ngModel)]&#x3D;&quot;ripple&quot;&gt;&lt;/p-inputSwitch&gt;
+  &lt;/ng-container&gt;
+
+  &lt;h5&gt;Bootstrap&lt;/h5&gt;
+  &lt;div class&#x3D;&quot;grid&quot;&gt;
+    &lt;div class&#x3D;&quot;col-3&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;p-link w-2rem h-2rem&quot;
+        (click)&#x3D;&quot;changeTheme(&#x27;bootstrap4-light-blue&#x27;, &#x27;light&#x27;)&quot;
+      &gt;
+        &lt;img
+          src&#x3D;&quot;assets/images/themes/bootstrap4-light-blue.svg&quot;
+          class&#x3D;&quot;w-2rem h-2rem&quot;
+          alt&#x3D;&quot;Bootstrap Light Blue&quot;
+        /&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-3&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;p-link w-2rem h-2rem&quot;
+        (click)&#x3D;&quot;changeTheme(&#x27;bootstrap4-light-purple&#x27;, &#x27;light&#x27;)&quot;
+      &gt;
+        &lt;img
+          src&#x3D;&quot;assets/images/themes/bootstrap4-light-purple.svg&quot;
+          class&#x3D;&quot;w-2rem h-2rem&quot;
+          alt&#x3D;&quot;Bootstrap Light Purple&quot;
+        /&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-3&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;p-link w-2rem h-2rem&quot;
+        (click)&#x3D;&quot;changeTheme(&#x27;bootstrap4-dark-blue&#x27;, &#x27;dark&#x27;)&quot;
+      &gt;
+        &lt;img
+          src&#x3D;&quot;assets/images/themes/bootstrap4-dark-blue.svg&quot;
+          class&#x3D;&quot;w-2rem h-2rem&quot;
+          alt&#x3D;&quot;Bootstrap Dark Blue&quot;
+        /&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-3&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;p-link w-2rem h-2rem&quot;
+        (click)&#x3D;&quot;changeTheme(&#x27;bootstrap4-dark-purple&#x27;, &#x27;dark&#x27;)&quot;
+      &gt;
+        &lt;img
+          src&#x3D;&quot;assets/images/themes/bootstrap4-dark-purple.svg&quot;
+          class&#x3D;&quot;w-2rem h-2rem&quot;
+          alt&#x3D;&quot;Bootstrap Dark Purple&quot;
+        /&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;h5&gt;Material Design&lt;/h5&gt;
+  &lt;div class&#x3D;&quot;grid&quot;&gt;
+    &lt;div class&#x3D;&quot;col-3&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;p-link w-2rem h-2rem&quot;
+        (click)&#x3D;&quot;changeTheme(&#x27;md-light-indigo&#x27;, &#x27;light&#x27;)&quot;
+      &gt;
+        &lt;img
+          src&#x3D;&quot;assets/images/themes/md-light-indigo.svg&quot;
+          class&#x3D;&quot;w-2rem h-2rem&quot;
+          alt&#x3D;&quot;Material Light Indigo&quot;
+        /&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-3&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;p-link w-2rem h-2rem&quot;
+        (click)&#x3D;&quot;changeTheme(&#x27;md-light-deeppurple&#x27;, &#x27;light&#x27;)&quot;
+      &gt;
+        &lt;img
+          src&#x3D;&quot;assets/images/themes/md-light-deeppurple.svg&quot;
+          class&#x3D;&quot;w-2rem h-2rem&quot;
+          alt&#x3D;&quot;Material Light DeepPurple&quot;
+        /&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-3&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;p-link w-2rem h-2rem&quot;
+        (click)&#x3D;&quot;changeTheme(&#x27;md-dark-indigo&#x27;, &#x27;dark&#x27;)&quot;
+      &gt;
+        &lt;img
+          src&#x3D;&quot;assets/images/themes/md-dark-indigo.svg&quot;
+          class&#x3D;&quot;w-2rem h-2rem&quot;
+          alt&#x3D;&quot;Material Dark Indigo&quot;
+        /&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-3&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;p-link w-2rem h-2rem&quot;
+        (click)&#x3D;&quot;changeTheme(&#x27;md-dark-deeppurple&#x27;, &#x27;dark&#x27;)&quot;
+      &gt;
+        &lt;img
+          src&#x3D;&quot;assets/images/themes/md-dark-deeppurple.svg&quot;
+          class&#x3D;&quot;w-2rem h-2rem&quot;
+          alt&#x3D;&quot;Material Dark DeepPurple&quot;
+        /&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;h5&gt;Material Design Compact&lt;/h5&gt;
+  &lt;div class&#x3D;&quot;grid&quot;&gt;
+    &lt;div class&#x3D;&quot;col-3&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;p-link w-2rem h-2rem&quot;
+        (click)&#x3D;&quot;changeTheme(&#x27;mdc-light-indigo&#x27;, &#x27;light&#x27;)&quot;
+      &gt;
+        &lt;img
+          src&#x3D;&quot;assets/images/themes/md-light-indigo.svg&quot;
+          class&#x3D;&quot;w-2rem h-2rem&quot;
+          alt&#x3D;&quot;Material Light Indigo&quot;
+        /&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-3&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;p-link w-2rem h-2rem&quot;
+        (click)&#x3D;&quot;changeTheme(&#x27;mdc-light-deeppurple&#x27;, &#x27;light&#x27;)&quot;
+      &gt;
+        &lt;img
+          src&#x3D;&quot;assets/images/themes/md-light-deeppurple.svg&quot;
+          class&#x3D;&quot;w-2rem h-2rem&quot;
+          alt&#x3D;&quot;Material Light Deep Purple&quot;
+        /&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-3&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;p-link w-2rem h-2rem&quot;
+        (click)&#x3D;&quot;changeTheme(&#x27;mdc-dark-indigo&#x27;, &#x27;dark&#x27;)&quot;
+      &gt;
+        &lt;img
+          src&#x3D;&quot;assets/images/themes/md-dark-indigo.svg&quot;
+          class&#x3D;&quot;w-2rem h-2rem&quot;
+          alt&#x3D;&quot;Material Dark Indigo&quot;
+        /&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-3&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;p-link w-2rem h-2rem&quot;
+        (click)&#x3D;&quot;changeTheme(&#x27;mdc-dark-deeppurple&#x27;, &#x27;dark&#x27;)&quot;
+      &gt;
+        &lt;img
+          src&#x3D;&quot;assets/images/themes/md-dark-deeppurple.svg&quot;
+          class&#x3D;&quot;w-2rem h-2rem&quot;
+          alt&#x3D;&quot;Material Dark Deep Purple&quot;
+        /&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;h5&gt;Tailwind&lt;/h5&gt;
+  &lt;div class&#x3D;&quot;grid&quot;&gt;
+    &lt;div class&#x3D;&quot;col-3&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;p-link w-2rem h-2rem&quot;
+        (click)&#x3D;&quot;changeTheme(&#x27;tailwind-light&#x27;, &#x27;light&#x27;)&quot;
+      &gt;
+        &lt;img
+          src&#x3D;&quot;assets/images/themes/tailwind-light.png&quot;
+          class&#x3D;&quot;w-2rem h-2rem&quot;
+          alt&#x3D;&quot;Tailwind Light&quot;
+        /&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;h5&gt;Fluent UI&lt;/h5&gt;
+  &lt;div class&#x3D;&quot;grid&quot;&gt;
+    &lt;div class&#x3D;&quot;col-3&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;p-link w-2rem h-2rem&quot;
+        (click)&#x3D;&quot;changeTheme(&#x27;fluent-light&#x27;, &#x27;light&#x27;)&quot;
+      &gt;
+        &lt;img
+          src&#x3D;&quot;assets/images/themes/fluent-light.png&quot;
+          class&#x3D;&quot;w-2rem h-2rem&quot;
+          alt&#x3D;&quot;Fluent Light&quot;
+        /&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;h5&gt;PrimeOne Design - 2022&lt;/h5&gt;
+  &lt;div class&#x3D;&quot;grid&quot;&gt;
+    &lt;div class&#x3D;&quot;col-3&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;p-link w-2rem h-2rem&quot;
+        (click)&#x3D;&quot;changeTheme(&#x27;lara-light-indigo&#x27;, &#x27;light&#x27;)&quot;
+      &gt;
+        &lt;img
+          src&#x3D;&quot;assets/images/themes/lara-light-indigo.png&quot;
+          class&#x3D;&quot;w-2rem h-2rem&quot;
+          alt&#x3D;&quot;Lara Light Indigo&quot;
+        /&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-3&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;p-link w-2rem h-2rem&quot;
+        (click)&#x3D;&quot;changeTheme(&#x27;lara-light-blue&#x27;, &#x27;light&#x27;)&quot;
+      &gt;
+        &lt;img
+          src&#x3D;&quot;assets/images/themes/lara-light-blue.png&quot;
+          class&#x3D;&quot;w-2rem h-2rem&quot;
+          alt&#x3D;&quot;Lara Light Blue&quot;
+        /&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-3&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;p-link w-2rem h-2rem&quot;
+        (click)&#x3D;&quot;changeTheme(&#x27;lara-light-purple&#x27;, &#x27;light&#x27;)&quot;
+      &gt;
+        &lt;img
+          src&#x3D;&quot;assets/images/themes/lara-light-purple.png&quot;
+          class&#x3D;&quot;w-2rem h-2rem&quot;
+          alt&#x3D;&quot;Lara Light Purple&quot;
+        /&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-3&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;p-link w-2rem h-2rem&quot;
+        (click)&#x3D;&quot;changeTheme(&#x27;lara-light-teal&#x27;, &#x27;light&#x27;)&quot;
+      &gt;
+        &lt;img
+          src&#x3D;&quot;assets/images/themes/lara-light-teal.png&quot;
+          class&#x3D;&quot;w-2rem h-2rem&quot;
+          alt&#x3D;&quot;Lara Light Teal&quot;
+        /&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-3&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;p-link w-2rem h-2rem&quot;
+        (click)&#x3D;&quot;changeTheme(&#x27;lara-dark-indigo&#x27;, &#x27;dark&#x27;)&quot;
+      &gt;
+        &lt;img
+          src&#x3D;&quot;assets/images/themes/lara-dark-indigo.png&quot;
+          class&#x3D;&quot;w-2rem h-2rem&quot;
+          alt&#x3D;&quot;Lara Dark Indigo&quot;
+        /&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-3&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;p-link w-2rem h-2rem&quot;
+        (click)&#x3D;&quot;changeTheme(&#x27;lara-dark-blue&#x27;, &#x27;dark&#x27;)&quot;
+      &gt;
+        &lt;img
+          src&#x3D;&quot;assets/images/themes/lara-dark-blue.png&quot;
+          class&#x3D;&quot;w-2rem h-2rem&quot;
+          alt&#x3D;&quot;Lara Dark Blue&quot;
+        /&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-3&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;p-link w-2rem h-2rem&quot;
+        (click)&#x3D;&quot;changeTheme(&#x27;lara-dark-purple&#x27;, &#x27;dark&#x27;)&quot;
+      &gt;
+        &lt;img
+          src&#x3D;&quot;assets/images/themes/lara-dark-purple.png&quot;
+          class&#x3D;&quot;w-2rem h-2rem&quot;
+          alt&#x3D;&quot;Lara Dark Purple&quot;
+        /&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-3&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;p-link w-2rem h-2rem&quot;
+        (click)&#x3D;&quot;changeTheme(&#x27;lara-dark-teal&#x27;, &#x27;dark&#x27;)&quot;
+      &gt;
+        &lt;img
+          src&#x3D;&quot;assets/images/themes/lara-dark-teal.png&quot;
+          class&#x3D;&quot;w-2rem h-2rem&quot;
+          alt&#x3D;&quot;Lara Dark Teal&quot;
+        /&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;h5&gt;PrimeOne Design - 2021&lt;/h5&gt;
+  &lt;div class&#x3D;&quot;grid&quot;&gt;
+    &lt;div class&#x3D;&quot;col-3&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;p-link w-2rem h-2rem&quot;
+        (click)&#x3D;&quot;changeTheme(&#x27;saga-blue&#x27;, &#x27;light&#x27;)&quot;
+      &gt;
+        &lt;img
+          src&#x3D;&quot;assets/images/themes/saga-blue.png&quot;
+          class&#x3D;&quot;w-2rem h-2rem&quot;
+          alt&#x3D;&quot;Saga Blue&quot;
+        /&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-3&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;p-link w-2rem h-2rem&quot;
+        (click)&#x3D;&quot;changeTheme(&#x27;saga-green&#x27;, &#x27;light&#x27;)&quot;
+      &gt;
+        &lt;img
+          src&#x3D;&quot;assets/images/themes/saga-green.png&quot;
+          class&#x3D;&quot;w-2rem h-2rem&quot;
+          alt&#x3D;&quot;Saga Green&quot;
+        /&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-3&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;p-link w-2rem h-2rem&quot;
+        (click)&#x3D;&quot;changeTheme(&#x27;saga-orange&#x27;, &#x27;light&#x27;)&quot;
+      &gt;
+        &lt;img
+          src&#x3D;&quot;assets/images/themes/saga-orange.png&quot;
+          class&#x3D;&quot;w-2rem h-2rem&quot;
+          alt&#x3D;&quot;Saga Orange&quot;
+        /&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-3&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;p-link w-2rem h-2rem&quot;
+        (click)&#x3D;&quot;changeTheme(&#x27;saga-purple&#x27;, &#x27;light&#x27;)&quot;
+      &gt;
+        &lt;img
+          src&#x3D;&quot;assets/images/themes/saga-purple.png&quot;
+          class&#x3D;&quot;w-2rem h-2rem&quot;
+          alt&#x3D;&quot;Saga Purple&quot;
+        /&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-3&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;p-link w-2rem h-2rem&quot;
+        (click)&#x3D;&quot;changeTheme(&#x27;vela-blue&#x27;, &#x27;dark&#x27;)&quot;
+      &gt;
+        &lt;img
+          src&#x3D;&quot;assets/images/themes/vela-blue.png&quot;
+          class&#x3D;&quot;w-2rem h-2rem&quot;
+          alt&#x3D;&quot;Vela Blue&quot;
+        /&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-3&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;p-link w-2rem h-2rem&quot;
+        (click)&#x3D;&quot;changeTheme(&#x27;vela-green&#x27;, &#x27;dark&#x27;)&quot;
+      &gt;
+        &lt;img
+          src&#x3D;&quot;assets/images/themes/vela-green.png&quot;
+          class&#x3D;&quot;w-2rem h-2rem&quot;
+          alt&#x3D;&quot;Vela Green&quot;
+        /&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-3&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;p-link w-2rem h-2rem&quot;
+        (click)&#x3D;&quot;changeTheme(&#x27;vela-orange&#x27;, &#x27;dark&#x27;)&quot;
+      &gt;
+        &lt;img
+          src&#x3D;&quot;assets/images/themes/vela-orange.png&quot;
+          class&#x3D;&quot;w-2rem h-2rem&quot;
+          alt&#x3D;&quot;Vela Orange&quot;
+        /&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-3&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;p-link w-2rem h-2rem&quot;
+        (click)&#x3D;&quot;changeTheme(&#x27;vela-purple&#x27;, &#x27;dark&#x27;)&quot;
+      &gt;
+        &lt;img
+          src&#x3D;&quot;assets/images/themes/vela-purple.png&quot;
+          class&#x3D;&quot;w-2rem h-2rem&quot;
+          alt&#x3D;&quot;Vela Purple&quot;
+        /&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-3&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;p-link w-2rem h-2rem&quot;
+        (click)&#x3D;&quot;changeTheme(&#x27;arya-blue&#x27;, &#x27;dark&#x27;)&quot;
+      &gt;
+        &lt;img
+          src&#x3D;&quot;assets/images/themes/arya-blue.png&quot;
+          class&#x3D;&quot;w-2rem h-2rem&quot;
+          alt&#x3D;&quot;Arya Blue&quot;
+        /&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-3&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;p-link w-2rem h-2rem&quot;
+        (click)&#x3D;&quot;changeTheme(&#x27;arya-green&#x27;, &#x27;dark&#x27;)&quot;
+      &gt;
+        &lt;img
+          src&#x3D;&quot;assets/images/themes/arya-green.png&quot;
+          class&#x3D;&quot;w-2rem h-2rem&quot;
+          alt&#x3D;&quot;Arya Green&quot;
+        /&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-3&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;p-link w-2rem h-2rem&quot;
+        (click)&#x3D;&quot;changeTheme(&#x27;arya-orange&#x27;, &#x27;dark&#x27;)&quot;
+      &gt;
+        &lt;img
+          src&#x3D;&quot;assets/images/themes/arya-orange.png&quot;
+          class&#x3D;&quot;w-2rem h-2rem&quot;
+          alt&#x3D;&quot;Arya Orange&quot;
+        /&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-3&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;p-link w-2rem h-2rem&quot;
+        (click)&#x3D;&quot;changeTheme(&#x27;arya-purple&#x27;, &#x27;dark&#x27;)&quot;
+      &gt;
+        &lt;img
+          src&#x3D;&quot;assets/images/themes/arya-purple.png&quot;
+          class&#x3D;&quot;w-2rem h-2rem&quot;
+          alt&#x3D;&quot;Arya Purple&quot;
+        /&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/p-sidebar&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><button  class="layout-config-button p-link"  type="button"  (click)="onConfigButtonClick()">  <i class="pi pi-cog"></i></button><p-sidebar  [(visible)]="visible"  position="right"  [transitionOptions]="\'.3s cubic-bezier(0, 0, 0.2, 1)\'"  styleClass="layout-config-sidebar w-20rem">  <h5>{{ "config.scale" | translate }}</h5>  <div class="flex align-items-center">    <button      icon="pi pi-minus"      type="button"      pButton      (click)="decrementScale()"      class="p-button-rounded w-2rem h-2rem mr-2"      [disabled]="scale === scales[0]"    ></button>    <div class="flex gap-2 align-items-center">      <i        class="pi pi-circle-fill text-300"        *ngFor="let s of scales"        [ngClass]="{ \'text-primary-500\': s === scale }"      ></i>    </div>    <button      icon="pi pi-plus"      type="button"      pButton      pRipple      (click)="incrementScale()"      class="p-button-rounded w-2rem h-2rem ml-2"      [disabled]="scale === scales[scales.length - 1]"    ></button>  </div>  <ng-container *ngIf="!minimal">    <h5>{{ "config.menu_type" | translate }}</h5>    <div class="field-radiobutton">      <p-radioButton        name="menuMode"        value="static"        [(ngModel)]="menuMode"        inputId="mode1"      ></p-radioButton>      <label for="mode1">{{ "config.static" | translate }}</label>    </div>    <div class="field-radiobutton">      <p-radioButton        name="menuMode"        value="overlay"        [(ngModel)]="menuMode"        inputId="mode2"      ></p-radioButton>      <label for="mode2">{{ "config.overlay" | translate }}</label>    </div>  </ng-container>  <ng-container *ngIf="!minimal">    <h5>{{ "config.input_style" | translate }}</h5>    <div class="flex">      <div class="field-radiobutton flex-1">        <p-radioButton          name="inputStyle"          value="outlined"          [(ngModel)]="inputStyle"          inputId="outlined_input"        ></p-radioButton>        <label for="outlined_input">{{          "config.outlined" | translate        }}</label>      </div>      <div class="field-radiobutton flex-1">        <p-radioButton          name="inputStyle"          value="filled"          [(ngModel)]="inputStyle"          inputId="filled_input"        ></p-radioButton>        <label for="filled_input">{{          "config.filled" | translate        }}</label>      </div>    </div>    <h5>{{ "config.ripple_effect" | translate }}</h5>    <p-inputSwitch [(ngModel)]="ripple"></p-inputSwitch>  </ng-container>  <h5>Bootstrap</h5>  <div class="grid">    <div class="col-3">      <button        class="p-link w-2rem h-2rem"        (click)="changeTheme(\'bootstrap4-light-blue\', \'light\')"      >        <img          src="assets/images/themes/bootstrap4-light-blue.svg"          class="w-2rem h-2rem"          alt="Bootstrap Light Blue"        />      </button>    </div>    <div class="col-3">      <button        class="p-link w-2rem h-2rem"        (click)="changeTheme(\'bootstrap4-light-purple\', \'light\')"      >        <img          src="assets/images/themes/bootstrap4-light-purple.svg"          class="w-2rem h-2rem"          alt="Bootstrap Light Purple"        />      </button>    </div>    <div class="col-3">      <button        class="p-link w-2rem h-2rem"        (click)="changeTheme(\'bootstrap4-dark-blue\', \'dark\')"      >        <img          src="assets/images/themes/bootstrap4-dark-blue.svg"          class="w-2rem h-2rem"          alt="Bootstrap Dark Blue"        />      </button>    </div>    <div class="col-3">      <button        class="p-link w-2rem h-2rem"        (click)="changeTheme(\'bootstrap4-dark-purple\', \'dark\')"      >        <img          src="assets/images/themes/bootstrap4-dark-purple.svg"          class="w-2rem h-2rem"          alt="Bootstrap Dark Purple"        />      </button>    </div>  </div>  <h5>Material Design</h5>  <div class="grid">    <div class="col-3">      <button        class="p-link w-2rem h-2rem"        (click)="changeTheme(\'md-light-indigo\', \'light\')"      >        <img          src="assets/images/themes/md-light-indigo.svg"          class="w-2rem h-2rem"          alt="Material Light Indigo"        />      </button>    </div>    <div class="col-3">      <button        class="p-link w-2rem h-2rem"        (click)="changeTheme(\'md-light-deeppurple\', \'light\')"      >        <img          src="assets/images/themes/md-light-deeppurple.svg"          class="w-2rem h-2rem"          alt="Material Light DeepPurple"        />      </button>    </div>    <div class="col-3">      <button        class="p-link w-2rem h-2rem"        (click)="changeTheme(\'md-dark-indigo\', \'dark\')"      >        <img          src="assets/images/themes/md-dark-indigo.svg"          class="w-2rem h-2rem"          alt="Material Dark Indigo"        />      </button>    </div>    <div class="col-3">      <button        class="p-link w-2rem h-2rem"        (click)="changeTheme(\'md-dark-deeppurple\', \'dark\')"      >        <img          src="assets/images/themes/md-dark-deeppurple.svg"          class="w-2rem h-2rem"          alt="Material Dark DeepPurple"        />      </button>    </div>  </div>  <h5>Material Design Compact</h5>  <div class="grid">    <div class="col-3">      <button        class="p-link w-2rem h-2rem"        (click)="changeTheme(\'mdc-light-indigo\', \'light\')"      >        <img          src="assets/images/themes/md-light-indigo.svg"          class="w-2rem h-2rem"          alt="Material Light Indigo"        />      </button>    </div>    <div class="col-3">      <button        class="p-link w-2rem h-2rem"        (click)="changeTheme(\'mdc-light-deeppurple\', \'light\')"      >        <img          src="assets/images/themes/md-light-deeppurple.svg"          class="w-2rem h-2rem"          alt="Material Light Deep Purple"        />      </button>    </div>    <div class="col-3">      <button        class="p-link w-2rem h-2rem"        (click)="changeTheme(\'mdc-dark-indigo\', \'dark\')"      >        <img          src="assets/images/themes/md-dark-indigo.svg"          class="w-2rem h-2rem"          alt="Material Dark Indigo"        />      </button>    </div>    <div class="col-3">      <button        class="p-link w-2rem h-2rem"        (click)="changeTheme(\'mdc-dark-deeppurple\', \'dark\')"      >        <img          src="assets/images/themes/md-dark-deeppurple.svg"          class="w-2rem h-2rem"          alt="Material Dark Deep Purple"        />      </button>    </div>  </div>  <h5>Tailwind</h5>  <div class="grid">    <div class="col-3">      <button        class="p-link w-2rem h-2rem"        (click)="changeTheme(\'tailwind-light\', \'light\')"      >        <img          src="assets/images/themes/tailwind-light.png"          class="w-2rem h-2rem"          alt="Tailwind Light"        />      </button>    </div>  </div>  <h5>Fluent UI</h5>  <div class="grid">    <div class="col-3">      <button        class="p-link w-2rem h-2rem"        (click)="changeTheme(\'fluent-light\', \'light\')"      >        <img          src="assets/images/themes/fluent-light.png"          class="w-2rem h-2rem"          alt="Fluent Light"        />      </button>    </div>  </div>  <h5>PrimeOne Design - 2022</h5>  <div class="grid">    <div class="col-3">      <button        class="p-link w-2rem h-2rem"        (click)="changeTheme(\'lara-light-indigo\', \'light\')"      >        <img          src="assets/images/themes/lara-light-indigo.png"          class="w-2rem h-2rem"          alt="Lara Light Indigo"        />      </button>    </div>    <div class="col-3">      <button        class="p-link w-2rem h-2rem"        (click)="changeTheme(\'lara-light-blue\', \'light\')"      >        <img          src="assets/images/themes/lara-light-blue.png"          class="w-2rem h-2rem"          alt="Lara Light Blue"        />      </button>    </div>    <div class="col-3">      <button        class="p-link w-2rem h-2rem"        (click)="changeTheme(\'lara-light-purple\', \'light\')"      >        <img          src="assets/images/themes/lara-light-purple.png"          class="w-2rem h-2rem"          alt="Lara Light Purple"        />      </button>    </div>    <div class="col-3">      <button        class="p-link w-2rem h-2rem"        (click)="changeTheme(\'lara-light-teal\', \'light\')"      >        <img          src="assets/images/themes/lara-light-teal.png"          class="w-2rem h-2rem"          alt="Lara Light Teal"        />      </button>    </div>    <div class="col-3">      <button        class="p-link w-2rem h-2rem"        (click)="changeTheme(\'lara-dark-indigo\', \'dark\')"      >        <img          src="assets/images/themes/lara-dark-indigo.png"          class="w-2rem h-2rem"          alt="Lara Dark Indigo"        />      </button>    </div>    <div class="col-3">      <button        class="p-link w-2rem h-2rem"        (click)="changeTheme(\'lara-dark-blue\', \'dark\')"      >        <img          src="assets/images/themes/lara-dark-blue.png"          class="w-2rem h-2rem"          alt="Lara Dark Blue"        />      </button>    </div>    <div class="col-3">      <button        class="p-link w-2rem h-2rem"        (click)="changeTheme(\'lara-dark-purple\', \'dark\')"      >        <img          src="assets/images/themes/lara-dark-purple.png"          class="w-2rem h-2rem"          alt="Lara Dark Purple"        />      </button>    </div>    <div class="col-3">      <button        class="p-link w-2rem h-2rem"        (click)="changeTheme(\'lara-dark-teal\', \'dark\')"      >        <img          src="assets/images/themes/lara-dark-teal.png"          class="w-2rem h-2rem"          alt="Lara Dark Teal"        />      </button>    </div>  </div>  <h5>PrimeOne Design - 2021</h5>  <div class="grid">    <div class="col-3">      <button        class="p-link w-2rem h-2rem"        (click)="changeTheme(\'saga-blue\', \'light\')"      >        <img          src="assets/images/themes/saga-blue.png"          class="w-2rem h-2rem"          alt="Saga Blue"        />      </button>    </div>    <div class="col-3">      <button        class="p-link w-2rem h-2rem"        (click)="changeTheme(\'saga-green\', \'light\')"      >        <img          src="assets/images/themes/saga-green.png"          class="w-2rem h-2rem"          alt="Saga Green"        />      </button>    </div>    <div class="col-3">      <button        class="p-link w-2rem h-2rem"        (click)="changeTheme(\'saga-orange\', \'light\')"      >        <img          src="assets/images/themes/saga-orange.png"          class="w-2rem h-2rem"          alt="Saga Orange"        />      </button>    </div>    <div class="col-3">      <button        class="p-link w-2rem h-2rem"        (click)="changeTheme(\'saga-purple\', \'light\')"      >        <img          src="assets/images/themes/saga-purple.png"          class="w-2rem h-2rem"          alt="Saga Purple"        />      </button>    </div>    <div class="col-3">      <button        class="p-link w-2rem h-2rem"        (click)="changeTheme(\'vela-blue\', \'dark\')"      >        <img          src="assets/images/themes/vela-blue.png"          class="w-2rem h-2rem"          alt="Vela Blue"        />      </button>    </div>    <div class="col-3">      <button        class="p-link w-2rem h-2rem"        (click)="changeTheme(\'vela-green\', \'dark\')"      >        <img          src="assets/images/themes/vela-green.png"          class="w-2rem h-2rem"          alt="Vela Green"        />      </button>    </div>    <div class="col-3">      <button        class="p-link w-2rem h-2rem"        (click)="changeTheme(\'vela-orange\', \'dark\')"      >        <img          src="assets/images/themes/vela-orange.png"          class="w-2rem h-2rem"          alt="Vela Orange"        />      </button>    </div>    <div class="col-3">      <button        class="p-link w-2rem h-2rem"        (click)="changeTheme(\'vela-purple\', \'dark\')"      >        <img          src="assets/images/themes/vela-purple.png"          class="w-2rem h-2rem"          alt="Vela Purple"        />      </button>    </div>    <div class="col-3">      <button        class="p-link w-2rem h-2rem"        (click)="changeTheme(\'arya-blue\', \'dark\')"      >        <img          src="assets/images/themes/arya-blue.png"          class="w-2rem h-2rem"          alt="Arya Blue"        />      </button>    </div>    <div class="col-3">      <button        class="p-link w-2rem h-2rem"        (click)="changeTheme(\'arya-green\', \'dark\')"      >        <img          src="assets/images/themes/arya-green.png"          class="w-2rem h-2rem"          alt="Arya Green"        />      </button>    </div>    <div class="col-3">      <button        class="p-link w-2rem h-2rem"        (click)="changeTheme(\'arya-orange\', \'dark\')"      >        <img          src="assets/images/themes/arya-orange.png"          class="w-2rem h-2rem"          alt="Arya Orange"        />      </button>    </div>    <div class="col-3">      <button        class="p-link w-2rem h-2rem"        (click)="changeTheme(\'arya-purple\', \'dark\')"      >        <img          src="assets/images/themes/arya-purple.png"          class="w-2rem h-2rem"          alt="Arya Purple"        />      </button>    </div>  </div></p-sidebar></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'ConfigComponent', 'selector': 'app-config'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InvitationComponent', 'selector': 'app-invitation'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuitemComponent', 'selector': '[app-menuitem]'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'TopbarComponent', 'selector': 'app-topbar'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ConfigComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ConfigComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
