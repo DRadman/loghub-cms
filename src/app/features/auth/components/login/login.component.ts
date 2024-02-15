@@ -1,5 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnDestroy,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import {
   FormBuilder,
   FormsModule,
@@ -15,19 +22,25 @@ import { InputMaskModule } from 'primeng/inputmask';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { ToastModule } from 'primeng/toast';
-import { Subscription, debounceTime, distinctUntilChanged, fromEvent, map } from 'rxjs';
+import {
+  Subscription,
+  debounceTime,
+  distinctUntilChanged,
+  fromEvent,
+  map,
+} from 'rxjs';
 import { environment } from '../../../../../environments/environment';
+import { AuthService } from '../../../../core/services/api/auth.api.service';
 import { AppState } from '../../../../core/state/app.state';
 import {
   authenticate,
-  loadCurrentUser
+  loadCurrentUser,
 } from '../../../../core/state/auth/auth.actions';
 import {
   isLoadingAuthState,
   selectAuthorizationError,
   selectCurrentUser,
 } from '../../../../core/state/auth/auth.selectors';
-import { AuthService } from '../../../../core/services/api/auth.api.service';
 
 @Component({
   selector: 'app-login',
@@ -50,7 +63,7 @@ import { AuthService } from '../../../../core/services/api/auth.api.service';
 })
 export class LoginComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('username') usernameInput!: ElementRef;
-  
+
   constructor(
     private formBuilder: FormBuilder,
     private store: Store<AppState>,
@@ -78,9 +91,9 @@ export class LoginComponent implements OnInit, AfterViewInit, OnDestroy {
       .pipe(
         map((event: Event) => (event.target as HTMLInputElement).value),
         debounceTime(500),
-        distinctUntilChanged()
+        distinctUntilChanged(),
       )
-      .subscribe(data => this.checkUsername(data));
+      .subscribe((data) => this.checkUsername(data));
   }
 
   ngOnInit() {
@@ -101,23 +114,22 @@ export class LoginComponent implements OnInit, AfterViewInit, OnDestroy {
           this.messageService.add({
             severity: 'error',
             summary: this.translateService.instant(
-              'auth.login.authorization_error'
+              'auth.login.authorization_error',
             ),
             detail: this.translateService.instant(
-              'auth.login.wrong_username_or_password'
+              'auth.login.wrong_username_or_password',
             ),
           });
         }
       });
   }
 
-  /* eslint-disable @typescript-eslint/no-non-null-asserted-optional-chain */
   login() {
     this.store.dispatch(
       authenticate({
-        username: this.loginForm.get('username')?.value!,
-        password: this.loginForm.get('password')?.value!,
-      })
+        username: this.loginForm.get('username')?.value ?? '',
+        password: this.loginForm.get('password')?.value ?? '',
+      }),
     );
   }
 
@@ -137,13 +149,15 @@ export class LoginComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private checkUsername(username: string) {
     this.usernameCheckSubscription?.unsubscribe();
-    this.usernameCheckSubscription = this.authService.isUsernameTaken(username).subscribe({
-      next: (result) => {
-        this.isUsernameTaken = result;
-      },
-      error: () => {
-        this.isUsernameTaken = null;
-      }
-    })
+    this.usernameCheckSubscription = this.authService
+      .isUsernameTaken(username)
+      .subscribe({
+        next: (result) => {
+          this.isUsernameTaken = result;
+        },
+        error: () => {
+          this.isUsernameTaken = null;
+        },
+      });
   }
 }

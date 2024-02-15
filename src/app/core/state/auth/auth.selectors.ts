@@ -7,17 +7,17 @@ export const selectAuth = (state: AppState) => state.authState;
 
 export const isLoadingAuthState = createSelector(
   selectAuth,
-  (state: AuthState) => state.status == StateStatus.LOADING
+  (state: AuthState) => state.status == StateStatus.LOADING,
 );
 
 export const isSuccess = createSelector(
   selectAuth,
-  (state: AuthState) => state.status == StateStatus.SUCCESS
+  (state: AuthState) => state.status == StateStatus.SUCCESS,
 );
 
 export const selectCurrentUser = createSelector(
   selectAuth,
-  (state: AuthState) => state.user
+  (state: AuthState) => state.user,
 );
 
 export const selectAuthorizationError = createSelector(
@@ -32,15 +32,35 @@ export const selectAuthorizationError = createSelector(
     } else {
       return null;
     }
-  }
+  },
+);
+
+export const selectCurrentUserError = createSelector(
+  selectAuth,
+  (state: AuthState) => {
+    if (
+      state.user == null &&
+      state.status == StateStatus.ERROR &&
+      state.error
+    ) {
+      return state.error;
+    } else {
+      return null;
+    }
+  },
 );
 
 export const selectForgotPasswordError = createSelector(
   selectAuth,
-  (state: AuthState) => state.forgotPasswordError
+  (state: AuthState) => state.forgotPasswordError,
 );
 
 export const selectResetPasswordError = createSelector(
   selectAuth,
-  (state: AuthState) => state.resetPasswordError
+  (state: AuthState) => state.resetPasswordError,
+);
+
+export const selectRegistrationError = createSelector(
+  selectAuth,
+  (state: AuthState) => state.registrationError,
 );

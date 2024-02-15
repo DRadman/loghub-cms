@@ -43,6 +43,32 @@
       "success": "Success",
       "success_message": "You have reseted your password",
       "back_to_login": "Back to Login"
+    },
+    "register": {
+      "welcome_message": "Register",
+      "welcome_description": "Create new account",
+      "username_label": "Username [REQUIRED]",
+      "password_label": "Password [REQUIRED]",
+      "username": "Username",
+      "password": "Password",
+      "back_to_login": "Back to Login",
+      "register": "Register",
+      "username_is_required": "Username is required",
+      "username_length": "Username minimum length is 3",
+      "password_is_required": "Password is required",
+      "password_length": "Password minimum length is 8",
+      "password_not_strong": "Password needs at least 1 capital case, 1 digit and 1 special character",
+      "email_label": "E-Mail [REQUIRED]",
+      "email": "E-Mail",
+      "email_is_required": "E-Mail is required",
+      "first_name_label": "First Name [REQUIRED]",
+      "first_name": "First Name",
+      "first_name_is_required": "First Name is required",
+      "last_name_label": "Last Name [REQUIRED]",
+      "last_name": "Last Name",
+      "last_name_is_required": "Last Name is required",
+      "registration_error": "API Error",
+      "registration_error_description": "Failed to register new user (Username exists)"
     }
   }
 }
