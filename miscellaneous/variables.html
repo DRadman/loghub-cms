@@ -200,6 +200,15 @@
                             <a href="#REFRESH_TOKEN_KEY" title="src/app/core/services/token-storage.service.ts" ><b>REFRESH_TOKEN_KEY</b>&nbsp;&nbsp;&nbsp;(src/.../token-storage.service.ts)</a>
                         </li>
                         <li>
+                            <a href="#registerNewUser" title="src/app/core/state/auth/auth.actions.ts" ><b>registerNewUser</b>&nbsp;&nbsp;&nbsp;(src/.../auth.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#registerNewUserFailure" title="src/app/core/state/auth/auth.actions.ts" ><b>registerNewUserFailure</b>&nbsp;&nbsp;&nbsp;(src/.../auth.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#registerNewUserSuccess" title="src/app/core/state/auth/auth.actions.ts" ><b>registerNewUserSuccess</b>&nbsp;&nbsp;&nbsp;(src/.../auth.actions.ts)</a>
+                        </li>
+                        <li>
                             <a href="#registrationGuard" title="src/app/core/guards/registration.guard.ts" ><b>registrationGuard</b>&nbsp;&nbsp;&nbsp;(src/.../registration.guard.ts)</a>
                         </li>
                         <li>
@@ -224,7 +233,13 @@
                             <a href="#selectCurrentUser" title="src/app/core/state/auth/auth.selectors.ts" ><b>selectCurrentUser</b>&nbsp;&nbsp;&nbsp;(src/.../auth.selectors.ts)</a>
                         </li>
                         <li>
+                            <a href="#selectCurrentUserError" title="src/app/core/state/auth/auth.selectors.ts" ><b>selectCurrentUserError</b>&nbsp;&nbsp;&nbsp;(src/.../auth.selectors.ts)</a>
+                        </li>
+                        <li>
                             <a href="#selectForgotPasswordError" title="src/app/core/state/auth/auth.selectors.ts" ><b>selectForgotPasswordError</b>&nbsp;&nbsp;&nbsp;(src/.../auth.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectRegistrationError" title="src/app/core/state/auth/auth.selectors.ts" ><b>selectRegistrationError</b>&nbsp;&nbsp;&nbsp;(src/.../auth.selectors.ts)</a>
                         </li>
                         <li>
                             <a href="#selectResetPasswordError" title="src/app/core/state/auth/auth.selectors.ts" ><b>selectResetPasswordError</b>&nbsp;&nbsp;&nbsp;(src/.../auth.selectors.ts)</a>
@@ -464,7 +479,7 @@
                     <td class="col-md-4">
                         <i>Default value : </i><code>createAction(
   &#x27;[Login Page] Authenticate&#x27;,
-  props&lt;AuthenticateRequestDto&gt;()
+  props&lt;AuthenticateRequestDto&gt;(),
 )</code>
                     </td>
                 </tr>
@@ -488,7 +503,7 @@
                         <i>Default value : </i><code>createAction(
   &#x27;[Auth API] Authentication failure&#x27;,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  props&lt;{ error: any }&gt;()
+  props&lt;{ error: any }&gt;(),
 )</code>
                     </td>
                 </tr>
@@ -511,7 +526,7 @@
                     <td class="col-md-4">
                         <i>Default value : </i><code>createAction(
   &#x27;[Auth API] Authentication success&#x27;,
-  props&lt;Token&gt;()
+  props&lt;Token&gt;(),
 )</code>
                     </td>
                 </tr>
@@ -534,7 +549,7 @@
                     <td class="col-md-4">
                         <i>Default value : </i><code>createAction(
   &#x27;[ForgotPassword Page] forgot password&#x27;,
-  props&lt;{username: string}&gt;(),
+  props&lt;{ username: string }&gt;(),
 )</code>
                     </td>
                 </tr>
@@ -558,7 +573,7 @@
                         <i>Default value : </i><code>createAction(
   &#x27;[Auth Api] Forgot password failure&#x27;,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  props&lt;{ error: any }&gt;()
+  props&lt;{ error: any }&gt;(),
 )</code>
                     </td>
                 </tr>
@@ -580,7 +595,7 @@
                 <tr>
                     <td class="col-md-4">
                         <i>Default value : </i><code>createAction(
-  &#x27;[Auth Api] Forgot password success&#x27;
+  &#x27;[Auth Api] Forgot password success&#x27;,
 )</code>
                     </td>
                 </tr>
@@ -602,7 +617,7 @@
                 <tr>
                     <td class="col-md-4">
                         <i>Default value : </i><code>createAction(
-  &#x27;[Login Page] Get authenticated user&#x27;
+  &#x27;[Login Page] Get authenticated user&#x27;,
 )</code>
                     </td>
                 </tr>
@@ -626,7 +641,7 @@
                         <i>Default value : </i><code>createAction(
   &#x27;[Auth API] Get authenticated user failure&#x27;,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  props&lt;{ error: any }&gt;()
+  props&lt;{ error: any }&gt;(),
 )</code>
                     </td>
                 </tr>
@@ -649,7 +664,77 @@
                     <td class="col-md-4">
                         <i>Default value : </i><code>createAction(
   &#x27;[Auth API] Get authenticated user success&#x27;,
-  props&lt;User&gt;()
+  props&lt;User&gt;(),
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="registerNewUser"></a>
+                    <span class="name">
+                        <span ><b>registerNewUser</b></span>
+                        <a href="#registerNewUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(
+  &#x27;[Register Page] Register new user&#x27;,
+  props&lt;RegisterRequestDto&gt;(),
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="registerNewUserFailure"></a>
+                    <span class="name">
+                        <span ><b>registerNewUserFailure</b></span>
+                        <a href="#registerNewUserFailure"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(
+  &#x27;[Auth Api] Register new user failure&#x27;,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  props&lt;{ error: any }&gt;(),
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="registerNewUserSuccess"></a>
+                    <span class="name">
+                        <span ><b>registerNewUserSuccess</b></span>
+                        <a href="#registerNewUserSuccess"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(
+  &#x27;[Auth Api] Register new user success&#x27;,
+  props&lt;{ username: string; password: string }&gt;(),
 )</code>
                     </td>
                 </tr>
@@ -696,7 +781,7 @@
                         <i>Default value : </i><code>createAction(
   &#x27;[Auth Api] Reset password failure&#x27;,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  props&lt;{ error: any }&gt;()
+  props&lt;{ error: any }&gt;(),
 )</code>
                     </td>
                 </tr>
@@ -718,7 +803,7 @@
                 <tr>
                     <td class="col-md-4">
                         <i>Default value : </i><code>createAction(
-  &#x27;[Auth Api] Reset password success&#x27;
+  &#x27;[Auth Api] Reset password success&#x27;,
 )</code>
                     </td>
                 </tr>
@@ -741,7 +826,7 @@
                     <td class="col-md-4">
                         <i>Default value : </i><code>createAction(
   &#x27;[Login Page] Set current user&#x27;,
-  props&lt;User&gt;()
+  props&lt;User&gt;(),
 )</code>
                     </td>
                 </tr>
@@ -764,7 +849,7 @@
                     <td class="col-md-4">
                         <i>Default value : </i><code>createAction(
   &#x27;[Login Page] Set current user&#x27;,
-  props&lt;Token&gt;()
+  props&lt;Token&gt;(),
 )</code>
                     </td>
                 </tr>
@@ -785,9 +870,7 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>createAction(
-  &#x27;[Home Page] Sign Out&#x27;,
-)</code>
+                        <i>Default value : </i><code>createAction(&#x27;[Home Page] Sign Out&#x27;)</code>
                     </td>
                 </tr>
 
@@ -1019,14 +1102,14 @@
   })),
 
   // Handle Forgot Password Failure
-  on(forgotPasswordFailure, (state, {error}) &#x3D;&gt; ({
+  on(forgotPasswordFailure, (state, { error }) &#x3D;&gt; ({
     ...state,
     forgotPasswordError: error,
     status: StateStatus.ERROR,
   })),
 
-   // Handle Reset Password
-   on(resetPassword, (state) &#x3D;&gt; ({
+  // Handle Reset Password
+  on(resetPassword, (state) &#x3D;&gt; ({
     ...state,
     status: StateStatus.LOADING,
   })),
@@ -1039,9 +1122,29 @@
   })),
 
   // Handle Reset Password Failure
-  on(resetPasswordFailure, (state, {error}) &#x3D;&gt; ({
+  on(resetPasswordFailure, (state, { error }) &#x3D;&gt; ({
     ...state,
     resetPasswordError: error,
+    status: StateStatus.ERROR,
+  })),
+
+  // Handle Register new user
+  on(registerNewUser, (state) &#x3D;&gt; ({
+    ...state,
+    status: StateStatus.LOADING,
+  })),
+
+  // Handle Register new user success
+  on(registerNewUserSuccess, (state) &#x3D;&gt; ({
+    ...state,
+    registrationError: null,
+    status: StateStatus.SUCCESS,
+  })),
+
+  // Handle Register new user failure
+  on(registerNewUserFailure, (state, { error }) &#x3D;&gt; ({
+    ...state,
+    registrationError: error,
     status: StateStatus.ERROR,
   })),
 )</code>
@@ -1285,7 +1388,7 @@
                     <td class="col-md-4">
                         <i>Default value : </i><code>createSelector(
   selectAuth,
-  (state: AuthState) &#x3D;&gt; state.status &#x3D;&#x3D; StateStatus.LOADING
+  (state: AuthState) &#x3D;&gt; state.status &#x3D;&#x3D; StateStatus.LOADING,
 )</code>
                     </td>
                 </tr>
@@ -1308,7 +1411,7 @@
                     <td class="col-md-4">
                         <i>Default value : </i><code>createSelector(
   selectAuth,
-  (state: AuthState) &#x3D;&gt; state.status &#x3D;&#x3D; StateStatus.SUCCESS
+  (state: AuthState) &#x3D;&gt; state.status &#x3D;&#x3D; StateStatus.SUCCESS,
 )</code>
                     </td>
                 </tr>
@@ -1361,7 +1464,7 @@
     } else {
       return null;
     }
-  }
+  },
 )</code>
                     </td>
                 </tr>
@@ -1384,7 +1487,40 @@
                     <td class="col-md-4">
                         <i>Default value : </i><code>createSelector(
   selectAuth,
-  (state: AuthState) &#x3D;&gt; state.user
+  (state: AuthState) &#x3D;&gt; state.user,
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectCurrentUserError"></a>
+                    <span class="name">
+                        <span ><b>selectCurrentUserError</b></span>
+                        <a href="#selectCurrentUserError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(
+  selectAuth,
+  (state: AuthState) &#x3D;&gt; {
+    if (
+      state.user &#x3D;&#x3D; null &amp;&amp;
+      state.status &#x3D;&#x3D; StateStatus.ERROR &amp;&amp;
+      state.error
+    ) {
+      return state.error;
+    } else {
+      return null;
+    }
+  },
 )</code>
                     </td>
                 </tr>
@@ -1407,7 +1543,30 @@
                     <td class="col-md-4">
                         <i>Default value : </i><code>createSelector(
   selectAuth,
-  (state: AuthState) &#x3D;&gt; state.forgotPasswordError
+  (state: AuthState) &#x3D;&gt; state.forgotPasswordError,
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectRegistrationError"></a>
+                    <span class="name">
+                        <span ><b>selectRegistrationError</b></span>
+                        <a href="#selectRegistrationError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(
+  selectAuth,
+  (state: AuthState) &#x3D;&gt; state.registrationError,
 )</code>
                     </td>
                 </tr>
@@ -1430,7 +1589,7 @@
                     <td class="col-md-4">
                         <i>Default value : </i><code>createSelector(
   selectAuth,
-  (state: AuthState) &#x3D;&gt; state.resetPasswordError
+  (state: AuthState) &#x3D;&gt; state.resetPasswordError,
 )</code>
                     </td>
                 </tr>

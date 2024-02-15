@@ -554,6 +554,8 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { createReducer, on } from &#x27;@ngrx/store&#x27;;
+import { AuthenticateRequestDto } from &#x27;../../domain/dto/requests/authenticate-request.dto&#x27;;
+import { StateStatus } from &#x27;../../domain/models/enums/state-status.enum&#x27;;
 import { Token } from &#x27;../../domain/models/token.entity&#x27;;
 import { User } from &#x27;../../domain/models/user.entity&#x27;;
 import {
@@ -566,6 +568,9 @@ import {
   loadCurrentUser,
   loadCurrentUserFailure,
   loadCurrentUserSuccess,
+  registerNewUser,
+  registerNewUserFailure,
+  registerNewUserSuccess,
   resetPassword,
   resetPasswordFailure,
   resetPasswordSuccess,
@@ -573,8 +578,6 @@ import {
   setToken,
   signOut,
 } from &#x27;./auth.actions&#x27;;
-import { StateStatus } from &#x27;../../domain/models/enums/state-status.enum&#x27;;
-import { AuthenticateRequestDto } from &#x27;../../domain/dto/requests/authenticate-request.dto&#x27;;
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export interface AuthState {
@@ -584,7 +587,7 @@ export interface AuthState {
   resetPasswordError: null | any;
   registrationError: null | any;
   usernameCheckError: null | any;
-  isUsernameAvialable: boolean | null,
+  isUsernameAvialable: boolean | null;
   token: Token | null;
   credentials: AuthenticateRequestDto | null;
   status: StateStatus;
@@ -685,14 +688,14 @@ export const authReducer &#x3D; createReducer(
   })),
 
   // Handle Forgot Password Failure
-  on(forgotPasswordFailure, (state, {error}) &#x3D;&gt; ({
+  on(forgotPasswordFailure, (state, { error }) &#x3D;&gt; ({
     ...state,
     forgotPasswordError: error,
     status: StateStatus.ERROR,
   })),
 
-   // Handle Reset Password
-   on(resetPassword, (state) &#x3D;&gt; ({
+  // Handle Reset Password
+  on(resetPassword, (state) &#x3D;&gt; ({
     ...state,
     status: StateStatus.LOADING,
   })),
@@ -705,9 +708,29 @@ export const authReducer &#x3D; createReducer(
   })),
 
   // Handle Reset Password Failure
-  on(resetPasswordFailure, (state, {error}) &#x3D;&gt; ({
+  on(resetPasswordFailure, (state, { error }) &#x3D;&gt; ({
     ...state,
     resetPasswordError: error,
+    status: StateStatus.ERROR,
+  })),
+
+  // Handle Register new user
+  on(registerNewUser, (state) &#x3D;&gt; ({
+    ...state,
+    status: StateStatus.LOADING,
+  })),
+
+  // Handle Register new user success
+  on(registerNewUserSuccess, (state) &#x3D;&gt; ({
+    ...state,
+    registrationError: null,
+    status: StateStatus.SUCCESS,
+  })),
+
+  // Handle Register new user failure
+  on(registerNewUserFailure, (state, { error }) &#x3D;&gt; ({
+    ...state,
+    registrationError: error,
     status: StateStatus.ERROR,
   })),
 );

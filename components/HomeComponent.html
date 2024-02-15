@@ -250,12 +250,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(store: <a href="../interfaces/AppState.html" target="_self">Store&lt;AppState&gt;</a>)</code>
+<code>constructor(store: <a href="../interfaces/AppState.html" target="_self">Store&lt;AppState&gt;</a>, router: Router)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/features/home/home.component.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/features/home/home.component.ts:20</a></div>
                             </td>
                         </tr>
 
@@ -277,6 +277,18 @@
                                                   
                                                         <td>
                                                                         <code><a href="../interfaces/AppState.html" target="_self" >Store&lt;AppState&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
                                                         </td>
                                                   
                                                     <td>
@@ -322,8 +334,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="25"
-                                    class="link-to-prism">src/app/features/home/home.component.ts:25</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="40"
+                                    class="link-to-prism">src/app/features/home/home.component.ts:40</a></div>
                         </td>
                     </tr>
 
@@ -359,8 +371,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="21"
-                                    class="link-to-prism">src/app/features/home/home.component.ts:21</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="28"
+                                    class="link-to-prism">src/app/features/home/home.component.ts:28</a></div>
                         </td>
                     </tr>
 
@@ -400,7 +412,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/features/home/home.component.ts:29</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/features/home/home.component.ts:44</a></div>
                         </td>
                     </tr>
 
@@ -428,7 +440,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/features/home/home.component.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/features/home/home.component.ts:26</a></div>
                         </td>
                     </tr>
 
@@ -447,7 +459,11 @@ import { Store } from &#x27;@ngrx/store&#x27;;
 import { Subscription } from &#x27;rxjs&#x27;;
 import { AppState } from &#x27;../../core/state/app.state&#x27;;
 import { loadCurrentUser } from &#x27;../../core/state/auth/auth.actions&#x27;;
-import { selectCurrentUser } from &#x27;../../core/state/auth/auth.selectors&#x27;;
+import {
+  selectCurrentUser,
+  selectCurrentUserError,
+} from &#x27;../../core/state/auth/auth.selectors&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
 
 @Component({
   selector: &#x27;app-home&#x27;,
@@ -457,12 +473,23 @@ import { selectCurrentUser } from &#x27;../../core/state/auth/auth.selectors&#x2
   styleUrl: &#x27;./home.component.scss&#x27;,
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  constructor(private store: Store&lt;AppState&gt;) {}
+  constructor(
+    private store: Store&lt;AppState&gt;,
+    private router: Router,
+  ) {}
 
   private currentUserErrorSubscription?: Subscription;
 
   ngOnInit() {
     this.store.dispatch(loadCurrentUser());
+
+    this.currentUserErrorSubscription &#x3D; this.store
+      .select(selectCurrentUserError)
+      .subscribe((error) &#x3D;&gt; {
+        if (error &amp;&amp; error !&#x3D; null) {
+          this.router.navigate([&#x27;/auth&#x27;]);
+        }
+      });
   }
 
   ngOnDestroy() {

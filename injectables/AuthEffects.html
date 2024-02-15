@@ -154,6 +154,12 @@
                                 <a href="#loadCurrentUser$" >loadCurrentUser$</a>
                             </li>
                             <li>
+                                <a href="#registerNewUser$" >registerNewUser$</a>
+                            </li>
+                            <li>
+                                <a href="#registerNewUserSuccess$" >registerNewUserSuccess$</a>
+                            </li>
+                            <li>
                                 <a href="#resetPassword$" >resetPassword$</a>
                             </li>
                             <li>
@@ -183,7 +189,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/core/state/auth/auth.effects.ts:23</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/core/state/auth/auth.effects.ts:26</a></div>
                             </td>
                         </tr>
 
@@ -279,16 +285,16 @@
               this.jwtService.saveRefreshToken(token.refreshToken);
               return authenticationSuccess(token);
             }),
-            catchError((error) &#x3D;&gt; of(authenticationFailure({ error })))
-          )
-      )
-    )
+            catchError((error) &#x3D;&gt; of(authenticationFailure({ error }))),
+          ),
+      ),
+    ),
   )</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/core/state/auth/auth.effects.ts:42</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/core/state/auth/auth.effects.ts:45</a></div>
                         </td>
                     </tr>
 
@@ -314,16 +320,16 @@
       switchMap(() &#x3D;&gt;
         this.authService.me().pipe(
           map((user) &#x3D;&gt; loadCurrentUserSuccess(user)),
-          catchError((error) &#x3D;&gt; of(authenticationFailure({ error })))
-        )
-      )
-    )
+          catchError((error) &#x3D;&gt; of(authenticationFailure({ error }))),
+        ),
+      ),
+    ),
   )</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="91" class="link-to-prism">src/app/core/state/auth/auth.effects.ts:91</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="94" class="link-to-prism">src/app/core/state/auth/auth.effects.ts:94</a></div>
                         </td>
                     </tr>
 
@@ -351,16 +357,16 @@
           map(() &#x3D;&gt; {
             return forgotPasswordSuccess();
           }),
-          catchError((error) &#x3D;&gt; of(forgotPasswordFailure({ error })))
-        )
-      )
-    )
+          catchError((error) &#x3D;&gt; of(forgotPasswordFailure({ error }))),
+        ),
+      ),
+    ),
   )</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/core/state/auth/auth.effects.ts:63</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/app/core/state/auth/auth.effects.ts:66</a></div>
                         </td>
                     </tr>
 
@@ -386,16 +392,86 @@
       switchMap(() &#x3D;&gt;
         this.authService.me().pipe(
           map((user) &#x3D;&gt; loadCurrentUserSuccess(user)),
-          catchError((error) &#x3D;&gt; of(loadCurrentUserFailure({ error })))
-        )
-      )
-    )
+          catchError((error) &#x3D;&gt; of(loadCurrentUserFailure({ error }))),
+        ),
+      ),
+    ),
   )</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/core/state/auth/auth.effects.ts:30</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/core/state/auth/auth.effects.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="registerNewUser$"></a>
+                    <span class="name">
+                        <span ><b>registerNewUser$</b></span>
+                        <a href="#registerNewUser$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(registerNewUser),
+      switchMap((request) &#x3D;&gt;
+        this.authService.register(request).pipe(
+          map(() &#x3D;&gt; {
+            return registerNewUserSuccess({
+              username: request.username,
+              password: request.password,
+            });
+          }),
+          catchError((error) &#x3D;&gt; of(registerNewUserFailure({ error }))),
+        ),
+      ),
+    ),
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="117" class="link-to-prism">src/app/core/state/auth/auth.effects.ts:117</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="registerNewUserSuccess$"></a>
+                    <span class="name">
+                        <span ><b>registerNewUserSuccess$</b></span>
+                        <a href="#registerNewUserSuccess$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(registerNewUserSuccess),
+      switchMap((request) &#x3D;&gt; of(authenticate(request))),
+    ),
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="134" class="link-to-prism">src/app/core/state/auth/auth.effects.ts:134</a></div>
                         </td>
                     </tr>
 
@@ -423,16 +499,16 @@
           map(() &#x3D;&gt; {
             return resetPasswordSuccess();
           }),
-          catchError((error) &#x3D;&gt; of(resetPasswordFailure({ error })))
-        )
-      )
-    )
+          catchError((error) &#x3D;&gt; of(resetPasswordFailure({ error }))),
+        ),
+      ),
+    ),
   )</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/app/core/state/auth/auth.effects.ts:77</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/app/core/state/auth/auth.effects.ts:80</a></div>
                         </td>
                     </tr>
 
@@ -458,15 +534,15 @@
         ofType(signOut),
         tap(() &#x3D;&gt; {
           this.jwtService.clear();
-        })
+        }),
       ),
-    { dispatch: false }
+    { dispatch: false },
   )</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="103" class="link-to-prism">src/app/core/state/auth/auth.effects.ts:103</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="106" class="link-to-prism">src/app/core/state/auth/auth.effects.ts:106</a></div>
                         </td>
                     </tr>
 
@@ -494,6 +570,9 @@ import {
   loadCurrentUser,
   loadCurrentUserFailure,
   loadCurrentUserSuccess,
+  registerNewUser,
+  registerNewUserFailure,
+  registerNewUserSuccess,
   resetPassword,
   resetPasswordFailure,
   resetPasswordSuccess,
@@ -505,7 +584,7 @@ export class AuthEffects {
   constructor(
     private authService: AuthService,
     private jwtService: JwtService,
-    private actions$: Actions
+    private actions$: Actions,
   ) {}
 
   loadCurrentUser$ &#x3D; createEffect(() &#x3D;&gt;
@@ -514,10 +593,10 @@ export class AuthEffects {
       switchMap(() &#x3D;&gt;
         this.authService.me().pipe(
           map((user) &#x3D;&gt; loadCurrentUserSuccess(user)),
-          catchError((error) &#x3D;&gt; of(loadCurrentUserFailure({ error })))
-        )
-      )
-    )
+          catchError((error) &#x3D;&gt; of(loadCurrentUserFailure({ error }))),
+        ),
+      ),
+    ),
   );
 
   authenticate$ &#x3D; createEffect(() &#x3D;&gt;
@@ -535,10 +614,10 @@ export class AuthEffects {
               this.jwtService.saveRefreshToken(token.refreshToken);
               return authenticationSuccess(token);
             }),
-            catchError((error) &#x3D;&gt; of(authenticationFailure({ error })))
-          )
-      )
-    )
+            catchError((error) &#x3D;&gt; of(authenticationFailure({ error }))),
+          ),
+      ),
+    ),
   );
 
   forgotPassword$ &#x3D; createEffect(() &#x3D;&gt;
@@ -549,10 +628,10 @@ export class AuthEffects {
           map(() &#x3D;&gt; {
             return forgotPasswordSuccess();
           }),
-          catchError((error) &#x3D;&gt; of(forgotPasswordFailure({ error })))
-        )
-      )
-    )
+          catchError((error) &#x3D;&gt; of(forgotPasswordFailure({ error }))),
+        ),
+      ),
+    ),
   );
 
   resetPassword$ &#x3D; createEffect(() &#x3D;&gt;
@@ -563,10 +642,10 @@ export class AuthEffects {
           map(() &#x3D;&gt; {
             return resetPasswordSuccess();
           }),
-          catchError((error) &#x3D;&gt; of(resetPasswordFailure({ error })))
-        )
-      )
-    )
+          catchError((error) &#x3D;&gt; of(resetPasswordFailure({ error }))),
+        ),
+      ),
+    ),
   );
 
   authenticationSuccess$ &#x3D; createEffect(() &#x3D;&gt;
@@ -575,10 +654,10 @@ export class AuthEffects {
       switchMap(() &#x3D;&gt;
         this.authService.me().pipe(
           map((user) &#x3D;&gt; loadCurrentUserSuccess(user)),
-          catchError((error) &#x3D;&gt; of(authenticationFailure({ error })))
-        )
-      )
-    )
+          catchError((error) &#x3D;&gt; of(authenticationFailure({ error }))),
+        ),
+      ),
+    ),
   );
 
   signOut$ &#x3D; createEffect(
@@ -587,9 +666,33 @@ export class AuthEffects {
         ofType(signOut),
         tap(() &#x3D;&gt; {
           this.jwtService.clear();
-        })
+        }),
       ),
-    { dispatch: false }
+    { dispatch: false },
+  );
+
+  registerNewUser$ &#x3D; createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(registerNewUser),
+      switchMap((request) &#x3D;&gt;
+        this.authService.register(request).pipe(
+          map(() &#x3D;&gt; {
+            return registerNewUserSuccess({
+              username: request.username,
+              password: request.password,
+            });
+          }),
+          catchError((error) &#x3D;&gt; of(registerNewUserFailure({ error }))),
+        ),
+      ),
+    ),
+  );
+
+  registerNewUserSuccess$ &#x3D; createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(registerNewUserSuccess),
+      switchMap((request) &#x3D;&gt; of(authenticate(request))),
+    ),
   );
 }
 </code></pre>
