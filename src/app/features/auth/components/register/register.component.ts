@@ -42,6 +42,7 @@ import {
   selectRegistrationError,
 } from '../../../../core/state/auth/auth.selectors';
 import { securePasswordRegex } from '../../../../core/utils/regex.constants';
+import { environment } from '../../../../../environments/environment';
 
 @Component({
   selector: 'app-register',
@@ -97,6 +98,9 @@ export class RegisterComponent implements OnInit, AfterViewInit, OnDestroy {
   private usernameCheckSubscription?: Subscription;
 
   ngOnInit() {
+    if (!environment.enableRegistration) {
+      this.router.navigate(['/auth/login']);
+    }
     this.store.dispatch(loadCurrentUser());
 
     this.userSubscription = this.store
