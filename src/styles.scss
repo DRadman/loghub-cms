@@ -1,6 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-@import "primeng/resources/themes/lara-light-blue/theme.css";
-@import "primeng/resources/primeng.css";
 
 // @layer tailwind-base, primeng, tailwind-utilities;
         
@@ -13,9 +11,16 @@
 //     @tailwind utilities;
 // }
 
+$gutter: 1rem;//for primeflex grid system
+@import "styles/layout.scss";
+
 @import "primeflex/primeflex.scss";
 @import "primeicons/primeicons.css";
 @import "primeng/resources/primeng.min.css";
+
+/* Flags */
+@import "styles/flags.scss";
+
 
 body {
     margin: 0;
