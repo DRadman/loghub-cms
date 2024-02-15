@@ -1,4 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
+import { AuthenticateRequestDto } from '../../domain/dto/requests/authenticate-request.dto';
+import { StateStatus } from '../../domain/models/enums/state-status.enum';
 import { Token } from '../../domain/models/token.entity';
 import { User } from '../../domain/models/user.entity';
 import {
@@ -11,6 +13,9 @@ import {
   loadCurrentUser,
   loadCurrentUserFailure,
   loadCurrentUserSuccess,
+  registerNewUser,
+  registerNewUserFailure,
+  registerNewUserSuccess,
   resetPassword,
   resetPasswordFailure,
   resetPasswordSuccess,
@@ -18,8 +23,6 @@ import {
   setToken,
   signOut,
 } from './auth.actions';
-import { StateStatus } from '../../domain/models/enums/state-status.enum';
-import { AuthenticateRequestDto } from '../../domain/dto/requests/authenticate-request.dto';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export interface AuthState {
@@ -29,7 +32,7 @@ export interface AuthState {
   resetPasswordError: null | any;
   registrationError: null | any;
   usernameCheckError: null | any;
-  isUsernameAvialable: boolean | null,
+  isUsernameAvialable: boolean | null;
   token: Token | null;
   credentials: AuthenticateRequestDto | null;
   status: StateStatus;
@@ -130,14 +133,14 @@ export const authReducer = createReducer(
   })),
 
   // Handle Forgot Password Failure
-  on(forgotPasswordFailure, (state, {error}) => ({
+  on(forgotPasswordFailure, (state, { error }) => ({
     ...state,
     forgotPasswordError: error,
     status: StateStatus.ERROR,
   })),
 
-   // Handle Reset Password
-   on(resetPassword, (state) => ({
+  // Handle Reset Password
+  on(resetPassword, (state) => ({
     ...state,
     status: StateStatus.LOADING,
   })),
@@ -150,9 +153,29 @@ export const authReducer = createReducer(
   })),
 
   // Handle Reset Password Failure
-  on(resetPasswordFailure, (state, {error}) => ({
+  on(resetPasswordFailure, (state, { error }) => ({
     ...state,
     resetPasswordError: error,
+    status: StateStatus.ERROR,
+  })),
+
+  // Handle Register new user
+  on(registerNewUser, (state) => ({
+    ...state,
+    status: StateStatus.LOADING,
+  })),
+
+  // Handle Register new user success
+  on(registerNewUserSuccess, (state) => ({
+    ...state,
+    registrationError: null,
+    status: StateStatus.SUCCESS,
+  })),
+
+  // Handle Register new user failure
+  on(registerNewUserFailure, (state, { error }) => ({
+    ...state,
+    registrationError: error,
     status: StateStatus.ERROR,
   })),
 );

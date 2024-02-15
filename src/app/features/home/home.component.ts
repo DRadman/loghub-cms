@@ -4,7 +4,11 @@ import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 import { AppState } from '../../core/state/app.state';
 import { loadCurrentUser } from '../../core/state/auth/auth.actions';
-import { selectCurrentUser } from '../../core/state/auth/auth.selectors';
+import {
+  selectCurrentUser,
+  selectCurrentUserError,
+} from '../../core/state/auth/auth.selectors';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -14,12 +18,23 @@ import { selectCurrentUser } from '../../core/state/auth/auth.selectors';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  constructor(private store: Store<AppState>) {}
+  constructor(
+    private store: Store<AppState>,
+    private router: Router,
+  ) {}
 
   private currentUserErrorSubscription?: Subscription;
 
   ngOnInit() {
     this.store.dispatch(loadCurrentUser());
+
+    this.currentUserErrorSubscription = this.store
+      .select(selectCurrentUserError)
+      .subscribe((error) => {
+        if (error && error != null) {
+          this.router.navigate(['/auth']);
+        }
+      });
   }
 
   ngOnDestroy() {

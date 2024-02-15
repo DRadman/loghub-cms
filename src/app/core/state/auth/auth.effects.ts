@@ -13,6 +13,9 @@ import {
   loadCurrentUser,
   loadCurrentUserFailure,
   loadCurrentUserSuccess,
+  registerNewUser,
+  registerNewUserFailure,
+  registerNewUserSuccess,
   resetPassword,
   resetPasswordFailure,
   resetPasswordSuccess,
@@ -24,7 +27,7 @@ export class AuthEffects {
   constructor(
     private authService: AuthService,
     private jwtService: JwtService,
-    private actions$: Actions
+    private actions$: Actions,
   ) {}
 
   loadCurrentUser$ = createEffect(() =>
@@ -33,10 +36,10 @@ export class AuthEffects {
       switchMap(() =>
         this.authService.me().pipe(
           map((user) => loadCurrentUserSuccess(user)),
-          catchError((error) => of(loadCurrentUserFailure({ error })))
-        )
-      )
-    )
+          catchError((error) => of(loadCurrentUserFailure({ error }))),
+        ),
+      ),
+    ),
   );
 
   authenticate$ = createEffect(() =>
@@ -54,10 +57,10 @@ export class AuthEffects {
               this.jwtService.saveRefreshToken(token.refreshToken);
               return authenticationSuccess(token);
             }),
-            catchError((error) => of(authenticationFailure({ error })))
-          )
-      )
-    )
+            catchError((error) => of(authenticationFailure({ error }))),
+          ),
+      ),
+    ),
   );
 
   forgotPassword$ = createEffect(() =>
@@ -68,10 +71,10 @@ export class AuthEffects {
           map(() => {
             return forgotPasswordSuccess();
           }),
-          catchError((error) => of(forgotPasswordFailure({ error })))
-        )
-      )
-    )
+          catchError((error) => of(forgotPasswordFailure({ error }))),
+        ),
+      ),
+    ),
   );
 
   resetPassword$ = createEffect(() =>
@@ -82,10 +85,10 @@ export class AuthEffects {
           map(() => {
             return resetPasswordSuccess();
           }),
-          catchError((error) => of(resetPasswordFailure({ error })))
-        )
-      )
-    )
+          catchError((error) => of(resetPasswordFailure({ error }))),
+        ),
+      ),
+    ),
   );
 
   authenticationSuccess$ = createEffect(() =>
@@ -94,10 +97,10 @@ export class AuthEffects {
       switchMap(() =>
         this.authService.me().pipe(
           map((user) => loadCurrentUserSuccess(user)),
-          catchError((error) => of(authenticationFailure({ error })))
-        )
-      )
-    )
+          catchError((error) => of(authenticationFailure({ error }))),
+        ),
+      ),
+    ),
   );
 
   signOut$ = createEffect(
@@ -106,8 +109,32 @@ export class AuthEffects {
         ofType(signOut),
         tap(() => {
           this.jwtService.clear();
-        })
+        }),
       ),
-    { dispatch: false }
+    { dispatch: false },
+  );
+
+  registerNewUser$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(registerNewUser),
+      switchMap((request) =>
+        this.authService.register(request).pipe(
+          map(() => {
+            return registerNewUserSuccess({
+              username: request.username,
+              password: request.password,
+            });
+          }),
+          catchError((error) => of(registerNewUserFailure({ error }))),
+        ),
+      ),
+    ),
+  );
+
+  registerNewUserSuccess$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(registerNewUserSuccess),
+      switchMap((request) => of(authenticate(request))),
+    ),
   );
 }
