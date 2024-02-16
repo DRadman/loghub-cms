@@ -31,6 +31,12 @@
       }
   }
 
+  .layout-topbar-title {
+    color: var(--surface-900);
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
   .layout-topbar-button {
       display: inline-flex;
       justify-content: center;

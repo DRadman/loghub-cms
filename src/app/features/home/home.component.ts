@@ -24,6 +24,8 @@ import { ConfigComponent } from './components/config/config.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { TopbarComponent } from './components/topbar/topbar.component';
+import { loadCurrentOrganization } from '../../core/state/organization/organization.actions';
+import { selectOrganizationError } from '../../core/state/organization/organization.selectors';
 
 @Component({
   selector: 'app-home',
@@ -128,9 +130,11 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   private currentUserErrorSubscription?: Subscription;
   private overlayMenuOpenSubscription: Subscription;
+  private organizationErrorSubscription?: Subscription;
 
   ngOnInit() {
     this.store.dispatch(loadCurrentUser());
+    this.store.dispatch(loadCurrentOrganization());
 
     this.currentUserErrorSubscription = this.store
       .select(selectCurrentUserError)
@@ -140,11 +144,18 @@ export class HomeComponent implements OnInit, OnDestroy {
         }
       });
 
+      this.organizationErrorSubscription = this.store.select(selectOrganizationError).subscribe((error => {
+        if (error && error != null) {
+          this.router.navigate(['/create-organization']);
+        }
+      }))
+
     this.home = { icon: 'pi pi-home', routerLink: '/dashboard' };
   }
 
   ngOnDestroy() {
     this.currentUserErrorSubscription?.unsubscribe();
+    this.organizationErrorSubscription?.unsubscribe();
 
     if (this.overlayMenuOpenSubscription) {
       this.overlayMenuOpenSubscription.unsubscribe();
