@@ -86,98 +86,71 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content component">
+               <div class="content injectable">
                    <div class="content-data">
 
 
 
 
+
+
+
+
 <ol class="breadcrumb">
-  <li class="breadcrumb-item">Components</li>
-  <li class="breadcrumb-item"
-  >
-  AppComponent</li>
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >OrganizationEffects</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
         <li class="nav-item">
-            <a href="#info" class="nav-link active"
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
                 role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
         <li class="nav-item">
-            <a href="#source" class="nav-link"
+            <a href="#source" 
+                class="nav-link"
+                
                 role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
-        </li>
-        <li class="nav-item">
-            <a href="#templateData" class="nav-link"
-                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li class="nav-item">
-            <a href="#tree" class="nav-link"
-                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="info"><p class="comment">
-    <h3>File</h3>
-</p>
-<p class="comment">
-    <code>src/app/app.component.ts</code>
-</p>
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/core/state/organization/organization.effects.ts</code>
+        </p>
 
 
 
 
 
-
-<section data-compodoc="block-metadata">
-    <h3>Metadata</h3>
-    <table class="table table-sm table-hover metadata">
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#createNewOrganization$" >createNewOrganization$</a>
+                            </li>
+                            <li>
+                                <a href="#loadCurrentOrganization$" >loadCurrentOrganization$</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
-
-
-
-
-
-
-
-
-
-
-
-            <tr>
-                <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-root</code></td>
-            </tr>
-
-            <tr>
-                <td class="col-md-3">Standalone</td>
-                <td class="col-md-9"><code>true</code></td>
-            </tr>
-
-            <tr>
-                <td class="col-md-3">imports</td>
-                <td class="col-md-9">
-                            <code>RouterOutlet</code>
-                </td>
-            </tr>
-
-
-
-
-            <tr>
-                <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./app.component.html</code></td>
-            </tr>
-
-
-
-            <tr>
-                <td class="col-md-3">styleUrl</td>
-                <td class="col-md-9"><code>./app.component.scss</code></td>
-            </tr>
 
 
 
@@ -187,19 +160,18 @@
     </table>
 </section>
 
-
-    <section data-compodoc="block-constructor">
+            <section data-compodoc="block-constructor">
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(translate: TranslateService)</code>
+<code>constructor(organizationService: <a href="../injectables/OrganizationService.html" target="_self">OrganizationService</a>, actions$: Actions)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/app.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/core/state/organization/organization.effects.ts:8</a></div>
                             </td>
                         </tr>
 
@@ -217,10 +189,22 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>translate</td>
+                                                        <td>organizationService</td>
                                                   
                                                         <td>
-                                                                    <code>TranslateService</code>
+                                                                        <code><a href="../injectables/OrganizationService.html" target="_self" >OrganizationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>actions$</td>
+                                                  
+                                                        <td>
+                                                                    <code>Actions</code>
                                                         </td>
                                                   
                                                     <td>
@@ -238,81 +222,128 @@
 </section>
 
 
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createNewOrganization$"></a>
+                    <span class="name">
+                        <span ><b>createNewOrganization$</b></span>
+                        <a href="#createNewOrganization$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(createOrganization),
+      switchMap((request) &#x3D;&gt;
+        this.organizationService.createOrganization(request).pipe(
+          map((organization) &#x3D;&gt; createOrganizationSuccess(organization)),
+          catchError((error) &#x3D;&gt; of(loadCurrentOrganizationFailure({ error }))),
+        ),
+      ),
+    ),
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/core/state/organization/organization.effects.ts:26</a></div>
+                        </td>
+                    </tr>
 
 
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadCurrentOrganization$"></a>
+                    <span class="name">
+                        <span ><b>loadCurrentOrganization$</b></span>
+                        <a href="#loadCurrentOrganization$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(loadCurrentOrganization),
+      switchMap(() &#x3D;&gt;
+        this.organizationService.getOrganization().pipe(
+          map((organization) &#x3D;&gt; loadCurrentOrganizationSuccess(organization)),
+          catchError((error) &#x3D;&gt; of(loadCurrentOrganizationFailure({ error }))),
+        ),
+      ),
+    ),
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/core/state/organization/organization.effects.ts:14</a></div>
+                        </td>
+                    </tr>
 
 
+        </tbody>
+    </table>
+</section>
 
-</div>
+    </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
-import { RouterOutlet } from &#x27;@angular/router&#x27;;
-import { TranslateService } from &#x27;@ngx-translate/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Actions, createEffect, ofType } from &quot;@ngrx/effects&quot;;
+import { OrganizationService } from &quot;../../services/api/organization.api.service&quot;;
+import { createOrganization, createOrganizationSuccess, loadCurrentOrganization, loadCurrentOrganizationFailure, loadCurrentOrganizationSuccess } from &quot;./organization.actions&quot;;
+import { catchError, map, of, switchMap } from &quot;rxjs&quot;;
+import { Injectable } from &quot;@angular/core&quot;;
 
-@Component({
-  selector: &#x27;app-root&#x27;,
-  standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: &#x27;./app.component.html&#x27;,
-  styleUrl: &#x27;./app.component.scss&#x27;,
-})
-export class AppComponent {
-  constructor(private translate: TranslateService) {
-    translate.setDefaultLang(&#x27;en&#x27;);
-    translate.addLangs([&#x27;en&#x27;]);
-    translate.use(&#x27;en&#x27;);
-  }
+@Injectable()
+export class OrganizationEffects {
+  constructor(
+    private organizationService: OrganizationService,
+    private actions$: Actions,
+  ) {}
+
+  loadCurrentOrganization$ &#x3D; createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(loadCurrentOrganization),
+      switchMap(() &#x3D;&gt;
+        this.organizationService.getOrganization().pipe(
+          map((organization) &#x3D;&gt; loadCurrentOrganizationSuccess(organization)),
+          catchError((error) &#x3D;&gt; of(loadCurrentOrganizationFailure({ error }))),
+        ),
+      ),
+    ),
+  );
+
+  createNewOrganization$ &#x3D; createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(createOrganization),
+      switchMap((request) &#x3D;&gt;
+        this.organizationService.createOrganization(request).pipe(
+          map((organization) &#x3D;&gt; createOrganizationSuccess(organization)),
+          catchError((error) &#x3D;&gt; of(loadCurrentOrganizationFailure({ error }))),
+        ),
+      ),
+    ),
+  );
 }
 </code></pre>
     </div>
 
-    <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;main class&#x3D;&quot;main&quot;&gt;
-  &lt;div class&#x3D;&quot;content&quot;&gt;
-    &lt;router-outlet /&gt;
-  &lt;/div&gt;
-&lt;/main&gt;
-</code></pre>
-    </div>
-
-
-    <div class="tab-pane fade " id="tree">
-        <div id="tree-container"></div>
-        <div class="tree-legend">
-            <div class="title">
-                <b>Legend</b>
-            </div>
-            <div>
-                <div class="color htmlelement"></div><span>Html element</span>
-            </div>
-            <div>
-                <div class="color component"></div><span>Component</span>
-            </div>
-            <div>
-                <div class="color directive"></div><span>Html element with directive</span>
-            </div>
-        </div>
-    </div>
-
-    
 </div>
-
-<script src="../js/libs/vis.min.js"></script>
-<script src="../js/libs/htmlparser.js"></script>
-<script src="../js/libs/deep-iterator.js"></script>
-<script>
-        var COMPONENT_TEMPLATE = '<div><main class="main">  <div class="content">    <router-outlet />  </div></main></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'ConfigComponent', 'selector': 'app-config'},{'name': 'CreateOrganizationComponent', 'selector': 'app-create-organization'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InvitationComponent', 'selector': 'app-invitation'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuitemComponent', 'selector': '[app-menuitem]'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'TopbarComponent', 'selector': 'app-topbar'}];
-    var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'AppComponent'};
-</script>
-<script src="../js/tree.js"></script>
-
-
-
-
 
 
 
@@ -351,8 +382,8 @@ export class AppComponent {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'AppComponent.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'OrganizationEffects.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

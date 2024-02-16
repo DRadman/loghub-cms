@@ -68,6 +68,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/ConfigComponent.html" data-type="entity-link" >ConfigComponent</a>
                             </li>
                             <li class="link">
+                                <a href="components/CreateOrganizationComponent.html" data-type="entity-link" >CreateOrganizationComponent</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/FooterComponent.html" data-type="entity-link" >FooterComponent</a>
                             </li>
                             <li class="link">
@@ -129,6 +132,12 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     <a href="injectables/MenuService.html" data-type="entity-link" >MenuService</a>
                                 </li>
                                 <li class="link">
+                                    <a href="injectables/OrganizationEffects.html" data-type="entity-link" >OrganizationEffects</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/OrganizationService.html" data-type="entity-link" >OrganizationService</a>
+                                </li>
+                                <li class="link">
                                     <a href="injectables/SessionStorage.html" data-type="entity-link" >SessionStorage</a>
                                 </li>
                             </ul>
@@ -154,6 +163,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/AuthState.html" data-type="entity-link" >AuthState</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/CreateOrganizationRequestDto.html" data-type="entity-link" >CreateOrganizationRequestDto</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/ForgotPasswordRequestDto.html" data-type="entity-link" >ForgotPasswordRequestDto</a>
                             </li>
                             <li class="link">
@@ -161,6 +173,15 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/MenuChangeEvent.html" data-type="entity-link" >MenuChangeEvent</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/Organization.html" data-type="entity-link" >Organization</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/OrganizationDto.html" data-type="entity-link" >OrganizationDto</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/OrganizationState.html" data-type="entity-link" >OrganizationState</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/RegisterRequestDto.html" data-type="entity-link" >RegisterRequestDto</a>

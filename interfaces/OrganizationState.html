@@ -105,7 +105,7 @@
   <li class="breadcrumb-item">Interfaces</li>
   <li class="breadcrumb-item"
   >
-  AppState</li>
+  OrganizationState</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -129,7 +129,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/core/state/app.state.ts</code>
+            <code>src/app/core/state/organization/organization.reducer.ts</code>
         </p>
 
 
@@ -148,15 +148,21 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                        <a href="#authState" 
+                                        <a href="#error" 
 >
-                                            authState
+                                            error
                                         </a>
                                 </li>
                                 <li>
-                                        <a href="#organizationState" 
+                                        <a href="#organization" 
 >
-                                            organizationState
+                                            organization
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#status" 
+>
+                                            status
                                         </a>
                                 </li>
                             </ul>
@@ -174,9 +180,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="authState"></a>
-                                        <span class="name "><b>authState</b>
-                                            <a href="#authState">
+                                        <a name="error"></a>
+                                        <span class="name "><b>error</b>
+                                            <a href="#error">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -184,7 +190,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>authState:         <code><a href="../interfaces/AuthState.html" target="_self" >AuthState</a></code>
+                                        <code>error:     <code>any | null</code>
 </code>
                                     </td>
                                 </tr>
@@ -192,7 +198,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="../interfaces/AuthState.html" target="_self" >AuthState</a></code>
+                                            <i>Type : </i>    <code>any | null</code>
 
                                         </td>
                                     </tr>
@@ -207,9 +213,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="organizationState"></a>
-                                        <span class="name "><b>organizationState</b>
-                                            <a href="#organizationState">
+                                        <a name="organization"></a>
+                                        <span class="name "><b>organization</b>
+                                            <a href="#organization">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -217,7 +223,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>organizationState:         <code><a href="../interfaces/OrganizationState.html" target="_self" >OrganizationState</a></code>
+                                        <code>organization:         <code><a href="../interfaces/Organization.html" target="_self" >Organization | null</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -225,7 +231,40 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="../interfaces/OrganizationState.html" target="_self" >OrganizationState</a></code>
+                                            <i>Type : </i>        <code><a href="../interfaces/Organization.html" target="_self" >Organization | null</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="status"></a>
+                                        <span class="name "><b>status</b>
+                                            <a href="#status">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>status:         <code><a href="../miscellaneous/enumerations.html#StateStatus" target="_self" >StateStatus</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="../miscellaneous/enumerations.html#StateStatus" target="_self" >StateStatus</a></code>
 
                                         </td>
                                     </tr>
@@ -241,21 +280,78 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AuthEffects } from &#x27;./auth/auth.effects&#x27;;
-import { AuthState, authReducer } from &#x27;./auth/auth.reducer&#x27;;
-import { OrganizationEffects } from &#x27;./organization/organization.effects&#x27;;
-import { OrganizationState, organizationReducer } from &#x27;./organization/organization.reducer&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { createReducer, on } from &#x27;@ngrx/store&#x27;;
+import { StateStatus } from &#x27;../../domain/models/enums/state-status.enum&#x27;;
+import { Organization } from &#x27;../../domain/models/organization.entity&#x27;;
+import {
+  createOrganization,
+  createOrganizationFailure,
+  createOrganizationSuccess,
+  loadCurrentOrganization,
+  loadCurrentOrganizationFailure,
+  loadCurrentOrganizationSuccess,
+} from &#x27;./organization.actions&#x27;;
 
-export interface AppState {
-  authState: AuthState;
-  organizationState: OrganizationState
+export interface OrganizationState {
+  organization: Organization | null;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  error: any | null;
+  status: StateStatus;
 }
 
-export const appEfects &#x3D; [AuthEffects, OrganizationEffects];
-export const appStore &#x3D; {
-  authState: authReducer,
-  organizationState: organizationReducer,
+export const initialState: OrganizationState &#x3D; {
+  organization: null,
+  error: undefined,
+  status: StateStatus.PENDING,
 };
+
+export const organizationReducer &#x3D; createReducer(
+  initialState,
+
+  //Handle loading current organization
+  on(loadCurrentOrganization, (state) &#x3D;&gt; ({
+    ...state,
+    error: null,
+    status: StateStatus.LOADING,
+  })),
+
+  //Handle load success
+  on(loadCurrentOrganizationSuccess, (state, organization) &#x3D;&gt; ({
+    ...state,
+    organization: organization,
+    error: null,
+    status: StateStatus.SUCCESS,
+  })),
+
+  //Handle load failure
+  on(loadCurrentOrganizationFailure, (state, { error }) &#x3D;&gt; ({
+    ...state,
+    error: error,
+    status: StateStatus.ERROR,
+  })),
+
+  //Handle create new organization
+  on(createOrganization, (state) &#x3D;&gt; ({
+    ...state,
+    error: null,
+    status: StateStatus.LOADING,
+  })),
+
+  //Handle create new organization success
+  on(createOrganizationSuccess, (state, organization) &#x3D;&gt; ({
+    ...state,
+    organization: organization,
+    error: null,
+    status: StateStatus.SUCCESS,
+  })),
+
+  //Handle create new organization failure
+  on(createOrganizationFailure, (state, { error }) &#x3D;&gt; ({
+    ...state,
+    error: error,
+    status: StateStatus.ERROR,
+  })),
+);
 </code></pre>
     </div>
 </div>
@@ -293,7 +389,7 @@ export const appStore &#x3D; {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
-            var COMPODOC_CURRENT_PAGE_URL = 'AppState.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'OrganizationState.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
