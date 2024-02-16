@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { selectCurrentUser } from '../../../../core/state/auth/auth.selectors';
 import { environment } from '../../../../../environments/environment';
+import { selectCurrentOrganization } from '../../../../core/state/organization/organization.selectors';
 
 @Component({
   selector: 'app-topbar',
@@ -43,6 +44,7 @@ export class TopbarComponent {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   selectedLanguage: any;
 
+  organization = this.store.select(selectCurrentOrganization);
   user = this.store.select(selectCurrentUser);
 
   logout() {

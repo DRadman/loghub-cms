@@ -11,6 +11,11 @@ export const routes: Routes = [
     loadChildren: () =>
         import('./features/auth/auth.routes').then(r => r.routes)
   },
+  {
+    path: 'create-organization',
+    loadChildren: () =>
+        import('./features/create-organization/create-organization.routes').then(r => r.routes)
+  },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];

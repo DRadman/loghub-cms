@@ -55,12 +55,168 @@ export class SidebarComponent implements OnInit {
     this.model.push({
       label: sidenav.General,
       items: [
+        // {
+        //   label: sidenav.Home,
+        //   icon: 'pi pi-fw pi-home',
+        //   routerLink: ['/home'],
+        // },
         {
-          label: sidenav.Home,
-          icon: 'pi pi-fw pi-home',
-          routerLink: ['/home'],
+          label: sidenav.Projects,
+          icon: 'pi pi-fw pi-code',
+          routerLink: ['/home/projects'],
+        },
+        {
+          label: sidenav.Logs,
+          icon: 'pi pi-fw pi-list',
+          routerLink: ['/home/logs'],
+        },
+        {
+          label: sidenav.Issues,
+          icon: 'pi pi-fw pi-inbox',
+          routerLink: ['/home/issues'],
+        },
+        {
+          label: sidenav.Messages,
+          icon: 'pi pi-fw pi-envelope',
+          routerLink: ['/home/messages'],
+        },
+        {
+          label: sidenav.Devices,
+          icon: 'pi pi-fw pi-mobile',
+          routerLink: ['/home/devices'],
+        },
+        {
+          label: sidenav.Sessions,
+          icon: 'pi pi-fw pi-clock',
+          routerLink: ['/home/sessions'],
+        },
+        {
+          label: sidenav.Performance,
+          icon: 'pi pi-fw pi-chart-line',
+          routerLink: ['/home/performance'],
+          expanded: true,
+          items: [
+            {
+              label: sidenav.Queries,
+              icon: 'pi pi-fw pi-database',
+              routerLink: ['/home/queries'],
+            },
+            {
+              label: sidenav.Vitals,
+              icon: 'pi pi-fw pi-heart',
+              routerLink: ['/home/vitals'],
+            },
+            {
+              label: sidenav.Screen_Loads,
+              icon: 'pi pi-fw pi-stopwatch',
+              routerLink: ['/home/screen-loads'],
+            },
+            {
+              label: sidenav.Resources,
+              icon: 'pi pi-fw pi-server',
+              routerLink: ['/home/resources'],
+            },
+          ],
+        },
+        {
+          label: sidenav.Replays,
+          icon: 'pi pi-fw pi-play',
+          routerLink: ['/home/replays'],
+        },
+        {
+          label: sidenav.Releases,
+          icon: 'pi pi-fw pi-box',
+          routerLink: ['/home/releases'],
+        },
+        {
+          label: sidenav.Stats,
+          icon: 'pi pi-fw pi-chart-bar',
+          routerLink: ['/home/stats'],
         },
       ],
     });
+    this.model.push({
+      label: sidenav.Setitngs,
+      items: [
+        {
+          label: sidenav.Settings_Account,
+          icon: 'pi pi-fw pi-user',
+          expanded: false,
+          routerLink: ['/home/settings/account'],
+          items: [
+            {
+              label: sidenav.Settings_Account_Details,
+              routerLink: ['/home/settings/account/details'],
+              icon: 'pi pi-fw pi-list'
+            },
+            {
+              label: sidenav.Settings_Account_Security,
+              routerLink: ['/home/settings/account/security'],
+              icon: 'pi pi-fw pi-shield'
+            },
+            {
+              label: sidenav.Settings_Account_Notifications,
+              routerLink: ['/home/settings/account/notifications'],
+              icon: 'pi pi-fw pi-envelope'
+            },
+            {
+              label: sidenav.Settings_Account_Close,
+              routerLink: ['/home/settings/account/close-account'],
+              icon: 'pi pi-fw pi-exclamation-circle'
+            }
+          ]
+        },
+        {
+          label: sidenav.Settings_Organization,
+          icon: 'pi pi-fw pi-building',
+          routerLink: ['/home/settings/organization']
+        },
+        {
+          label: sidenav.Settings_Projects,
+          icon: 'pi pi-fw pi-box',
+          routerLink: ['/home/settings/projects']
+        },
+        {
+          label: sidenav.Settings_Teams,
+          icon: 'pi pi-fw pi-sitemap',
+          routerLink: ['/home/settings/teams']
+        },
+        {
+          label: sidenav.Settings_Members,
+          icon: 'pi pi-fw pi-users',
+          routerLink: ['/home/settings/members']
+        },
+        {
+          label: sidenav.Settings_Alerts,
+          icon: 'pi pi-fw pi-bell',
+          routerLink: ['/home/settings/alerts']
+        }
+      ]
+    })
+    this.model.push({
+      label: sidenav.Help,
+      items: [
+        {
+          label: sidenav.Documentation,
+          icon: 'pi pi-fw pi-book',
+          routerLink: ['/home/help/documentation']
+        },
+        {
+          label: sidenav.SDKS,
+          icon: 'pi pi-fw pi-wrench',
+          routerLink: ['/home/help/sdks']
+        },
+        {
+          label: sidenav.Guides,
+          icon: 'pi pi-fw pi-question-circle',
+          routerLink: ['/home/help/guides']
+        },
+        {
+          label: sidenav.Support,
+          icon: 'pi pi-fw pi-ticket',
+          routerLink: ['/home/help/support']
+        },
+      ]
+    })
   }
 }
