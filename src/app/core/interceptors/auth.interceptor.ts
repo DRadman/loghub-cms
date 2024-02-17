@@ -75,7 +75,6 @@ export const unauthErrorInterceptor: HttpInterceptorFn = (
                   jwtService.clear();
                   store.dispatch(signOut());
                   if(!router.url.startsWith('/auth')) {
-                    console.log('Ja sam')
                     router.navigate(['/auth'])
                   }
                 }
@@ -83,7 +82,9 @@ export const unauthErrorInterceptor: HttpInterceptorFn = (
               })
             );
           } else {
-            router.navigate(['/auth'])
+            if(!router.url.startsWith('/auth')) {
+              router.navigate(['/auth'])
+            }
             return throwError(() => error);
           }
         } else {
