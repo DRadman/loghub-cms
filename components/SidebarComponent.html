@@ -733,7 +733,8 @@ export class SidebarComponent implements OnInit {
       ],
     });
     this.model.push({
-      label: sidenav.Setitngs,
+      label: sidenav.Settings,
+      routerLink: [&#x27;/home/settings&#x27;],
       items: [
         {
           label: sidenav.Settings_Account,
@@ -758,7 +759,7 @@ export class SidebarComponent implements OnInit {
             },
             {
               label: sidenav.Settings_Account_Close,
-              routerLink: [&#x27;/home/settings/account/close-account&#x27;],
+              routerLink: [&#x27;/home/settings/account/close&#x27;],
               icon: &#x27;pi pi-fw pi-exclamation-circle&#x27;
             }
           ]
@@ -794,22 +795,22 @@ export class SidebarComponent implements OnInit {
       label: sidenav.Help,
       items: [
         {
-          label: sidenav.Documentation,
+          label: sidenav.Help_Documentation,
           icon: &#x27;pi pi-fw pi-book&#x27;,
           routerLink: [&#x27;/home/help/documentation&#x27;]
         },
         {
-          label: sidenav.SDKS,
+          label: sidenav.Help_SDKS,
           icon: &#x27;pi pi-fw pi-wrench&#x27;,
           routerLink: [&#x27;/home/help/sdks&#x27;]
         },
         {
-          label: sidenav.Guides,
+          label: sidenav.Help_Guides,
           icon: &#x27;pi pi-fw pi-question-circle&#x27;,
           routerLink: [&#x27;/home/help/guides&#x27;]
         },
         {
-          label: sidenav.Support,
+          label: sidenav.Help_Support,
           icon: &#x27;pi pi-fw pi-ticket&#x27;,
           routerLink: [&#x27;/home/help/support&#x27;]
         },
@@ -869,7 +870,7 @@ export class SidebarComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><ul class="layout-menu">  <ng-container *ngFor="let item of model; let i = index">    <li      app-menuitem      *ngIf="!item.separator"      [item]="item"      [index]="i"      [root]="true"    ></li>    <li *ngIf="item.separator" class="menu-separator"></li>  </ng-container></ul></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'ConfigComponent', 'selector': 'app-config'},{'name': 'CreateOrganizationComponent', 'selector': 'app-create-organization'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InvitationComponent', 'selector': 'app-invitation'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuitemComponent', 'selector': '[app-menuitem]'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'TopbarComponent', 'selector': 'app-topbar'}];
+    var COMPONENTS = [{'name': 'AlertsComponent', 'selector': 'app-alerts'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CloseComponent', 'selector': 'app-close'},{'name': 'ConfigComponent', 'selector': 'app-config'},{'name': 'CreateOrganizationComponent', 'selector': 'app-create-organization'},{'name': 'DetailsComponent', 'selector': 'app-details'},{'name': 'DevicesComponent', 'selector': 'app-devices'},{'name': 'DocumentationComponent', 'selector': 'app-documentation'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'GuidesComponent', 'selector': 'app-guides'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InvitationComponent', 'selector': 'app-invitation'},{'name': 'IssuesComponent', 'selector': 'app-issues'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogsComponent', 'selector': 'app-logs'},{'name': 'MembersComponent', 'selector': 'app-members'},{'name': 'MenuitemComponent', 'selector': '[app-menuitem]'},{'name': 'MessagesComponent', 'selector': 'app-messages'},{'name': 'NotificationsComponent', 'selector': 'app-notifications'},{'name': 'OrganizationComponent', 'selector': 'app-organization'},{'name': 'ProjectDetailsComponent', 'selector': 'app-project-details'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'ProjectsComponent', 'selector': 'app-projects-settings'},{'name': 'QueriesComponent', 'selector': 'app-queries'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ReleasesComponent', 'selector': 'app-releases'},{'name': 'ReplaysComponent', 'selector': 'app-replays'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'ScreenLoadsComponent', 'selector': 'app-screen-loads'},{'name': 'SdksComponent', 'selector': 'app-sdks'},{'name': 'SecurityComponent', 'selector': 'app-security'},{'name': 'SessionsComponent', 'selector': 'app-sessions'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StatsComponent', 'selector': 'app-stats'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TeamsComponent', 'selector': 'app-teams'},{'name': 'TopbarComponent', 'selector': 'app-topbar'},{'name': 'VitalsComponent', 'selector': 'app-vitals'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'SidebarComponent'};
 </script>

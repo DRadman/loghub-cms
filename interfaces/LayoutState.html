@@ -468,6 +468,7 @@ currently active on a mobile device.</p>
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 import { Subject } from &#x27;rxjs&#x27;;
+import { LocalStorage } from &#x27;./local-storage.service&#x27;;
 
 /** The above code is defining an interface named &#x60;AppConfig&#x60; in TypeScript. This interface has several
 properties such as &#x60;inputStyle&#x60;, &#x60;colorScheme&#x60;, &#x60;theme&#x60;, &#x60;ripple&#x60;, &#x60;menuMode&#x60;, and &#x60;scale&#x60;. These
@@ -557,6 +558,7 @@ provides functions to toggle menu and sidebar visibility, and emits events throu
   providedIn: &#x27;root&#x27;,
 })
 export class LayoutService {
+  constructor(private localStorage: LocalStorage) {}
   //TODO: Move config to local storage
   /** The &#x60;config&#x60; property is initializing an object of type &#x60;AppConfig&#x60; with default values for
   various configuration options. These options include &#x60;ripple&#x60;, &#x60;inputStyle&#x60;, &#x60;menuMode&#x60;,
@@ -691,7 +693,20 @@ export class LayoutService {
    * The function updates the configuration and emits the updated configuration through a subject.
    */
   onConfigUpdate() {
+    this.saveConfig();
     this.configUpdate.next(this.config);
+  }
+
+  restoreConfig() {
+    const localStorageConfig &#x3D; this.localStorage.getItem(&quot;UI_CONFIG&quot;);
+    if (localStorageConfig &amp;&amp; localStorageConfig !&#x3D; null) {
+      this.config &#x3D; JSON.parse(localStorageConfig);
+      this.onConfigUpdate();
+    }
+  }
+
+  saveConfig() {
+    this.localStorage.setItem(&quot;UI_CONFIG&quot;, JSON.stringify(this.config));
   }
 }
 </code></pre>

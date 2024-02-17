@@ -59,10 +59,16 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? 'id="components-links"' : 'id="xs-components-links"' }>
                             <li class="link">
+                                <a href="components/AlertsComponent.html" data-type="entity-link" >AlertsComponent</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/AppComponent.html" data-type="entity-link" >AppComponent</a>
                             </li>
                             <li class="link">
                                 <a href="components/AuthComponent.html" data-type="entity-link" >AuthComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/CloseComponent.html" data-type="entity-link" >CloseComponent</a>
                             </li>
                             <li class="link">
                                 <a href="components/ConfigComponent.html" data-type="entity-link" >ConfigComponent</a>
@@ -71,10 +77,22 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/CreateOrganizationComponent.html" data-type="entity-link" >CreateOrganizationComponent</a>
                             </li>
                             <li class="link">
+                                <a href="components/DetailsComponent.html" data-type="entity-link" >DetailsComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/DevicesComponent.html" data-type="entity-link" >DevicesComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/DocumentationComponent.html" data-type="entity-link" >DocumentationComponent</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/FooterComponent.html" data-type="entity-link" >FooterComponent</a>
                             </li>
                             <li class="link">
                                 <a href="components/ForgotPasswordComponent.html" data-type="entity-link" >ForgotPasswordComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/GuidesComponent.html" data-type="entity-link" >GuidesComponent</a>
                             </li>
                             <li class="link">
                                 <a href="components/HomeComponent.html" data-type="entity-link" >HomeComponent</a>
@@ -83,22 +101,88 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/InvitationComponent.html" data-type="entity-link" >InvitationComponent</a>
                             </li>
                             <li class="link">
+                                <a href="components/IssuesComponent.html" data-type="entity-link" >IssuesComponent</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/LoginComponent.html" data-type="entity-link" >LoginComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/LogsComponent.html" data-type="entity-link" >LogsComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/MembersComponent.html" data-type="entity-link" >MembersComponent</a>
                             </li>
                             <li class="link">
                                 <a href="components/MenuitemComponent.html" data-type="entity-link" >MenuitemComponent</a>
                             </li>
                             <li class="link">
+                                <a href="components/MessagesComponent.html" data-type="entity-link" >MessagesComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/NotificationsComponent.html" data-type="entity-link" >NotificationsComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/OrganizationComponent.html" data-type="entity-link" >OrganizationComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/ProjectDetailsComponent.html" data-type="entity-link" >ProjectDetailsComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/ProjectsComponent.html" data-type="entity-link" >ProjectsComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/ProjectsComponent-1.html" data-type="entity-link" >ProjectsComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/QueriesComponent.html" data-type="entity-link" >QueriesComponent</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/RegisterComponent.html" data-type="entity-link" >RegisterComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/ReleasesComponent.html" data-type="entity-link" >ReleasesComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/ReplaysComponent.html" data-type="entity-link" >ReplaysComponent</a>
                             </li>
                             <li class="link">
                                 <a href="components/ResetPasswordComponent.html" data-type="entity-link" >ResetPasswordComponent</a>
                             </li>
                             <li class="link">
+                                <a href="components/ResourcesComponent.html" data-type="entity-link" >ResourcesComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/ScreenLoadsComponent.html" data-type="entity-link" >ScreenLoadsComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/SdksComponent.html" data-type="entity-link" >SdksComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/SecurityComponent.html" data-type="entity-link" >SecurityComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/SessionsComponent.html" data-type="entity-link" >SessionsComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/SettingsComponent.html" data-type="entity-link" >SettingsComponent</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/SidebarComponent.html" data-type="entity-link" >SidebarComponent</a>
                             </li>
                             <li class="link">
+                                <a href="components/StatsComponent.html" data-type="entity-link" >StatsComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/SupportComponent.html" data-type="entity-link" >SupportComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/TeamsComponent.html" data-type="entity-link" >TeamsComponent</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/TopbarComponent.html" data-type="entity-link" >TopbarComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/VitalsComponent.html" data-type="entity-link" >VitalsComponent</a>
                             </li>
                         </ul>
                     </li>

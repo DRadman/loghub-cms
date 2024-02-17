@@ -1020,15 +1020,20 @@
                   jwtService.clear();
                   store.dispatch(signOut());
                   if(!router.url.startsWith(&#x27;/auth&#x27;)) {
+                    console.log(&#x27;Ja sam&#x27;)
                     router.navigate([&#x27;/auth&#x27;])
                   }
                 }
                 return throwError(() &#x3D;&gt; error);
               })
             );
+          } else {
+            router.navigate([&#x27;/auth&#x27;])
+            return throwError(() &#x3D;&gt; error);
           }
+        } else {
+          return throwError(() &#x3D;&gt; error);
         }
-        return throwError(() &#x3D;&gt; new Error(&#x27;Unauthorized Exception&#x27;));
       })
     );
   } else {
