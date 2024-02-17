@@ -1,5 +1,6 @@
 import { CommonModule, DOCUMENT } from '@angular/common';
 import {
+  AfterViewInit,
   Component,
   Inject,
   OnDestroy,
@@ -16,16 +17,13 @@ import { Subscription, filter } from 'rxjs';
 import { LayoutService } from '../../core/services/layout.service';
 import { AppState } from '../../core/state/app.state';
 import { loadCurrentUser } from '../../core/state/auth/auth.actions';
-import {
-  selectCurrentUser,
-  selectCurrentUserError,
-} from '../../core/state/auth/auth.selectors';
+import { selectCurrentUser } from '../../core/state/auth/auth.selectors';
+import { loadCurrentOrganization } from '../../core/state/organization/organization.actions';
+import { selectOrganizationError } from '../../core/state/organization/organization.selectors';
 import { ConfigComponent } from './components/config/config.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { TopbarComponent } from './components/topbar/topbar.component';
-import { loadCurrentOrganization } from '../../core/state/organization/organization.actions';
-import { selectOrganizationError } from '../../core/state/organization/organization.selectors';
 
 @Component({
   selector: 'app-home',
@@ -41,7 +39,7 @@ import { selectOrganizationError } from '../../core/state/organization/organizat
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
   @ViewChild(SidebarComponent) appSidebar!: SidebarComponent;
   @ViewChild(TopbarComponent) appTopbar!: TopbarComponent;
 
@@ -136,21 +134,23 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.store.dispatch(loadCurrentUser());
     this.store.dispatch(loadCurrentOrganization());
 
-    this.currentUserErrorSubscription = this.store
-      .select(selectCurrentUserError)
-      .subscribe((error) => {
-        if (error && error != null) {
-          this.router.navigate(['/auth']);
-        }
-      });
+    this.home = { icon: 'pi pi-home', routerLink: '/home' };
+  }
 
-      this.organizationErrorSubscription = this.store.select(selectOrganizationError).subscribe((error => {
-        if (error && error != null) {
+  ngAfterViewInit() {
+    this.organizationErrorSubscription = this.store
+      .select(selectOrganizationError)
+      .subscribe((error) => {
+        if (
+          error &&
+          error != null &&
+          error.status !== 0 &&
+          error.status !== 401
+        ) {
+          console.log(error);
           this.router.navigate(['/create-organization']);
         }
-      }))
-
-    this.home = { icon: 'pi pi-home', routerLink: '/dashboard' };
+      });
   }
 
   ngOnDestroy() {
@@ -204,7 +204,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         } else if (
           breadcrumbs[breadcrumbs.length - 1].label !== localizedLabel
         ) {
-          breadcrumbs.push({ label: localizedLabel, url });
+          breadcrumbs.push({ label: localizedLabel, routerLink: [url] });
         }
       }
 

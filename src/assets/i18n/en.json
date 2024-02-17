@@ -90,7 +90,9 @@
     "slug_label": "Slug [REQUIRED]",
     "slug": "Slug",
     "slug_is_required": "Slug is required",
-    "create": "Create"
+    "create": "Create",
+    "error": "API Error",
+    "error_description": "Failed to create organization (Organization slug exists)"
   },
   "sidenav": {
     "General": "General",
@@ -109,7 +111,7 @@
     "Issues": "Issues",
     "Logs": "Logs",
     "Projects": "Projects",
-    "Setitngs": "Settings",
+    "Settings": "Settings",
     "Settings_Account": "Account",
     "Settings_Account_Details": "Details",
     "Settings_Account_Security": "Security",
@@ -121,9 +123,9 @@
     "Settings_Teams": "Teams",
     "Settings_Alerts": "Alerts",
     "Help": "Help",
-    "Documentation": "Documentation",
-    "SDKS": "SDK's",
-    "Guides": "Guides",
-    "Support": "Support"
+    "Help_Documentation": "Documentation",
+    "Help_SDKS": "SDK's",
+    "Help_Guides": "Guides",
+    "Help_Support": "Support"
   }
 }

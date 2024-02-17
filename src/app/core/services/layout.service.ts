@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { LocalStorage } from './local-storage.service';
 
 /** The above code is defining an interface named `AppConfig` in TypeScript. This interface has several
 properties such as `inputStyle`, `colorScheme`, `theme`, `ripple`, `menuMode`, and `scale`. These
@@ -89,6 +90,7 @@ provides functions to toggle menu and sidebar visibility, and emits events throu
   providedIn: 'root',
 })
 export class LayoutService {
+  constructor(private localStorage: LocalStorage) {}
   //TODO: Move config to local storage
   /** The `config` property is initializing an object of type `AppConfig` with default values for
   various configuration options. These options include `ripple`, `inputStyle`, `menuMode`,
@@ -223,6 +225,19 @@ export class LayoutService {
    * The function updates the configuration and emits the updated configuration through a subject.
    */
   onConfigUpdate() {
+    this.saveConfig();
     this.configUpdate.next(this.config);
+  }
+
+  restoreConfig() {
+    const localStorageConfig = this.localStorage.getItem("UI_CONFIG");
+    if (localStorageConfig && localStorageConfig != null) {
+      this.config = JSON.parse(localStorageConfig);
+      this.onConfigUpdate();
+    }
+  }
+
+  saveConfig() {
+    this.localStorage.setItem("UI_CONFIG", JSON.stringify(this.config));
   }
 }

@@ -53,7 +53,7 @@ export class TopbarComponent {
   }
 
   goToProfilePage() {
-    this.router.navigate(['/home/user-profile'])
+    this.router.navigate(['/home/settings/account'])
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

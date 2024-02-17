@@ -73,6 +73,7 @@ export class ConfigComponent {
 
   set scale(_val: number) {
     this.layoutService.config.scale = _val;
+    this.layoutService.saveConfig();
   }
 
   get menuMode(): string {
@@ -81,6 +82,7 @@ export class ConfigComponent {
 
   set menuMode(_val: string) {
     this.layoutService.config.menuMode = _val;
+    this.layoutService.saveConfig();
   }
 
   get inputStyle(): string {
@@ -89,6 +91,7 @@ export class ConfigComponent {
 
   set inputStyle(_val: string) {
     this.layoutService.config.inputStyle = _val;
+    this.layoutService.saveConfig();
   }
 
   get ripple(): boolean {
@@ -97,6 +100,7 @@ export class ConfigComponent {
 
   set ripple(_val: boolean) {
     this.layoutService.config.ripple = _val;
+    this.layoutService.saveConfig();
   }
 
   /**

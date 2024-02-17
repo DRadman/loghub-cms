@@ -75,15 +75,20 @@ export const unauthErrorInterceptor: HttpInterceptorFn = (
                   jwtService.clear();
                   store.dispatch(signOut());
                   if(!router.url.startsWith('/auth')) {
+                    console.log('Ja sam')
                     router.navigate(['/auth'])
                   }
                 }
                 return throwError(() => error);
               })
             );
+          } else {
+            router.navigate(['/auth'])
+            return throwError(() => error);
           }
+        } else {
+          return throwError(() => error);
         }
-        return throwError(() => new Error('Unauthorized Exception'));
       })
     );
   } else {

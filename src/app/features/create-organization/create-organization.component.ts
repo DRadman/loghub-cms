@@ -13,7 +13,9 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { TranslateModule } from '@ngx-translate/core';
+import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
@@ -26,20 +28,18 @@ import {
   fromEvent,
   map,
 } from 'rxjs';
+import { CreateOrganizationRequestDto } from '../../core/domain/dto/requests/create-organization-request.dto';
 import { OrganizationService } from '../../core/services/api/organization.api.service';
 import { AppState } from '../../core/state/app.state';
 import {
   createOrganization,
   loadCurrentOrganization,
 } from '../../core/state/organization/organization.actions';
-import { Store } from '@ngrx/store';
 import {
   isLoadingOrganization,
   selectCurrentOrganization,
   selectOrganizationError,
 } from '../../core/state/organization/organization.selectors';
-import { CreateOrganizationRequestDto } from '../../core/domain/dto/requests/create-organization-request.dto';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-organization',
@@ -69,6 +69,8 @@ export class CreateOrganizationComponent
     private store: Store<AppState>,
     private formBuilder: FormBuilder,
     private router: Router,
+    private messageService: MessageService,
+    private translateService: TranslateService,
   ) {}
 
   createOrganizationForm = this.formBuilder.group({
@@ -117,8 +119,17 @@ export class CreateOrganizationComponent
     this.errorSubscription = this.store
       .select(selectOrganizationError)
       .subscribe((error) => {
-        if (error && error.status == 401) {
-          this.router.navigate(['/auth']);
+        if (error != null && error.status !== 0) {
+          console.log(error)
+          this.messageService.add({
+            severity: 'error',
+            summary: this.translateService.instant(
+              'create-organization.error',
+            ),
+            detail: this.translateService.instant(
+              'create-organization.error_description',
+            ),
+          });
         }
       });
   }
@@ -139,7 +150,6 @@ export class CreateOrganizationComponent
 
   toSlugValue(slug: string): string {
     const result = slug.toLowerCase().replaceAll(' ', '-');
-    console.log(result);
     return result;
   }
 
