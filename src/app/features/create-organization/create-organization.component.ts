@@ -112,6 +112,7 @@ export class CreateOrganizationComponent
       .select(selectCurrentOrganization)
       .subscribe((organization) => {
         if (organization != null) {
+          console.log('Organization: '+ JSON.stringify(organization))
           this.router.navigate(['/home']);
         }
       });
@@ -119,7 +120,7 @@ export class CreateOrganizationComponent
     this.errorSubscription = this.store
       .select(selectOrganizationError)
       .subscribe((error) => {
-        if (error != null && error.status !== 0) {
+        if (error != null && error.status !== 0 && error.status !== 404) {
           console.log(error)
           this.messageService.add({
             severity: 'error',

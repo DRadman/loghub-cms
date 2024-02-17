@@ -94,6 +94,16 @@
     "error": "API Error",
     "error_description": "Failed to create organization (Organization slug exists)"
   },
+  "access-denied": {
+    "go_to_dashboard": "Go To Dashboard",
+    "insufficient_permission": "You do not have the necessary permisions. Please contact admins.",
+    "access_denied": "Access Denied"
+  },
+  "not-found": {
+    "go_to_dashboard": "Go To Dashboard",
+    "not_available": "Requested resource is not available.",
+    "not_found": "Not Found"
+  },
   "sidenav": {
     "General": "General",
     "Home": "Home",
