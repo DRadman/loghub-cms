@@ -439,8 +439,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="156"
-                                    class="link-to-prism">src/app/features/create-organization/create-organization.component.ts:156</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="157"
+                                    class="link-to-prism">src/app/features/create-organization/create-organization.component.ts:157</a></div>
                         </td>
                     </tr>
 
@@ -508,8 +508,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="162"
-                                    class="link-to-prism">src/app/features/create-organization/create-organization.component.ts:162</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="163"
+                                    class="link-to-prism">src/app/features/create-organization/create-organization.component.ts:163</a></div>
                         </td>
                     </tr>
 
@@ -575,8 +575,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="143"
-                                    class="link-to-prism">src/app/features/create-organization/create-organization.component.ts:143</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="144"
+                                    class="link-to-prism">src/app/features/create-organization/create-organization.component.ts:144</a></div>
                         </td>
                     </tr>
 
@@ -649,8 +649,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="137"
-                                    class="link-to-prism">src/app/features/create-organization/create-organization.component.ts:137</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="138"
+                                    class="link-to-prism">src/app/features/create-organization/create-organization.component.ts:138</a></div>
                         </td>
                     </tr>
 
@@ -723,8 +723,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="151"
-                                    class="link-to-prism">src/app/features/create-organization/create-organization.component.ts:151</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="152"
+                                    class="link-to-prism">src/app/features/create-organization/create-organization.component.ts:152</a></div>
                         </td>
                     </tr>
 
@@ -1136,6 +1136,7 @@ export class CreateOrganizationComponent
       .select(selectCurrentOrganization)
       .subscribe((organization) &#x3D;&gt; {
         if (organization !&#x3D; null) {
+          console.log(&#x27;Organization: &#x27;+ JSON.stringify(organization))
           this.router.navigate([&#x27;/home&#x27;]);
         }
       });
@@ -1143,7 +1144,7 @@ export class CreateOrganizationComponent
     this.errorSubscription &#x3D; this.store
       .select(selectOrganizationError)
       .subscribe((error) &#x3D;&gt; {
-        if (error !&#x3D; null &amp;&amp; error.status !&#x3D;&#x3D; 0) {
+        if (error !&#x3D; null &amp;&amp; error.status !&#x3D;&#x3D; 0 &amp;&amp; error.status !&#x3D;&#x3D; 404) {
           console.log(error)
           this.messageService.add({
             severity: &#x27;error&#x27;,
@@ -1341,7 +1342,7 @@ export class CreateOrganizationComponent
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><p-toast /><div  class="surface-ground flex align-items-center justify-content-center min-w-screen min-h-screen overscroll-none">  <div class="flex flex-column align-items-center justify-content-center">    <img      src="assets/images/log-hub-no-bg.png"      alt="LogHub logo"      class="mb-5 w-6rem flex-shrink-0"    />    <div      style="        border-radius: 56px;        padding: 0.3rem;        background: linear-gradient(          180deg,          var(--primary-color) 10%,          rgba(33, 150, 243, 0) 30%        );      "    >      <div        class="w-full surface-card py-6 px-5 sm:px-8"        style="border-radius: 53px"      >        <div class="text-center mb-5">          <div class="text-900 text-3xl font-medium mb-3">            {{ "create-organization.welcome_message" | translate }}          </div>          <span class="text-600 font-medium">{{            "create-organization.welcome_description" | translate          }}</span>        </div>        <div>          <form [formGroup]="createOrganizationForm" class="md:w-30rem">            <label              for="name"              class="block text-900 font-medium text-md mb-2 mt-5"              >{{ "create-organization.name_label" | translate }}</label            >            <span class="p-input-icon-right w-full">              <i class="pi pi-building"></i>              <input                #name                id="name"                type="text"                formControlName="name"                [placeholder]="\'create-organization.name\' | translate"                pInputText                class="w-full"                style="padding: 1rem"              />            </span>            <small              *ngIf="                createOrganizationForm.get(\'name\')?.hasError(\'required\') &&                createOrganizationForm.get(\'name\')?.dirty              "              class="p-error block"              >{{ "create-organization.name_is_required" | translate }}</small            >            <label              for="slug"              class="block text-900 font-medium text-md mb-2 mt-5"              >{{ "create-organization.slug_label" | translate }}</label            >            <span class="p-input-icon-right w-full">              @if (isSlugTaken !== null && !isSlugTaken) {                <i class="pi pi-check text-green-500"></i>              } @else {                <i class="pi pi-times text-red-500"></i>              }              <input                #slug                id="slug"                (input)="slug.value = toSlugValue(slug.value)"                type="text"                formControlName="slug"                [placeholder]="\'create-organization.slug\' | translate"                pInputText                class="w-full"                style="padding: 1rem"              />            </span>            <small              *ngIf="                createOrganizationForm.get(\'slug\')?.hasError(\'required\') &&                createOrganizationForm.get(\'slug\')?.dirty              "              class="p-error block"              >{{ "create-organization.slug_is_required" | translate }}</small            >            <button              pButton              pRipple              [label]="\'create-organization.create\' | translate"              class="w-full p-3 mt-5"              [disabled]="createOrganizationForm.invalid"              [loading]="(isLoading | async) ?? false"              (click)="createOrganization()"              type="submit"            ></button>          </form>        </div>      </div>    </div>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AlertsComponent', 'selector': 'app-alerts'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CloseComponent', 'selector': 'app-close'},{'name': 'ConfigComponent', 'selector': 'app-config'},{'name': 'CreateOrganizationComponent', 'selector': 'app-create-organization'},{'name': 'DetailsComponent', 'selector': 'app-details'},{'name': 'DevicesComponent', 'selector': 'app-devices'},{'name': 'DocumentationComponent', 'selector': 'app-documentation'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'GuidesComponent', 'selector': 'app-guides'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InvitationComponent', 'selector': 'app-invitation'},{'name': 'IssuesComponent', 'selector': 'app-issues'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogsComponent', 'selector': 'app-logs'},{'name': 'MembersComponent', 'selector': 'app-members'},{'name': 'MenuitemComponent', 'selector': '[app-menuitem]'},{'name': 'MessagesComponent', 'selector': 'app-messages'},{'name': 'NotificationsComponent', 'selector': 'app-notifications'},{'name': 'OrganizationComponent', 'selector': 'app-organization'},{'name': 'ProjectDetailsComponent', 'selector': 'app-project-details'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'ProjectsComponent', 'selector': 'app-projects-settings'},{'name': 'QueriesComponent', 'selector': 'app-queries'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ReleasesComponent', 'selector': 'app-releases'},{'name': 'ReplaysComponent', 'selector': 'app-replays'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'ScreenLoadsComponent', 'selector': 'app-screen-loads'},{'name': 'SdksComponent', 'selector': 'app-sdks'},{'name': 'SecurityComponent', 'selector': 'app-security'},{'name': 'SessionsComponent', 'selector': 'app-sessions'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StatsComponent', 'selector': 'app-stats'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TeamsComponent', 'selector': 'app-teams'},{'name': 'TopbarComponent', 'selector': 'app-topbar'},{'name': 'VitalsComponent', 'selector': 'app-vitals'}];
+    var COMPONENTS = [{'name': 'AccessDeniedComponent', 'selector': 'app-access-denied'},{'name': 'AlertsComponent', 'selector': 'app-alerts'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CloseComponent', 'selector': 'app-close'},{'name': 'ConfigComponent', 'selector': 'app-config'},{'name': 'CreateOrganizationComponent', 'selector': 'app-create-organization'},{'name': 'DetailsComponent', 'selector': 'app-details'},{'name': 'DevicesComponent', 'selector': 'app-devices'},{'name': 'DocumentationComponent', 'selector': 'app-documentation'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'GuidesComponent', 'selector': 'app-guides'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InvitationComponent', 'selector': 'app-invitation'},{'name': 'IssuesComponent', 'selector': 'app-issues'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogsComponent', 'selector': 'app-logs'},{'name': 'MembersComponent', 'selector': 'app-members'},{'name': 'MenuitemComponent', 'selector': '[app-menuitem]'},{'name': 'MessagesComponent', 'selector': 'app-messages'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationsComponent', 'selector': 'app-notifications'},{'name': 'OrganizationComponent', 'selector': 'app-organization'},{'name': 'ProjectDetailsComponent', 'selector': 'app-project-details'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'ProjectsComponent', 'selector': 'app-projects-settings'},{'name': 'QueriesComponent', 'selector': 'app-queries'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ReleasesComponent', 'selector': 'app-releases'},{'name': 'ReplaysComponent', 'selector': 'app-replays'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'ScreenLoadsComponent', 'selector': 'app-screen-loads'},{'name': 'SdksComponent', 'selector': 'app-sdks'},{'name': 'SecurityComponent', 'selector': 'app-security'},{'name': 'SessionsComponent', 'selector': 'app-sessions'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StatsComponent', 'selector': 'app-stats'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TeamsComponent', 'selector': 'app-teams'},{'name': 'TopbarComponent', 'selector': 'app-topbar'},{'name': 'VitalsComponent', 'selector': 'app-vitals'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'CreateOrganizationComponent'};
 </script>

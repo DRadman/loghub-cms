@@ -59,6 +59,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? 'id="components-links"' : 'id="xs-components-links"' }>
                             <li class="link">
+                                <a href="components/AccessDeniedComponent.html" data-type="entity-link" >AccessDeniedComponent</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/AlertsComponent.html" data-type="entity-link" >AlertsComponent</a>
                             </li>
                             <li class="link">
@@ -117,6 +120,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="components/MessagesComponent.html" data-type="entity-link" >MessagesComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/NotFoundComponent.html" data-type="entity-link" >NotFoundComponent</a>
                             </li>
                             <li class="link">
                                 <a href="components/NotificationsComponent.html" data-type="entity-link" >NotificationsComponent</a>

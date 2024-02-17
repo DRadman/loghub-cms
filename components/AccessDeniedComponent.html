@@ -96,7 +96,7 @@
   <li class="breadcrumb-item">Components</li>
   <li class="breadcrumb-item"
   >
-  LogsComponent</li>
+  AccessDeniedComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -123,7 +123,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/features/logs/logs.component.ts</code>
+    <code>src/app/shared/components/access-denied/access-denied.component.ts</code>
 </p>
 
 
@@ -149,7 +149,7 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-logs</code></td>
+                <td class="col-md-9"><code>app-access-denied</code></td>
             </tr>
 
             <tr>
@@ -157,20 +157,30 @@
                 <td class="col-md-9"><code>true</code></td>
             </tr>
 
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>CommonModule</code>
+                            <code>ButtonModule</code>
+                            <code>RouterModule</code>
+                            <code>RippleModule</code>
+                            <code>TranslateModule</code>
+                </td>
+            </tr>
 
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./logs.component.html</code></td>
+                <td class="col-md-9"><code>./access-denied.component.html</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">styleUrl</td>
-                <td class="col-md-9"><code>./logs.component.scss</code></td>
+                <td class="col-md-9"><code>./access-denied.component.scss</code></td>
             </tr>
 
 
@@ -193,23 +203,90 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { CommonModule } from &#x27;@angular/common&#x27;;
+import { Component } from &#x27;@angular/core&#x27;;
+import { RouterModule } from &#x27;@angular/router&#x27;;
+import { TranslateModule } from &#x27;@ngx-translate/core&#x27;;
+import { ButtonModule } from &#x27;primeng/button&#x27;;
+import { RippleModule } from &#x27;primeng/ripple&#x27;;
 
 @Component({
-  selector: &#x27;app-logs&#x27;,
+  selector: &#x27;app-access-denied&#x27;,
   standalone: true,
-  imports: [],
-  templateUrl: &#x27;./logs.component.html&#x27;,
-  styleUrl: &#x27;./logs.component.scss&#x27;
+  imports: [
+    CommonModule,
+    ButtonModule,
+    RouterModule,
+    RippleModule,
+    TranslateModule
+  ],
+  templateUrl: &#x27;./access-denied.component.html&#x27;,
+  styleUrl: &#x27;./access-denied.component.scss&#x27;
 })
-export class LogsComponent {
+export class AccessDeniedComponent {
 
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;p&gt;logs works!&lt;/p&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div
+  class&#x3D;&quot;surface-ground flex align-items-center justify-content-center w-full h-full overflow-hidden&quot;
+&gt;
+  &lt;div class&#x3D;&quot;flex flex-column align-items-center justify-content-center&quot;&gt;
+    &lt;img
+      src&#x3D;&quot;assets/images/log-hub-no-bg.png&quot;
+      alt&#x3D;&quot;LogHub logo&quot;
+      class&#x3D;&quot;mb-5 w-6rem flex-shrink-0&quot;
+    /&gt;
+    &lt;div
+      style&#x3D;&quot;
+        border-radius: 56px;
+        padding: 0.3rem;
+        background: linear-gradient(
+          180deg,
+          rgba(247, 149, 48, 0.4) 10%,
+          rgba(247, 149, 48, 0) 30%
+        );
+      &quot;
+    &gt;
+      &lt;div
+        class&#x3D;&quot;w-full surface-card py-8 px-5 sm:px-8 flex flex-column align-items-center&quot;
+        style&#x3D;&quot;border-radius: 53px&quot;
+      &gt;
+        &lt;div class&#x3D;&quot;grid flex flex-column align-items-center&quot;&gt;
+          &lt;div
+            class&#x3D;&quot;flex justify-content-center align-items-center bg-orange-500 border-circle&quot;
+            style&#x3D;&quot;width: 3.2rem; height: 3.2rem&quot;
+          &gt;
+            &lt;i class&#x3D;&quot;text-50 pi pi-fw pi-lock text-2xl&quot;&gt;&lt;/i&gt;
+          &lt;/div&gt;
+          &lt;h1 class&#x3D;&quot;text-900 font-bold text-4xl lg:text-5xl mb-2&quot;&gt;
+            {{&#x27;access-denied.access_denied&#x27; | translate}}
+          &lt;/h1&gt;
+          &lt;span class&#x3D;&quot;text-600 mb-5&quot;
+            &gt;{{&#x27;access-denied.insufficient_permission&#x27; | translate}}&lt;/span
+          &gt;
+          &lt;img
+            src&#x3D;&quot;assets/images/asset-access.svg&quot;
+            alt&#x3D;&quot;Access denied&quot;
+            class&#x3D;&quot;mb-5&quot;
+            width&#x3D;&quot;80%&quot;
+          /&gt;
+          &lt;p-button
+            pRipple
+            icon&#x3D;&quot;pi pi-arrow-left&quot;
+            [label]&#x3D;&quot;&#x27;access-denied.go_to_dashboard&#x27; | translate&quot;
+            severity&#x3D;&quot;warning&quot;
+            [text]&#x3D;&quot;true&quot;
+            [plain]&#x3D;&quot;true&quot;
+            [routerLink]&#x3D;&quot;[&#x27;/&#x27;]&quot;
+          &gt;&lt;/p-button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 </code></pre>
     </div>
 
@@ -239,10 +316,10 @@ export class LogsComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><p>logs works!</p></div>'
+        var COMPONENT_TEMPLATE = '<div><div  class="surface-ground flex align-items-center justify-content-center w-full h-full overflow-hidden">  <div class="flex flex-column align-items-center justify-content-center">    <img      src="assets/images/log-hub-no-bg.png"      alt="LogHub logo"      class="mb-5 w-6rem flex-shrink-0"    />    <div      style="        border-radius: 56px;        padding: 0.3rem;        background: linear-gradient(          180deg,          rgba(247, 149, 48, 0.4) 10%,          rgba(247, 149, 48, 0) 30%        );      "    >      <div        class="w-full surface-card py-8 px-5 sm:px-8 flex flex-column align-items-center"        style="border-radius: 53px"      >        <div class="grid flex flex-column align-items-center">          <div            class="flex justify-content-center align-items-center bg-orange-500 border-circle"            style="width: 3.2rem; height: 3.2rem"          >            <i class="text-50 pi pi-fw pi-lock text-2xl"></i>          </div>          <h1 class="text-900 font-bold text-4xl lg:text-5xl mb-2">            {{\'access-denied.access_denied\' | translate}}          </h1>          <span class="text-600 mb-5"            >{{\'access-denied.insufficient_permission\' | translate}}</span          >          <img            src="assets/images/asset-access.svg"            alt="Access denied"            class="mb-5"            width="80%"          />          <p-button            pRipple            icon="pi pi-arrow-left"            [label]="\'access-denied.go_to_dashboard\' | translate"            severity="warning"            [text]="true"            [plain]="true"            [routerLink]="[\'/\']"          ></p-button>        </div>      </div>    </div>  </div></div></div>'
     var COMPONENTS = [{'name': 'AccessDeniedComponent', 'selector': 'app-access-denied'},{'name': 'AlertsComponent', 'selector': 'app-alerts'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CloseComponent', 'selector': 'app-close'},{'name': 'ConfigComponent', 'selector': 'app-config'},{'name': 'CreateOrganizationComponent', 'selector': 'app-create-organization'},{'name': 'DetailsComponent', 'selector': 'app-details'},{'name': 'DevicesComponent', 'selector': 'app-devices'},{'name': 'DocumentationComponent', 'selector': 'app-documentation'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'GuidesComponent', 'selector': 'app-guides'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InvitationComponent', 'selector': 'app-invitation'},{'name': 'IssuesComponent', 'selector': 'app-issues'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogsComponent', 'selector': 'app-logs'},{'name': 'MembersComponent', 'selector': 'app-members'},{'name': 'MenuitemComponent', 'selector': '[app-menuitem]'},{'name': 'MessagesComponent', 'selector': 'app-messages'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationsComponent', 'selector': 'app-notifications'},{'name': 'OrganizationComponent', 'selector': 'app-organization'},{'name': 'ProjectDetailsComponent', 'selector': 'app-project-details'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'ProjectsComponent', 'selector': 'app-projects-settings'},{'name': 'QueriesComponent', 'selector': 'app-queries'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ReleasesComponent', 'selector': 'app-releases'},{'name': 'ReplaysComponent', 'selector': 'app-replays'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'ScreenLoadsComponent', 'selector': 'app-screen-loads'},{'name': 'SdksComponent', 'selector': 'app-sdks'},{'name': 'SecurityComponent', 'selector': 'app-security'},{'name': 'SessionsComponent', 'selector': 'app-sessions'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StatsComponent', 'selector': 'app-stats'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TeamsComponent', 'selector': 'app-teams'},{'name': 'TopbarComponent', 'selector': 'app-topbar'},{'name': 'VitalsComponent', 'selector': 'app-vitals'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'LogsComponent'};
+    var ACTUAL_COMPONENT = {'name': 'AccessDeniedComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -288,7 +365,7 @@ export class LogsComponent {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'LogsComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'AccessDeniedComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

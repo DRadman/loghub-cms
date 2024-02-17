@@ -1020,7 +1020,6 @@
                   jwtService.clear();
                   store.dispatch(signOut());
                   if(!router.url.startsWith(&#x27;/auth&#x27;)) {
-                    console.log(&#x27;Ja sam&#x27;)
                     router.navigate([&#x27;/auth&#x27;])
                   }
                 }
@@ -1028,7 +1027,9 @@
               })
             );
           } else {
-            router.navigate([&#x27;/auth&#x27;])
+            if(!router.url.startsWith(&#x27;/auth&#x27;)) {
+              router.navigate([&#x27;/auth&#x27;])
+            }
             return throwError(() &#x3D;&gt; error);
           }
         } else {
