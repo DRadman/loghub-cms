@@ -136,7 +136,8 @@ export class SidebarComponent implements OnInit {
       ],
     });
     this.model.push({
-      label: sidenav.Setitngs,
+      label: sidenav.Settings,
+      routerLink: ['/home/settings'],
       items: [
         {
           label: sidenav.Settings_Account,
@@ -161,7 +162,7 @@ export class SidebarComponent implements OnInit {
             },
             {
               label: sidenav.Settings_Account_Close,
-              routerLink: ['/home/settings/account/close-account'],
+              routerLink: ['/home/settings/account/close'],
               icon: 'pi pi-fw pi-exclamation-circle'
             }
           ]
@@ -197,22 +198,22 @@ export class SidebarComponent implements OnInit {
       label: sidenav.Help,
       items: [
         {
-          label: sidenav.Documentation,
+          label: sidenav.Help_Documentation,
           icon: 'pi pi-fw pi-book',
           routerLink: ['/home/help/documentation']
         },
         {
-          label: sidenav.SDKS,
+          label: sidenav.Help_SDKS,
           icon: 'pi pi-fw pi-wrench',
           routerLink: ['/home/help/sdks']
         },
         {
-          label: sidenav.Guides,
+          label: sidenav.Help_Guides,
           icon: 'pi pi-fw pi-question-circle',
           routerLink: ['/home/help/guides']
         },
         {
-          label: sidenav.Support,
+          label: sidenav.Help_Support,
           icon: 'pi pi-fw pi-ticket',
           routerLink: ['/home/help/support']
         },
