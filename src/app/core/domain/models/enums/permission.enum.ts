@@ -1,6 +1,6 @@
 export enum Permission {
-  CREATE,
-  READ,
-  UPDATE,
-  DELETE,
+  CREATE = 'CREATE',
+  READ = 'READ',
+  UPDATE = 'UPDATE',
+  DELETE = 'DELETE',
 }

@@ -1,5 +1,8 @@
 import { createSelector } from '@ngrx/store';
+import { Permission } from '../../domain/models/enums/permission.enum';
+import { ResourceType } from '../../domain/models/enums/resource-type.enum';
 import { StateStatus } from '../../domain/models/enums/state-status.enum';
+import { User } from '../../domain/models/user.entity';
 import { AppState } from '../app.state';
 import { AuthState } from './auth.reducer';
 
@@ -64,3 +67,25 @@ export const selectRegistrationError = createSelector(
   selectAuth,
   (state: AuthState) => state.registrationError,
 );
+
+export const selectHasPermission = (
+  permissionType: ResourceType,
+  permissionValue: Permission,
+) =>
+  createSelector(
+    selectCurrentUser,
+    (user) => !!user && hasPermission(user, permissionType, permissionValue), // Map the user to a boolean value
+  );
+
+function hasPermission(
+  user: User,
+  permissionType: ResourceType,
+  permissionValue: Permission,
+): boolean {
+  const result = user.role.permissions.some(
+    (permission) =>
+      permission.type === permissionType &&
+      permission.values.includes(permissionValue),
+  );
+  return result;
+}

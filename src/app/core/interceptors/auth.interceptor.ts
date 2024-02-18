@@ -71,7 +71,7 @@ export const unauthErrorInterceptor: HttpInterceptorFn = (
                 );
               }),
               catchError((error) => {
-                if (error.status === '401') {
+                if (error.status !== 0) {
                   jwtService.clear();
                   store.dispatch(signOut());
                   if(!router.url.startsWith('/auth')) {
