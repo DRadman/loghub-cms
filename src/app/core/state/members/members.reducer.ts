@@ -14,9 +14,9 @@ import {
   removeMemberSuccess,
 } from './members.actions';
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export interface MembersState {
   members: MembersDto | null;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   error: any | null;
   inviteMemberError: any | null;
   removeMemberError: any | null;
@@ -73,6 +73,7 @@ export const membersReducer = createReducer(
     ...state,
     invitedMember: invitedMember,
     members: {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
       owner: state.members?.owner!,
       invitations: [...state.members?.invitations || [], invitedMember],
       users: state.members?.users || []
@@ -93,7 +94,7 @@ export const membersReducer = createReducer(
     removeMemberStatus: StateStatus.LOADING,
   })),
 
-  on(removeMemberSuccess, (state, invitedMember) => ({
+  on(removeMemberSuccess, (state) => ({
     ...state,
     removeMemberError: null,
     removeMemberStatus: StateStatus.SUCCESS,

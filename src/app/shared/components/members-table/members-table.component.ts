@@ -18,6 +18,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { RippleModule } from 'primeng/ripple';
 import { Table, TableModule } from 'primeng/table';
 import { ToastModule } from 'primeng/toast';
+import { filter, take } from 'rxjs';
 import { InvitationDto } from '../../../core/domain/dto/invitation.dto';
 import { StateStatus } from '../../../core/domain/models/enums/state-status.enum';
 import { Role, User } from '../../../core/domain/models/user.entity';
@@ -34,7 +35,6 @@ import {
 } from '../../../core/state/members/members.selectors';
 import { loadRoles } from '../../../core/state/role/role.actions';
 import { selectRoles } from '../../../core/state/role/role.selectors';
-import { Subscription, filter, take } from 'rxjs';
 
 @Component({
   selector: 'app-members-table',
@@ -155,6 +155,7 @@ export class MembersTableComponent {
     });
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   showRemoveMemberConfirmation(member: any, event: Event) {
     this.confirmationService.confirm({
       target: event.target as EventTarget,
@@ -173,6 +174,7 @@ export class MembersTableComponent {
     });
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   removeMember(member: any) {
     this.store
       .select(selectRemoveMemberStatus)
@@ -203,7 +205,7 @@ export class MembersTableComponent {
         }
       });
 
-    var memberId = '';
+    let memberId = '';
     if (member.userId) {
       memberId = member.userId;
     } else if (member.invitationId) {

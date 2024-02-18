@@ -30,6 +30,7 @@ export const inviteMemberSuccess = createAction(
 
 export const inviteMemberFailure = createAction(
   '[Members API] Invite member failure',
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   props<{ error: any }>(),
 );
 
@@ -44,5 +45,6 @@ export const removeMemberSuccess = createAction(
 
 export const removeMemberFailure = createAction(
   '[Members API] Remove member failure',
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   props<{ error: any }>(),
 );
