@@ -129,6 +129,12 @@
 
 
 
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
 
 
 <section data-compodoc="block-metadata">
@@ -145,6 +151,12 @@
 
 
 
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                            <code>MessageService</code>
+                </td>
+            </tr>
 
 
             <tr>
@@ -157,6 +169,17 @@
                 <td class="col-md-9"><code>true</code></td>
             </tr>
 
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>CommonModule</code>
+                            <code>ToastModule</code>
+                                <code><a href="../components/MembersTableComponent.html" target="_self" >MembersTableComponent</a></code>
+                                <code><a href="../components/AccessDeniedComponent.html" target="_self" >AccessDeniedComponent</a></code>
+                            <code>TranslateModule</code>
+                            <code>PanelModule</code>
+                </td>
+            </tr>
 
 
 
@@ -181,35 +204,457 @@
     </table>
 </section>
 
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#activeMembers" >activeMembers</a>
+                            </li>
+                            <li>
+                                <a href="#hasCreatePermission" >hasCreatePermission</a>
+                            </li>
+                            <li>
+                                <a href="#hasDeletePermission" >hasDeletePermission</a>
+                            </li>
+                            <li>
+                                <a href="#hasReadPermission" >hasReadPermission</a>
+                            </li>
+                            <li>
+                                <a href="#invitedMembers" >invitedMembers</a>
+                            </li>
+                            <li>
+                                <a href="#isLoadingMembers" >isLoadingMembers</a>
+                            </li>
+                            <li>
+                                <a href="#owner" >owner</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
 
 
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(store: <a href="../interfaces/AppState.html" target="_self">Store&lt;AppState&gt;</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/features/settings/members/members.component.ts:37</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>store</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../interfaces/AppState.html" target="_self" >Store&lt;AppState&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
 
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="54"
+                                    class="link-to-prism">src/app/features/settings/members/members.component.ts:54</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="activeMembers"></a>
+                    <span class="name">
+                        <span ><b>activeMembers</b></span>
+                        <a href="#activeMembers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.store.select(selectActiveMembers)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/features/settings/members/members.component.ts:50</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hasCreatePermission"></a>
+                    <span class="name">
+                        <span ><b>hasCreatePermission</b></span>
+                        <a href="#hasCreatePermission"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.store.select(
+    selectHasPermission(ResourceType.USER, Permission.CREATE),
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/features/settings/members/members.component.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hasDeletePermission"></a>
+                    <span class="name">
+                        <span ><b>hasDeletePermission</b></span>
+                        <a href="#hasDeletePermission"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.store.select(
+    selectHasPermission(ResourceType.USER, Permission.DELETE),
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/features/settings/members/members.component.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hasReadPermission"></a>
+                    <span class="name">
+                        <span ><b>hasReadPermission</b></span>
+                        <a href="#hasReadPermission"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.store.select(
+    selectHasPermission(ResourceType.USER, Permission.READ),
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/features/settings/members/members.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="invitedMembers"></a>
+                    <span class="name">
+                        <span ><b>invitedMembers</b></span>
+                        <a href="#invitedMembers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.store.select(selectInvitedMembers)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/features/settings/members/members.component.ts:51</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isLoadingMembers"></a>
+                    <span class="name">
+                        <span ><b>isLoadingMembers</b></span>
+                        <a href="#isLoadingMembers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.store.select(isLoadingMembers)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/features/settings/members/members.component.ts:49</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="owner"></a>
+                    <span class="name">
+                        <span ><b>owner</b></span>
+                        <a href="#owner"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.store.select(selectOwnerAsArray)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/features/settings/members/members.component.ts:52</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { CommonModule } from &#x27;@angular/common&#x27;;
+import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { Store } from &#x27;@ngrx/store&#x27;;
+import { TranslateModule } from &#x27;@ngx-translate/core&#x27;;
+import { MessageService } from &#x27;primeng/api&#x27;;
+import { PanelModule } from &#x27;primeng/panel&#x27;;
+import { ToastModule } from &#x27;primeng/toast&#x27;;
+import { Permission } from &#x27;../../../core/domain/models/enums/permission.enum&#x27;;
+import { ResourceType } from &#x27;../../../core/domain/models/enums/resource-type.enum&#x27;;
+import { AppState } from &#x27;../../../core/state/app.state&#x27;;
+import { selectHasPermission } from &#x27;../../../core/state/auth/auth.selectors&#x27;;
+import { loadOrganizationMembers } from &#x27;../../../core/state/members/members.actions&#x27;;
+import {
+  isLoadingMembers,
+  selectActiveMembers,
+  selectInvitedMembers,
+  selectOwnerAsArray,
+} from &#x27;../../../core/state/members/members.selectors&#x27;;
+import { AccessDeniedComponent } from &#x27;../../../shared/components/access-denied/access-denied.component&#x27;;
+import { MembersTableComponent } from &#x27;../../../shared/components/members-table/members-table.component&#x27;;
 
 @Component({
   selector: &#x27;app-members&#x27;,
   standalone: true,
-  imports: [],
+  imports: [
+    CommonModule,
+    ToastModule,
+    MembersTableComponent,
+    AccessDeniedComponent,
+    TranslateModule,
+    PanelModule,
+  ],
+  providers: [MessageService],
   templateUrl: &#x27;./members.component.html&#x27;,
-  styleUrl: &#x27;./members.component.scss&#x27;
+  styleUrl: &#x27;./members.component.scss&#x27;,
 })
-export class MembersComponent {
+export class MembersComponent implements OnInit {
+  constructor(private store: Store&lt;AppState&gt;) {}
 
+  hasReadPermission &#x3D; this.store.select(
+    selectHasPermission(ResourceType.USER, Permission.READ),
+  );
+  hasDeletePermission &#x3D; this.store.select(
+    selectHasPermission(ResourceType.USER, Permission.DELETE),
+  );
+  hasCreatePermission &#x3D; this.store.select(
+    selectHasPermission(ResourceType.USER, Permission.CREATE),
+  );
+  isLoadingMembers &#x3D; this.store.select(isLoadingMembers);
+  activeMembers &#x3D; this.store.select(selectActiveMembers);
+  invitedMembers &#x3D; this.store.select(selectInvitedMembers);
+  owner &#x3D; this.store.select(selectOwnerAsArray);
+
+  ngOnInit() {
+    this.store.dispatch(loadOrganizationMembers());
+  }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;p&gt;members works!&lt;/p&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;p-toast /&gt;
+@if (hasReadPermission | async) {
+  &lt;!-- &lt;div class&#x3D;&quot;card&quot;&gt; --&gt;
+    &lt;p-panel [header]&#x3D;&quot;&#x27;members.members&#x27; | translate&quot; [toggleable]&#x3D;&quot;true&quot;&gt;
+      &lt;app-members-table
+        [enableInviteAction]&#x3D;&quot;(hasCreatePermission | async) ?? false&quot;
+        [isLoading]&#x3D;&quot;(isLoadingMembers | async) ?? true&quot;
+        [enableRemoveAction]&#x3D;&quot;(hasDeletePermission | async) ?? false&quot;
+        [data]&#x3D;&quot;(activeMembers | async) ?? []&quot;
+      /&gt;
+    &lt;/p-panel&gt;
+
+    &lt;p-panel
+      styleClass&#x3D;&quot;mt-5&quot;
+      [header]&#x3D;&quot;&#x27;members.invited_members&#x27; | translate&quot;
+      [toggleable]&#x3D;&quot;true&quot;
+    &gt;
+      &lt;app-members-table
+        [isLoading]&#x3D;&quot;(isLoadingMembers | async) ?? true&quot;
+        [enableRemoveAction]&#x3D;&quot;(hasDeletePermission | async) ?? false&quot;
+        [data]&#x3D;&quot;(invitedMembers | async) ?? []&quot;
+      /&gt;
+    &lt;/p-panel&gt;
+
+    &lt;p-panel
+      styleClass&#x3D;&quot;mt-5&quot;
+      [header]&#x3D;&quot;&#x27;members.organization_owner&#x27; | translate&quot;
+      [toggleable]&#x3D;&quot;true&quot;
+    &gt;
+      &lt;app-members-table
+        [enableFiltering]&#x3D;&quot;false&quot;
+        [enableGlobalSearch]&#x3D;&quot;false&quot;
+        [enablePagination]&#x3D;&quot;false&quot;
+        [enableSorting]&#x3D;&quot;false&quot;
+        [isLoading]&#x3D;&quot;(isLoadingMembers | async) ?? true&quot;
+        [data]&#x3D;&quot;(owner | async) ?? []&quot;
+      /&gt;
+    &lt;/p-panel&gt;
+  &lt;!-- &lt;/div&gt; --&gt;
+} @else {
+  &lt;app-access-denied /&gt;
+}
 </code></pre>
     </div>
 
@@ -239,8 +684,8 @@ export class MembersComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><p>members works!</p></div>'
-    var COMPONENTS = [{'name': 'AccessDeniedComponent', 'selector': 'app-access-denied'},{'name': 'AlertsComponent', 'selector': 'app-alerts'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CloseComponent', 'selector': 'app-close'},{'name': 'ConfigComponent', 'selector': 'app-config'},{'name': 'CreateOrganizationComponent', 'selector': 'app-create-organization'},{'name': 'DetailsComponent', 'selector': 'app-details'},{'name': 'DevicesComponent', 'selector': 'app-devices'},{'name': 'DocumentationComponent', 'selector': 'app-documentation'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'GuidesComponent', 'selector': 'app-guides'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InvitationComponent', 'selector': 'app-invitation'},{'name': 'IssuesComponent', 'selector': 'app-issues'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogsComponent', 'selector': 'app-logs'},{'name': 'MembersComponent', 'selector': 'app-members'},{'name': 'MenuitemComponent', 'selector': '[app-menuitem]'},{'name': 'MessagesComponent', 'selector': 'app-messages'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationsComponent', 'selector': 'app-notifications'},{'name': 'OrganizationComponent', 'selector': 'app-organization'},{'name': 'ProjectDetailsComponent', 'selector': 'app-project-details'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'ProjectsComponent', 'selector': 'app-projects-settings'},{'name': 'QueriesComponent', 'selector': 'app-queries'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ReleasesComponent', 'selector': 'app-releases'},{'name': 'ReplaysComponent', 'selector': 'app-replays'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'ScreenLoadsComponent', 'selector': 'app-screen-loads'},{'name': 'SdksComponent', 'selector': 'app-sdks'},{'name': 'SecurityComponent', 'selector': 'app-security'},{'name': 'SessionsComponent', 'selector': 'app-sessions'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StatsComponent', 'selector': 'app-stats'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TeamsComponent', 'selector': 'app-teams'},{'name': 'TopbarComponent', 'selector': 'app-topbar'},{'name': 'VitalsComponent', 'selector': 'app-vitals'}];
+        var COMPONENT_TEMPLATE = '<div><p-toast />@if (hasReadPermission | async) {  <!-- <div class="card"> -->    <p-panel [header]="\'members.members\' | translate" [toggleable]="true">      <app-members-table        [enableInviteAction]="(hasCreatePermission | async) ?? false"        [isLoading]="(isLoadingMembers | async) ?? true"        [enableRemoveAction]="(hasDeletePermission | async) ?? false"        [data]="(activeMembers | async) ?? []"      />    </p-panel>    <p-panel      styleClass="mt-5"      [header]="\'members.invited_members\' | translate"      [toggleable]="true"    >      <app-members-table        [isLoading]="(isLoadingMembers | async) ?? true"        [enableRemoveAction]="(hasDeletePermission | async) ?? false"        [data]="(invitedMembers | async) ?? []"      />    </p-panel>    <p-panel      styleClass="mt-5"      [header]="\'members.organization_owner\' | translate"      [toggleable]="true"    >      <app-members-table        [enableFiltering]="false"        [enableGlobalSearch]="false"        [enablePagination]="false"        [enableSorting]="false"        [isLoading]="(isLoadingMembers | async) ?? true"        [data]="(owner | async) ?? []"      />    </p-panel>  <!-- </div> -->} @else {  <app-access-denied />}</div>'
+    var COMPONENTS = [{'name': 'AccessDeniedComponent', 'selector': 'app-access-denied'},{'name': 'AlertsComponent', 'selector': 'app-alerts'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CloseComponent', 'selector': 'app-close'},{'name': 'ConfigComponent', 'selector': 'app-config'},{'name': 'CreateOrganizationComponent', 'selector': 'app-create-organization'},{'name': 'DetailsComponent', 'selector': 'app-details'},{'name': 'DevicesComponent', 'selector': 'app-devices'},{'name': 'DocumentationComponent', 'selector': 'app-documentation'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'GuidesComponent', 'selector': 'app-guides'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InvitationComponent', 'selector': 'app-invitation'},{'name': 'IssuesComponent', 'selector': 'app-issues'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogsComponent', 'selector': 'app-logs'},{'name': 'MembersComponent', 'selector': 'app-members'},{'name': 'MembersTableComponent', 'selector': 'app-members-table'},{'name': 'MenuitemComponent', 'selector': '[app-menuitem]'},{'name': 'MessagesComponent', 'selector': 'app-messages'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationsComponent', 'selector': 'app-notifications'},{'name': 'OrganizationComponent', 'selector': 'app-organization'},{'name': 'ProjectDetailsComponent', 'selector': 'app-project-details'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'ProjectsComponent', 'selector': 'app-projects-settings'},{'name': 'QueriesComponent', 'selector': 'app-queries'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ReleasesComponent', 'selector': 'app-releases'},{'name': 'ReplaysComponent', 'selector': 'app-replays'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'ScreenLoadsComponent', 'selector': 'app-screen-loads'},{'name': 'SdksComponent', 'selector': 'app-sdks'},{'name': 'SecurityComponent', 'selector': 'app-security'},{'name': 'SessionsComponent', 'selector': 'app-sessions'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StatsComponent', 'selector': 'app-stats'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TeamsComponent', 'selector': 'app-teams'},{'name': 'TopbarComponent', 'selector': 'app-topbar'},{'name': 'VitalsComponent', 'selector': 'app-vitals'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'MembersComponent'};
 </script>

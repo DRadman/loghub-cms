@@ -105,7 +105,7 @@
   <li class="breadcrumb-item">Interfaces</li>
   <li class="breadcrumb-item"
   >
-  User</li>
+  MembersState</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -129,7 +129,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/core/domain/models/user.entity.ts</code>
+            <code>src/app/core/state/members/members.reducer.ts</code>
         </p>
 
 
@@ -148,69 +148,51 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                        <a href="#activated" 
+                                        <a href="#error" 
 >
-                                            activated
+                                            error
                                         </a>
                                 </li>
                                 <li>
-                                        <a href="#createdAt" 
+                                        <a href="#invitationStatus" 
 >
-                                            createdAt
+                                            invitationStatus
                                         </a>
                                 </li>
                                 <li>
-                                        <a href="#email" 
+                                        <a href="#invitedMember" 
 >
-                                            email
+                                            invitedMember
                                         </a>
                                 </li>
                                 <li>
-                                        <a href="#firstName" 
+                                        <a href="#inviteMemberError" 
 >
-                                            firstName
+                                            inviteMemberError
                                         </a>
                                 </li>
                                 <li>
-                                        <a href="#lastLoginTime" 
+                                        <a href="#members" 
 >
-                                            lastLoginTime
+                                            members
                                         </a>
                                 </li>
                                 <li>
-                                        <a href="#lastName" 
+                                        <a href="#removeMemberError" 
 >
-                                            lastName
+                                            removeMemberError
                                         </a>
                                 </li>
                                 <li>
-                                        <a href="#profileIconUrl" 
+                                        <a href="#removeMemberStatus" 
 >
-                                            profileIconUrl
+                                            removeMemberStatus
                                         </a>
                                 </li>
                                 <li>
-                                        <a href="#role" 
+                                        <a href="#status" 
 >
-                                            role
-                                        </a>
-                                </li>
-                                <li>
-                                        <a href="#updatedAt" 
->
-                                            updatedAt
-                                        </a>
-                                </li>
-                                <li>
-                                        <a href="#userId" 
->
-                                            userId
-                                        </a>
-                                </li>
-                                <li>
-                                        <a href="#username" 
->
-                                            username
+                                            status
                                         </a>
                                 </li>
                             </ul>
@@ -228,9 +210,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="activated"></a>
-                                        <span class="name "><b>activated</b>
-                                            <a href="#activated">
+                                        <a name="error"></a>
+                                        <span class="name "><b>error</b>
+                                            <a href="#error">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -238,7 +220,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>activated:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                        <code>error:     <code>any | null</code>
 </code>
                                     </td>
                                 </tr>
@@ -246,7 +228,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                            <i>Type : </i>    <code>any | null</code>
 
                                         </td>
                                     </tr>
@@ -261,9 +243,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="createdAt"></a>
-                                        <span class="name "><b>createdAt</b>
-                                            <a href="#createdAt">
+                                        <a name="invitationStatus"></a>
+                                        <span class="name "><b>invitationStatus</b>
+                                            <a href="#invitationStatus">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -271,7 +253,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>createdAt:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+                                        <code>invitationStatus:         <code><a href="../miscellaneous/enumerations.html#StateStatus" target="_self" >StateStatus</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -279,7 +261,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+                                            <i>Type : </i>        <code><a href="../miscellaneous/enumerations.html#StateStatus" target="_self" >StateStatus</a></code>
 
                                         </td>
                                     </tr>
@@ -294,9 +276,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="email"></a>
-                                        <span class="name "><b>email</b>
-                                            <a href="#email">
+                                        <a name="invitedMember"></a>
+                                        <span class="name "><b>invitedMember</b>
+                                            <a href="#invitedMember">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -304,7 +286,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>email:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                        <code>invitedMember:         <code><a href="../interfaces/Invitation.html" target="_self" >Invitation | null</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -312,7 +294,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            <i>Type : </i>        <code><a href="../interfaces/Invitation.html" target="_self" >Invitation | null</a></code>
 
                                         </td>
                                     </tr>
@@ -327,9 +309,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="firstName"></a>
-                                        <span class="name "><b>firstName</b>
-                                            <a href="#firstName">
+                                        <a name="inviteMemberError"></a>
+                                        <span class="name "><b>inviteMemberError</b>
+                                            <a href="#inviteMemberError">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -337,7 +319,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>firstName:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                        <code>inviteMemberError:     <code>any | null</code>
 </code>
                                     </td>
                                 </tr>
@@ -345,7 +327,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            <i>Type : </i>    <code>any | null</code>
 
                                         </td>
                                     </tr>
@@ -360,9 +342,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="lastLoginTime"></a>
-                                        <span class="name "><b>lastLoginTime</b>
-                                            <a href="#lastLoginTime">
+                                        <a name="members"></a>
+                                        <span class="name "><b>members</b>
+                                            <a href="#members">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -370,7 +352,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>lastLoginTime:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+                                        <code>members:         <code><a href="../interfaces/MembersDto.html" target="_self" >MembersDto | null</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -378,7 +360,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+                                            <i>Type : </i>        <code><a href="../interfaces/MembersDto.html" target="_self" >MembersDto | null</a></code>
 
                                         </td>
                                     </tr>
@@ -393,9 +375,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="lastName"></a>
-                                        <span class="name "><b>lastName</b>
-                                            <a href="#lastName">
+                                        <a name="removeMemberError"></a>
+                                        <span class="name "><b>removeMemberError</b>
+                                            <a href="#removeMemberError">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -403,7 +385,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>lastName:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                        <code>removeMemberError:     <code>any | null</code>
 </code>
                                     </td>
                                 </tr>
@@ -411,7 +393,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            <i>Type : </i>    <code>any | null</code>
 
                                         </td>
                                     </tr>
@@ -426,9 +408,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="profileIconUrl"></a>
-                                        <span class="name "><b>profileIconUrl</b>
-                                            <a href="#profileIconUrl">
+                                        <a name="removeMemberStatus"></a>
+                                        <span class="name "><b>removeMemberStatus</b>
+                                            <a href="#removeMemberStatus">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -436,7 +418,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>profileIconUrl:     <code>string | null</code>
+                                        <code>removeMemberStatus:         <code><a href="../miscellaneous/enumerations.html#StateStatus" target="_self" >StateStatus</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -444,7 +426,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>    <code>string | null</code>
+                                            <i>Type : </i>        <code><a href="../miscellaneous/enumerations.html#StateStatus" target="_self" >StateStatus</a></code>
 
                                         </td>
                                     </tr>
@@ -459,9 +441,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="role"></a>
-                                        <span class="name "><b>role</b>
-                                            <a href="#role">
+                                        <a name="status"></a>
+                                        <span class="name "><b>status</b>
+                                            <a href="#status">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -469,7 +451,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>role:         <code><a href="../interfaces/Role.html" target="_self" >Role</a></code>
+                                        <code>status:         <code><a href="../miscellaneous/enumerations.html#StateStatus" target="_self" >StateStatus</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -477,106 +459,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="../interfaces/Role.html" target="_self" >Role</a></code>
-
-                                        </td>
-                                    </tr>
-
-
-
-
-
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="updatedAt"></a>
-                                        <span class="name "><b>updatedAt</b>
-                                            <a href="#updatedAt">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>updatedAt:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
-
-                                        </td>
-                                    </tr>
-
-
-
-
-
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="userId"></a>
-                                        <span class="name "><b>userId</b>
-                                            <a href="#userId">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>userId:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                                        </td>
-                                    </tr>
-
-
-
-
-
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="username"></a>
-                                        <span class="name "><b>username</b>
-                                            <a href="#username">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>username:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            <i>Type : </i>        <code><a href="../miscellaneous/enumerations.html#StateStatus" target="_self" >StateStatus</a></code>
 
                                         </td>
                                     </tr>
@@ -592,34 +475,115 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Permission } from &quot;./enums/permission.enum&quot;;
-import { ResourceType } from &quot;./enums/resource-type.enum&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { createReducer, on } from &#x27;@ngrx/store&#x27;;
+import { MembersDto } from &#x27;../../domain/dto/members.dto&#x27;;
+import { StateStatus } from &#x27;../../domain/models/enums/state-status.enum&#x27;;
+import { Invitation } from &#x27;../../domain/models/invitation.entity&#x27;;
+import {
+  inviteMember,
+  inviteMemberFailure,
+  inviteMemberSuccess,
+  loadOrganizationMembers,
+  loadOrganizationMembersFailure,
+  loadOrganizationMembersSuccess,
+  removeMember,
+  removeMemberFailure,
+  removeMemberSuccess,
+} from &#x27;./members.actions&#x27;;
 
-export interface User {
-    userId: string;
-    username: string;
-    lastLoginTime: Date;
-    email: string;
-    firstName: string;
-    lastName: string;
-    profileIconUrl: string | null;
-    role: Role;
-    createdAt: Date;
-    updatedAt: Date;
-    activated: boolean;
-  }
+/* eslint-disable @typescript-eslint/no-explicit-any */
+export interface MembersState {
+  members: MembersDto | null;
+  error: any | null;
+  inviteMemberError: any | null;
+  removeMemberError: any | null;
+  invitedMember: Invitation | null;
+  status: StateStatus;
+  invitationStatus: StateStatus;
+  removeMemberStatus: StateStatus;
+}
 
-  export interface Role {
-    roleId: string;
-    name: string;
-    permissions: [
-      {
-        type: ResourceType;
-        values: Permission[];
-      }
-    ];
-    internal: boolean;
-  }</code></pre>
+export const initialState: MembersState &#x3D; {
+  members: null,
+  error: undefined,
+  inviteMemberError: null,
+  invitedMember: null,
+  removeMemberError: null,
+  status: StateStatus.PENDING,
+  invitationStatus: StateStatus.PENDING,
+  removeMemberStatus: StateStatus.PENDING
+};
+
+export const membersReducer &#x3D; createReducer(
+  initialState,
+
+  //Handle loading current organization members
+  on(loadOrganizationMembers, (state) &#x3D;&gt; ({
+    ...state,
+    error: null,
+    status: StateStatus.LOADING,
+  })),
+
+  //Handle load success
+  on(loadOrganizationMembersSuccess, (state, members) &#x3D;&gt; ({
+    ...state,
+    members: members,
+    error: null,
+    status: StateStatus.SUCCESS,
+  })),
+
+  //Handle load failure
+  on(loadOrganizationMembersFailure, (state, { error }) &#x3D;&gt; ({
+    ...state,
+    error: error,
+    status: StateStatus.ERROR,
+  })),
+
+  on(inviteMember, (state) &#x3D;&gt; ({
+    ...state,
+    inviteMemberError: null,
+    invitedMember: null,
+    invitationStatus: StateStatus.LOADING,
+  })),
+
+  on(inviteMemberSuccess, (state, invitedMember) &#x3D;&gt; ({
+    ...state,
+    invitedMember: invitedMember,
+    members: {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
+      owner: state.members?.owner!,
+      invitations: [...state.members?.invitations || [], invitedMember],
+      users: state.members?.users || []
+    },
+    inviteMemberError: null,
+    invitationStatus: StateStatus.SUCCESS,
+  })),
+
+  on(inviteMemberFailure, (state, { error }) &#x3D;&gt; ({
+    ...state,
+    inviteMemberError: error,
+    invitationStatus: StateStatus.ERROR,
+  })),
+
+  on(removeMember, (state) &#x3D;&gt; ({
+    ...state,
+    removeMemberError: null,
+    removeMemberStatus: StateStatus.LOADING,
+  })),
+
+  on(removeMemberSuccess, (state) &#x3D;&gt; ({
+    ...state,
+    removeMemberError: null,
+    removeMemberStatus: StateStatus.SUCCESS,
+  })),
+
+  on(removeMemberFailure, (state, { error }) &#x3D;&gt; ({
+    ...state,
+    removeMemberError: error,
+    removeMemberStatus: StateStatus.ERROR,
+  })),
+);
+</code></pre>
     </div>
 </div>
 
@@ -656,7 +620,7 @@ export interface User {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
-            var COMPODOC_CURRENT_PAGE_URL = 'User.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'MembersState.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

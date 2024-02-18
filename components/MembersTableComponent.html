@@ -1,0 +1,1731 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>loghub-cms documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">loghub-cms documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  MembersTableComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/shared/components/members-table/members-table.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                            <code>MessageService</code>
+                            <code>ConfirmationService</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-members-table</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">Standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>CommonModule</code>
+                            <code>TableModule</code>
+                            <code>TranslateModule</code>
+                            <code>ButtonModule</code>
+                            <code>RippleModule</code>
+                            <code>InputTextModule</code>
+                            <code>AvatarModule</code>
+                            <code>DialogModule</code>
+                            <code>DropdownModule</code>
+                            <code>FormsModule</code>
+                            <code>ReactiveFormsModule</code>
+                            <code>ToastModule</code>
+                            <code>ConfirmDialogModule</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./members-table.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./members-table.component.scss</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#dt" >dt</a>
+                            </li>
+                            <li>
+                                <a href="#inviteNewUserForm" >inviteNewUserForm</a>
+                            </li>
+                            <li>
+                                <a href="#isInviteDialogVisible" >isInviteDialogVisible</a>
+                            </li>
+                            <li>
+                                <a href="#isLoadingRemoveMembers" >isLoadingRemoveMembers</a>
+                            </li>
+                            <li>
+                                <a href="#isLoadingSendInvitation" >isLoadingSendInvitation</a>
+                            </li>
+                            <li>
+                                <a href="#roles" >roles</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#applyFilterGlobal" >applyFilterGlobal</a>
+                            </li>
+                            <li>
+                                <a href="#removeMember" >removeMember</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#resetInviteForm" >resetInviteForm</a>
+                            </li>
+                            <li>
+                                <a href="#sendInvite" >sendInvite</a>
+                            </li>
+                            <li>
+                                <a href="#showInviteDialog" >showInviteDialog</a>
+                            </li>
+                            <li>
+                                <a href="#showRemoveMemberConfirmation" >showRemoveMemberConfirmation</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#data" >data</a>
+                            </li>
+                            <li>
+                                <a href="#enableFiltering" >enableFiltering</a>
+                            </li>
+                            <li>
+                                <a href="#enableGlobalSearch" >enableGlobalSearch</a>
+                            </li>
+                            <li>
+                                <a href="#enableInviteAction" >enableInviteAction</a>
+                            </li>
+                            <li>
+                                <a href="#enablePagination" >enablePagination</a>
+                            </li>
+                            <li>
+                                <a href="#enableRemoveAction" >enableRemoveAction</a>
+                            </li>
+                            <li>
+                                <a href="#enableSorting" >enableSorting</a>
+                            </li>
+                            <li>
+                                <a href="#isLoading" >isLoading</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(store: <a href="../interfaces/AppState.html" target="_self">Store&lt;AppState&gt;</a>, formBuilder: FormBuilder, messageService: MessageService, confirmationService: ConfirmationService, translateService: TranslateService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/app/shared/components/members-table/members-table.component.ts:61</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>store</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../interfaces/AppState.html" target="_self" >Store&lt;AppState&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>formBuilder</td>
+                                                  
+                                                        <td>
+                                                                    <code>FormBuilder</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>messageService</td>
+                                                  
+                                                        <td>
+                                                                    <code>MessageService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>confirmationService</td>
+                                                  
+                                                        <td>
+                                                                    <code>ConfirmationService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>translateService</td>
+                                                  
+                                                        <td>
+                                                                    <code>TranslateService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="data"></a>
+                        <b>data</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>User[] | InvitationDto[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>undefined</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/app/shared/components/members-table/members-table.component.ts:72</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="enableFiltering"></a>
+                        <b>enableFiltering</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/app/shared/components/members-table/members-table.component.ts:78</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="enableGlobalSearch"></a>
+                        <b>enableGlobalSearch</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="84" class="link-to-prism">src/app/shared/components/members-table/members-table.component.ts:84</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="enableInviteAction"></a>
+                        <b>enableInviteAction</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="90" class="link-to-prism">src/app/shared/components/members-table/members-table.component.ts:90</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="enablePagination"></a>
+                        <b>enablePagination</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">src/app/shared/components/members-table/members-table.component.ts:87</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="enableRemoveAction"></a>
+                        <b>enableRemoveAction</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="93" class="link-to-prism">src/app/shared/components/members-table/members-table.component.ts:93</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="enableSorting"></a>
+                        <b>enableSorting</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/app/shared/components/members-table/members-table.component.ts:81</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isLoading"></a>
+                        <b>isLoading</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/app/shared/components/members-table/members-table.component.ts:75</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="applyFilterGlobal"></a>
+                    <span class="name">
+                        <span ><b>applyFilterGlobal</b></span>
+                        <a href="#applyFilterGlobal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>applyFilterGlobal($event: Event, stringVal: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="105"
+                                    class="link-to-prism">src/app/shared/components/members-table/members-table.component.ts:105</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>$event</td>
+                                            <td>
+                                                        <code>Event</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>stringVal</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeMember"></a>
+                    <span class="name">
+                        <span ><b>removeMember</b></span>
+                        <a href="#removeMember"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>removeMember(member: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="178"
+                                    class="link-to-prism">src/app/shared/components/members-table/members-table.component.ts:178</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>member</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetInviteForm"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>resetInviteForm</b></span>
+                        <a href="#resetInviteForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>resetInviteForm()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="151"
+                                    class="link-to-prism">src/app/shared/components/members-table/members-table.component.ts:151</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sendInvite"></a>
+                    <span class="name">
+                        <span ><b>sendInvite</b></span>
+                        <a href="#sendInvite"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>sendInvite()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="115"
+                                    class="link-to-prism">src/app/shared/components/members-table/members-table.component.ts:115</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showInviteDialog"></a>
+                    <span class="name">
+                        <span ><b>showInviteDialog</b></span>
+                        <a href="#showInviteDialog"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>showInviteDialog()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="109"
+                                    class="link-to-prism">src/app/shared/components/members-table/members-table.component.ts:109</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showRemoveMemberConfirmation"></a>
+                    <span class="name">
+                        <span ><b>showRemoveMemberConfirmation</b></span>
+                        <a href="#showRemoveMemberConfirmation"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>showRemoveMemberConfirmation(member: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, event: Event)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="159"
+                                    class="link-to-prism">src/app/shared/components/members-table/members-table.component.ts:159</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>member</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                        <code>Event</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dt"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>dt</b></span>
+                        <a href="#dt"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Table | undefined</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;dt&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/app/shared/components/members-table/members-table.component.ts:70</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="inviteNewUserForm"></a>
+                    <span class="name">
+                        <span ><b>inviteNewUserForm</b></span>
+                        <a href="#inviteNewUserForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.formBuilder.group({
+    role: [undefined as Role | undefined, [Validators.required]],
+    email: [&#x27;&#x27;, [Validators.required, Validators.email]],
+  })</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="96" class="link-to-prism">src/app/shared/components/members-table/members-table.component.ts:96</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isInviteDialogVisible"></a>
+                    <span class="name">
+                        <span ><b>isInviteDialogVisible</b></span>
+                        <a href="#isInviteDialogVisible"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="100" class="link-to-prism">src/app/shared/components/members-table/members-table.component.ts:100</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isLoadingRemoveMembers"></a>
+                    <span class="name">
+                        <span ><b>isLoadingRemoveMembers</b></span>
+                        <a href="#isLoadingRemoveMembers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.store.select(isLoadingRemoveMembers)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="103" class="link-to-prism">src/app/shared/components/members-table/members-table.component.ts:103</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isLoadingSendInvitation"></a>
+                    <span class="name">
+                        <span ><b>isLoadingSendInvitation</b></span>
+                        <a href="#isLoadingSendInvitation"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.store.select(isLoadingSendInvitation)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="102" class="link-to-prism">src/app/shared/components/members-table/members-table.component.ts:102</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="roles"></a>
+                    <span class="name">
+                        <span ><b>roles</b></span>
+                        <a href="#roles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.store.select(selectRoles)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="95" class="link-to-prism">src/app/shared/components/members-table/members-table.component.ts:95</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { CommonModule } from &#x27;@angular/common&#x27;;
+import { Component, Input, ViewChild } from &#x27;@angular/core&#x27;;
+import {
+  FormBuilder,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators,
+} from &#x27;@angular/forms&#x27;;
+import { Store } from &#x27;@ngrx/store&#x27;;
+import { TranslateModule, TranslateService } from &#x27;@ngx-translate/core&#x27;;
+import { ConfirmationService, MessageService } from &#x27;primeng/api&#x27;;
+import { AvatarModule } from &#x27;primeng/avatar&#x27;;
+import { ButtonModule } from &#x27;primeng/button&#x27;;
+import { ConfirmDialogModule } from &#x27;primeng/confirmdialog&#x27;;
+import { DialogModule } from &#x27;primeng/dialog&#x27;;
+import { DropdownModule } from &#x27;primeng/dropdown&#x27;;
+import { InputTextModule } from &#x27;primeng/inputtext&#x27;;
+import { RippleModule } from &#x27;primeng/ripple&#x27;;
+import { Table, TableModule } from &#x27;primeng/table&#x27;;
+import { ToastModule } from &#x27;primeng/toast&#x27;;
+import { filter, take } from &#x27;rxjs&#x27;;
+import { InvitationDto } from &#x27;../../../core/domain/dto/invitation.dto&#x27;;
+import { StateStatus } from &#x27;../../../core/domain/models/enums/state-status.enum&#x27;;
+import { Role, User } from &#x27;../../../core/domain/models/user.entity&#x27;;
+import { AppState } from &#x27;../../../core/state/app.state&#x27;;
+import {
+  inviteMember,
+  removeMember,
+} from &#x27;../../../core/state/members/members.actions&#x27;;
+import {
+  isLoadingRemoveMembers,
+  isLoadingSendInvitation,
+  selectInvitationSendStatus,
+  selectRemoveMemberStatus,
+} from &#x27;../../../core/state/members/members.selectors&#x27;;
+import { loadRoles } from &#x27;../../../core/state/role/role.actions&#x27;;
+import { selectRoles } from &#x27;../../../core/state/role/role.selectors&#x27;;
+
+@Component({
+  selector: &#x27;app-members-table&#x27;,
+  standalone: true,
+  imports: [
+    CommonModule,
+    TableModule,
+    TranslateModule,
+    ButtonModule,
+    RippleModule,
+    InputTextModule,
+    AvatarModule,
+    DialogModule,
+    DropdownModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ToastModule,
+    ConfirmDialogModule,
+  ],
+  providers: [MessageService, ConfirmationService],
+  templateUrl: &#x27;./members-table.component.html&#x27;,
+  styleUrl: &#x27;./members-table.component.scss&#x27;,
+})
+export class MembersTableComponent {
+  constructor(
+    private store: Store&lt;AppState&gt;,
+    private formBuilder: FormBuilder,
+    private messageService: MessageService,
+    private confirmationService: ConfirmationService,
+    private translateService: TranslateService,
+  ) {}
+
+  @ViewChild(&#x27;dt&#x27;) dt: Table | undefined;
+  @Input()
+  data?: User[] | InvitationDto[] &#x3D; undefined;
+
+  @Input()
+  isLoading: boolean &#x3D; true;
+
+  @Input()
+  enableFiltering: boolean &#x3D; true;
+
+  @Input()
+  enableSorting: boolean &#x3D; true;
+
+  @Input()
+  enableGlobalSearch: boolean &#x3D; true;
+
+  @Input()
+  enablePagination: boolean &#x3D; true;
+
+  @Input()
+  enableInviteAction: boolean &#x3D; false;
+
+  @Input()
+  enableRemoveAction: boolean &#x3D; false;
+
+  roles &#x3D; this.store.select(selectRoles);
+  inviteNewUserForm &#x3D; this.formBuilder.group({
+    role: [undefined as Role | undefined, [Validators.required]],
+    email: [&#x27;&#x27;, [Validators.required, Validators.email]],
+  });
+  isInviteDialogVisible: boolean &#x3D; false;
+
+  isLoadingSendInvitation &#x3D; this.store.select(isLoadingSendInvitation);
+  isLoadingRemoveMembers &#x3D; this.store.select(isLoadingRemoveMembers);
+
+  applyFilterGlobal($event: Event, stringVal: string) {
+    this.dt?.filterGlobal(($event.target as HTMLInputElement).value, stringVal);
+  }
+
+  showInviteDialog() {
+    this.resetInviteForm();
+    this.store.dispatch(loadRoles());
+    this.isInviteDialogVisible &#x3D; true;
+  }
+
+  sendInvite() {
+    this.store
+      .select(selectInvitationSendStatus)
+      .pipe(
+        filter(
+          (status) &#x3D;&gt;
+            status &#x3D;&#x3D; StateStatus.ERROR || status &#x3D;&#x3D; StateStatus.SUCCESS,
+        ),
+        take(1), // unsubscribe after one emitted value
+      )
+      .subscribe((status) &#x3D;&gt; {
+        if (status &amp;&amp; status &#x3D;&#x3D; StateStatus.ERROR) {
+          this.messageService.add({
+            severity: &#x27;error&#x27;,
+            summary: this.translateService.instant(&#x27;members-table.error&#x27;),
+            detail: this.translateService.instant(
+              &#x27;members-table.failed_to_send_invite&#x27;,
+            ),
+          });
+        } else if (status &amp;&amp; status &#x3D;&#x3D; StateStatus.SUCCESS) {
+          this.messageService.add({
+            severity: &#x27;success&#x27;,
+            summary: this.translateService.instant(&#x27;members-table.success&#x27;),
+            detail: this.translateService.instant(&#x27;members-table.invite_sent&#x27;),
+          });
+          this.isInviteDialogVisible &#x3D; !this.isInviteDialogVisible;
+        }
+      });
+
+    const dto &#x3D; {
+      email: this.inviteNewUserForm.get(&#x27;email&#x27;)?.value ?? &#x27;&#x27;,
+      roleId: this.inviteNewUserForm.get(&#x27;role&#x27;)?.value?.roleId ?? &#x27;&#x27;,
+    };
+    this.store.dispatch(inviteMember(dto));
+  }
+
+  private resetInviteForm() {
+    this.inviteNewUserForm &#x3D; this.formBuilder.group({
+      role: [undefined as Role | undefined, [Validators.required]],
+      email: [&#x27;&#x27;, [Validators.required, Validators.email]],
+    });
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  showRemoveMemberConfirmation(member: any, event: Event) {
+    this.confirmationService.confirm({
+      target: event.target as EventTarget,
+      message: this.translateService.instant(&#x27;members-table.delete_confirmation_message&#x27;),
+      header: this.translateService.instant(&#x27;members-table.delete_confirmation&#x27;),
+      icon: &#x27;pi pi-info-circle&#x27;,
+      acceptButtonStyleClass: &#x27;p-button-danger p-button-text&#x27;,
+      rejectButtonStyleClass: &#x27;p-button-text p-button-text&#x27;,
+      acceptIcon: &#x27;none&#x27;,
+      rejectIcon: &#x27;none&#x27;,
+
+      accept: () &#x3D;&gt; {
+        this.removeMember(member);
+      },
+      reject: () &#x3D;&gt; {},
+    });
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  removeMember(member: any) {
+    this.store
+      .select(selectRemoveMemberStatus)
+      .pipe(
+        filter(
+          (status) &#x3D;&gt;
+            status &#x3D;&#x3D; StateStatus.ERROR || status &#x3D;&#x3D; StateStatus.SUCCESS,
+        ),
+        take(1), // unsubscribe after one emitted value
+      )
+      .subscribe((status) &#x3D;&gt; {
+        if (status &amp;&amp; status &#x3D;&#x3D; StateStatus.ERROR) {
+          this.messageService.add({
+            severity: &#x27;error&#x27;,
+            summary: this.translateService.instant(&#x27;members-table.error&#x27;),
+            detail: this.translateService.instant(
+              &#x27;members-table.failed_to_remove_member&#x27;,
+            ),
+          });
+        } else if (status &amp;&amp; status &#x3D;&#x3D; StateStatus.SUCCESS) {
+          this.messageService.add({
+            severity: &#x27;success&#x27;,
+            summary: this.translateService.instant(&#x27;members-table.success&#x27;),
+            detail: this.translateService.instant(
+              &#x27;members-table.removed_memeber&#x27;,
+            ),
+          });
+        }
+      });
+
+    let memberId &#x3D; &#x27;&#x27;;
+    if (member.userId) {
+      memberId &#x3D; member.userId;
+    } else if (member.invitationId) {
+      memberId &#x3D; member.invitationId;
+    }
+    this.store.dispatch(removeMember({ memberId: memberId }));
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;p-toast /&gt;
+&lt;p-confirmDialog /&gt;
+&lt;p-table
+  #dt
+  [value]&#x3D;&quot;data ?? []&quot;
+  dataKey&#x3D;&quot;id&quot;
+  [rowHover]&#x3D;&quot;true&quot;
+  [rows]&#x3D;&quot;10&quot;
+  [showCurrentPageReport]&#x3D;&quot;enablePagination&quot;
+  [rowsPerPageOptions]&#x3D;&quot;[10, 25, 50]&quot;
+  [loading]&#x3D;&quot;isLoading&quot;
+  [paginator]&#x3D;&quot;enablePagination&quot;
+  [currentPageReportTemplate]&#x3D;&quot;&#x27;table.pagination_template&#x27; | translate&quot;
+  [filterDelay]&#x3D;&quot;0&quot;
+  [globalFilterFields]&#x3D;&quot;[&#x27;firstName&#x27;, &#x27;lastName&#x27;, &#x27;email&#x27;, &#x27;role.name&#x27;]&quot;
+&gt;
+  &lt;ng-template
+    pTemplate&#x3D;&quot;caption&quot;
+    *ngIf&#x3D;&quot;enableGlobalSearch || enableInviteAction&quot;
+  &gt;
+    &lt;div class&#x3D;&quot;table-header w-full flex&quot;&gt;
+      &lt;span class&#x3D;&quot;p-input-icon-left w-full&quot;&gt;
+        &lt;i class&#x3D;&quot;pi pi-search&quot;&gt;&lt;/i&gt;
+        &lt;input
+          class&#x3D;&quot;w-full&quot;
+          pInputText
+          type&#x3D;&quot;text&quot;
+          (input)&#x3D;&quot;applyFilterGlobal($event, &#x27;contains&#x27;)&quot;
+          [placeholder]&#x3D;&quot;&#x27;table.search&#x27; | translate&quot;
+        /&gt;
+      &lt;/span&gt;
+      &lt;p-button
+        *ngIf&#x3D;&quot;enableInviteAction&quot;
+        pRipple
+        styleClass&#x3D;&quot;mr-4 ml-4&quot;
+        severity&#x3D;&quot;success&quot;
+        icon&#x3D;&quot;pi pi-plus&quot;
+        (onClick)&#x3D;&quot;showInviteDialog()&quot;
+        [label]&#x3D;&quot;&#x27;members-table.invite&#x27; | translate&quot;
+        iconPos&#x3D;&quot;left&quot;
+      /&gt;
+    &lt;/div&gt;
+  &lt;/ng-template&gt;
+  &lt;ng-template pTemplate&#x3D;&quot;header&quot;&gt;
+    &lt;tr&gt;
+      &lt;th pSortableColumn&#x3D;&quot;firstName&quot; style&#x3D;&quot;min-width: 14rem&quot;&gt;
+        &lt;div class&#x3D;&quot;flex justify-content-between align-items-center&quot;&gt;
+          {{ &quot;members-table.first_name&quot; | translate }}
+          &lt;p-sortIcon field&#x3D;&quot;firstName&quot; *ngIf&#x3D;&quot;enableSorting&quot; /&gt;
+          &lt;p-columnFilter
+            type&#x3D;&quot;text&quot;
+            field&#x3D;&quot;firstName&quot;
+            display&#x3D;&quot;menu&quot;
+            class&#x3D;&quot;ml-auto&quot;
+            *ngIf&#x3D;&quot;enableFiltering&quot;
+          /&gt;
+        &lt;/div&gt;
+      &lt;/th&gt;
+      &lt;th pSortableColumn&#x3D;&quot;lastName&quot; style&#x3D;&quot;min-width: 14rem&quot;&gt;
+        &lt;div class&#x3D;&quot;flex justify-content-between align-items-center&quot;&gt;
+          {{ &quot;members-table.last_name&quot; | translate }}
+          &lt;p-sortIcon field&#x3D;&quot;lastName&quot; *ngIf&#x3D;&quot;enableSorting&quot; /&gt;
+          &lt;p-columnFilter
+            type&#x3D;&quot;text&quot;
+            field&#x3D;&quot;lastName&quot;
+            display&#x3D;&quot;menu&quot;
+            class&#x3D;&quot;ml-auto&quot;
+            *ngIf&#x3D;&quot;enableFiltering&quot;
+          /&gt;
+        &lt;/div&gt;
+      &lt;/th&gt;
+      &lt;th pSortableColumn&#x3D;&quot;email&quot; style&#x3D;&quot;min-width: 14rem&quot;&gt;
+        &lt;div class&#x3D;&quot;flex justify-content-between align-items-center&quot;&gt;
+          {{ &quot;members-table.email&quot; | translate }}
+          &lt;p-sortIcon field&#x3D;&quot;email&quot; *ngIf&#x3D;&quot;enableSorting&quot; /&gt;
+          &lt;p-columnFilter
+            type&#x3D;&quot;text&quot;
+            field&#x3D;&quot;email&quot;
+            display&#x3D;&quot;menu&quot;
+            class&#x3D;&quot;ml-auto&quot;
+            *ngIf&#x3D;&quot;enableFiltering&quot;
+          /&gt;
+        &lt;/div&gt;
+      &lt;/th&gt;
+      &lt;th pSortableColumn&#x3D;&quot;role.name&quot; style&#x3D;&quot;min-width: 8rem&quot;&gt;
+        &lt;div class&#x3D;&quot;flex justify-content-between align-items-center&quot;&gt;
+          {{ &quot;members-table.role&quot; | translate }}
+          &lt;p-sortIcon field&#x3D;&quot;role.name&quot; *ngIf&#x3D;&quot;enableSorting&quot; /&gt;
+          &lt;p-columnFilter
+            type&#x3D;&quot;text&quot;
+            field&#x3D;&quot;role.name&quot;
+            display&#x3D;&quot;menu&quot;
+            class&#x3D;&quot;ml-auto&quot;
+            *ngIf&#x3D;&quot;enableFiltering&quot;
+          /&gt;
+        &lt;/div&gt;
+      &lt;/th&gt;
+      &lt;th style&#x3D;&quot;width: 8rem&quot;&gt;
+        &lt;div class&#x3D;&quot;flex justify-content-center align-items-center&quot;&gt;
+          {{ &quot;members-table.avatar&quot; | translate }}
+        &lt;/div&gt;
+      &lt;/th&gt;
+      &lt;th style&#x3D;&quot;width: 8rem&quot;&gt;
+        &lt;div class&#x3D;&quot;flex justify-content-center align-items-center&quot;&gt;
+          {{ &quot;members-table.actions&quot; | translate }}
+        &lt;/div&gt;
+      &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/ng-template&gt;
+  &lt;ng-template pTemplate&#x3D;&quot;body&quot; let-member&gt;
+    &lt;tr class&#x3D;&quot;p-selectable-row&quot;&gt;
+      &lt;td&gt;
+        {{ member?.firstName }}
+      &lt;/td&gt;
+      &lt;td&gt;
+        {{ member?.lastName }}
+      &lt;/td&gt;
+      &lt;td&gt;
+        {{ member.email }}
+      &lt;/td&gt;
+      &lt;td&gt;
+        {{ member.role.name }}
+      &lt;/td&gt;
+      &lt;td style&#x3D;&quot;text-align: center&quot;&gt;
+        &lt;p-avatar
+          styleClass&#x3D;&quot;profile-avatar-border&quot;
+          [image]&#x3D;&quot;member.profileIconUrl ?? &#x27;/assets/icons/user.svg&#x27;&quot;
+          styleClass&#x3D;&quot;mr-2&quot;
+          size&#x3D;&quot;normal&quot;
+          shape&#x3D;&quot;circle&quot;
+          [style]&#x3D;&quot;{ background: &#x27;transparent&#x27; }&quot;
+        &gt;&lt;/p-avatar&gt;
+      &lt;/td&gt;
+      &lt;td style&#x3D;&quot;text-align: center&quot;&gt;
+        &lt;p-button
+          pRipple
+          [disabled]&#x3D;&quot;!enableRemoveAction&quot;
+          severity&#x3D;&quot;danger&quot;
+          icon&#x3D;&quot;pi pi-minus&quot;
+          [label]&#x3D;&quot;&#x27;members-table.remove&#x27; | translate&quot;
+          iconPos&#x3D;&quot;left&quot;
+          [loading]&#x3D;&quot;(isLoadingRemoveMembers | async) ?? false&quot;
+          (onClick)&#x3D;&quot;showRemoveMemberConfirmation(member, $event)&quot;
+        /&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/ng-template&gt;
+  &lt;ng-template pTemplate&#x3D;&quot;emptymessage&quot;&gt;
+    &lt;tr&gt;
+      &lt;td colspan&#x3D;&quot;6&quot;&gt;{{ &quot;members-table.no_members_found&quot; | translate }}&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/ng-template&gt;
+&lt;/p-table&gt;
+
+&lt;p-dialog
+  [header]&#x3D;&quot;&#x27;members-table.invite_member&#x27; | translate&quot;
+  [(visible)]&#x3D;&quot;isInviteDialogVisible&quot;
+  [style]&#x3D;&quot;{ width: &#x27;40vw&#x27; }&quot;
+  [modal]&#x3D;&quot;true&quot;
+&gt;
+  &lt;div class&#x3D;&quot;flex py-2 justify-content-center&quot;&gt;
+    &lt;form [formGroup]&#x3D;&quot;inviteNewUserForm&quot; class&#x3D;&quot;w-full&quot;&gt;
+      &lt;div class&#x3D;&quot;w-full&quot;&gt;
+        &lt;label
+          for&#x3D;&quot;email&quot;
+          class&#x3D;&quot;block text-900 font-medium text-md mb-2 mt-2&quot;
+          &gt;{{ &quot;members-table.email_label&quot; | translate }}&lt;/label
+        &gt;
+        &lt;span class&#x3D;&quot;p-input-icon-right w-full&quot;&gt;
+          &lt;i class&#x3D;&quot;pi pi-at&quot;&gt;&lt;/i&gt;
+          &lt;input
+            id&#x3D;&quot;email&quot;
+            type&#x3D;&quot;email&quot;
+            formControlName&#x3D;&quot;email&quot;
+            [placeholder]&#x3D;&quot;&#x27;members-table.email&#x27; | translate&quot;
+            pInputText
+            class&#x3D;&quot;w-full&quot;
+            style&#x3D;&quot;padding: 1rem&quot;
+          /&gt;
+        &lt;/span&gt;
+        &lt;small
+          *ngIf&#x3D;&quot;
+            inviteNewUserForm.get(&#x27;email&#x27;)?.hasError(&#x27;required&#x27;) &amp;&amp;
+            inviteNewUserForm.get(&#x27;email&#x27;)?.dirty
+          &quot;
+          class&#x3D;&quot;p-error block&quot;
+          &gt;{{ &quot;members-table.email_is_required&quot; | translate }}&lt;/small
+        &gt;
+        &lt;small
+          *ngIf&#x3D;&quot;
+            inviteNewUserForm.get(&#x27;email&#x27;)?.hasError(&#x27;email&#x27;) &amp;&amp;
+            inviteNewUserForm.get(&#x27;email&#x27;)?.dirty
+          &quot;
+          class&#x3D;&quot;p-error block&quot;
+          &gt;{{ &quot;members-table.invalid_email&quot; | translate }}&lt;/small
+        &gt;
+
+        &lt;label
+          for&#x3D;&quot;role&quot;
+          class&#x3D;&quot;block text-900 font-medium text-md mb-2 mt-4&quot;
+          &gt;{{ &quot;members-table.role_label&quot; | translate }}&lt;/label
+        &gt;
+        &lt;p-dropdown
+          appendTo&#x3D;&quot;body&quot;
+          [options]&#x3D;&quot;(roles | async) ?? []&quot;
+          formControlName&#x3D;&quot;role&quot;
+          [placeholder]&#x3D;&quot;&#x27;members-table.select_role&#x27; | translate&quot;
+          optionLabel&#x3D;&quot;name&quot;
+          styleClass&#x3D;&quot;w-full&quot;
+        &gt;&lt;/p-dropdown&gt;
+        &lt;small
+          *ngIf&#x3D;&quot;
+            inviteNewUserForm.get(&#x27;role&#x27;)?.hasError(&#x27;required&#x27;) &amp;&amp;
+            inviteNewUserForm.get(&#x27;role&#x27;)?.dirty
+          &quot;
+          class&#x3D;&quot;p-error block&quot;
+          &gt;{{ &quot;members-table.role_is_required&quot; | translate }}&lt;/small
+        &gt;
+
+        &lt;div class&#x3D;&quot;flex w-full justify-content-end mt-5&quot;&gt;
+            &lt;p-button 
+            pRipple
+            [label]&#x3D;&quot;&#x27;members-table.cancel&#x27; | translate&quot;
+            [outlined]&#x3D;&quot;true&quot;
+            icon&#x3D;&quot;pi pi-times&quot;
+            iconPos&#x3D;&quot;left&quot;
+            severity&#x3D;&quot;danger&quot;
+            [loading]&#x3D;&quot;(isLoadingSendInvitation | async) ?? false&quot;
+            (onClick)&#x3D;&quot;isInviteDialogVisible &#x3D; !isInviteDialogVisible&quot;
+            /&gt;
+          &lt;p-button
+            pRipple
+            styleClass&#x3D;&quot;ml-4&quot;
+            type&#x3D;&quot;submit&quot;
+            [label]&#x3D;&quot;&#x27;members-table.send_invite&#x27; | translate&quot;
+            [outlined]&#x3D;&quot;true&quot;
+            icon&#x3D;&quot;pi pi-check&quot;
+            iconPos&#x3D;&quot;left&quot;
+            [loading]&#x3D;&quot;(isLoadingSendInvitation | async) ?? false&quot;
+            (onClick)&#x3D;&quot;sendInvite()&quot;
+            [disabled]&#x3D;&quot;inviteNewUserForm.invalid&quot;
+          /&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+&lt;/p-dialog&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><p-toast /><p-confirmDialog /><p-table  #dt  [value]="data ?? []"  dataKey="id"  [rowHover]="true"  [rows]="10"  [showCurrentPageReport]="enablePagination"  [rowsPerPageOptions]="[10, 25, 50]"  [loading]="isLoading"  [paginator]="enablePagination"  [currentPageReportTemplate]="\'table.pagination_template\' | translate"  [filterDelay]="0"  [globalFilterFields]="[\'firstName\', \'lastName\', \'email\', \'role.name\']">  <ng-template    pTemplate="caption"    *ngIf="enableGlobalSearch || enableInviteAction"  >    <div class="table-header w-full flex">      <span class="p-input-icon-left w-full">        <i class="pi pi-search"></i>        <input          class="w-full"          pInputText          type="text"          (input)="applyFilterGlobal($event, \'contains\')"          [placeholder]="\'table.search\' | translate"        />      </span>      <p-button        *ngIf="enableInviteAction"        pRipple        styleClass="mr-4 ml-4"        severity="success"        icon="pi pi-plus"        (onClick)="showInviteDialog()"        [label]="\'members-table.invite\' | translate"        iconPos="left"      />    </div>  </ng-template>  <ng-template pTemplate="header">    <tr>      <th pSortableColumn="firstName" style="min-width: 14rem">        <div class="flex justify-content-between align-items-center">          {{ "members-table.first_name" | translate }}          <p-sortIcon field="firstName" *ngIf="enableSorting" />          <p-columnFilter            type="text"            field="firstName"            display="menu"            class="ml-auto"            *ngIf="enableFiltering"          />        </div>      </th>      <th pSortableColumn="lastName" style="min-width: 14rem">        <div class="flex justify-content-between align-items-center">          {{ "members-table.last_name" | translate }}          <p-sortIcon field="lastName" *ngIf="enableSorting" />          <p-columnFilter            type="text"            field="lastName"            display="menu"            class="ml-auto"            *ngIf="enableFiltering"          />        </div>      </th>      <th pSortableColumn="email" style="min-width: 14rem">        <div class="flex justify-content-between align-items-center">          {{ "members-table.email" | translate }}          <p-sortIcon field="email" *ngIf="enableSorting" />          <p-columnFilter            type="text"            field="email"            display="menu"            class="ml-auto"            *ngIf="enableFiltering"          />        </div>      </th>      <th pSortableColumn="role.name" style="min-width: 8rem">        <div class="flex justify-content-between align-items-center">          {{ "members-table.role" | translate }}          <p-sortIcon field="role.name" *ngIf="enableSorting" />          <p-columnFilter            type="text"            field="role.name"            display="menu"            class="ml-auto"            *ngIf="enableFiltering"          />        </div>      </th>      <th style="width: 8rem">        <div class="flex justify-content-center align-items-center">          {{ "members-table.avatar" | translate }}        </div>      </th>      <th style="width: 8rem">        <div class="flex justify-content-center align-items-center">          {{ "members-table.actions" | translate }}        </div>      </th>    </tr>  </ng-template>  <ng-template pTemplate="body" let-member>    <tr class="p-selectable-row">      <td>        {{ member?.firstName }}      </td>      <td>        {{ member?.lastName }}      </td>      <td>        {{ member.email }}      </td>      <td>        {{ member.role.name }}      </td>      <td style="text-align: center">        <p-avatar          styleClass="profile-avatar-border"          [image]="member.profileIconUrl ?? \'/assets/icons/user.svg\'"          styleClass="mr-2"          size="normal"          shape="circle"          [style]="{ background: \'transparent\' }"        ></p-avatar>      </td>      <td style="text-align: center">        <p-button          pRipple          [disabled]="!enableRemoveAction"          severity="danger"          icon="pi pi-minus"          [label]="\'members-table.remove\' | translate"          iconPos="left"          [loading]="(isLoadingRemoveMembers | async) ?? false"          (onClick)="showRemoveMemberConfirmation(member, $event)"        />      </td>    </tr>  </ng-template>  <ng-template pTemplate="emptymessage">    <tr>      <td colspan="6">{{ "members-table.no_members_found" | translate }}</td>    </tr>  </ng-template></p-table><p-dialog  [header]="\'members-table.invite_member\' | translate"  [(visible)]="isInviteDialogVisible"  [style]="{ width: \'40vw\' }"  [modal]="true">  <div class="flex py-2 justify-content-center">    <form [formGroup]="inviteNewUserForm" class="w-full">      <div class="w-full">        <label          for="email"          class="block text-900 font-medium text-md mb-2 mt-2"          >{{ "members-table.email_label" | translate }}</label        >        <span class="p-input-icon-right w-full">          <i class="pi pi-at"></i>          <input            id="email"            type="email"            formControlName="email"            [placeholder]="\'members-table.email\' | translate"            pInputText            class="w-full"            style="padding: 1rem"          />        </span>        <small          *ngIf="            inviteNewUserForm.get(\'email\')?.hasError(\'required\') &&            inviteNewUserForm.get(\'email\')?.dirty          "          class="p-error block"          >{{ "members-table.email_is_required" | translate }}</small        >        <small          *ngIf="            inviteNewUserForm.get(\'email\')?.hasError(\'email\') &&            inviteNewUserForm.get(\'email\')?.dirty          "          class="p-error block"          >{{ "members-table.invalid_email" | translate }}</small        >        <label          for="role"          class="block text-900 font-medium text-md mb-2 mt-4"          >{{ "members-table.role_label" | translate }}</label        >        <p-dropdown          appendTo="body"          [options]="(roles | async) ?? []"          formControlName="role"          [placeholder]="\'members-table.select_role\' | translate"          optionLabel="name"          styleClass="w-full"        ></p-dropdown>        <small          *ngIf="            inviteNewUserForm.get(\'role\')?.hasError(\'required\') &&            inviteNewUserForm.get(\'role\')?.dirty          "          class="p-error block"          >{{ "members-table.role_is_required" | translate }}</small        >        <div class="flex w-full justify-content-end mt-5">            <p-button             pRipple            [label]="\'members-table.cancel\' | translate"            [outlined]="true"            icon="pi pi-times"            iconPos="left"            severity="danger"            [loading]="(isLoadingSendInvitation | async) ?? false"            (onClick)="isInviteDialogVisible = !isInviteDialogVisible"            />          <p-button            pRipple            styleClass="ml-4"            type="submit"            [label]="\'members-table.send_invite\' | translate"            [outlined]="true"            icon="pi pi-check"            iconPos="left"            [loading]="(isLoadingSendInvitation | async) ?? false"            (onClick)="sendInvite()"            [disabled]="inviteNewUserForm.invalid"          />        </div>      </div>    </form>  </div></p-dialog></div>'
+    var COMPONENTS = [{'name': 'AccessDeniedComponent', 'selector': 'app-access-denied'},{'name': 'AlertsComponent', 'selector': 'app-alerts'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CloseComponent', 'selector': 'app-close'},{'name': 'ConfigComponent', 'selector': 'app-config'},{'name': 'CreateOrganizationComponent', 'selector': 'app-create-organization'},{'name': 'DetailsComponent', 'selector': 'app-details'},{'name': 'DevicesComponent', 'selector': 'app-devices'},{'name': 'DocumentationComponent', 'selector': 'app-documentation'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'GuidesComponent', 'selector': 'app-guides'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InvitationComponent', 'selector': 'app-invitation'},{'name': 'IssuesComponent', 'selector': 'app-issues'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogsComponent', 'selector': 'app-logs'},{'name': 'MembersComponent', 'selector': 'app-members'},{'name': 'MembersTableComponent', 'selector': 'app-members-table'},{'name': 'MenuitemComponent', 'selector': '[app-menuitem]'},{'name': 'MessagesComponent', 'selector': 'app-messages'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationsComponent', 'selector': 'app-notifications'},{'name': 'OrganizationComponent', 'selector': 'app-organization'},{'name': 'ProjectDetailsComponent', 'selector': 'app-project-details'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'ProjectsComponent', 'selector': 'app-projects-settings'},{'name': 'QueriesComponent', 'selector': 'app-queries'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ReleasesComponent', 'selector': 'app-releases'},{'name': 'ReplaysComponent', 'selector': 'app-replays'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'ScreenLoadsComponent', 'selector': 'app-screen-loads'},{'name': 'SdksComponent', 'selector': 'app-sdks'},{'name': 'SecurityComponent', 'selector': 'app-security'},{'name': 'SessionsComponent', 'selector': 'app-sessions'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StatsComponent', 'selector': 'app-stats'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TeamsComponent', 'selector': 'app-teams'},{'name': 'TopbarComponent', 'selector': 'app-topbar'},{'name': 'VitalsComponent', 'selector': 'app-vitals'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'MembersTableComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'MembersTableComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
