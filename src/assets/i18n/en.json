@@ -137,5 +137,42 @@
     "Help_SDKS": "SDK's",
     "Help_Guides": "Guides",
     "Help_Support": "Support"
+  },
+  "table": {
+    "pagination_template": "Showing {first} to {last} of {totalRecords} entries",
+    "search": "Search"
+  },
+  "members": {
+    "members": "Members",
+    "invited_members": "Invited Members",
+    "organization_owner": "Organization Owner"
+  },
+  "members-table": {
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "email": "E-Mail",
+    "email_label": "E-Mail [REQUIRED]",
+    "role": "Role",
+    "actions": "Actions",
+    "no_members_found": "No members found.",
+    "remove": "Remove",
+    "invite": "Invite",
+    "avatar": "Avatar",
+    "select_role": "Select role",
+    "invite_member": "Invite Member",
+    "role_is_required": "Role is required",
+    "email_is_required": "Email is required",
+    "invalid_email": "Invalid email address",
+    "role_label": "Role [REQUIRED]",
+    "send_invite": "Send Invite",
+    "cancel": "Cancel",
+    "error": "API Error",
+    "failed_to_send_invite": "Failed to send invite",
+    "failed_to_remove_member": "Failed to remove member (Can't Remove Owner)",
+    "success": "Success",
+    "invite_sent": "Invitation has been sent to the email",
+    "removed_memeber": "Removed organization member successfully",
+    "delete_confirmation": "Delete Confirmation",
+    "delete_confirmation_message": "Are you sure that you want to remove this user?"
   }
 }

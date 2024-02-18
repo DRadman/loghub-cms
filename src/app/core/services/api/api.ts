@@ -19,6 +19,7 @@ export const api = {
   membersUrl: environment.apiUrl + '/v1/members',
   filesUrl: environment.apiUrl + '/v1/files',
   authUrl: environment.apiUrl + '/v1/auth',
+  roleUrl: environment.apiUrl + '/v1/role',
   authOptions: {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',

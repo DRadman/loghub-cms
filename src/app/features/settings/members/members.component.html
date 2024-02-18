@@ -1,1 +1,42 @@
-<p>members works!</p>
+<p-toast />
+@if (hasReadPermission | async) {
+  <!-- <div class="card"> -->
+    <p-panel [header]="'members.members' | translate" [toggleable]="true">
+      <app-members-table
+        [enableInviteAction]="(hasCreatePermission | async) ?? false"
+        [isLoading]="(isLoadingMembers | async) ?? true"
+        [enableRemoveAction]="(hasDeletePermission | async) ?? false"
+        [data]="(activeMembers | async) ?? []"
+      />
+    </p-panel>
+
+    <p-panel
+      styleClass="mt-5"
+      [header]="'members.invited_members' | translate"
+      [toggleable]="true"
+    >
+      <app-members-table
+        [isLoading]="(isLoadingMembers | async) ?? true"
+        [enableRemoveAction]="(hasDeletePermission | async) ?? false"
+        [data]="(invitedMembers | async) ?? []"
+      />
+    </p-panel>
+
+    <p-panel
+      styleClass="mt-5"
+      [header]="'members.organization_owner' | translate"
+      [toggleable]="true"
+    >
+      <app-members-table
+        [enableFiltering]="false"
+        [enableGlobalSearch]="false"
+        [enablePagination]="false"
+        [enableSorting]="false"
+        [isLoading]="(isLoadingMembers | async) ?? true"
+        [data]="(owner | async) ?? []"
+      />
+    </p-panel>
+  <!-- </div> -->
+} @else {
+  <app-access-denied />
+}

@@ -112,21 +112,25 @@ export class CreateOrganizationComponent
       .select(selectCurrentOrganization)
       .subscribe((organization) => {
         if (organization != null) {
-          console.log('Organization: '+ JSON.stringify(organization))
+          console.log('Organization: ' + JSON.stringify(organization));
           this.router.navigate(['/home']);
+          this.errorSubscription?.unsubscribe();
         }
       });
 
     this.errorSubscription = this.store
       .select(selectOrganizationError)
       .subscribe((error) => {
-        if (error != null && error.status !== 0 && error.status !== 404) {
-          console.log(error)
+        if (
+          error != null &&
+          error.status !== 0 &&
+          error.status !== 404 &&
+          error.status !== 401
+        ) {
+          console.log(error);
           this.messageService.add({
             severity: 'error',
-            summary: this.translateService.instant(
-              'create-organization.error',
-            ),
+            summary: this.translateService.instant('create-organization.error'),
             detail: this.translateService.instant(
               'create-organization.error_description',
             ),
