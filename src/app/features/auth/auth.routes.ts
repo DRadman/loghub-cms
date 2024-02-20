@@ -28,7 +28,7 @@ export const routes: Routes = [
         canActivate: [registrationGuard],
       },
       {
-        path: 'invitation/:id',
+        path: 'invitation/:invitationHash',
         loadComponent: () =>
           import('./components/invitation/invitation.component').then(
             (c) => c.InvitationComponent

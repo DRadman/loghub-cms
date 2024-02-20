@@ -93,3 +93,19 @@ export const registerNewUserFailure = createAction(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   props<{ error: any }>(),
 );
+
+export const acceptInvitation = createAction(
+  '[Invitation Page] Accept invitation',
+  props<{dto: RegisterRequestDto, invitationHash: string}>(),
+);
+
+export const acceptInvitationSuccess = createAction(
+  '[Invitation Api] Accept invitation success',
+  props<{ username: string; password: string }>(),
+);
+
+export const acceptInvitationFailure = createAction(
+  '[Invitation Api] Accept invitation failure',
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  props<{ error: any }>(),
+);

@@ -4,6 +4,9 @@ import { catchError, map, of, switchMap, tap } from 'rxjs';
 import { AuthService } from '../../services/api/auth.api.service';
 import { JwtService } from '../../services/token-storage.service';
 import {
+  acceptInvitation,
+  acceptInvitationFailure,
+  acceptInvitationSuccess,
   authenticate,
   authenticationFailure,
   authenticationSuccess,
@@ -21,12 +24,14 @@ import {
   resetPasswordSuccess,
   signOut,
 } from './auth.actions';
+import { InvitationService } from '../../services/api/invitation.api.service';
 
 @Injectable()
 export class AuthEffects {
   constructor(
     private authService: AuthService,
     private jwtService: JwtService,
+    private invitationService: InvitationService,
     private actions$: Actions,
   ) {}
 
@@ -134,6 +139,30 @@ export class AuthEffects {
   registerNewUserSuccess$ = createEffect(() =>
     this.actions$.pipe(
       ofType(registerNewUserSuccess),
+      switchMap((request) => of(authenticate(request))),
+    ),
+  );
+
+  acceptInvitation$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(acceptInvitation),
+      switchMap((request) =>
+        this.invitationService.acceptInvitation(request.invitationHash, request.dto).pipe(
+          map(() => {
+            return acceptInvitationSuccess({
+              username: request.dto.username,
+              password: request.dto.password,
+            });
+          }),
+          catchError((error) => of(acceptInvitationFailure({ error }))),
+        ),
+      ),
+    ),
+  );
+
+  acceptInvitationSuccess$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(acceptInvitationSuccess),
       switchMap((request) => of(authenticate(request))),
     ),
   );

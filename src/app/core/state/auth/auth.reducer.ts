@@ -4,6 +4,9 @@ import { StateStatus } from '../../domain/models/enums/state-status.enum';
 import { Token } from '../../domain/models/token.entity';
 import { User } from '../../domain/models/user.entity';
 import {
+  acceptInvitation,
+  acceptInvitationFailure,
+  acceptInvitationSuccess,
   authenticate,
   authenticationFailure,
   authenticationSuccess,
@@ -31,6 +34,7 @@ export interface AuthState {
   forgotPasswordError: null | any;
   resetPasswordError: null | any;
   registrationError: null | any;
+  acceptInvitationError: null | any;
   usernameCheckError: null | any;
   isUsernameAvialable: boolean | null;
   token: Token | null;
@@ -46,6 +50,7 @@ export const initialState: AuthState = {
   registrationError: null,
   usernameCheckError: null,
   isUsernameAvialable: null,
+  acceptInvitationError: null,
   token: null,
   credentials: null,
   status: StateStatus.PENDING,
@@ -176,6 +181,26 @@ export const authReducer = createReducer(
   on(registerNewUserFailure, (state, { error }) => ({
     ...state,
     registrationError: error,
+    status: StateStatus.ERROR,
+  })),
+
+  // Handle Accept Invitation
+  on(acceptInvitation, (state) => ({
+    ...state,
+    status: StateStatus.LOADING,
+  })),
+
+  // Handle Accept invitation success
+  on(acceptInvitationSuccess, (state) => ({
+    ...state,
+    acceptInvitationError: null,
+    status: StateStatus.SUCCESS,
+  })),
+
+  // Handle Accept invitation failure
+  on(acceptInvitationFailure, (state, { error }) => ({
+    ...state,
+    acceptInvitationError: error,
     status: StateStatus.ERROR,
   })),
 );
