@@ -27,6 +27,7 @@ import {
   unauthErrorInterceptor,
 } from './core/interceptors/auth.interceptor';
 import { appEfects, appStore } from './core/state/app.state';
+import { dateInterceptor } from './core/interceptors/date.interceptor';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -40,7 +41,7 @@ export const appConfig: ApplicationConfig = {
       withComponentInputBinding(),
     ),
     provideHttpClient(
-      withInterceptors([authInterceptor, unauthErrorInterceptor]),
+      withInterceptors([authInterceptor, unauthErrorInterceptor, dateInterceptor]),
       withFetch(),
     ),
     provideClientHydration(),
