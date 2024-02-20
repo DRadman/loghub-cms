@@ -129,6 +129,12 @@
 
 
 
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
 
 
 <section data-compodoc="block-metadata">
@@ -157,6 +163,16 @@
                 <td class="col-md-9"><code>true</code></td>
             </tr>
 
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>CommonModule</code>
+                                <code><a href="../components/AccessDeniedComponent.html" target="_self" >AccessDeniedComponent</a></code>
+                            <code>PanelModule</code>
+                                <code><a href="../components/TeamsTableComponent.html" target="_self" >TeamsTableComponent</a></code>
+                            <code>TranslateModule</code>
+                </td>
+            </tr>
 
 
 
@@ -181,35 +197,434 @@
     </table>
 </section>
 
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#hasCreatePermission" >hasCreatePermission</a>
+                            </li>
+                            <li>
+                                <a href="#hasDeletePermission" >hasDeletePermission</a>
+                            </li>
+                            <li>
+                                <a href="#hasReadPermission" >hasReadPermission</a>
+                            </li>
+                            <li>
+                                <a href="#isLoadingMyTeams" >isLoadingMyTeams</a>
+                            </li>
+                            <li>
+                                <a href="#isLoadingOrganizationTeams" >isLoadingOrganizationTeams</a>
+                            </li>
+                            <li>
+                                <a href="#myTeams" >myTeams</a>
+                            </li>
+                            <li>
+                                <a href="#organizationTeams" >organizationTeams</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
 
 
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(store: <a href="../interfaces/AppState.html" target="_self">Store&lt;AppState&gt;</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/features/settings/teams/teams.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>store</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../interfaces/AppState.html" target="_self" >Store&lt;AppState&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
 
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="46"
+                                    class="link-to-prism">src/app/features/settings/teams/teams.component.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hasCreatePermission"></a>
+                    <span class="name">
+                        <span ><b>hasCreatePermission</b></span>
+                        <a href="#hasCreatePermission"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.store.select(
+    selectHasPermission(ResourceType.TEAM, Permission.CREATE),
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/features/settings/teams/teams.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hasDeletePermission"></a>
+                    <span class="name">
+                        <span ><b>hasDeletePermission</b></span>
+                        <a href="#hasDeletePermission"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.store.select(
+    selectHasPermission(ResourceType.TEAM, Permission.DELETE),
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/features/settings/teams/teams.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hasReadPermission"></a>
+                    <span class="name">
+                        <span ><b>hasReadPermission</b></span>
+                        <a href="#hasReadPermission"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.store.select(
+    selectHasPermission(ResourceType.TEAM, Permission.READ),
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/features/settings/teams/teams.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isLoadingMyTeams"></a>
+                    <span class="name">
+                        <span ><b>isLoadingMyTeams</b></span>
+                        <a href="#isLoadingMyTeams"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.store.select(isLoadingMyTeams)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/features/settings/teams/teams.component.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isLoadingOrganizationTeams"></a>
+                    <span class="name">
+                        <span ><b>isLoadingOrganizationTeams</b></span>
+                        <a href="#isLoadingOrganizationTeams"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.store.select(isLoadingOrganizationTeams)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/features/settings/teams/teams.component.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="myTeams"></a>
+                    <span class="name">
+                        <span ><b>myTeams</b></span>
+                        <a href="#myTeams"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.store.select(selectMyTeams)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/features/settings/teams/teams.component.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="organizationTeams"></a>
+                    <span class="name">
+                        <span ><b>organizationTeams</b></span>
+                        <a href="#organizationTeams"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.store.select(selectOrganizationTeams)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/features/settings/teams/teams.component.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { CommonModule } from &#x27;@angular/common&#x27;;
+import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { Store } from &#x27;@ngrx/store&#x27;;
+import { Permission } from &#x27;../../../core/domain/models/enums/permission.enum&#x27;;
+import { ResourceType } from &#x27;../../../core/domain/models/enums/resource-type.enum&#x27;;
+import { AppState } from &#x27;../../../core/state/app.state&#x27;;
+import { selectHasPermission } from &#x27;../../../core/state/auth/auth.selectors&#x27;;
+import { AccessDeniedComponent } from &#x27;../../../shared/components/access-denied/access-denied.component&#x27;;
+import { PanelModule } from &#x27;primeng/panel&#x27;;
+import { TeamsTableComponent } from &#x27;../../../shared/components/teams-table/teams-table.component&#x27;;
+import { TranslateModule } from &#x27;@ngx-translate/core&#x27;;
+import { isLoadingMyTeams, isLoadingOrganizationTeams, selectMyTeams, selectOrganizationTeams } from &#x27;../../../core/state/team/team.selectors&#x27;;
+import { loadMyTeams, loadOrganizationTeams } from &#x27;../../../core/state/team/team.actions&#x27;;
 
 @Component({
   selector: &#x27;app-teams&#x27;,
   standalone: true,
-  imports: [],
   templateUrl: &#x27;./teams.component.html&#x27;,
-  styleUrl: &#x27;./teams.component.scss&#x27;
+  styleUrl: &#x27;./teams.component.scss&#x27;,
+  imports: [
+    CommonModule,
+    AccessDeniedComponent,
+    PanelModule,
+    TeamsTableComponent,
+    TranslateModule
+  ],
 })
-export class TeamsComponent {
+export class TeamsComponent implements OnInit {
+  constructor(private store: Store&lt;AppState&gt;) {}
 
+  hasReadPermission &#x3D; this.store.select(
+    selectHasPermission(ResourceType.TEAM, Permission.READ),
+  );
+  hasDeletePermission &#x3D; this.store.select(
+    selectHasPermission(ResourceType.TEAM, Permission.DELETE),
+  );
+  hasCreatePermission &#x3D; this.store.select(
+    selectHasPermission(ResourceType.TEAM, Permission.CREATE),
+  );
+
+  isLoadingOrganizationTeams &#x3D; this.store.select(isLoadingOrganizationTeams);
+  isLoadingMyTeams &#x3D; this.store.select(isLoadingMyTeams);
+  organizationTeams &#x3D; this.store.select(selectOrganizationTeams);
+  myTeams &#x3D; this.store.select(selectMyTeams);
+
+  ngOnInit(): void {
+    this.store.dispatch(loadOrganizationTeams());
+    this.store.dispatch(loadMyTeams());
+  }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;p&gt;teams works!&lt;/p&gt;
+        <pre class="line-numbers"><code class="language-html">@if (hasReadPermission | async) {
+  &lt;p-panel
+    [header]&#x3D;&quot;&#x27;teams.organization_teams&#x27; | translate&quot;
+    [toggleable]&#x3D;&quot;true&quot;
+  &gt;
+    &lt;app-teams-table
+      [enableAddAction]&#x3D;&quot;(hasCreatePermission | async) ?? false&quot;
+      [enableDeleteAction]&#x3D;&quot;(hasDeletePermission | async) ?? false&quot;
+      [isLoading]&#x3D;&quot;(isLoadingOrganizationTeams | async) ?? true&quot;
+      [data]&#x3D;&quot;(organizationTeams | async) ?? undefined&quot;
+    /&gt;
+  &lt;/p-panel&gt;
+
+  &lt;p-panel
+    styleClass&#x3D;&quot;mt-5&quot;
+    [header]&#x3D;&quot;&#x27;teams.my_teams&#x27; | translate&quot;
+    [toggleable]&#x3D;&quot;true&quot;
+  &gt;
+    &lt;app-teams-table
+      [isLoading]&#x3D;&quot;(isLoadingMyTeams | async) ?? true&quot;
+      [data]&#x3D;&quot;(myTeams | async) ?? undefined&quot;
+    /&gt;
+  &lt;/p-panel&gt;
+} @else {
+  &lt;app-access-denied /&gt;
+}
 </code></pre>
     </div>
 
@@ -239,8 +654,8 @@ export class TeamsComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><p>teams works!</p></div>'
-    var COMPONENTS = [{'name': 'AccessDeniedComponent', 'selector': 'app-access-denied'},{'name': 'AlertsComponent', 'selector': 'app-alerts'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CloseComponent', 'selector': 'app-close'},{'name': 'ConfigComponent', 'selector': 'app-config'},{'name': 'CreateOrganizationComponent', 'selector': 'app-create-organization'},{'name': 'DetailsComponent', 'selector': 'app-details'},{'name': 'DevicesComponent', 'selector': 'app-devices'},{'name': 'DocumentationComponent', 'selector': 'app-documentation'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'GuidesComponent', 'selector': 'app-guides'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InvitationComponent', 'selector': 'app-invitation'},{'name': 'IssuesComponent', 'selector': 'app-issues'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogsComponent', 'selector': 'app-logs'},{'name': 'MembersComponent', 'selector': 'app-members'},{'name': 'MembersTableComponent', 'selector': 'app-members-table'},{'name': 'MenuitemComponent', 'selector': '[app-menuitem]'},{'name': 'MessagesComponent', 'selector': 'app-messages'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationsComponent', 'selector': 'app-notifications'},{'name': 'OrganizationComponent', 'selector': 'app-organization'},{'name': 'ProjectDetailsComponent', 'selector': 'app-project-details'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'ProjectsComponent', 'selector': 'app-projects-settings'},{'name': 'QueriesComponent', 'selector': 'app-queries'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ReleasesComponent', 'selector': 'app-releases'},{'name': 'ReplaysComponent', 'selector': 'app-replays'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'ScreenLoadsComponent', 'selector': 'app-screen-loads'},{'name': 'SdksComponent', 'selector': 'app-sdks'},{'name': 'SecurityComponent', 'selector': 'app-security'},{'name': 'SessionsComponent', 'selector': 'app-sessions'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StatsComponent', 'selector': 'app-stats'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TeamsComponent', 'selector': 'app-teams'},{'name': 'TopbarComponent', 'selector': 'app-topbar'},{'name': 'VitalsComponent', 'selector': 'app-vitals'}];
+        var COMPONENT_TEMPLATE = '<div>@if (hasReadPermission | async) {  <p-panel    [header]="\'teams.organization_teams\' | translate"    [toggleable]="true"  >    <app-teams-table      [enableAddAction]="(hasCreatePermission | async) ?? false"      [enableDeleteAction]="(hasDeletePermission | async) ?? false"      [isLoading]="(isLoadingOrganizationTeams | async) ?? true"      [data]="(organizationTeams | async) ?? undefined"    />  </p-panel>  <p-panel    styleClass="mt-5"    [header]="\'teams.my_teams\' | translate"    [toggleable]="true"  >    <app-teams-table      [isLoading]="(isLoadingMyTeams | async) ?? true"      [data]="(myTeams | async) ?? undefined"    />  </p-panel>} @else {  <app-access-denied />}</div>'
+    var COMPONENTS = [{'name': 'AccessDeniedComponent', 'selector': 'app-access-denied'},{'name': 'AlertsComponent', 'selector': 'app-alerts'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CloseComponent', 'selector': 'app-close'},{'name': 'ConfigComponent', 'selector': 'app-config'},{'name': 'CreateOrganizationComponent', 'selector': 'app-create-organization'},{'name': 'DetailsComponent', 'selector': 'app-details'},{'name': 'DevicesComponent', 'selector': 'app-devices'},{'name': 'DocumentationComponent', 'selector': 'app-documentation'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'GuidesComponent', 'selector': 'app-guides'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InvitationComponent', 'selector': 'app-invitation'},{'name': 'IssuesComponent', 'selector': 'app-issues'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogsComponent', 'selector': 'app-logs'},{'name': 'MembersComponent', 'selector': 'app-members'},{'name': 'MembersTableComponent', 'selector': 'app-members-table'},{'name': 'MenuitemComponent', 'selector': '[app-menuitem]'},{'name': 'MessagesComponent', 'selector': 'app-messages'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationsComponent', 'selector': 'app-notifications'},{'name': 'OrganizationComponent', 'selector': 'app-organization'},{'name': 'ProjectDetailsComponent', 'selector': 'app-project-details'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'ProjectsComponent', 'selector': 'app-projects-settings'},{'name': 'QueriesComponent', 'selector': 'app-queries'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ReleasesComponent', 'selector': 'app-releases'},{'name': 'ReplaysComponent', 'selector': 'app-replays'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'ScreenLoadsComponent', 'selector': 'app-screen-loads'},{'name': 'SdksComponent', 'selector': 'app-sdks'},{'name': 'SecurityComponent', 'selector': 'app-security'},{'name': 'SessionsComponent', 'selector': 'app-sessions'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StatsComponent', 'selector': 'app-stats'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TeamsComponent', 'selector': 'app-teams'},{'name': 'TeamsTableComponent', 'selector': 'app-teams-table'},{'name': 'TopbarComponent', 'selector': 'app-topbar'},{'name': 'VitalsComponent', 'selector': 'app-vitals'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'TeamsComponent'};
 </script>

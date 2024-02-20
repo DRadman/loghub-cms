@@ -105,7 +105,7 @@
   <li class="breadcrumb-item">Interfaces</li>
   <li class="breadcrumb-item"
   >
-  AppState</li>
+  TeamState</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -129,7 +129,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/core/state/app.state.ts</code>
+            <code>src/app/core/state/team/team.reducer.ts</code>
         </p>
 
 
@@ -148,33 +148,51 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                        <a href="#authState" 
+                                        <a href="#createOrganizationTeamError" 
 >
-                                            authState
+                                            createOrganizationTeamError
                                         </a>
                                 </li>
                                 <li>
-                                        <a href="#membersState" 
+                                        <a href="#createOrganizationTeamStatus" 
 >
-                                            membersState
+                                            createOrganizationTeamStatus
                                         </a>
                                 </li>
                                 <li>
-                                        <a href="#organizationState" 
+                                        <a href="#myTeams" 
 >
-                                            organizationState
+                                            myTeams
                                         </a>
                                 </li>
                                 <li>
-                                        <a href="#roleState" 
+                                        <a href="#myTeamsError" 
 >
-                                            roleState
+                                            myTeamsError
                                         </a>
                                 </li>
                                 <li>
-                                        <a href="#teamState" 
+                                        <a href="#myTeamsStatus" 
 >
-                                            teamState
+                                            myTeamsStatus
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#organizationTeams" 
+>
+                                            organizationTeams
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#organizationTeamsError" 
+>
+                                            organizationTeamsError
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#organizationTeamsStatus" 
+>
+                                            organizationTeamsStatus
                                         </a>
                                 </li>
                             </ul>
@@ -192,9 +210,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="authState"></a>
-                                        <span class="name "><b>authState</b>
-                                            <a href="#authState">
+                                        <a name="createOrganizationTeamError"></a>
+                                        <span class="name "><b>createOrganizationTeamError</b>
+                                            <a href="#createOrganizationTeamError">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -202,7 +220,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>authState:         <code><a href="../interfaces/AuthState.html" target="_self" >AuthState</a></code>
+                                        <code>createOrganizationTeamError:     <code>any | null</code>
 </code>
                                     </td>
                                 </tr>
@@ -210,7 +228,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="../interfaces/AuthState.html" target="_self" >AuthState</a></code>
+                                            <i>Type : </i>    <code>any | null</code>
 
                                         </td>
                                     </tr>
@@ -225,9 +243,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="membersState"></a>
-                                        <span class="name "><b>membersState</b>
-                                            <a href="#membersState">
+                                        <a name="createOrganizationTeamStatus"></a>
+                                        <span class="name "><b>createOrganizationTeamStatus</b>
+                                            <a href="#createOrganizationTeamStatus">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -235,7 +253,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>membersState:         <code><a href="../interfaces/MembersState.html" target="_self" >MembersState</a></code>
+                                        <code>createOrganizationTeamStatus:         <code><a href="../miscellaneous/enumerations.html#StateStatus" target="_self" >StateStatus</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -243,7 +261,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="../interfaces/MembersState.html" target="_self" >MembersState</a></code>
+                                            <i>Type : </i>        <code><a href="../miscellaneous/enumerations.html#StateStatus" target="_self" >StateStatus</a></code>
 
                                         </td>
                                     </tr>
@@ -258,9 +276,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="organizationState"></a>
-                                        <span class="name "><b>organizationState</b>
-                                            <a href="#organizationState">
+                                        <a name="myTeams"></a>
+                                        <span class="name "><b>myTeams</b>
+                                            <a href="#myTeams">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -268,7 +286,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>organizationState:         <code><a href="../interfaces/OrganizationState.html" target="_self" >OrganizationState</a></code>
+                                        <code>myTeams:         <code><a href="../interfaces/Team.html" target="_self" >Team[] | null</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -276,7 +294,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="../interfaces/OrganizationState.html" target="_self" >OrganizationState</a></code>
+                                            <i>Type : </i>        <code><a href="../interfaces/Team.html" target="_self" >Team[] | null</a></code>
 
                                         </td>
                                     </tr>
@@ -291,9 +309,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="roleState"></a>
-                                        <span class="name "><b>roleState</b>
-                                            <a href="#roleState">
+                                        <a name="myTeamsError"></a>
+                                        <span class="name "><b>myTeamsError</b>
+                                            <a href="#myTeamsError">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -301,7 +319,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>roleState:         <code><a href="../interfaces/RoleState.html" target="_self" >RoleState</a></code>
+                                        <code>myTeamsError:     <code>any | null</code>
 </code>
                                     </td>
                                 </tr>
@@ -309,7 +327,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="../interfaces/RoleState.html" target="_self" >RoleState</a></code>
+                                            <i>Type : </i>    <code>any | null</code>
 
                                         </td>
                                     </tr>
@@ -324,9 +342,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="teamState"></a>
-                                        <span class="name "><b>teamState</b>
-                                            <a href="#teamState">
+                                        <a name="myTeamsStatus"></a>
+                                        <span class="name "><b>myTeamsStatus</b>
+                                            <a href="#myTeamsStatus">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -334,7 +352,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>teamState:         <code><a href="../interfaces/TeamState.html" target="_self" >TeamState</a></code>
+                                        <code>myTeamsStatus:         <code><a href="../miscellaneous/enumerations.html#StateStatus" target="_self" >StateStatus</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -342,7 +360,106 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="../interfaces/TeamState.html" target="_self" >TeamState</a></code>
+                                            <i>Type : </i>        <code><a href="../miscellaneous/enumerations.html#StateStatus" target="_self" >StateStatus</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="organizationTeams"></a>
+                                        <span class="name "><b>organizationTeams</b>
+                                            <a href="#organizationTeams">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>organizationTeams:         <code><a href="../interfaces/Team.html" target="_self" >Team[] | null</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="../interfaces/Team.html" target="_self" >Team[] | null</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="organizationTeamsError"></a>
+                                        <span class="name "><b>organizationTeamsError</b>
+                                            <a href="#organizationTeamsError">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>organizationTeamsError:     <code>any | null</code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code>any | null</code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="organizationTeamsStatus"></a>
+                                        <span class="name "><b>organizationTeamsStatus</b>
+                                            <a href="#organizationTeamsStatus">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>organizationTeamsStatus:         <code><a href="../miscellaneous/enumerations.html#StateStatus" target="_self" >StateStatus</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="../miscellaneous/enumerations.html#StateStatus" target="_self" >StateStatus</a></code>
 
                                         </td>
                                     </tr>
@@ -358,42 +475,114 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AuthEffects } from &#x27;./auth/auth.effects&#x27;;
-import { AuthState, authReducer } from &#x27;./auth/auth.reducer&#x27;;
-import { MembersEffects } from &#x27;./members/members.effects&#x27;;
-import { MembersState, membersReducer } from &#x27;./members/members.reducer&#x27;;
-import { OrganizationEffects } from &#x27;./organization/organization.effects&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { createReducer, on } from &#x27;@ngrx/store&#x27;;
+import { StateStatus } from &#x27;../../domain/models/enums/state-status.enum&#x27;;
+import { Team } from &#x27;../../domain/models/team.entity&#x27;;
 import {
-  OrganizationState,
-  organizationReducer,
-} from &#x27;./organization/organization.reducer&#x27;;
-import { RoleEffects } from &#x27;./role/role.effects&#x27;;
-import { RoleState, roleReducer } from &#x27;./role/role.reducer&#x27;;
-import { TeamEffects } from &#x27;./team/team.effects&#x27;;
-import { TeamState, teamReducer } from &#x27;./team/team.reducer&#x27;;
+    createTeam,
+    createTeamFailure,
+    createTeamSuccess,
+    loadMyTeams,
+    loadMyTeamsSuccess,
+    loadOrganizationTeams,
+    loadOrganizationTeamsFailure,
+    loadOrganizationTeamsSuccess,
+} from &#x27;./team.actions&#x27;;
 
-export interface AppState {
-  authState: AuthState;
-  organizationState: OrganizationState;
-  membersState: MembersState;
-  roleState: RoleState;
-  teamState: TeamState;
+export interface TeamState {
+  organizationTeams: Team[] | null;
+  myTeams: Team[] | null;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  organizationTeamsError: any | null;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  myTeamsError: any | null;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  createOrganizationTeamError: any | null;
+  organizationTeamsStatus: StateStatus;
+  myTeamsStatus: StateStatus;
+  createOrganizationTeamStatus: StateStatus;
 }
 
-export const appEfects &#x3D; [
-  AuthEffects,
-  OrganizationEffects,
-  MembersEffects,
-  RoleEffects,
-  TeamEffects,
-];
-export const appStore &#x3D; {
-  authState: authReducer,
-  organizationState: organizationReducer,
-  membersState: membersReducer,
-  roleState: roleReducer,
-  teamState: teamReducer,
+export const initialState: TeamState &#x3D; {
+  organizationTeams: null,
+  organizationTeamsError: undefined,
+  organizationTeamsStatus: StateStatus.PENDING,
+  myTeams: null,
+  myTeamsError: undefined,
+  myTeamsStatus: StateStatus.PENDING,
+  createOrganizationTeamError: undefined,
+  createOrganizationTeamStatus: StateStatus.PENDING,
 };
+
+export const teamReducer &#x3D; createReducer(
+  initialState,
+
+  //Handle loading organization teams
+  on(loadOrganizationTeams, (state) &#x3D;&gt; ({
+    ...state,
+    organizationTeamsError: null,
+    organizationTeamsStatus: StateStatus.LOADING,
+  })),
+
+  //Handle load success
+  on(loadOrganizationTeamsSuccess, (state, { teams }) &#x3D;&gt; ({
+    ...state,
+    organizationTeams: teams,
+    organizationTeamsError: null,
+    organizationTeamsStatus: StateStatus.SUCCESS,
+  })),
+
+  //Handle load failure
+  on(loadOrganizationTeamsFailure, (state, { error }) &#x3D;&gt; ({
+    ...state,
+    organizationTeamsError: error,
+    organizationTeamsStatus: StateStatus.ERROR,
+  })),
+
+  //Handle loading current user teams
+  on(loadMyTeams, (state) &#x3D;&gt; ({
+    ...state,
+    myTeamsError: null,
+    myTeamsStatus: StateStatus.LOADING,
+  })),
+
+  //Handle load success
+  on(loadMyTeamsSuccess, (state, { teams }) &#x3D;&gt; ({
+    ...state,
+    myTeams: teams,
+    myTeamsError: null,
+    myTeamsStatus: StateStatus.SUCCESS,
+  })),
+
+  //Handle load failure
+  on(loadOrganizationTeamsFailure, (state, { error }) &#x3D;&gt; ({
+    ...state,
+    myTeamsError: error,
+    myTeamsStatus: StateStatus.ERROR,
+  })),
+
+  //Handle create new team
+  on(createTeam, (state) &#x3D;&gt; ({
+    ...state,
+    error: null,
+    status: StateStatus.LOADING,
+  })),
+
+  //Handle create new team success
+  on(createTeamSuccess, (state, team) &#x3D;&gt; ({
+    ...state,
+    organizationTeams: [...(state.organizationTeams || []), team],
+    createOrganizationTeamError: null,
+    createOrganizationTeamStatus: StateStatus.SUCCESS,
+  })),
+
+  //Handle create new team failure
+  on(createTeamFailure, (state, { error }) &#x3D;&gt; ({
+    ...state,
+    createOrganizationTeamError: error,
+    createOrganizationTeamStatus: StateStatus.ERROR,
+  })),
+);
 </code></pre>
     </div>
 </div>
@@ -431,7 +620,7 @@ export const appStore &#x3D; {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
-            var COMPODOC_CURRENT_PAGE_URL = 'AppState.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'TeamState.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

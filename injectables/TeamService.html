@@ -86,7 +86,7 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content miscellaneous-functions">
+               <div class="content injectable">
                    <div class="content-data">
 
 
@@ -96,121 +96,154 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 <ol class="breadcrumb">
-  <li class="breadcrumb-item">Miscellaneous</li>
-  <li class="breadcrumb-item">Functions</li>
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >TeamService</li>
 </ol>
 
-<section data-compodoc="block-index">
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/core/services/api/team.api.service.ts</code>
+        </p>
+
+
+
+
+
+            <section data-compodoc="block-index">
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <ul class="index-list">
-                        <li>
-                            <a href="#convertToDate" title="src/app/core/interceptors/date.interceptor.ts" ><b>convertToDate</b>&nbsp;&nbsp;&nbsp;(src/.../date.interceptor.ts)</a>
-                        </li>
-                        <li>
-                            <a href="#hasPermission" title="src/app/core/state/auth/auth.selectors.ts" ><b>hasPermission</b>&nbsp;&nbsp;&nbsp;(src/.../auth.selectors.ts)</a>
-                        </li>
-                        <li>
-                            <a href="#HttpLoaderFactory" title="src/app/app.config.ts" ><b>HttpLoaderFactory</b>&nbsp;&nbsp;&nbsp;(src/.../app.config.ts)</a>
-                        </li>
-                        <li>
-                            <a href="#isIso8601" title="src/app/core/interceptors/date.interceptor.ts" ><b>isIso8601</b>&nbsp;&nbsp;&nbsp;(src/.../date.interceptor.ts)</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#createNewTeam" >createNewTeam</a>
+                            </li>
+                            <li>
+                                <a href="#getMyTeams" >getMyTeams</a>
+                            </li>
+                            <li>
+                                <a href="#getOrganizationTeams" >getOrganizationTeams</a>
+                            </li>
+                            <li>
+                                <a href="#isSlugTaken" >isSlugTaken</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
         </tbody>
     </table>
 </section>
 
-    <h3>src/app/core/interceptors/date.interceptor.ts</h3>
-    <section data-compodoc="block-methods">
-    <h3></h3>    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="convertToDate"></a>
-                    <span class="name">
-                        <span ><b>convertToDate</b></span>
-                        <a href="#convertToDate"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>convertToDate(body: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
-                </td>
-            </tr>
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(http: HttpClient)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/core/services/api/team.api.service.ts:11</a></div>
+                            </td>
+                        </tr>
 
-
-
-
-            <tr>
-                <td class="col-md-4">
-
-                            <div class="io-description">
-                                <b>Parameters :</b>
-                                
-                                <table class="params">
-                                    <thead>
-                                        <tr>
-                                            <td>Name</td>
-                                                <td>Type</td>
-                                            <td>Optional</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                                <td>body</td>
-                                            <td>
-                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-                                            </td>
-
-                                            <td>
-                                                    No
-                                            </td>
-
-
-                                        </tr>
-                                    </tbody>
-                                </table>
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                    <code>HttpClient</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
                             </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="isIso8601"></a>
+                    <a name="createNewTeam"></a>
                     <span class="name">
-                        <span ><b>isIso8601</b></span>
-                        <a href="#isIso8601"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>createNewTeam</b></span>
+                        <a href="#createNewTeam"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>isIso8601(value: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+<code>createNewTeam(dto: <a href="../interfaces/CreateTeamRequestDto.html" target="_self">CreateTeamRequestDto</a>)</code>
                 </td>
             </tr>
 
 
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="29"
+                                    class="link-to-prism">src/app/core/services/api/team.api.service.ts:29</a></div>
+                        </td>
+                    </tr>
 
 
             <tr>
@@ -229,89 +262,9 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                                <td>value</td>
+                                                <td>dto</td>
                                             <td>
-                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-                                            </td>
-
-                                            <td>
-                                                    No
-                                            </td>
-
-
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>    <h3>src/app/core/state/auth/auth.selectors.ts</h3>
-    <section data-compodoc="block-methods">
-    <h3></h3>    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="hasPermission"></a>
-                    <span class="name">
-                        <span ><b>hasPermission</b></span>
-                        <a href="#hasPermission"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>hasPermission(user: <a href="../interfaces/User.html" target="_self">User</a>, permissionType: <a href="../undefineds/ResourceType.html" target="_self">ResourceType</a>, permissionValue: <a href="../undefineds/Permission.html" target="_self">Permission</a>)</code>
-                </td>
-            </tr>
-
-
-
-
-            <tr>
-                <td class="col-md-4">
-
-                            <div class="io-description">
-                                <b>Parameters :</b>
-                                
-                                <table class="params">
-                                    <thead>
-                                        <tr>
-                                            <td>Name</td>
-                                                <td>Type</td>
-                                            <td>Optional</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                                <td>user</td>
-                                            <td>
-                                                            <code><a href="../interfaces/User.html" target="_self" >User</a></code>
-                                            </td>
-
-                                            <td>
-                                                    No
-                                            </td>
-
-
-                                        </tr>
-                                        <tr>
-                                                <td>permissionType</td>
-                                            <td>
-                                                            <code><a href="../miscellaneous/enumerations.html#ResourceType" target="_self" >ResourceType</a></code>
-                                            </td>
-
-                                            <td>
-                                                    No
-                                            </td>
-
-
-                                        </tr>
-                                        <tr>
-                                                <td>permissionValue</td>
-                                            <td>
-                                                            <code><a href="../miscellaneous/enumerations.html#Permission" target="_self" >Permission</a></code>
+                                                            <code><a href="../interfaces/CreateTeamRequestDto.html" target="_self" >CreateTeamRequestDto</a></code>
                                             </td>
 
                                             <td>
@@ -324,7 +277,7 @@
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                            <b>Returns : </b>    <code>Observable&lt;TeamDto&gt;</code>
 
                         </div>
                             <div class="io-description">
@@ -334,26 +287,104 @@
             </tr>
         </tbody>
     </table>
-</section>    <h3>src/app/app.config.ts</h3>
-    <section data-compodoc="block-methods">
-    <h3></h3>    <table class="table table-sm table-bordered">
+    <table class="table table-sm table-bordered">
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="HttpLoaderFactory"></a>
+                    <a name="getMyTeams"></a>
                     <span class="name">
-                        <span ><b>HttpLoaderFactory</b></span>
-                        <a href="#HttpLoaderFactory"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>getMyTeams</b></span>
+                        <a href="#getMyTeams"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>HttpLoaderFactory(http: HttpClient)</code>
+<code>getMyTeams()</code>
                 </td>
             </tr>
 
 
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="18"
+                                    class="link-to-prism">src/app/core/services/api/team.api.service.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;TeamDto[]&gt;</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getOrganizationTeams"></a>
+                    <span class="name">
+                        <span ><b>getOrganizationTeams</b></span>
+                        <a href="#getOrganizationTeams"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getOrganizationTeams()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="14"
+                                    class="link-to-prism">src/app/core/services/api/team.api.service.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;TeamDto[]&gt;</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isSlugTaken"></a>
+                    <span class="name">
+                        <span ><b>isSlugTaken</b></span>
+                        <a href="#isSlugTaken"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isSlugTaken(slug: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="22"
+                                    class="link-to-prism">src/app/core/services/api/team.api.service.ts:22</a></div>
+                        </td>
+                    </tr>
 
 
             <tr>
@@ -372,9 +403,9 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                                <td>http</td>
+                                                <td>slug</td>
                                             <td>
-                                                        <code>HttpClient</code>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                             </td>
 
                                             <td>
@@ -386,11 +417,70 @@
                                     </tbody>
                                 </table>
                             </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
                 </td>
             </tr>
         </tbody>
     </table>
 </section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { Injectable } from &#x27;@angular/core&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+import { TeamDto } from &#x27;../../domain/dto/team.dto&#x27;;
+import { api } from &#x27;./api&#x27;;
+import { CreateTeamRequestDto } from &#x27;../../domain/dto/requests/create-team-request.dto&#x27;;
+
+@Injectable({
+  providedIn: &#x27;root&#x27;,
+})
+export class TeamService {
+  constructor(private http: HttpClient) {}
+
+  getOrganizationTeams(): Observable&lt;TeamDto[]&gt; {
+    return this.http.get&lt;TeamDto[]&gt;(api.teamUrl, api.authOptions);
+  }
+
+  getMyTeams(): Observable&lt;TeamDto[]&gt; {
+    return this.http.get&lt;TeamDto[]&gt;(api.teamUrl + &#x27;/my&#x27;, api.authOptions);
+  }
+
+  isSlugTaken(slug: string): Observable&lt;boolean&gt; {
+    return this.http.get&lt;boolean&gt;(
+      api.teamUrl + &#x27;/slug/taken?slug&#x3D;&#x27; + slug,
+      api.authOptions,
+    );
+  }
+
+  createNewTeam(dto: CreateTeamRequestDto): Observable&lt;TeamDto&gt; {
+    return this.http.post&lt;TeamDto&gt;(api.teamUrl, dto, api.authOptions);
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
 
 
                    </div><div class="search-results">
@@ -418,8 +508,8 @@
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-functions';
-            var COMPODOC_CURRENT_PAGE_URL = 'functions.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'TeamService.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
