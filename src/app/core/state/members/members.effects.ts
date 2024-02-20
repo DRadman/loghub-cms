@@ -13,11 +13,13 @@ import {
 } from './members.actions';
 import { MembersService } from '../../services/api/members.api.service';
 import { Injectable } from '@angular/core';
+import { InvitationService } from '../../services/api/invitation.api.service';
 
 @Injectable()
 export class MembersEffects {
   constructor(
     private membersService: MembersService,
+    private invitationService: InvitationService,
     private actions$: Actions,
   ) {}
 
@@ -37,7 +39,7 @@ export class MembersEffects {
     this.actions$.pipe(
       ofType(inviteMember),
       switchMap((request) =>
-        this.membersService.inviteMember(request).pipe(
+        this.invitationService.inviteMember(request).pipe(
           map((invitation) => inviteMemberSuccess(invitation)),
           catchError((error) => of(inviteMemberFailure({ error }))),
         ),

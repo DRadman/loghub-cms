@@ -68,6 +68,11 @@ export const selectRegistrationError = createSelector(
   (state: AuthState) => state.registrationError,
 );
 
+export const selectAcceptInvitationError = createSelector(
+  selectAuth,
+  (state: AuthState) => state.acceptInvitationError,
+);
+
 export const selectHasPermission = (
   permissionType: ResourceType,
   permissionValue: Permission,
