@@ -1,18 +1,18 @@
 // import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-// import { TeamsComponent } from './teams.component';
+// import { TeamsTableComponent } from './teams-table.component';
 
-// describe('TeamsComponent', () => {
-//   let component: TeamsComponent;
-//   let fixture: ComponentFixture<TeamsComponent>;
+// describe('TeamsTableComponent', () => {
+//   let component: TeamsTableComponent;
+//   let fixture: ComponentFixture<TeamsTableComponent>;
 
 //   beforeEach(async () => {
 //     await TestBed.configureTestingModule({
-//       imports: [TeamsComponent]
+//       imports: [TeamsTableComponent]
 //     })
 //     .compileComponents();
     
-//     fixture = TestBed.createComponent(TeamsComponent);
+//     fixture = TestBed.createComponent(TeamsTableComponent);
 //     component = fixture.componentInstance;
 //     fixture.detectChanges();
 //   });

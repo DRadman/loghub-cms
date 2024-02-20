@@ -1,1 +1,26 @@
-<p>teams works!</p>
+@if (hasReadPermission | async) {
+  <p-panel
+    [header]="'teams.organization_teams' | translate"
+    [toggleable]="true"
+  >
+    <app-teams-table
+      [enableAddAction]="(hasCreatePermission | async) ?? false"
+      [enableDeleteAction]="(hasDeletePermission | async) ?? false"
+      [isLoading]="(isLoadingOrganizationTeams | async) ?? true"
+      [data]="(organizationTeams | async) ?? undefined"
+    />
+  </p-panel>
+
+  <p-panel
+    styleClass="mt-5"
+    [header]="'teams.my_teams' | translate"
+    [toggleable]="true"
+  >
+    <app-teams-table
+      [isLoading]="(isLoadingMyTeams | async) ?? true"
+      [data]="(myTeams | async) ?? undefined"
+    />
+  </p-panel>
+} @else {
+  <app-access-denied />
+}

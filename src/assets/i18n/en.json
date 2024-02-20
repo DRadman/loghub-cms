@@ -174,6 +174,10 @@
     "invited_members": "Invited Members",
     "organization_owner": "Organization Owner"
   },
+  "teams": {
+    "organization_teams": "Organization Teams",
+    "my_teams": "My Teams"
+  },
   "members-table": {
     "first_name": "First Name",
     "last_name": "Last Name",
@@ -201,5 +205,19 @@
     "removed_memeber": "Removed organization member successfully",
     "delete_confirmation": "Delete Confirmation",
     "delete_confirmation_message": "Are you sure that you want to remove this user?"
+  },
+  "teams-table": {
+    "new_team": "New Team",
+    "slug": "Slug",
+    "slug_is_required": "Slug is required",
+    "slug_label": "Slug [REQUIRED]",
+    "added_on": "Added On",
+    "error": "API Error",
+    "failed_to_create_team": "Failed to create team (Team slug already exists)",
+    "success": "Success",
+    "team_created": "Team has been created successfully",
+    "create_new_team": "Create New Team",
+    "cancel": "Cancel",
+    "no_teams_found": "No Teams Found"
   }
 }
