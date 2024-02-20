@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import {
   FormBuilder,
   FormsModule,
@@ -56,7 +56,7 @@ import { InvitationService } from '../../../../core/services/api/invitation.api.
   templateUrl: './invitation.component.html',
   styleUrl: './invitation.component.scss',
 })
-export class InvitationComponent {
+export class InvitationComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('username') usernameInput!: ElementRef;
   @Input()
   private invitationHash?: string;
