@@ -148,6 +148,12 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
+                                        <a href="#acceptInvitationError" 
+>
+                                            acceptInvitationError
+                                        </a>
+                                </li>
+                                <li>
                                         <a href="#credentials" 
 >
                                             credentials
@@ -218,6 +224,39 @@
 
             <section data-compodoc="block-properties">
                 <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="acceptInvitationError"></a>
+                                        <span class="name "><b>acceptInvitationError</b>
+                                            <a href="#acceptInvitationError">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>acceptInvitationError:     <code>null | any</code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code>null | any</code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
                     <table class="table table-sm table-bordered">
                         <tbody>
                                 <tr>
@@ -559,6 +598,9 @@ import { StateStatus } from &#x27;../../domain/models/enums/state-status.enum&#x
 import { Token } from &#x27;../../domain/models/token.entity&#x27;;
 import { User } from &#x27;../../domain/models/user.entity&#x27;;
 import {
+  acceptInvitation,
+  acceptInvitationFailure,
+  acceptInvitationSuccess,
   authenticate,
   authenticationFailure,
   authenticationSuccess,
@@ -586,6 +628,7 @@ export interface AuthState {
   forgotPasswordError: null | any;
   resetPasswordError: null | any;
   registrationError: null | any;
+  acceptInvitationError: null | any;
   usernameCheckError: null | any;
   isUsernameAvialable: boolean | null;
   token: Token | null;
@@ -601,6 +644,7 @@ export const initialState: AuthState &#x3D; {
   registrationError: null,
   usernameCheckError: null,
   isUsernameAvialable: null,
+  acceptInvitationError: null,
   token: null,
   credentials: null,
   status: StateStatus.PENDING,
@@ -731,6 +775,26 @@ export const authReducer &#x3D; createReducer(
   on(registerNewUserFailure, (state, { error }) &#x3D;&gt; ({
     ...state,
     registrationError: error,
+    status: StateStatus.ERROR,
+  })),
+
+  // Handle Accept Invitation
+  on(acceptInvitation, (state) &#x3D;&gt; ({
+    ...state,
+    status: StateStatus.LOADING,
+  })),
+
+  // Handle Accept invitation success
+  on(acceptInvitationSuccess, (state) &#x3D;&gt; ({
+    ...state,
+    acceptInvitationError: null,
+    status: StateStatus.SUCCESS,
+  })),
+
+  // Handle Accept invitation failure
+  on(acceptInvitationFailure, (state, { error }) &#x3D;&gt; ({
+    ...state,
+    acceptInvitationError: error,
     status: StateStatus.ERROR,
   })),
 );

@@ -142,6 +142,12 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#acceptInvitation$" >acceptInvitation$</a>
+                            </li>
+                            <li>
+                                <a href="#acceptInvitationSuccess$" >acceptInvitationSuccess$</a>
+                            </li>
+                            <li>
                                 <a href="#authenticate$" >authenticate$</a>
                             </li>
                             <li>
@@ -184,12 +190,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, jwtService: <a href="../injectables/JwtService.html" target="_self">JwtService</a>, actions$: Actions)</code>
+<code>constructor(authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, jwtService: <a href="../injectables/JwtService.html" target="_self">JwtService</a>, invitationService: <a href="../injectables/InvitationService.html" target="_self">InvitationService</a>, actions$: Actions)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/core/state/auth/auth.effects.ts:26</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/core/state/auth/auth.effects.ts:30</a></div>
                             </td>
                         </tr>
 
@@ -231,6 +237,18 @@
                                                     
                                                 </tr>
                                                 <tr>
+                                                        <td>invitationService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/InvitationService.html" target="_self" >InvitationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
                                                         <td>actions$</td>
                                                   
                                                         <td>
@@ -257,6 +275,76 @@
     <h3 id="inputs">
         Properties
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="acceptInvitation$"></a>
+                    <span class="name">
+                        <span ><b>acceptInvitation$</b></span>
+                        <a href="#acceptInvitation$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(acceptInvitation),
+      switchMap((request) &#x3D;&gt;
+        this.invitationService.acceptInvitation(request.invitationHash, request.dto).pipe(
+          map(() &#x3D;&gt; {
+            return acceptInvitationSuccess({
+              username: request.dto.username,
+              password: request.dto.password,
+            });
+          }),
+          catchError((error) &#x3D;&gt; of(acceptInvitationFailure({ error }))),
+        ),
+      ),
+    ),
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="146" class="link-to-prism">src/app/core/state/auth/auth.effects.ts:146</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="acceptInvitationSuccess$"></a>
+                    <span class="name">
+                        <span ><b>acceptInvitationSuccess$</b></span>
+                        <a href="#acceptInvitationSuccess$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(acceptInvitationSuccess),
+      switchMap((request) &#x3D;&gt; of(authenticate(request))),
+    ),
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="163" class="link-to-prism">src/app/core/state/auth/auth.effects.ts:163</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -294,7 +382,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/core/state/auth/auth.effects.ts:45</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/core/state/auth/auth.effects.ts:50</a></div>
                         </td>
                     </tr>
 
@@ -329,7 +417,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="94" class="link-to-prism">src/app/core/state/auth/auth.effects.ts:94</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="99" class="link-to-prism">src/app/core/state/auth/auth.effects.ts:99</a></div>
                         </td>
                     </tr>
 
@@ -366,7 +454,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/app/core/state/auth/auth.effects.ts:66</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/app/core/state/auth/auth.effects.ts:71</a></div>
                         </td>
                     </tr>
 
@@ -401,7 +489,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/core/state/auth/auth.effects.ts:33</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/core/state/auth/auth.effects.ts:38</a></div>
                         </td>
                     </tr>
 
@@ -441,7 +529,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="117" class="link-to-prism">src/app/core/state/auth/auth.effects.ts:117</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="122" class="link-to-prism">src/app/core/state/auth/auth.effects.ts:122</a></div>
                         </td>
                     </tr>
 
@@ -471,7 +559,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="134" class="link-to-prism">src/app/core/state/auth/auth.effects.ts:134</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="139" class="link-to-prism">src/app/core/state/auth/auth.effects.ts:139</a></div>
                         </td>
                     </tr>
 
@@ -508,7 +596,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/app/core/state/auth/auth.effects.ts:80</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/app/core/state/auth/auth.effects.ts:85</a></div>
                         </td>
                     </tr>
 
@@ -542,7 +630,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="106" class="link-to-prism">src/app/core/state/auth/auth.effects.ts:106</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="111" class="link-to-prism">src/app/core/state/auth/auth.effects.ts:111</a></div>
                         </td>
                     </tr>
 
@@ -561,6 +649,9 @@ import { catchError, map, of, switchMap, tap } from &#x27;rxjs&#x27;;
 import { AuthService } from &#x27;../../services/api/auth.api.service&#x27;;
 import { JwtService } from &#x27;../../services/token-storage.service&#x27;;
 import {
+  acceptInvitation,
+  acceptInvitationFailure,
+  acceptInvitationSuccess,
   authenticate,
   authenticationFailure,
   authenticationSuccess,
@@ -578,12 +669,14 @@ import {
   resetPasswordSuccess,
   signOut,
 } from &#x27;./auth.actions&#x27;;
+import { InvitationService } from &#x27;../../services/api/invitation.api.service&#x27;;
 
 @Injectable()
 export class AuthEffects {
   constructor(
     private authService: AuthService,
     private jwtService: JwtService,
+    private invitationService: InvitationService,
     private actions$: Actions,
   ) {}
 
@@ -691,6 +784,30 @@ export class AuthEffects {
   registerNewUserSuccess$ &#x3D; createEffect(() &#x3D;&gt;
     this.actions$.pipe(
       ofType(registerNewUserSuccess),
+      switchMap((request) &#x3D;&gt; of(authenticate(request))),
+    ),
+  );
+
+  acceptInvitation$ &#x3D; createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(acceptInvitation),
+      switchMap((request) &#x3D;&gt;
+        this.invitationService.acceptInvitation(request.invitationHash, request.dto).pipe(
+          map(() &#x3D;&gt; {
+            return acceptInvitationSuccess({
+              username: request.dto.username,
+              password: request.dto.password,
+            });
+          }),
+          catchError((error) &#x3D;&gt; of(acceptInvitationFailure({ error }))),
+        ),
+      ),
+    ),
+  );
+
+  acceptInvitationSuccess$ &#x3D; createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(acceptInvitationSuccess),
       switchMap((request) &#x3D;&gt; of(authenticate(request))),
     ),
   );

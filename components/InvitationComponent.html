@@ -129,6 +129,14 @@
 
 
 
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+                <code>AfterViewInit</code>
+                <code>OnDestroy</code>
+    </p>
 
 
 <section data-compodoc="block-metadata">
@@ -145,6 +153,12 @@
 
 
 
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                            <code>MessageService</code>
+                </td>
+            </tr>
 
 
             <tr>
@@ -157,6 +171,21 @@
                 <td class="col-md-9"><code>true</code></td>
             </tr>
 
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>CommonModule</code>
+                            <code>FormsModule</code>
+                            <code>ReactiveFormsModule</code>
+                            <code>TranslateModule</code>
+                            <code>ButtonModule</code>
+                            <code>InputMaskModule</code>
+                            <code>InputTextModule</code>
+                            <code>PasswordModule</code>
+                            <code>RouterModule</code>
+                            <code>ToastModule</code>
+                </td>
+            </tr>
 
 
 
@@ -181,35 +210,1072 @@
     </table>
 </section>
 
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#errorSubscription" >errorSubscription</a>
+                            </li>
+                            <li>
+                                <a href="#isLoading" >isLoading</a>
+                            </li>
+                            <li>
+                                <a href="#isUsernameTaken" >isUsernameTaken</a>
+                            </li>
+                            <li>
+                                <a href="#registerForm" >registerForm</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#usernameCheckSubscription" >usernameCheckSubscription</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#usernameInput" >usernameInput</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#userSubscription" >userSubscription</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#checkUsername" >checkUsername</a>
+                            </li>
+                            <li>
+                                <a href="#ngAfterViewInit" >ngAfterViewInit</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#register" >register</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#invitationHash" >invitationHash</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
 
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(formBuilder: FormBuilder, store: <a href="../interfaces/AppState.html" target="_self">Store&lt;AppState&gt;</a>, router: Router, messageService: MessageService, translateService: TranslateService, authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, invitationService: <a href="../injectables/InvitationService.html" target="_self">InvitationService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/features/auth/components/invitation/invitation.component.ts:62</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>formBuilder</td>
+                                                  
+                                                        <td>
+                                                                    <code>FormBuilder</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>store</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../interfaces/AppState.html" target="_self" >Store&lt;AppState&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>messageService</td>
+                                                  
+                                                        <td>
+                                                                    <code>MessageService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>translateService</td>
+                                                  
+                                                        <td>
+                                                                    <code>TranslateService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>invitationService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/InvitationService.html" target="_self" >InvitationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="invitationHash"></a>
+                        <b>invitationHash</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/features/auth/components/invitation/invitation.component.ts:62</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
 
 
 
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkUsername"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>checkUsername</b></span>
+                        <a href="#checkUsername"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>checkUsername(username: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="177"
+                                    class="link-to-prism">src/app/features/auth/components/invitation/invitation.component.ts:177</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>username</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngAfterViewInit"></a>
+                    <span class="name">
+                        <span ><b>ngAfterViewInit</b></span>
+                        <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngAfterViewInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="147"
+                                    class="link-to-prism">src/app/features/auth/components/invitation/invitation.component.ts:147</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="158"
+                                    class="link-to-prism">src/app/features/auth/components/invitation/invitation.component.ts:158</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="99"
+                                    class="link-to-prism">src/app/features/auth/components/invitation/invitation.component.ts:99</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="register"></a>
+                    <span class="name">
+                        <span ><b>register</b></span>
+                        <a href="#register"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>register()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="164"
+                                    class="link-to-prism">src/app/features/auth/components/invitation/invitation.component.ts:164</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="errorSubscription"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>errorSubscription</b></span>
+                        <a href="#errorSubscription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subscription</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="96" class="link-to-prism">src/app/features/auth/components/invitation/invitation.component.ts:96</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isLoading"></a>
+                    <span class="name">
+                        <span ><b>isLoading</b></span>
+                        <a href="#isLoading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.store.select(isLoadingAuthState)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/app/features/auth/components/invitation/invitation.component.ts:74</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isUsernameTaken"></a>
+                    <span class="name">
+                        <span ><b>isUsernameTaken</b></span>
+                        <a href="#isUsernameTaken"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>boolean | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/app/features/auth/components/invitation/invitation.component.ts:75</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="registerForm"></a>
+                    <span class="name">
+                        <span ><b>registerForm</b></span>
+                        <a href="#registerForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.formBuilder.group({
+    username: [&#x27;&#x27;, [Validators.required, Validators.minLength(3)]],
+    password: [
+      &#x27;&#x27;,
+      [
+        Validators.required,
+        Validators.minLength(8),
+        Validators.pattern(securePasswordRegex),
+      ],
+    ],
+    email: [
+      { value: &#x27;&#x27;, disabled: true },
+      [Validators.required, Validators.email],
+    ],
+    firstName: [&#x27;&#x27;, [Validators.required]],
+    lastName: [&#x27;&#x27;, [Validators.required]],
+  })</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/app/features/auth/components/invitation/invitation.component.ts:77</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="usernameCheckSubscription"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>usernameCheckSubscription</b></span>
+                        <a href="#usernameCheckSubscription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subscription</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="97" class="link-to-prism">src/app/features/auth/components/invitation/invitation.component.ts:97</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="usernameInput"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>usernameInput</b></span>
+                        <a href="#usernameInput"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ElementRef</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;username&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/features/auth/components/invitation/invitation.component.ts:60</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="userSubscription"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>userSubscription</b></span>
+                        <a href="#userSubscription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subscription</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="95" class="link-to-prism">src/app/features/auth/components/invitation/invitation.component.ts:95</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { CommonModule } from &#x27;@angular/common&#x27;;
+import { AfterViewInit, Component, ElementRef, Input, OnDestroy, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
+import {
+  FormBuilder,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators,
+} from &#x27;@angular/forms&#x27;;
+import { Router, RouterModule } from &#x27;@angular/router&#x27;;
+import { TranslateModule, TranslateService } from &#x27;@ngx-translate/core&#x27;;
+import { MessageService } from &#x27;primeng/api&#x27;;
+import { ButtonModule } from &#x27;primeng/button&#x27;;
+import { InputMaskModule } from &#x27;primeng/inputmask&#x27;;
+import { InputTextModule } from &#x27;primeng/inputtext&#x27;;
+import { PasswordModule } from &#x27;primeng/password&#x27;;
+import { ToastModule } from &#x27;primeng/toast&#x27;;
+import { RegisterRequestDto } from &#x27;../../../../core/domain/dto/requests/register-request.dto&#x27;;
+import {
+  Subscription,
+  debounceTime,
+  distinctUntilChanged,
+  fromEvent,
+  map,
+} from &#x27;rxjs&#x27;;
+import {
+  isLoadingAuthState,
+  selectAcceptInvitationError,
+  selectCurrentUser,
+} from &#x27;../../../../core/state/auth/auth.selectors&#x27;;
+import { Store } from &#x27;@ngrx/store&#x27;;
+import { AppState } from &#x27;../../../../core/state/app.state&#x27;;
+import { AuthService } from &#x27;../../../../core/services/api/auth.api.service&#x27;;
+import { securePasswordRegex } from &#x27;../../../../core/utils/regex.constants&#x27;;
+import {
+  acceptInvitation,
+  loadCurrentUser,
+} from &#x27;../../../../core/state/auth/auth.actions&#x27;;
+import { InvitationService } from &#x27;../../../../core/services/api/invitation.api.service&#x27;;
 
 @Component({
   selector: &#x27;app-invitation&#x27;,
   standalone: true,
-  imports: [],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    TranslateModule,
+    ButtonModule,
+    InputMaskModule,
+    InputTextModule,
+    PasswordModule,
+    RouterModule,
+    ToastModule,
+  ],
+  providers: [MessageService],
   templateUrl: &#x27;./invitation.component.html&#x27;,
-  styleUrl: &#x27;./invitation.component.scss&#x27;
+  styleUrl: &#x27;./invitation.component.scss&#x27;,
 })
-export class InvitationComponent {
+export class InvitationComponent implements OnInit, AfterViewInit, OnDestroy {
+  @ViewChild(&#x27;username&#x27;) usernameInput!: ElementRef;
+  @Input()
+  private invitationHash?: string;
 
+  constructor(
+    private formBuilder: FormBuilder,
+    private store: Store&lt;AppState&gt;,
+    private router: Router,
+    private messageService: MessageService,
+    private translateService: TranslateService,
+    private authService: AuthService,
+    private invitationService: InvitationService,
+  ) {}
+
+  isLoading &#x3D; this.store.select(isLoadingAuthState);
+  isUsernameTaken: boolean | null &#x3D; null;
+
+  registerForm &#x3D; this.formBuilder.group({
+    username: [&#x27;&#x27;, [Validators.required, Validators.minLength(3)]],
+    password: [
+      &#x27;&#x27;,
+      [
+        Validators.required,
+        Validators.minLength(8),
+        Validators.pattern(securePasswordRegex),
+      ],
+    ],
+    email: [
+      { value: &#x27;&#x27;, disabled: true },
+      [Validators.required, Validators.email],
+    ],
+    firstName: [&#x27;&#x27;, [Validators.required]],
+    lastName: [&#x27;&#x27;, [Validators.required]],
+  });
+
+  private userSubscription?: Subscription;
+  private errorSubscription?: Subscription;
+  private usernameCheckSubscription?: Subscription;
+
+  ngOnInit() {
+    this.invitationService.getInvitationDetails(this.invitationHash ?? &#x27;&#x27;).subscribe({
+      next: (details) &#x3D;&gt; {
+        this.registerForm.get(&#x27;email&#x27;)?.setValue(details.email);
+      },
+      error: () &#x3D;&gt; {
+        this.router.navigate([&#x27;/auth&#x27;])
+      }
+    })
+    this.store.dispatch(loadCurrentUser());
+
+    this.userSubscription &#x3D; this.store
+      .select(selectCurrentUser)
+      .subscribe((user) &#x3D;&gt; {
+        if (user !&#x3D; null) {
+          this.router.navigate([&#x27;/home&#x27;]);
+        }
+      });
+
+    this.errorSubscription &#x3D; this.store
+      .select(selectAcceptInvitationError)
+      .subscribe((error) &#x3D;&gt; {
+        if (error !&#x3D; null) {
+          if (error.status &#x3D;&#x3D; 401) {
+            this.messageService.add({
+              severity: &#x27;error&#x27;,
+              summary: this.translateService.instant(
+                &#x27;auth.invitation.registration_error&#x27;,
+              ),
+              detail: this.translateService.instant(
+                &#x27;auth.invitation.registration_error_username_exists&#x27;,
+              ),
+            });
+          } else {
+            this.messageService.add({
+              severity: &#x27;error&#x27;,
+              summary: this.translateService.instant(
+                &#x27;auth.invitation.registration_error&#x27;,
+              ),
+              detail: this.translateService.instant(
+                &#x27;auth.invitation.registration_error_wrong_hash&#x27;,
+              ),
+            });
+          }
+        }
+      });
+  }
+
+  ngAfterViewInit(): void {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    fromEvent&lt;any&gt;(this.usernameInput.nativeElement, &#x27;input&#x27;)
+      .pipe(
+        map((event: Event) &#x3D;&gt; (event.target as HTMLInputElement).value),
+        debounceTime(500),
+        distinctUntilChanged(),
+      )
+      .subscribe((data) &#x3D;&gt; this.checkUsername(data));
+  }
+
+  ngOnDestroy() {
+    this.userSubscription?.unsubscribe();
+    this.errorSubscription?.unsubscribe();
+    this.usernameCheckSubscription?.unsubscribe();
+  }
+
+  register() {
+    const dto: RegisterRequestDto &#x3D; {
+      username: this.registerForm.get(&#x27;username&#x27;)?.value ?? &#x27;&#x27;,
+      password: this.registerForm.get(&#x27;password&#x27;)?.value ?? &#x27;&#x27;,
+      email: this.registerForm.get(&#x27;email&#x27;)?.value ?? &#x27;&#x27;,
+      firstName: this.registerForm.get(&#x27;firstName&#x27;)?.value ?? &#x27;&#x27;,
+      lastName: this.registerForm.get(&#x27;lastName&#x27;)?.value ?? &#x27;&#x27;,
+    };
+    this.store.dispatch(
+      acceptInvitation({ dto: dto, invitationHash: this.invitationHash ?? &#x27;&#x27; }),
+    );
+  }
+
+  private checkUsername(username: string) {
+    this.usernameCheckSubscription?.unsubscribe();
+    this.usernameCheckSubscription &#x3D; this.authService
+      .isUsernameTaken(username)
+      .subscribe({
+        next: (result) &#x3D;&gt; {
+          this.isUsernameTaken &#x3D; result;
+        },
+        error: () &#x3D;&gt; {
+          this.isUsernameTaken &#x3D; null;
+        },
+      });
+  }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;p&gt;invitation works!&lt;/p&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;p-toast /&gt;
+&lt;div class&#x3D;&quot;text-center mb-5&quot;&gt;
+  &lt;div class&#x3D;&quot;text-900 text-3xl font-medium mb-3&quot;&gt;
+    {{ &quot;auth.invitation.welcome_message&quot; | translate }}
+  &lt;/div&gt;
+  &lt;span class&#x3D;&quot;text-600 font-medium&quot;&gt;{{
+    &quot;auth.invitation.welcome_description&quot; | translate
+  }}&lt;/span&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;form [formGroup]&#x3D;&quot;registerForm&quot;&gt;
+    &lt;label
+      for&#x3D;&quot;username&quot;
+      class&#x3D;&quot;block text-900 font-medium text-md mb-2 mt-4&quot;
+      &gt;{{ &quot;auth.invitation.username_label&quot; | translate }}&lt;/label
+    &gt;
+    &lt;span class&#x3D;&quot;p-input-icon-right&quot;&gt;
+      @if (isUsernameTaken &#x3D;&#x3D;&#x3D; null) {
+        &lt;i class&#x3D;&quot;pi pi-user&quot;&gt;&lt;/i&gt;
+      } @else if (!isUsernameTaken) {
+        &lt;i class&#x3D;&quot;pi pi-check text-green-500&quot;&gt;&lt;/i&gt;
+      } @else {
+        &lt;i class&#x3D;&quot;pi pi-times text-red-500&quot;&gt;&lt;/i&gt;
+      }
+      &lt;input
+        #username
+        id&#x3D;&quot;username&quot;
+        type&#x3D;&quot;text&quot;
+        formControlName&#x3D;&quot;username&quot;
+        [placeholder]&#x3D;&quot;&#x27;auth.invitation.username&#x27; | translate&quot;
+        pInputText
+        class&#x3D;&quot;w-full md:w-30rem&quot;
+        style&#x3D;&quot;padding: 1rem&quot;
+      /&gt;
+    &lt;/span&gt;
+    &lt;small
+      *ngIf&#x3D;&quot;
+        registerForm.get(&#x27;username&#x27;)?.hasError(&#x27;required&#x27;) &amp;&amp;
+        registerForm.get(&#x27;username&#x27;)?.dirty
+      &quot;
+      class&#x3D;&quot;p-error block&quot;
+      &gt;{{ &quot;auth.invitation.username_is_required&quot; | translate }}&lt;/small
+    &gt;
+    &lt;small
+      *ngIf&#x3D;&quot;
+        registerForm.get(&#x27;username&#x27;)?.hasError(&#x27;minlength&#x27;) &amp;&amp;
+        registerForm.get(&#x27;username&#x27;)?.dirty
+      &quot;
+      class&#x3D;&quot;p-error block&quot;
+      &gt;{{ &quot;auth.invitation.username_length&quot; | translate }}&lt;/small
+    &gt;
+
+    &lt;label
+      for&#x3D;&quot;password&quot;
+      class&#x3D;&quot;block text-900 font-medium text-md mb-2 mt-4&quot;
+      &gt;{{ &quot;auth.invitation.password_label&quot; | translate }}&lt;/label
+    &gt;
+    &lt;p-password
+      id&#x3D;&quot;password&quot;
+      formControlName&#x3D;&quot;password&quot;
+      [placeholder]&#x3D;&quot;&#x27;auth.invitation.password&#x27; | translate&quot;
+      [toggleMask]&#x3D;&quot;true&quot;
+      [feedback]&#x3D;&quot;false&quot;
+      inputStyleClass&#x3D;&quot;w-full p-3 md:w-30rem&quot;
+    /&gt;
+    &lt;small
+      *ngIf&#x3D;&quot;
+        registerForm.get(&#x27;password&#x27;)?.hasError(&#x27;minlength&#x27;) &amp;&amp;
+        registerForm.get(&#x27;password&#x27;)?.dirty
+      &quot;
+      class&#x3D;&quot;p-error block&quot;
+      &gt;{{ &quot;auth.invitation.password_length&quot; | translate }}&lt;/small
+    &gt;
+    &lt;small
+      *ngIf&#x3D;&quot;
+        registerForm.get(&#x27;password&#x27;)?.hasError(&#x27;pattern&#x27;) &amp;&amp;
+        registerForm.get(&#x27;password&#x27;)?.dirty &amp;&amp;
+        !registerForm.get(&#x27;password&#x27;)?.hasError(&#x27;minlength&#x27;)
+      &quot;
+      class&#x3D;&quot;p-error block&quot;
+      &gt;{{ &quot;auth.invitation.password_not_strong&quot; | translate }}&lt;/small
+    &gt;
+
+    &lt;label for&#x3D;&quot;email&quot; class&#x3D;&quot;block text-900 font-medium text-md mb-2 mt-4&quot;&gt;{{
+      &quot;auth.invitation.email_label&quot; | translate
+    }}&lt;/label&gt;
+    &lt;span class&#x3D;&quot;p-input-icon-right&quot;&gt;
+      &lt;i class&#x3D;&quot;pi pi-at&quot;&gt;&lt;/i&gt;
+      &lt;input
+        #username
+        id&#x3D;&quot;email&quot;
+        type&#x3D;&quot;email&quot;
+        formControlName&#x3D;&quot;email&quot;
+        [placeholder]&#x3D;&quot;&#x27;auth.invitation.email&#x27; | translate&quot;
+        pInputText
+        class&#x3D;&quot;w-full md:w-30rem&quot;
+        style&#x3D;&quot;padding: 1rem&quot;
+      /&gt;
+    &lt;/span&gt;
+    &lt;small
+      *ngIf&#x3D;&quot;
+        registerForm.get(&#x27;email&#x27;)?.hasError(&#x27;required&#x27;) &amp;&amp;
+        registerForm.get(&#x27;email&#x27;)?.dirty
+      &quot;
+      class&#x3D;&quot;p-error block&quot;
+      &gt;{{ &quot;auth.invitation.email_is_required&quot; | translate }}&lt;/small
+    &gt;
+
+    &lt;label
+      for&#x3D;&quot;firstName&quot;
+      class&#x3D;&quot;block text-900 font-medium text-md mb-2 mt-4&quot;
+      &gt;{{ &quot;auth.invitation.first_name_label&quot; | translate }}&lt;/label
+    &gt;
+    &lt;input
+      #username
+      id&#x3D;&quot;firstName&quot;
+      type&#x3D;&quot;text&quot;
+      formControlName&#x3D;&quot;firstName&quot;
+      [placeholder]&#x3D;&quot;&#x27;auth.invitation.first_name&#x27; | translate&quot;
+      pInputText
+      class&#x3D;&quot;w-full md:w-30rem&quot;
+      style&#x3D;&quot;padding: 1rem&quot;
+    /&gt;
+    &lt;small
+      *ngIf&#x3D;&quot;
+        registerForm.get(&#x27;firstName&#x27;)?.hasError(&#x27;required&#x27;) &amp;&amp;
+        registerForm.get(&#x27;firstName&#x27;)?.dirty
+      &quot;
+      class&#x3D;&quot;p-error block&quot;
+      &gt;{{ &quot;auth.invitation.first_name_is_required&quot; | translate }}&lt;/small
+    &gt;
+
+    &lt;label
+      for&#x3D;&quot;lastName&quot;
+      class&#x3D;&quot;block text-900 font-medium text-md mb-2 mt-4&quot;
+      &gt;{{ &quot;auth.invitation.last_name_label&quot; | translate }}&lt;/label
+    &gt;
+    &lt;input
+      #username
+      id&#x3D;&quot;lastName&quot;
+      type&#x3D;&quot;text&quot;
+      formControlName&#x3D;&quot;lastName&quot;
+      [placeholder]&#x3D;&quot;&#x27;auth.invitation.last_name&#x27; | translate&quot;
+      pInputText
+      class&#x3D;&quot;w-full md:w-30rem&quot;
+      style&#x3D;&quot;padding: 1rem&quot;
+    /&gt;
+    &lt;small
+      *ngIf&#x3D;&quot;
+        registerForm.get(&#x27;lastName&#x27;)?.hasError(&#x27;required&#x27;) &amp;&amp;
+        registerForm.get(&#x27;lastName&#x27;)?.dirty
+      &quot;
+      class&#x3D;&quot;p-error block&quot;
+      &gt;{{ &quot;auth.invitation.last_name_is_required&quot; | translate }}&lt;/small
+    &gt;
+
+    &lt;div
+      class&#x3D;&quot;flex align-items-center justify-content-between mb-2 mt-4 gap-5&quot;
+    &gt;
+      &lt;a
+        class&#x3D;&quot;font-medium no-underline ml-2 text-right cursor-pointer&quot;
+        style&#x3D;&quot;color: var(--primary-color)&quot;
+        [routerLink]&#x3D;&quot;[&#x27;/auth/login&#x27;]&quot;
+        &gt;{{ &quot;auth.invitation.back_to_login&quot; | translate }}&lt;/a
+      &gt;
+    &lt;/div&gt;
+
+    &lt;button
+      pButton
+      pRipple
+      [label]&#x3D;&quot;&#x27;auth.invitation.register&#x27; | translate&quot;
+      class&#x3D;&quot;w-full p-3 mt-4&quot;
+      [disabled]&#x3D;&quot;registerForm.invalid&quot;
+      [loading]&#x3D;&quot;(isLoading | async) ?? false&quot;
+      (click)&#x3D;&quot;register()&quot;
+      type&#x3D;&quot;submit&quot;
+    &gt;&lt;/button&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
 </code></pre>
     </div>
 
@@ -239,7 +1305,7 @@ export class InvitationComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><p>invitation works!</p></div>'
+        var COMPONENT_TEMPLATE = '<div><p-toast /><div class="text-center mb-5">  <div class="text-900 text-3xl font-medium mb-3">    {{ "auth.invitation.welcome_message" | translate }}  </div>  <span class="text-600 font-medium">{{    "auth.invitation.welcome_description" | translate  }}</span></div><div>  <form [formGroup]="registerForm">    <label      for="username"      class="block text-900 font-medium text-md mb-2 mt-4"      >{{ "auth.invitation.username_label" | translate }}</label    >    <span class="p-input-icon-right">      @if (isUsernameTaken === null) {        <i class="pi pi-user"></i>      } @else if (!isUsernameTaken) {        <i class="pi pi-check text-green-500"></i>      } @else {        <i class="pi pi-times text-red-500"></i>      }      <input        #username        id="username"        type="text"        formControlName="username"        [placeholder]="\'auth.invitation.username\' | translate"        pInputText        class="w-full md:w-30rem"        style="padding: 1rem"      />    </span>    <small      *ngIf="        registerForm.get(\'username\')?.hasError(\'required\') &&        registerForm.get(\'username\')?.dirty      "      class="p-error block"      >{{ "auth.invitation.username_is_required" | translate }}</small    >    <small      *ngIf="        registerForm.get(\'username\')?.hasError(\'minlength\') &&        registerForm.get(\'username\')?.dirty      "      class="p-error block"      >{{ "auth.invitation.username_length" | translate }}</small    >    <label      for="password"      class="block text-900 font-medium text-md mb-2 mt-4"      >{{ "auth.invitation.password_label" | translate }}</label    >    <p-password      id="password"      formControlName="password"      [placeholder]="\'auth.invitation.password\' | translate"      [toggleMask]="true"      [feedback]="false"      inputStyleClass="w-full p-3 md:w-30rem"    />    <small      *ngIf="        registerForm.get(\'password\')?.hasError(\'minlength\') &&        registerForm.get(\'password\')?.dirty      "      class="p-error block"      >{{ "auth.invitation.password_length" | translate }}</small    >    <small      *ngIf="        registerForm.get(\'password\')?.hasError(\'pattern\') &&        registerForm.get(\'password\')?.dirty &&        !registerForm.get(\'password\')?.hasError(\'minlength\')      "      class="p-error block"      >{{ "auth.invitation.password_not_strong" | translate }}</small    >    <label for="email" class="block text-900 font-medium text-md mb-2 mt-4">{{      "auth.invitation.email_label" | translate    }}</label>    <span class="p-input-icon-right">      <i class="pi pi-at"></i>      <input        #username        id="email"        type="email"        formControlName="email"        [placeholder]="\'auth.invitation.email\' | translate"        pInputText        class="w-full md:w-30rem"        style="padding: 1rem"      />    </span>    <small      *ngIf="        registerForm.get(\'email\')?.hasError(\'required\') &&        registerForm.get(\'email\')?.dirty      "      class="p-error block"      >{{ "auth.invitation.email_is_required" | translate }}</small    >    <label      for="firstName"      class="block text-900 font-medium text-md mb-2 mt-4"      >{{ "auth.invitation.first_name_label" | translate }}</label    >    <input      #username      id="firstName"      type="text"      formControlName="firstName"      [placeholder]="\'auth.invitation.first_name\' | translate"      pInputText      class="w-full md:w-30rem"      style="padding: 1rem"    />    <small      *ngIf="        registerForm.get(\'firstName\')?.hasError(\'required\') &&        registerForm.get(\'firstName\')?.dirty      "      class="p-error block"      >{{ "auth.invitation.first_name_is_required" | translate }}</small    >    <label      for="lastName"      class="block text-900 font-medium text-md mb-2 mt-4"      >{{ "auth.invitation.last_name_label" | translate }}</label    >    <input      #username      id="lastName"      type="text"      formControlName="lastName"      [placeholder]="\'auth.invitation.last_name\' | translate"      pInputText      class="w-full md:w-30rem"      style="padding: 1rem"    />    <small      *ngIf="        registerForm.get(\'lastName\')?.hasError(\'required\') &&        registerForm.get(\'lastName\')?.dirty      "      class="p-error block"      >{{ "auth.invitation.last_name_is_required" | translate }}</small    >    <div      class="flex align-items-center justify-content-between mb-2 mt-4 gap-5"    >      <a        class="font-medium no-underline ml-2 text-right cursor-pointer"        style="color: var(--primary-color)"        [routerLink]="[\'/auth/login\']"        >{{ "auth.invitation.back_to_login" | translate }}</a      >    </div>    <button      pButton      pRipple      [label]="\'auth.invitation.register\' | translate"      class="w-full p-3 mt-4"      [disabled]="registerForm.invalid"      [loading]="(isLoading | async) ?? false"      (click)="register()"      type="submit"    ></button>  </form></div></div>'
     var COMPONENTS = [{'name': 'AccessDeniedComponent', 'selector': 'app-access-denied'},{'name': 'AlertsComponent', 'selector': 'app-alerts'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CloseComponent', 'selector': 'app-close'},{'name': 'ConfigComponent', 'selector': 'app-config'},{'name': 'CreateOrganizationComponent', 'selector': 'app-create-organization'},{'name': 'DetailsComponent', 'selector': 'app-details'},{'name': 'DevicesComponent', 'selector': 'app-devices'},{'name': 'DocumentationComponent', 'selector': 'app-documentation'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'GuidesComponent', 'selector': 'app-guides'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InvitationComponent', 'selector': 'app-invitation'},{'name': 'IssuesComponent', 'selector': 'app-issues'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogsComponent', 'selector': 'app-logs'},{'name': 'MembersComponent', 'selector': 'app-members'},{'name': 'MembersTableComponent', 'selector': 'app-members-table'},{'name': 'MenuitemComponent', 'selector': '[app-menuitem]'},{'name': 'MessagesComponent', 'selector': 'app-messages'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationsComponent', 'selector': 'app-notifications'},{'name': 'OrganizationComponent', 'selector': 'app-organization'},{'name': 'ProjectDetailsComponent', 'selector': 'app-project-details'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'ProjectsComponent', 'selector': 'app-projects-settings'},{'name': 'QueriesComponent', 'selector': 'app-queries'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ReleasesComponent', 'selector': 'app-releases'},{'name': 'ReplaysComponent', 'selector': 'app-replays'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'ScreenLoadsComponent', 'selector': 'app-screen-loads'},{'name': 'SdksComponent', 'selector': 'app-sdks'},{'name': 'SecurityComponent', 'selector': 'app-security'},{'name': 'SessionsComponent', 'selector': 'app-sessions'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StatsComponent', 'selector': 'app-stats'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TeamsComponent', 'selector': 'app-teams'},{'name': 'TopbarComponent', 'selector': 'app-topbar'},{'name': 'VitalsComponent', 'selector': 'app-vitals'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'InvitationComponent'};

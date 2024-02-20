@@ -98,7 +98,7 @@
 
 <ol class="breadcrumb">
   <li class="breadcrumb-item">Injectables</li>
-  <li class="breadcrumb-item" >MembersEffects</li>
+  <li class="breadcrumb-item" >InvitationService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -122,7 +122,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/core/state/members/members.effects.ts</code>
+            <code>src/app/core/services/api/invitation.api.service.ts</code>
         </p>
 
 
@@ -133,30 +133,27 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+
                 <tr>
                     <td class="col-md-4">
-                        <h6><b>Properties</b></h6>
+                        <h6><b>Methods</b></h6>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#inviteMember$" >inviteMember$</a>
+                                <a href="#acceptInvitation" >acceptInvitation</a>
                             </li>
                             <li>
-                                <a href="#loadOrganizationMembers$" >loadOrganizationMembers$</a>
+                                <a href="#getInvitationDetails" >getInvitationDetails</a>
                             </li>
                             <li>
-                                <a href="#removeMember$" >removeMember$</a>
-                            </li>
-                            <li>
-                                <a href="#removeMemberSuccess$" >removeMemberSuccess$</a>
+                                <a href="#inviteMember" >inviteMember</a>
                             </li>
                         </ul>
                     </td>
                 </tr>
-
 
 
 
@@ -172,12 +169,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(membersService: <a href="../injectables/MembersService.html" target="_self">MembersService</a>, invitationService: <a href="../injectables/InvitationService.html" target="_self">InvitationService</a>, actions$: Actions)</code>
+<code>constructor(http: HttpClient)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/core/state/members/members.effects.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/core/services/api/invitation.api.service.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -195,34 +192,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>membersService</td>
+                                                        <td>http</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/MembersService.html" target="_self" >MembersService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>invitationService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/InvitationService.html" target="_self" >InvitationService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>actions$</td>
-                                                  
-                                                        <td>
-                                                                    <code>Actions</code>
+                                                                    <code>HttpClient</code>
                                                         </td>
                                                   
                                                     <td>
@@ -239,147 +212,222 @@
         </table>
 </section>
 
-
-            <section data-compodoc="block-properties">
+            <section data-compodoc="block-methods">
     
-    <h3 id="inputs">
-        Properties
+    <h3 id="methods">
+        Methods
     </h3>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="inviteMember$"></a>
+                    <a name="acceptInvitation"></a>
                     <span class="name">
-                        <span ><b>inviteMember$</b></span>
-                        <a href="#inviteMember$"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>acceptInvitation</b></span>
+                        <a href="#acceptInvitation"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
-    this.actions$.pipe(
-      ofType(inviteMember),
-      switchMap((request) &#x3D;&gt;
-        this.invitationService.inviteMember(request).pipe(
-          map((invitation) &#x3D;&gt; inviteMemberSuccess(invitation)),
-          catchError((error) &#x3D;&gt; of(inviteMemberFailure({ error }))),
-        ),
-      ),
-    ),
-  )</code>
-                    </td>
-                </tr>
+            <tr>
+                <td class="col-md-4">
+<code>acceptInvitation(invitationHash: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, dto: <a href="../interfaces/RegisterRequestDto.html" target="_self">RegisterRequestDto</a>)</code>
+                </td>
+            </tr>
+
+
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/core/state/members/members.effects.ts:38</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="30"
+                                    class="link-to-prism">src/app/core/services/api/invitation.api.service.ts:30</a></div>
                         </td>
                     </tr>
 
 
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>invitationHash</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>dto</td>
+                                            <td>
+                                                            <code><a href="../interfaces/RegisterRequestDto.html" target="_self" >RegisterRequestDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
         </tbody>
     </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="loadOrganizationMembers$"></a>
+                    <a name="getInvitationDetails"></a>
                     <span class="name">
-                        <span ><b>loadOrganizationMembers$</b></span>
-                        <a href="#loadOrganizationMembers$"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>getInvitationDetails</b></span>
+                        <a href="#getInvitationDetails"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
-    this.actions$.pipe(
-      ofType(loadOrganizationMembers),
-      switchMap(() &#x3D;&gt;
-        this.membersService.getMembers().pipe(
-          map((members) &#x3D;&gt; loadOrganizationMembersSuccess(members)),
-          catchError((error) &#x3D;&gt; of(loadOrganizationMembersFailure({ error }))),
-        ),
-      ),
-    ),
-  )</code>
-                    </td>
-                </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getInvitationDetails(invitationHash: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/core/state/members/members.effects.ts:26</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="23"
+                                    class="link-to-prism">src/app/core/services/api/invitation.api.service.ts:23</a></div>
                         </td>
                     </tr>
 
 
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>invitationHash</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;InvitationDto&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
         </tbody>
     </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="removeMember$"></a>
+                    <a name="inviteMember"></a>
                     <span class="name">
-                        <span ><b>removeMember$</b></span>
-                        <a href="#removeMember$"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>inviteMember</b></span>
+                        <a href="#inviteMember"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
-    this.actions$.pipe(
-      ofType(removeMember),
-      switchMap((request) &#x3D;&gt;
-        this.membersService.removeMember(request.memberId).pipe(
-          map(() &#x3D;&gt; removeMemberSuccess()),
-          catchError((error) &#x3D;&gt; of(removeMemberFailure({ error }))),
-        ),
-      ),
-    ),
-  )</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/core/state/members/members.effects.ts:50</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="removeMemberSuccess$"></a>
-                    <span class="name">
-                        <span ><b>removeMemberSuccess$</b></span>
-                        <a href="#removeMemberSuccess$"><span class="icon ion-ios-link"></span></a>
-                    </span>
+<code>inviteMember(dto: <a href="../interfaces/InvitationRequestDto.html" target="_self">InvitationRequestDto</a>)</code>
                 </td>
             </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
-    this.actions$.pipe(
-      ofType(removeMemberSuccess),
-      switchMap(
-        () &#x3D;&gt; of(loadOrganizationMembers()), // Dispatch loadOrganizationMembers action after successful removal
-      ),
-    ),
-  )</code>
-                    </td>
-                </tr>
+
+
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/core/state/members/members.effects.ts:62</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="15"
+                                    class="link-to-prism">src/app/core/services/api/invitation.api.service.ts:15</a></div>
                         </td>
                     </tr>
 
 
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>dto</td>
+                                            <td>
+                                                            <code><a href="../interfaces/InvitationRequestDto.html" target="_self" >InvitationRequestDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
         </tbody>
     </table>
 </section>
@@ -388,75 +436,42 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Actions, createEffect, ofType } from &#x27;@ngrx/effects&#x27;;
-import { catchError, map, of, switchMap } from &#x27;rxjs&#x27;;
-import {
-  inviteMember,
-  inviteMemberFailure,
-  inviteMemberSuccess,
-  loadOrganizationMembers,
-  loadOrganizationMembersFailure,
-  loadOrganizationMembersSuccess,
-  removeMember,
-  removeMemberFailure,
-  removeMemberSuccess,
-} from &#x27;./members.actions&#x27;;
-import { MembersService } from &#x27;../../services/api/members.api.service&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
 import { Injectable } from &#x27;@angular/core&#x27;;
-import { InvitationService } from &#x27;../../services/api/invitation.api.service&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+import { InvitationDto } from &#x27;../../domain/dto/invitation.dto&#x27;;
+import { InvitationRequestDto } from &#x27;../../domain/dto/requests/invitation-request.dto&#x27;;
+import { RegisterRequestDto } from &#x27;../../domain/dto/requests/register-request.dto&#x27;;
+import { api } from &#x27;./api&#x27;;
 
-@Injectable()
-export class MembersEffects {
-  constructor(
-    private membersService: MembersService,
-    private invitationService: InvitationService,
-    private actions$: Actions,
-  ) {}
+@Injectable({
+  providedIn: &#x27;root&#x27;,
+})
+export class InvitationService {
+  constructor(private http: HttpClient) {}
 
-  loadOrganizationMembers$ &#x3D; createEffect(() &#x3D;&gt;
-    this.actions$.pipe(
-      ofType(loadOrganizationMembers),
-      switchMap(() &#x3D;&gt;
-        this.membersService.getMembers().pipe(
-          map((members) &#x3D;&gt; loadOrganizationMembersSuccess(members)),
-          catchError((error) &#x3D;&gt; of(loadOrganizationMembersFailure({ error }))),
-        ),
-      ),
-    ),
-  );
+  inviteMember(dto: InvitationRequestDto) {
+    return this.http.post&lt;InvitationDto&gt;(
+      api.invitationUrl + &#x27;/send&#x27;,
+      dto,
+      api.authOptions,
+    );
+  }
 
-  inviteMember$ &#x3D; createEffect(() &#x3D;&gt;
-    this.actions$.pipe(
-      ofType(inviteMember),
-      switchMap((request) &#x3D;&gt;
-        this.invitationService.inviteMember(request).pipe(
-          map((invitation) &#x3D;&gt; inviteMemberSuccess(invitation)),
-          catchError((error) &#x3D;&gt; of(inviteMemberFailure({ error }))),
-        ),
-      ),
-    ),
-  );
+  getInvitationDetails(invitationHash: string): Observable&lt;InvitationDto&gt; {
+    return this.http.get&lt;InvitationDto&gt;(
+      api.invitationUrl + &#x27;/details/&#x27; + invitationHash,
+      api.noAuthOptions,
+    );
+  }
 
-  removeMember$ &#x3D; createEffect(() &#x3D;&gt;
-    this.actions$.pipe(
-      ofType(removeMember),
-      switchMap((request) &#x3D;&gt;
-        this.membersService.removeMember(request.memberId).pipe(
-          map(() &#x3D;&gt; removeMemberSuccess()),
-          catchError((error) &#x3D;&gt; of(removeMemberFailure({ error }))),
-        ),
-      ),
-    ),
-  );
-
-  removeMemberSuccess$ &#x3D; createEffect(() &#x3D;&gt;
-    this.actions$.pipe(
-      ofType(removeMemberSuccess),
-      switchMap(
-        () &#x3D;&gt; of(loadOrganizationMembers()), // Dispatch loadOrganizationMembers action after successful removal
-      ),
-    ),
-  );
+  acceptInvitation(invitationHash: string, dto: RegisterRequestDto) {
+    return this.http.post&lt;InvitationDto&gt;(
+      api.invitationUrl + &#x27;/accept/&#x27; + invitationHash,
+      dto,
+      api.noAuthOptions,
+    );
+  }
 }
 </code></pre>
     </div>
@@ -501,7 +516,7 @@ export class MembersEffects {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'MembersEffects.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'InvitationService.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
