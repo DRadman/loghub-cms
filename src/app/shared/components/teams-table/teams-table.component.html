@@ -67,10 +67,24 @@
             class="ml-auto"
             *ngIf="enableFiltering"
           >
-          <ng-template pTemplate="filter" let-value let-filter="filterCallback">
-            <p-calendar #calendar [ngModel]="value" (onSelect)="filter(calendar.value)" dateFormat="M dd, yy"></p-calendar>
-       </ng-template>
-        </p-columnFilter>
+            <ng-template
+              pTemplate="filter"
+              let-value
+              let-filter="filterCallback"
+            >
+              <p-calendar
+                #calendar
+                [ngModel]="value"
+                (onSelect)="filter(calendar.value)"
+                dateFormat="M dd, yy"
+              ></p-calendar>
+            </ng-template>
+          </p-columnFilter>
+        </div>
+      </th>
+      <th style="width: 8rem" *ngIf="enableDeleteAction">
+        <div class="flex justify-content-center align-items-center">
+          {{ "teams-table.actions" | translate }}
         </div>
       </th>
     </tr>
@@ -83,11 +97,23 @@
       <td>
         {{ team?.createdAt | date }}
       </td>
+      <td style="text-align: center" *ngIf="enableDeleteAction">
+        <p-button
+          pRipple
+          [disabled]="!enableDeleteAction"
+          severity="danger"
+          icon="pi pi-minus"
+          [label]="'teams-table.delete' | translate"
+          iconPos="left"
+          [loading]="(isLoadingDeleteTeam | async) ?? false"
+          (onClick)="showDeleteConfirmation(team, $event)"
+        />
+      </td>
     </tr>
   </ng-template>
   <ng-template pTemplate="emptymessage">
     <tr>
-      <td colspan="6">{{ "teams-table.no_teams_found" | translate }}</td>
+      <td colspan="3">{{ "teams-table.no_teams_found" | translate }}</td>
     </tr>
   </ng-template>
 </p-table>
@@ -107,11 +133,11 @@
           >{{ "teams-table.slug_label" | translate }}</label
         >
         <span class="p-input-icon-right w-full">
-            @if (isSlugTaken !== null && !isSlugTaken) {
-                <i class="pi pi-check text-green-500"></i>
-              } @else {
-                <i class="pi pi-times text-red-500"></i>
-              }
+          @if (isSlugTaken !== null && !isSlugTaken) {
+            <i class="pi pi-check text-green-500"></i>
+          } @else {
+            <i class="pi pi-times text-red-500"></i>
+          }
           <input
             #slug
             id="slug"

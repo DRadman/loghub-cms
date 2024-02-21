@@ -43,7 +43,23 @@ export const createTeamSuccess = createAction(
 );
 
 export const createTeamFailure = createAction(
-  '[Organization API] Create team failure',
+  '[Team API] Create team failure',
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  props<{ error: any }>(),
+);
+
+export const deleteTeam = createAction(
+  '[Team Settings Page] Delete team',
+  props<{teamId: string}>(),
+);
+
+export const deleteTeamSuccess = createAction(
+  '[Team API] Delete team success',
+  props<{teamId: string}>(),
+);
+
+export const deleteTeamFailure = createAction(
+  '[Team API] Delete team failure',
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   props<{ error: any }>(),
 );

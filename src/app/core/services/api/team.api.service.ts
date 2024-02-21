@@ -29,4 +29,8 @@ export class TeamService {
   createNewTeam(dto: CreateTeamRequestDto): Observable<TeamDto> {
     return this.http.post<TeamDto>(api.teamUrl, dto, api.authOptions);
   }
+
+  deleteTeam(teamId: string) {
+    return this.http.delete(api.teamUrl + '/' + teamId, api.authOptions);
+  }
 }

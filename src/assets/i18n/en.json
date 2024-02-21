@@ -178,6 +178,9 @@
     "organization_teams": "Organization Teams",
     "my_teams": "My Teams"
   },
+  "project-settings": {
+    "projects": "Projects"
+  },
   "members-table": {
     "first_name": "First Name",
     "last_name": "Last Name",
@@ -218,6 +221,30 @@
     "team_created": "Team has been created successfully",
     "create_new_team": "Create New Team",
     "cancel": "Cancel",
-    "no_teams_found": "No Teams Found"
+    "no_teams_found": "No Teams Found",
+    "delete_confirmation": "Delete Confirmation",
+    "delete_confirmation_message":"Are you sure that you want to delete this team?",
+    "failed_to_delete_team": "Failed to delete member",
+    "removed_team": "Team has been deleted successfully",
+    "actions": "Actions",
+    "delete": "Delete"
+  },
+  "projects-table": {
+    "error": "API Error",
+    "failed_to_create_project": "Failed to create project (Team slug already taken)",
+    "failed_to_create_project_unsupported": "Failed to create project (Unsupported platform)",
+    "success": "Success",
+    "project_created": "Project has been created successfully",
+    "new_project": "New Project",
+    "name": "Name",
+    "name_label": "Name [REQUIRED]",
+    "name_is_required": "Name is required",
+    "no_projects_found": "No projects found",
+    "cancel": "Cancel",
+    "create_new_project": "Create New Project",
+    "platform_is_required": "Platform is required",
+    "platform_label": "Platform [REQUIRED]",
+    "select_platform": "Select platform",
+    "platform": "Platform"
   }
 }

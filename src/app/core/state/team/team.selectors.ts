@@ -25,6 +25,11 @@ export const isLoadingMyTeams = createSelector(
   (state: TeamState) => state.myTeamsStatus == StateStatus.LOADING,
 );
 
+export const isLoadingDeleteTeam = createSelector(
+  selectTeamState,
+  (state: TeamState) => state.deleteTeamStatus == StateStatus.LOADING,
+);
+
 export const isLoadingCreateNewTeam = createSelector(
   selectTeamState,
   (state: TeamState) =>
@@ -35,3 +40,9 @@ export const selectCreateNewTeamStatus = createSelector(
   selectTeamState,
   (state: TeamState) => state.createOrganizationTeamStatus,
 );
+
+export const selectDeleteTeamStatus = createSelector(
+  selectTeamState,
+  (state: TeamState) => state.deleteTeamStatus,
+);
+

@@ -1,1 +1,15 @@
-<p>projects works!</p>
+@if (hasReadPermission | async) {
+    <p-panel
+      [header]="'project-settings.projects' | translate"
+      [toggleable]="true"
+    >
+      <app-projects-table
+        [enableAddAction]="(hasCreatePermission | async) ?? false"
+        [isLoading]="(isLoadingAllProjects | async) ?? true"
+        [data]="(projects | async) ?? []"
+      />
+    </p-panel>
+  } @else {
+    <app-access-denied />
+  }
+  
