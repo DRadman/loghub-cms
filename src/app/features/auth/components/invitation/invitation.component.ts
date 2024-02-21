@@ -119,7 +119,7 @@ export class InvitationComponent implements OnInit, AfterViewInit, OnDestroy {
       .select(selectAcceptInvitationError)
       .subscribe((error) => {
         if (error != null) {
-          if (error.status == 401) {
+          if (error.status == 409) {
             this.messageService.add({
               severity: 'error',
               summary: this.translateService.instant(

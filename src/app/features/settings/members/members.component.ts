@@ -18,6 +18,7 @@ import {
 } from '../../../core/state/members/members.selectors';
 import { AccessDeniedComponent } from '../../../shared/components/access-denied/access-denied.component';
 import { MembersTableComponent } from '../../../shared/components/members-table/members-table.component';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-members',
@@ -47,9 +48,15 @@ export class MembersComponent implements OnInit {
     selectHasPermission(ResourceType.USER, Permission.CREATE),
   );
   isLoadingMembers = this.store.select(isLoadingMembers);
-  activeMembers = this.store.select(selectActiveMembers);
-  invitedMembers = this.store.select(selectInvitedMembers);
-  owner = this.store.select(selectOwnerAsArray);
+  activeMembers = this.store
+    .select(selectActiveMembers)
+    .pipe(map((value) => [...(value ?? [])]));
+  invitedMembers = this.store
+    .select(selectInvitedMembers)
+    .pipe(map((value) => [...(value ?? [])]));
+  owner = this.store
+    .select(selectOwnerAsArray)
+    .pipe(map((value) => [...(value ?? [])]));
 
   ngOnInit() {
     this.store.dispatch(loadOrganizationMembers());

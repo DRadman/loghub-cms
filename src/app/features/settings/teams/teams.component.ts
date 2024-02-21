@@ -9,8 +9,17 @@ import { AccessDeniedComponent } from '../../../shared/components/access-denied/
 import { PanelModule } from 'primeng/panel';
 import { TeamsTableComponent } from '../../../shared/components/teams-table/teams-table.component';
 import { TranslateModule } from '@ngx-translate/core';
-import { isLoadingMyTeams, isLoadingOrganizationTeams, selectMyTeams, selectOrganizationTeams } from '../../../core/state/team/team.selectors';
-import { loadMyTeams, loadOrganizationTeams } from '../../../core/state/team/team.actions';
+import {
+  isLoadingMyTeams,
+  isLoadingOrganizationTeams,
+  selectMyTeams,
+  selectOrganizationTeams,
+} from '../../../core/state/team/team.selectors';
+import {
+  loadMyTeams,
+  loadOrganizationTeams,
+} from '../../../core/state/team/team.actions';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-teams',
@@ -22,7 +31,7 @@ import { loadMyTeams, loadOrganizationTeams } from '../../../core/state/team/tea
     AccessDeniedComponent,
     PanelModule,
     TeamsTableComponent,
-    TranslateModule
+    TranslateModule,
   ],
 })
 export class TeamsComponent implements OnInit {
@@ -40,8 +49,12 @@ export class TeamsComponent implements OnInit {
 
   isLoadingOrganizationTeams = this.store.select(isLoadingOrganizationTeams);
   isLoadingMyTeams = this.store.select(isLoadingMyTeams);
-  organizationTeams = this.store.select(selectOrganizationTeams);
-  myTeams = this.store.select(selectMyTeams);
+  organizationTeams = this.store
+    .select(selectOrganizationTeams)
+    .pipe(map((value) => [...(value ?? [])]));
+  myTeams = this.store
+    .select(selectMyTeams)
+    .pipe(map((value) => [...(value ?? [])]));
 
   ngOnInit(): void {
     this.store.dispatch(loadOrganizationTeams());

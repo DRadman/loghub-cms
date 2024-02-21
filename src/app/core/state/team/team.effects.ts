@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { switchMap, map, catchError, of } from "rxjs";
 import { TeamService } from "../../services/api/team.api.service";
-import { createTeam, createTeamFailure, createTeamSuccess, loadMyTeams, loadMyTeamsFailure, loadMyTeamsSuccess, loadOrganizationTeams, loadOrganizationTeamsFailure, loadOrganizationTeamsSuccess } from "./team.actions";
+import { createTeam, createTeamFailure, createTeamSuccess, deleteTeam, deleteTeamFailure, deleteTeamSuccess, loadMyTeams, loadMyTeamsFailure, loadMyTeamsSuccess, loadOrganizationTeams, loadOrganizationTeamsFailure, loadOrganizationTeamsSuccess } from "./team.actions";
 
 @Injectable()
 export class TeamEffects {
@@ -42,6 +42,18 @@ export class TeamEffects {
         this.teamService.createNewTeam(request).pipe(
           map((team) => createTeamSuccess(team)),
           catchError((error) => of(createTeamFailure({ error }))),
+        ),
+      ),
+    ),
+  );
+
+  deleteTeam$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(deleteTeam),
+      switchMap((request) =>
+        this.teamService.deleteTeam(request.teamId).pipe(
+          map(() => deleteTeamSuccess({teamId: request.teamId})),
+          catchError((error) => of(deleteTeamFailure({ error }))),
         ),
       ),
     ),

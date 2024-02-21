@@ -1,5 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, Input, OnDestroy, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  Input,
+  OnDestroy,
+  ViewChild,
+} from '@angular/core';
 import {
   FormBuilder,
   FormsModule,
@@ -7,10 +14,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import {
-  ConfirmationService,
-  MessageService,
-} from 'primeng/api';
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { AvatarModule } from 'primeng/avatar';
 import { ButtonModule } from 'primeng/button';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
@@ -25,7 +29,9 @@ import { AppState } from '../../../core/state/app.state';
 import { Store } from '@ngrx/store';
 import {
   isLoadingCreateNewTeam,
+  isLoadingDeleteTeam,
   selectCreateNewTeamStatus,
+  selectDeleteTeamStatus,
 } from '../../../core/state/team/team.selectors';
 import {
   Subscription,
@@ -37,7 +43,7 @@ import {
   take,
 } from 'rxjs';
 import { StateStatus } from '../../../core/domain/models/enums/state-status.enum';
-import { createTeam } from '../../../core/state/team/team.actions';
+import { createTeam, deleteTeam } from '../../../core/state/team/team.actions';
 import { TeamService } from '../../../core/services/api/team.api.service';
 import { CalendarModule } from 'primeng/calendar';
 
@@ -71,6 +77,7 @@ export class TeamsTableComponent implements AfterViewInit, OnDestroy {
     private messageService: MessageService,
     private translateService: TranslateService,
     private teamService: TeamService,
+    private confirmationService: ConfirmationService,
   ) {}
 
   @ViewChild('dt') dt: Table | undefined;
@@ -106,6 +113,7 @@ export class TeamsTableComponent implements AfterViewInit, OnDestroy {
   isAddNewTeamDialogVisible: boolean = false;
   isSlugTaken: boolean | null = null;
   isLoadingCreateNewTeam = this.store.select(isLoadingCreateNewTeam);
+  isLoadingDeleteTeam = this.store.select(isLoadingDeleteTeam);
 
   private slugCheckSubscription?: Subscription;
 
@@ -131,6 +139,27 @@ export class TeamsTableComponent implements AfterViewInit, OnDestroy {
   showAddDialog() {
     this.resetTeamsForm();
     this.isAddNewTeamDialogVisible = true;
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  showDeleteConfirmation(team: Team, event: Event) {
+    this.confirmationService.confirm({
+      target: event.target as EventTarget,
+      message: this.translateService.instant(
+        'teams-table.delete_confirmation_message',
+      ),
+      header: this.translateService.instant('teams-table.delete_confirmation'),
+      icon: 'pi pi-info-circle',
+      acceptButtonStyleClass: 'p-button-danger p-button-text',
+      rejectButtonStyleClass: 'p-button-text p-button-text',
+      acceptIcon: 'none',
+      rejectIcon: 'none',
+
+      accept: () => {
+        this.removeMember(team);
+      },
+      reject: () => {},
+    });
   }
 
   createNewTeam() {
@@ -171,6 +200,38 @@ export class TeamsTableComponent implements AfterViewInit, OnDestroy {
   toSlugValue(slug: string): string {
     const result = slug.toLowerCase().replaceAll(' ', '-');
     return result;
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  removeMember(team: any) {
+    this.store
+      .select(selectDeleteTeamStatus)
+      .pipe(
+        filter(
+          (status) =>
+            status == StateStatus.ERROR || status == StateStatus.SUCCESS,
+        ),
+        take(1), // unsubscribe after one emitted value
+      )
+      .subscribe((status) => {
+        if (status && status == StateStatus.ERROR) {
+          this.messageService.add({
+            severity: 'error',
+            summary: this.translateService.instant('teams-table.error'),
+            detail: this.translateService.instant(
+              'teams-table.failed_to_delete_team',
+            ),
+          });
+        } else if (status && status == StateStatus.SUCCESS) {
+          this.messageService.add({
+            severity: 'success',
+            summary: this.translateService.instant('teams-table.success'),
+            detail: this.translateService.instant('teams-table.removed_team'),
+          });
+        }
+      });
+
+    this.store.dispatch(deleteTeam({ teamId: team.teamId }));
   }
 
   private resetTeamsForm() {

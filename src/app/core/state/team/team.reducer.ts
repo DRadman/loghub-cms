@@ -2,14 +2,17 @@ import { createReducer, on } from '@ngrx/store';
 import { StateStatus } from '../../domain/models/enums/state-status.enum';
 import { Team } from '../../domain/models/team.entity';
 import {
-    createTeam,
-    createTeamFailure,
-    createTeamSuccess,
-    loadMyTeams,
-    loadMyTeamsSuccess,
-    loadOrganizationTeams,
-    loadOrganizationTeamsFailure,
-    loadOrganizationTeamsSuccess,
+  createTeam,
+  createTeamFailure,
+  createTeamSuccess,
+  deleteTeam,
+  deleteTeamFailure,
+  deleteTeamSuccess,
+  loadMyTeams,
+  loadMyTeamsSuccess,
+  loadOrganizationTeams,
+  loadOrganizationTeamsFailure,
+  loadOrganizationTeamsSuccess,
 } from './team.actions';
 
 export interface TeamState {
@@ -21,9 +24,12 @@ export interface TeamState {
   myTeamsError: any | null;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   createOrganizationTeamError: any | null;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  deleteTeamError: any | null;
   organizationTeamsStatus: StateStatus;
   myTeamsStatus: StateStatus;
   createOrganizationTeamStatus: StateStatus;
+  deleteTeamStatus: StateStatus;
 }
 
 export const initialState: TeamState = {
@@ -35,6 +41,8 @@ export const initialState: TeamState = {
   myTeamsStatus: StateStatus.PENDING,
   createOrganizationTeamError: undefined,
   createOrganizationTeamStatus: StateStatus.PENDING,
+  deleteTeamError: undefined,
+  deleteTeamStatus: StateStatus.PENDING,
 };
 
 export const teamReducer = createReducer(
@@ -104,5 +112,25 @@ export const teamReducer = createReducer(
     ...state,
     createOrganizationTeamError: error,
     createOrganizationTeamStatus: StateStatus.ERROR,
+  })),
+
+  on(deleteTeam, (state) => ({
+    ...state,
+    deleteTeamError: null,
+    deleteTeamStatus: StateStatus.LOADING,
+  })),
+
+  on(deleteTeamSuccess, (state, { teamId }) => ({
+    ...state,
+    organizationTeams:
+      state.organizationTeams?.filter((team) => team.teamId !== teamId) ?? null,
+    deleteTeamError: null,
+    deleteTeamStatus: StateStatus.SUCCESS,
+  })),
+
+  on(deleteTeamFailure, (state, { error }) => ({
+    ...state,
+    deleteTeamError: error,
+    deleteTeamStatus: StateStatus.ERROR,
   })),
 );
