@@ -13,10 +13,12 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { Store } from '@ngrx/store';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { AvatarModule } from 'primeng/avatar';
 import { ButtonModule } from 'primeng/button';
+import { CalendarModule } from 'primeng/calendar';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { DialogModule } from 'primeng/dialog';
 import { DropdownModule } from 'primeng/dropdown';
@@ -24,9 +26,6 @@ import { InputTextModule } from 'primeng/inputtext';
 import { RippleModule } from 'primeng/ripple';
 import { Table, TableModule } from 'primeng/table';
 import { ToastModule } from 'primeng/toast';
-import { Team } from '../../../core/domain/models/team.entity';
-import { AppState } from '../../../core/state/app.state';
-import { Store } from '@ngrx/store';
 import {
   Subscription,
   debounceTime,
@@ -37,18 +36,17 @@ import {
   take,
 } from 'rxjs';
 import { StateStatus } from '../../../core/domain/models/enums/state-status.enum';
-import { TeamService } from '../../../core/services/api/team.api.service';
-import { CalendarModule } from 'primeng/calendar';
 import { Platform } from '../../../core/domain/models/platform.entity';
 import { Project } from '../../../core/domain/models/project.entity';
 import { ProjectService } from '../../../core/services/api/project.api.service';
+import { AppState } from '../../../core/state/app.state';
+import { loadPlatforms } from '../../../core/state/platform/platform.actions';
+import { selectPlatforms } from '../../../core/state/platform/platform.selectors';
+import { createProject } from '../../../core/state/project/project.actions';
 import {
   isLoadingCreateProject,
   selectCreateProjectStatus,
 } from '../../../core/state/project/project.selectors';
-import { createProject } from '../../../core/state/project/project.actions';
-import { selectPlatforms } from '../../../core/state/platform/platform.selectors';
-import { loadPlatforms } from '../../../core/state/platform/platform.actions';
 
 @Component({
   selector: 'app-projects-table',
@@ -73,7 +71,7 @@ import { loadPlatforms } from '../../../core/state/platform/platform.actions';
   templateUrl: './projects-table.component.html',
   styleUrl: './projects-table.component.scss',
 })
-export class ProjectsTableComponent {
+export class ProjectsTableComponent implements AfterViewInit, OnDestroy {
   constructor(
     private formBuilder: FormBuilder,
     private store: Store<AppState>,

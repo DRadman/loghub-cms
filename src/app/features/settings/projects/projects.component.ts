@@ -1,20 +1,20 @@
-import { Component } from '@angular/core';
-import { selectHasPermission } from '../../../core/state/auth/auth.selectors';
-import { ResourceType } from '../../../core/domain/models/enums/resource-type.enum';
+import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { TranslateModule } from '@ngx-translate/core';
+import { PanelModule } from 'primeng/panel';
+import { map } from 'rxjs';
 import { Permission } from '../../../core/domain/models/enums/permission.enum';
+import { ResourceType } from '../../../core/domain/models/enums/resource-type.enum';
+import { AppState } from '../../../core/state/app.state';
+import { selectHasPermission } from '../../../core/state/auth/auth.selectors';
+import { loadAllProjects } from '../../../core/state/project/project.actions';
 import {
   isLoadingAllProjects,
   selectAllProjects,
 } from '../../../core/state/project/project.selectors';
-import { loadAllProjects } from '../../../core/state/project/project.actions';
-import { Store } from '@ngrx/store';
-import { AppState } from '../../../core/state/app.state';
-import { CommonModule } from '@angular/common';
 import { AccessDeniedComponent } from '../../../shared/components/access-denied/access-denied.component';
-import { PanelModule } from 'primeng/panel';
-import { TranslateModule } from '@ngx-translate/core';
 import { ProjectsTableComponent } from '../../../shared/components/projects-table/projects-table.component';
-import { map } from 'rxjs';
 
 @Component({
   selector: 'app-projects-settings',
@@ -29,7 +29,7 @@ import { map } from 'rxjs';
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
 })
-export class ProjectsComponent {
+export class ProjectsComponent implements OnInit {
   constructor(private store: Store<AppState>) {}
 
   hasReadPermission = this.store.select(

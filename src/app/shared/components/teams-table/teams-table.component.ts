@@ -202,6 +202,7 @@ export class TeamsTableComponent implements AfterViewInit, OnDestroy {
     return result;
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   removeMember(team: any) {
     this.store
       .select(selectDeleteTeamStatus)

@@ -1,9 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Role } from '../../domain/models/user.entity';
-import { api } from './api';
 import { PlatformDto } from '../../domain/dto/platform.dto';
+import { api } from './api';
 
 @Injectable({
   providedIn: 'root',

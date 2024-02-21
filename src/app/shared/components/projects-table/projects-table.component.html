@@ -78,8 +78,13 @@
       </td>
       <td>
         <div class="flex align-items-center gap-2">
-          <img [src]="project?.platform?.iconUrl" class="w-2rem h-2rem" />
-          {{ project?.platform?.type | titlecase }} {{ project?.platform?.version}}
+          <img
+            [src]="project?.platform?.iconUrl"
+            class="w-2rem h-2rem"
+            alt="platform_logo"
+          />
+          {{ project?.platform?.type | titlecase }}
+          {{ project?.platform?.version }}
         </div>
       </td>
     </tr>
@@ -147,13 +152,21 @@
         >
           <ng-template pTemplate="selectedItem" let-platform>
             <div class="flex align-items-center gap-2" *ngIf="platform">
-              <img [src]="platform.iconUrl" class="w-2rem" />
+              <img
+                [src]="platform.iconUrl"
+                class="w-2rem"
+                alt="platform_logo"
+              />
               <div>{{ platform.type | titlecase }} {{ platform.version }}</div>
             </div>
           </ng-template>
           <ng-template let-platform pTemplate="item">
             <div class="flex align-items-center gap-2">
-              <img [src]="platform.iconUrl" class="w-2rem" />
+              <img
+                [src]="platform.iconUrl"
+                class="w-2rem"
+                alt="platform_logo"
+              />
               <div>{{ platform.type | titlecase }} {{ platform.version }}</div>
             </div>
           </ng-template>
