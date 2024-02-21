@@ -98,7 +98,7 @@
 
 <ol class="breadcrumb">
   <li class="breadcrumb-item">Injectables</li>
-  <li class="breadcrumb-item" >TeamEffects</li>
+  <li class="breadcrumb-item" >PlatformEffects</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -122,7 +122,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/core/state/team/team.effects.ts</code>
+            <code>src/app/core/state/platform/platform.effects.ts</code>
         </p>
 
 
@@ -142,16 +142,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#createTeam$" >createTeam$</a>
-                            </li>
-                            <li>
-                                <a href="#deleteTeam$" >deleteTeam$</a>
-                            </li>
-                            <li>
-                                <a href="#loadMyTeams$" >loadMyTeams$</a>
-                            </li>
-                            <li>
-                                <a href="#loadOrganizationTeams$" >loadOrganizationTeams$</a>
+                                <a href="#loadPlatforms$" >loadPlatforms$</a>
                             </li>
                         </ul>
                     </td>
@@ -172,12 +163,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(teamService: <a href="../injectables/TeamService.html" target="_self">TeamService</a>, actions$: Actions)</code>
+<code>constructor(platformService: <a href="../injectables/PlatformService.html" target="_self">PlatformService</a>, actions$: Actions)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/core/state/team/team.effects.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/core/state/platform/platform.effects.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -195,10 +186,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>teamService</td>
+                                                        <td>platformService</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/TeamService.html" target="_self" >TeamService</a></code>
+                                                                        <code><a href="../injectables/PlatformService.html" target="_self" >PlatformService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -237,10 +228,10 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="createTeam$"></a>
+                    <a name="loadPlatforms$"></a>
                     <span class="name">
-                        <span ><b>createTeam$</b></span>
-                        <a href="#createTeam$"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>loadPlatforms$</b></span>
+                        <a href="#loadPlatforms$"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -248,81 +239,11 @@
                     <td class="col-md-4">
                         <i>Default value : </i><code>createEffect(() &#x3D;&gt;
     this.actions$.pipe(
-      ofType(createTeam),
-      switchMap((request) &#x3D;&gt;
-        this.teamService.createNewTeam(request).pipe(
-          map((team) &#x3D;&gt; createTeamSuccess(team)),
-          catchError((error) &#x3D;&gt; of(createTeamFailure({ error }))),
-        ),
-      ),
-    ),
-  )</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/core/state/team/team.effects.ts:38</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="deleteTeam$"></a>
-                    <span class="name">
-                        <span ><b>deleteTeam$</b></span>
-                        <a href="#deleteTeam$"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
-    this.actions$.pipe(
-      ofType(deleteTeam),
-      switchMap((request) &#x3D;&gt;
-        this.teamService.deleteTeam(request.teamId).pipe(
-          map(() &#x3D;&gt; deleteTeamSuccess({teamId: request.teamId})),
-          catchError((error) &#x3D;&gt; of(deleteTeamFailure({ error }))),
-        ),
-      ),
-    ),
-  )</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/core/state/team/team.effects.ts:50</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="loadMyTeams$"></a>
-                    <span class="name">
-                        <span ><b>loadMyTeams$</b></span>
-                        <a href="#loadMyTeams$"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
-    this.actions$.pipe(
-      ofType(loadMyTeams),
+      ofType(loadPlatforms),
       switchMap(() &#x3D;&gt;
-        this.teamService.getMyTeams().pipe(
-          map((teams) &#x3D;&gt; loadMyTeamsSuccess({teams: teams})),
-          catchError((error) &#x3D;&gt; of(loadMyTeamsFailure({ error }))),
+        this.platformService.getPlatforms().pipe(
+          map((result) &#x3D;&gt; loadPlatformsSuccess({ platforms: result })),
+          catchError((error) &#x3D;&gt; of(loadPlatformsFailure({ error }))),
         ),
       ),
     ),
@@ -331,42 +252,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/core/state/team/team.effects.ts:26</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="loadOrganizationTeams$"></a>
-                    <span class="name">
-                        <span ><b>loadOrganizationTeams$</b></span>
-                        <a href="#loadOrganizationTeams$"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
-    this.actions$.pipe(
-      ofType(loadOrganizationTeams),
-      switchMap(() &#x3D;&gt;
-        this.teamService.getOrganizationTeams().pipe(
-          map((teams) &#x3D;&gt; loadOrganizationTeamsSuccess({teams: teams})),
-          catchError((error) &#x3D;&gt; of(loadOrganizationTeamsFailure({ error }))),
-        ),
-      ),
-    ),
-  )</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/core/state/team/team.effects.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/core/state/platform/platform.effects.ts:18</a></div>
                         </td>
                     </tr>
 
@@ -379,62 +265,30 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &quot;@angular/core&quot;;
-import { Actions, createEffect, ofType } from &quot;@ngrx/effects&quot;;
-import { switchMap, map, catchError, of } from &quot;rxjs&quot;;
-import { TeamService } from &quot;../../services/api/team.api.service&quot;;
-import { createTeam, createTeamFailure, createTeamSuccess, deleteTeam, deleteTeamFailure, deleteTeamSuccess, loadMyTeams, loadMyTeamsFailure, loadMyTeamsSuccess, loadOrganizationTeams, loadOrganizationTeamsFailure, loadOrganizationTeamsSuccess } from &quot;./team.actions&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { Actions, createEffect, ofType } from &#x27;@ngrx/effects&#x27;;
+import { catchError, map, of, switchMap } from &#x27;rxjs&#x27;;
+import { PlatformService } from &#x27;../../services/api/platform.api.service&#x27;;
+import {
+  loadPlatforms,
+  loadPlatformsFailure,
+  loadPlatformsSuccess,
+} from &#x27;./platform.actions&#x27;;
 
 @Injectable()
-export class TeamEffects {
+export class PlatformEffects {
   constructor(
-    private teamService: TeamService,
+    private platformService: PlatformService,
     private actions$: Actions,
   ) {}
 
-  loadOrganizationTeams$ &#x3D; createEffect(() &#x3D;&gt;
+  loadPlatforms$ &#x3D; createEffect(() &#x3D;&gt;
     this.actions$.pipe(
-      ofType(loadOrganizationTeams),
+      ofType(loadPlatforms),
       switchMap(() &#x3D;&gt;
-        this.teamService.getOrganizationTeams().pipe(
-          map((teams) &#x3D;&gt; loadOrganizationTeamsSuccess({teams: teams})),
-          catchError((error) &#x3D;&gt; of(loadOrganizationTeamsFailure({ error }))),
-        ),
-      ),
-    ),
-  );
-
-  loadMyTeams$ &#x3D; createEffect(() &#x3D;&gt;
-    this.actions$.pipe(
-      ofType(loadMyTeams),
-      switchMap(() &#x3D;&gt;
-        this.teamService.getMyTeams().pipe(
-          map((teams) &#x3D;&gt; loadMyTeamsSuccess({teams: teams})),
-          catchError((error) &#x3D;&gt; of(loadMyTeamsFailure({ error }))),
-        ),
-      ),
-    ),
-  );
-
-  createTeam$ &#x3D; createEffect(() &#x3D;&gt;
-    this.actions$.pipe(
-      ofType(createTeam),
-      switchMap((request) &#x3D;&gt;
-        this.teamService.createNewTeam(request).pipe(
-          map((team) &#x3D;&gt; createTeamSuccess(team)),
-          catchError((error) &#x3D;&gt; of(createTeamFailure({ error }))),
-        ),
-      ),
-    ),
-  );
-
-  deleteTeam$ &#x3D; createEffect(() &#x3D;&gt;
-    this.actions$.pipe(
-      ofType(deleteTeam),
-      switchMap((request) &#x3D;&gt;
-        this.teamService.deleteTeam(request.teamId).pipe(
-          map(() &#x3D;&gt; deleteTeamSuccess({teamId: request.teamId})),
-          catchError((error) &#x3D;&gt; of(deleteTeamFailure({ error }))),
+        this.platformService.getPlatforms().pipe(
+          map((result) &#x3D;&gt; loadPlatformsSuccess({ platforms: result })),
+          catchError((error) &#x3D;&gt; of(loadPlatformsFailure({ error }))),
         ),
       ),
     ),
@@ -483,7 +337,7 @@ export class TeamEffects {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'TeamEffects.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'PlatformEffects.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

@@ -105,7 +105,7 @@
   <li class="breadcrumb-item">Interfaces</li>
   <li class="breadcrumb-item"
   >
-  AppState</li>
+  PlatformState</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -129,7 +129,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/core/state/app.state.ts</code>
+            <code>src/app/core/state/platform/platform.reducer.ts</code>
         </p>
 
 
@@ -148,45 +148,21 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                        <a href="#authState" 
+                                        <a href="#error" 
 >
-                                            authState
+                                            error
                                         </a>
                                 </li>
                                 <li>
-                                        <a href="#membersState" 
+                                        <a href="#platforms" 
 >
-                                            membersState
+                                            platforms
                                         </a>
                                 </li>
                                 <li>
-                                        <a href="#organizationState" 
+                                        <a href="#status" 
 >
-                                            organizationState
-                                        </a>
-                                </li>
-                                <li>
-                                        <a href="#platformState" 
->
-                                            platformState
-                                        </a>
-                                </li>
-                                <li>
-                                        <a href="#projectState" 
->
-                                            projectState
-                                        </a>
-                                </li>
-                                <li>
-                                        <a href="#roleState" 
->
-                                            roleState
-                                        </a>
-                                </li>
-                                <li>
-                                        <a href="#teamState" 
->
-                                            teamState
+                                            status
                                         </a>
                                 </li>
                             </ul>
@@ -204,9 +180,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="authState"></a>
-                                        <span class="name "><b>authState</b>
-                                            <a href="#authState">
+                                        <a name="error"></a>
+                                        <span class="name "><b>error</b>
+                                            <a href="#error">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -214,7 +190,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>authState:         <code><a href="../interfaces/AuthState.html" target="_self" >AuthState</a></code>
+                                        <code>error:     <code>any | null</code>
 </code>
                                     </td>
                                 </tr>
@@ -222,7 +198,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="../interfaces/AuthState.html" target="_self" >AuthState</a></code>
+                                            <i>Type : </i>    <code>any | null</code>
 
                                         </td>
                                     </tr>
@@ -237,9 +213,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="membersState"></a>
-                                        <span class="name "><b>membersState</b>
-                                            <a href="#membersState">
+                                        <a name="platforms"></a>
+                                        <span class="name "><b>platforms</b>
+                                            <a href="#platforms">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -247,7 +223,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>membersState:         <code><a href="../interfaces/MembersState.html" target="_self" >MembersState</a></code>
+                                        <code>platforms:         <code><a href="../interfaces/Platform.html" target="_self" >Platform[] | null</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -255,7 +231,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="../interfaces/MembersState.html" target="_self" >MembersState</a></code>
+                                            <i>Type : </i>        <code><a href="../interfaces/Platform.html" target="_self" >Platform[] | null</a></code>
 
                                         </td>
                                     </tr>
@@ -270,9 +246,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="organizationState"></a>
-                                        <span class="name "><b>organizationState</b>
-                                            <a href="#organizationState">
+                                        <a name="status"></a>
+                                        <span class="name "><b>status</b>
+                                            <a href="#status">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -280,7 +256,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>organizationState:         <code><a href="../interfaces/OrganizationState.html" target="_self" >OrganizationState</a></code>
+                                        <code>status:         <code><a href="../miscellaneous/enumerations.html#StateStatus" target="_self" >StateStatus</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -288,139 +264,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="../interfaces/OrganizationState.html" target="_self" >OrganizationState</a></code>
-
-                                        </td>
-                                    </tr>
-
-
-
-
-
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="platformState"></a>
-                                        <span class="name "><b>platformState</b>
-                                            <a href="#platformState">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>platformState:         <code><a href="../interfaces/PlatformState.html" target="_self" >PlatformState</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="../interfaces/PlatformState.html" target="_self" >PlatformState</a></code>
-
-                                        </td>
-                                    </tr>
-
-
-
-
-
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="projectState"></a>
-                                        <span class="name "><b>projectState</b>
-                                            <a href="#projectState">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>projectState:         <code><a href="../interfaces/ProjectState.html" target="_self" >ProjectState</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="../interfaces/ProjectState.html" target="_self" >ProjectState</a></code>
-
-                                        </td>
-                                    </tr>
-
-
-
-
-
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="roleState"></a>
-                                        <span class="name "><b>roleState</b>
-                                            <a href="#roleState">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>roleState:         <code><a href="../interfaces/RoleState.html" target="_self" >RoleState</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="../interfaces/RoleState.html" target="_self" >RoleState</a></code>
-
-                                        </td>
-                                    </tr>
-
-
-
-
-
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="teamState"></a>
-                                        <span class="name "><b>teamState</b>
-                                            <a href="#teamState">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>teamState:         <code><a href="../interfaces/TeamState.html" target="_self" >TeamState</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="../interfaces/TeamState.html" target="_self" >TeamState</a></code>
+                                            <i>Type : </i>        <code><a href="../miscellaneous/enumerations.html#StateStatus" target="_self" >StateStatus</a></code>
 
                                         </td>
                                     </tr>
@@ -436,53 +280,53 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AuthEffects } from &#x27;./auth/auth.effects&#x27;;
-import { AuthState, authReducer } from &#x27;./auth/auth.reducer&#x27;;
-import { MembersEffects } from &#x27;./members/members.effects&#x27;;
-import { MembersState, membersReducer } from &#x27;./members/members.reducer&#x27;;
-import { OrganizationEffects } from &#x27;./organization/organization.effects&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { createReducer, on } from &#x27;@ngrx/store&#x27;;
+import { StateStatus } from &#x27;../../domain/models/enums/state-status.enum&#x27;;
+import { Platform } from &#x27;../../domain/models/platform.entity&#x27;;
 import {
-  OrganizationState,
-  organizationReducer,
-} from &#x27;./organization/organization.reducer&#x27;;
-import { ProjectEffects } from &#x27;./project/project.effects&#x27;;
-import { ProjectState, projectReducer } from &#x27;./project/project.reducer&#x27;;
-import { RoleEffects } from &#x27;./role/role.effects&#x27;;
-import { RoleState, roleReducer } from &#x27;./role/role.reducer&#x27;;
-import { TeamEffects } from &#x27;./team/team.effects&#x27;;
-import { TeamState, teamReducer } from &#x27;./team/team.reducer&#x27;;
-import { PlatformState, platformReducer } from &#x27;./platform/platform.reducer&#x27;;
-import { PlatformEffects } from &#x27;./platform/platform.effects&#x27;;
+  loadPlatforms,
+  loadPlatformsFailure,
+  loadPlatformsSuccess,
+} from &#x27;./platform.actions&#x27;;
 
-export interface AppState {
-  authState: AuthState;
-  organizationState: OrganizationState;
-  membersState: MembersState;
-  roleState: RoleState;
-  teamState: TeamState;
-  projectState: ProjectState;
-  platformState: PlatformState;
+export interface PlatformState {
+  platforms: Platform[] | null;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  error: any | null;
+  status: StateStatus;
 }
 
-export const appEfects &#x3D; [
-  AuthEffects,
-  OrganizationEffects,
-  MembersEffects,
-  RoleEffects,
-  TeamEffects,
-  ProjectEffects,
-  PlatformEffects
-];
-
-export const appStore &#x3D; {
-  authState: authReducer,
-  organizationState: organizationReducer,
-  membersState: membersReducer,
-  roleState: roleReducer,
-  teamState: teamReducer,
-  projectState: projectReducer,
-  platformState: platformReducer
+export const initialState: PlatformState &#x3D; {
+  platforms: null,
+  error: undefined,
+  status: StateStatus.PENDING,
 };
+
+export const platformReducer &#x3D; createReducer(
+  initialState,
+
+  //Handle loading current organization members
+  on(loadPlatforms, (state) &#x3D;&gt; ({
+    ...state,
+    error: null,
+    status: StateStatus.LOADING,
+  })),
+
+  //Handle load success
+  on(loadPlatformsSuccess, (state, params) &#x3D;&gt; ({
+    ...state,
+    platforms: params.platforms,
+    error: null,
+    status: StateStatus.SUCCESS,
+  })),
+
+  //Handle load failure
+  on(loadPlatformsFailure, (state, { error }) &#x3D;&gt; ({
+    ...state,
+    error: error,
+    status: StateStatus.ERROR,
+  })),
+);
 </code></pre>
     </div>
 </div>
@@ -520,7 +364,7 @@ export const appStore &#x3D; {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
-            var COMPODOC_CURRENT_PAGE_URL = 'AppState.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'PlatformState.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

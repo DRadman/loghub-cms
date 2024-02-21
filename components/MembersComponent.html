@@ -275,7 +275,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/features/settings/members/members.component.ts:37</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/features/settings/members/members.component.ts:38</a></div>
                             </td>
                         </tr>
 
@@ -342,8 +342,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="54"
-                                    class="link-to-prism">src/app/features/settings/members/members.component.ts:54</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="61"
+                                    class="link-to-prism">src/app/features/settings/members/members.component.ts:61</a></div>
                         </td>
                     </tr>
 
@@ -378,12 +378,14 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>this.store.select(selectActiveMembers)</code>
+                        <i>Default value : </i><code>this.store
+    .select(selectActiveMembers)
+    .pipe(map((value) &#x3D;&gt; [...(value ?? [])]))</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/features/settings/members/members.component.ts:50</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/features/settings/members/members.component.ts:51</a></div>
                         </td>
                     </tr>
 
@@ -410,7 +412,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/features/settings/members/members.component.ts:46</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/features/settings/members/members.component.ts:47</a></div>
                         </td>
                     </tr>
 
@@ -437,7 +439,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/features/settings/members/members.component.ts:43</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/features/settings/members/members.component.ts:44</a></div>
                         </td>
                     </tr>
 
@@ -464,7 +466,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/features/settings/members/members.component.ts:40</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/features/settings/members/members.component.ts:41</a></div>
                         </td>
                     </tr>
 
@@ -484,12 +486,14 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>this.store.select(selectInvitedMembers)</code>
+                        <i>Default value : </i><code>this.store
+    .select(selectInvitedMembers)
+    .pipe(map((value) &#x3D;&gt; [...(value ?? [])]))</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/features/settings/members/members.component.ts:51</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/features/settings/members/members.component.ts:54</a></div>
                         </td>
                     </tr>
 
@@ -514,7 +518,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/features/settings/members/members.component.ts:49</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/features/settings/members/members.component.ts:50</a></div>
                         </td>
                     </tr>
 
@@ -534,12 +538,14 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>this.store.select(selectOwnerAsArray)</code>
+                        <i>Default value : </i><code>this.store
+    .select(selectOwnerAsArray)
+    .pipe(map((value) &#x3D;&gt; [...(value ?? [])]))</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/features/settings/members/members.component.ts:52</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/features/settings/members/members.component.ts:57</a></div>
                         </td>
                     </tr>
 
@@ -572,6 +578,7 @@ import {
 } from &#x27;../../../core/state/members/members.selectors&#x27;;
 import { AccessDeniedComponent } from &#x27;../../../shared/components/access-denied/access-denied.component&#x27;;
 import { MembersTableComponent } from &#x27;../../../shared/components/members-table/members-table.component&#x27;;
+import { map } from &#x27;rxjs&#x27;;
 
 @Component({
   selector: &#x27;app-members&#x27;,
@@ -601,9 +608,15 @@ export class MembersComponent implements OnInit {
     selectHasPermission(ResourceType.USER, Permission.CREATE),
   );
   isLoadingMembers &#x3D; this.store.select(isLoadingMembers);
-  activeMembers &#x3D; this.store.select(selectActiveMembers);
-  invitedMembers &#x3D; this.store.select(selectInvitedMembers);
-  owner &#x3D; this.store.select(selectOwnerAsArray);
+  activeMembers &#x3D; this.store
+    .select(selectActiveMembers)
+    .pipe(map((value) &#x3D;&gt; [...(value ?? [])]));
+  invitedMembers &#x3D; this.store
+    .select(selectInvitedMembers)
+    .pipe(map((value) &#x3D;&gt; [...(value ?? [])]));
+  owner &#x3D; this.store
+    .select(selectOwnerAsArray)
+    .pipe(map((value) &#x3D;&gt; [...(value ?? [])]));
 
   ngOnInit() {
     this.store.dispatch(loadOrganizationMembers());
@@ -685,7 +698,7 @@ export class MembersComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><p-toast />@if (hasReadPermission | async) {  <!-- <div class="card"> -->    <p-panel [header]="\'members.members\' | translate" [toggleable]="true">      <app-members-table        [enableInviteAction]="(hasCreatePermission | async) ?? false"        [isLoading]="(isLoadingMembers | async) ?? true"        [enableRemoveAction]="(hasDeletePermission | async) ?? false"        [data]="(activeMembers | async) ?? []"      />    </p-panel>    <p-panel      styleClass="mt-5"      [header]="\'members.invited_members\' | translate"      [toggleable]="true"    >      <app-members-table        [isLoading]="(isLoadingMembers | async) ?? true"        [enableRemoveAction]="(hasDeletePermission | async) ?? false"        [data]="(invitedMembers | async) ?? []"      />    </p-panel>    <p-panel      styleClass="mt-5"      [header]="\'members.organization_owner\' | translate"      [toggleable]="true"    >      <app-members-table        [enableFiltering]="false"        [enableGlobalSearch]="false"        [enablePagination]="false"        [enableSorting]="false"        [isLoading]="(isLoadingMembers | async) ?? true"        [data]="(owner | async) ?? []"      />    </p-panel>  <!-- </div> -->} @else {  <app-access-denied />}</div>'
-    var COMPONENTS = [{'name': 'AccessDeniedComponent', 'selector': 'app-access-denied'},{'name': 'AlertsComponent', 'selector': 'app-alerts'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CloseComponent', 'selector': 'app-close'},{'name': 'ConfigComponent', 'selector': 'app-config'},{'name': 'CreateOrganizationComponent', 'selector': 'app-create-organization'},{'name': 'DetailsComponent', 'selector': 'app-details'},{'name': 'DevicesComponent', 'selector': 'app-devices'},{'name': 'DocumentationComponent', 'selector': 'app-documentation'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'GuidesComponent', 'selector': 'app-guides'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InvitationComponent', 'selector': 'app-invitation'},{'name': 'IssuesComponent', 'selector': 'app-issues'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogsComponent', 'selector': 'app-logs'},{'name': 'MembersComponent', 'selector': 'app-members'},{'name': 'MembersTableComponent', 'selector': 'app-members-table'},{'name': 'MenuitemComponent', 'selector': '[app-menuitem]'},{'name': 'MessagesComponent', 'selector': 'app-messages'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationsComponent', 'selector': 'app-notifications'},{'name': 'OrganizationComponent', 'selector': 'app-organization'},{'name': 'ProjectDetailsComponent', 'selector': 'app-project-details'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'ProjectsComponent', 'selector': 'app-projects-settings'},{'name': 'QueriesComponent', 'selector': 'app-queries'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ReleasesComponent', 'selector': 'app-releases'},{'name': 'ReplaysComponent', 'selector': 'app-replays'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'ScreenLoadsComponent', 'selector': 'app-screen-loads'},{'name': 'SdksComponent', 'selector': 'app-sdks'},{'name': 'SecurityComponent', 'selector': 'app-security'},{'name': 'SessionsComponent', 'selector': 'app-sessions'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StatsComponent', 'selector': 'app-stats'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TeamsComponent', 'selector': 'app-teams'},{'name': 'TeamsTableComponent', 'selector': 'app-teams-table'},{'name': 'TopbarComponent', 'selector': 'app-topbar'},{'name': 'VitalsComponent', 'selector': 'app-vitals'}];
+    var COMPONENTS = [{'name': 'AccessDeniedComponent', 'selector': 'app-access-denied'},{'name': 'AlertsComponent', 'selector': 'app-alerts'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CloseComponent', 'selector': 'app-close'},{'name': 'ConfigComponent', 'selector': 'app-config'},{'name': 'CreateOrganizationComponent', 'selector': 'app-create-organization'},{'name': 'DetailsComponent', 'selector': 'app-details'},{'name': 'DevicesComponent', 'selector': 'app-devices'},{'name': 'DocumentationComponent', 'selector': 'app-documentation'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'GuidesComponent', 'selector': 'app-guides'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InvitationComponent', 'selector': 'app-invitation'},{'name': 'IssuesComponent', 'selector': 'app-issues'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogsComponent', 'selector': 'app-logs'},{'name': 'MembersComponent', 'selector': 'app-members'},{'name': 'MembersTableComponent', 'selector': 'app-members-table'},{'name': 'MenuitemComponent', 'selector': '[app-menuitem]'},{'name': 'MessagesComponent', 'selector': 'app-messages'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationsComponent', 'selector': 'app-notifications'},{'name': 'OrganizationComponent', 'selector': 'app-organization'},{'name': 'ProjectDetailsComponent', 'selector': 'app-project-details'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'ProjectsComponent', 'selector': 'app-projects-settings'},{'name': 'ProjectsTableComponent', 'selector': 'app-projects-table'},{'name': 'QueriesComponent', 'selector': 'app-queries'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ReleasesComponent', 'selector': 'app-releases'},{'name': 'ReplaysComponent', 'selector': 'app-replays'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'ScreenLoadsComponent', 'selector': 'app-screen-loads'},{'name': 'SdksComponent', 'selector': 'app-sdks'},{'name': 'SecurityComponent', 'selector': 'app-security'},{'name': 'SessionsComponent', 'selector': 'app-sessions'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StatsComponent', 'selector': 'app-stats'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TeamsComponent', 'selector': 'app-teams'},{'name': 'TeamsTableComponent', 'selector': 'app-teams-table'},{'name': 'TopbarComponent', 'selector': 'app-topbar'},{'name': 'VitalsComponent', 'selector': 'app-vitals'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'MembersComponent'};
 </script>
