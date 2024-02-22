@@ -147,6 +147,9 @@
                             <li>
                                 <a href="#loadCurrentOrganization$" >loadCurrentOrganization$</a>
                             </li>
+                            <li>
+                                <a href="#updateOrganizationPicture$" >updateOrganizationPicture$</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -297,6 +300,41 @@
 
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateOrganizationPicture$"></a>
+                    <span class="name">
+                        <span ><b>updateOrganizationPicture$</b></span>
+                        <a href="#updateOrganizationPicture$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(updateOrganizationPicture),
+      switchMap((request) &#x3D;&gt;
+        this.organizationService.updateOrganizationPicture(request.file).pipe(
+          map((result) &#x3D;&gt; updateOrganizationPictureSuccess(result)),
+          catchError((error) &#x3D;&gt; of(updateOrganizationPictureFailure({ error }))),
+        ),
+      ),
+    ),
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/core/state/organization/organization.effects.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
 </section>
 
     </div>
@@ -305,7 +343,7 @@
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Actions, createEffect, ofType } from &quot;@ngrx/effects&quot;;
 import { OrganizationService } from &quot;../../services/api/organization.api.service&quot;;
-import { createOrganization, createOrganizationSuccess, loadCurrentOrganization, loadCurrentOrganizationFailure, loadCurrentOrganizationSuccess } from &quot;./organization.actions&quot;;
+import { createOrganization, createOrganizationSuccess, loadCurrentOrganization, loadCurrentOrganizationFailure, loadCurrentOrganizationSuccess, updateOrganizationPicture, updateOrganizationPictureFailure, updateOrganizationPictureSuccess } from &quot;./organization.actions&quot;;
 import { catchError, map, of, switchMap } from &quot;rxjs&quot;;
 import { Injectable } from &quot;@angular/core&quot;;
 
@@ -335,6 +373,18 @@ export class OrganizationEffects {
         this.organizationService.createOrganization(request).pipe(
           map((organization) &#x3D;&gt; createOrganizationSuccess(organization)),
           catchError((error) &#x3D;&gt; of(loadCurrentOrganizationFailure({ error }))),
+        ),
+      ),
+    ),
+  );
+
+  updateOrganizationPicture$ &#x3D; createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(updateOrganizationPicture),
+      switchMap((request) &#x3D;&gt;
+        this.organizationService.updateOrganizationPicture(request.file).pipe(
+          map((result) &#x3D;&gt; updateOrganizationPictureSuccess(result)),
+          catchError((error) &#x3D;&gt; of(updateOrganizationPictureFailure({ error }))),
         ),
       ),
     ),

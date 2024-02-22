@@ -151,6 +151,9 @@
                             <li>
                                 <a href="#isSlugTaken" >isSlugTaken</a>
                             </li>
+                            <li>
+                                <a href="#updateOrganizationPicture" >updateOrganizationPicture</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -174,7 +177,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/core/services/api/organization.api.service.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/core/services/api/organization.api.service.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -237,8 +240,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="14"
-                                    class="link-to-prism">src/app/core/services/api/organization.api.service.ts:14</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="15"
+                                    class="link-to-prism">src/app/core/services/api/organization.api.service.ts:15</a></div>
                         </td>
                     </tr>
 
@@ -304,8 +307,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="22"
-                                    class="link-to-prism">src/app/core/services/api/organization.api.service.ts:22</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="25"
+                                    class="link-to-prism">src/app/core/services/api/organization.api.service.ts:25</a></div>
                         </td>
                     </tr>
 
@@ -388,18 +391,86 @@
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateOrganizationPicture"></a>
+                    <span class="name">
+                        <span ><b>updateOrganizationPicture</b></span>
+                        <a href="#updateOrganizationPicture"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateOrganizationPicture(picture: File)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="36"
+                                    class="link-to-prism">src/app/core/services/api/organization.api.service.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>picture</td>
+                                            <td>
+                                                        <code>File</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/FileDto.html" target="_self" >Observable&lt;FileDto&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
 
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &quot;@angular/common/http&quot;;
-import { Injectable } from &quot;@angular/core&quot;;
-import { Observable } from &quot;rxjs&quot;;
-import { CreateOrganizationRequestDto } from &quot;../../domain/dto/requests/create-organization-request.dto&quot;;
-import { OrganizationDto } from &quot;../../domain/dto/organization.dto&quot;;
-import { api } from &quot;./api&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { Injectable } from &#x27;@angular/core&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+import { CreateOrganizationRequestDto } from &#x27;../../domain/dto/requests/create-organization-request.dto&#x27;;
+import { OrganizationDto } from &#x27;../../domain/dto/organization.dto&#x27;;
+import { api } from &#x27;./api&#x27;;
+import { FileDto } from &#x27;../../domain/dto/file.dto&#x27;;
 
 @Injectable({
   providedIn: &#x27;root&#x27;,
@@ -407,25 +478,34 @@ import { api } from &quot;./api&quot;;
 export class OrganizationService {
   constructor(private http: HttpClient) {}
 
-  createOrganization(dto: CreateOrganizationRequestDto): Observable&lt;OrganizationDto&gt; {
+  createOrganization(
+    dto: CreateOrganizationRequestDto,
+  ): Observable&lt;OrganizationDto&gt; {
     return this.http.post&lt;OrganizationDto&gt;(
       api.organizationUrl,
       dto,
-      api.authOptions
+      api.authOptions,
     );
   }
 
   getOrganization(): Observable&lt;OrganizationDto&gt; {
-    return this.http.get&lt;OrganizationDto&gt;(
-      api.organizationUrl,
-      api.authOptions
-    );
+    return this.http.get&lt;OrganizationDto&gt;(api.organizationUrl, api.authOptions);
   }
 
   isSlugTaken(slug: string): Observable&lt;boolean&gt; {
     return this.http.get&lt;boolean&gt;(
       api.organizationUrl + &#x27;/slug/taken?slug&#x3D;&#x27; + slug,
-      api.authOptions
+      api.authOptions,
+    );
+  }
+
+  updateOrganizationPicture(picture: File): Observable&lt;FileDto&gt; {
+    const data &#x3D; new FormData();
+    data.append(&#x27;picture&#x27;, picture);
+    return this.http.patch&lt;FileDto&gt;(
+      api.organizationUrl + &#x27;/update-picture&#x27;,
+      data,
+      api.authOptionsAutoContentType,
     );
   }
 }

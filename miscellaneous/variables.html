@@ -290,6 +290,9 @@
                             <a href="#isSuccess" title="src/app/core/state/auth/auth.selectors.ts" ><b>isSuccess</b>&nbsp;&nbsp;&nbsp;(src/.../auth.selectors.ts)</a>
                         </li>
                         <li>
+                            <a href="#isUpdateOrganizationPictureLoading" title="src/app/core/state/organization/organization.selectors.ts" ><b>isUpdateOrganizationPictureLoading</b>&nbsp;&nbsp;&nbsp;(src/.../organization.selectors.ts)</a>
+                        </li>
+                        <li>
                             <a href="#loadAllProjects" title="src/app/core/state/project/project.actions.ts" ><b>loadAllProjects</b>&nbsp;&nbsp;&nbsp;(src/.../project.actions.ts)</a>
                         </li>
                         <li>
@@ -512,6 +515,9 @@
                             <a href="#selectTeamState" title="src/app/core/state/team/team.selectors.ts" ><b>selectTeamState</b>&nbsp;&nbsp;&nbsp;(src/.../team.selectors.ts)</a>
                         </li>
                         <li>
+                            <a href="#selectUpdateOrganizationPictureStatus" title="src/app/core/state/organization/organization.selectors.ts" ><b>selectUpdateOrganizationPictureStatus</b>&nbsp;&nbsp;&nbsp;(src/.../organization.selectors.ts)</a>
+                        </li>
+                        <li>
                             <a href="#serverConfig" title="src/app/app.config.server.ts" ><b>serverConfig</b>&nbsp;&nbsp;&nbsp;(src/.../app.config.server.ts)</a>
                         </li>
                         <li>
@@ -531,6 +537,15 @@
                         </li>
                         <li>
                             <a href="#unauthErrorInterceptor" title="src/app/core/interceptors/auth.interceptor.ts" ><b>unauthErrorInterceptor</b>&nbsp;&nbsp;&nbsp;(src/.../auth.interceptor.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#updateOrganizationPicture" title="src/app/core/state/organization/organization.actions.ts" ><b>updateOrganizationPicture</b>&nbsp;&nbsp;&nbsp;(src/.../organization.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#updateOrganizationPictureFailure" title="src/app/core/state/organization/organization.actions.ts" ><b>updateOrganizationPictureFailure</b>&nbsp;&nbsp;&nbsp;(src/.../organization.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#updateOrganizationPictureSuccess" title="src/app/core/state/organization/organization.actions.ts" ><b>updateOrganizationPictureSuccess</b>&nbsp;&nbsp;&nbsp;(src/.../organization.actions.ts)</a>
                         </li>
                     </ul>
                 </td>
@@ -1062,6 +1077,12 @@
   authOptions: {
     headers: new HttpHeaders({
       &#x27;Content-Type&#x27;: &#x27;application/json&#x27;,
+      &#x27;ngrok-skip-browser-warning&#x27;: &#x27;true&#x27;,
+    }),
+    context: new HttpContext().set(AUTHENTICATE, true),
+  },
+  authOptionsAutoContentType: {
+    headers: new HttpHeaders({
       &#x27;ngrok-skip-browser-warning&#x27;: &#x27;true&#x27;,
     }),
     context: new HttpContext().set(AUTHENTICATE, true),
@@ -1785,6 +1806,76 @@
                         <i>Default value : </i><code>createAction(
   &#x27;[Organization API] Get organization success&#x27;,
   props&lt;Organization&gt;(),
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateOrganizationPicture"></a>
+                    <span class="name">
+                        <span ><b>updateOrganizationPicture</b></span>
+                        <a href="#updateOrganizationPicture"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(
+  &#x27;[Organization Page] Update organization picture&#x27;,
+  props&lt;{file: File}&gt;()
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateOrganizationPictureFailure"></a>
+                    <span class="name">
+                        <span ><b>updateOrganizationPictureFailure</b></span>
+                        <a href="#updateOrganizationPictureFailure"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(
+  &#x27;[Organization Api] Update organization picture failure&#x27;,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  props&lt;{error: any}&gt;()
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateOrganizationPictureSuccess"></a>
+                    <span class="name">
+                        <span ><b>updateOrganizationPictureSuccess</b></span>
+                        <a href="#updateOrganizationPictureSuccess"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(
+  &#x27;[Organization Api] Update organization picture success&#x27;,
+  props&lt;FileDto&gt;()
 )</code>
                     </td>
                 </tr>
@@ -2533,6 +2624,8 @@
   organization: null,
   error: undefined,
   status: StateStatus.PENDING,
+  updatePictureError: undefined,
+  updatePictureStatus: StateStatus.PENDING
 }</code>
                     </td>
                 </tr>
@@ -2598,6 +2691,28 @@
     ...state,
     error: error,
     status: StateStatus.ERROR,
+  })),
+
+  //Handle update organization picture
+  on(updateOrganizationPicture, (state) &#x3D;&gt; ({
+    ...state,
+    updatePictureError: null,
+    updatePictureStatus: StateStatus.LOADING,
+  })),
+
+  //Handle update organization picture success
+  on(updateOrganizationPictureSuccess, (state, fileDto) &#x3D;&gt; ({
+    ...state,
+    organization: {...state.organization!, pictureUrl: fileDto.url},
+    updatePictureError: null,
+    updatePictureStatus: StateStatus.SUCCESS,
+  })),
+
+  //Handleupdate organization picture failure
+  on(updateOrganizationPictureFailure, (state, { error }) &#x3D;&gt; ({
+    ...state,
+    updatePictureError: error,
+    updatePictureStatus: StateStatus.ERROR,
   })),
 )</code>
                     </td>
@@ -4081,6 +4196,29 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="isUpdateOrganizationPictureLoading"></a>
+                    <span class="name">
+                        <span ><b>isUpdateOrganizationPictureLoading</b></span>
+                        <a href="#isUpdateOrganizationPictureLoading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(
+  selectOrganization,
+  (state: OrganizationState) &#x3D;&gt; state.updatePictureStatus &#x3D;&#x3D; StateStatus.LOADING,
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="selectCurrentOrganization"></a>
                     <span class="name">
                         <span ><b>selectCurrentOrganization</b></span>
@@ -4136,6 +4274,29 @@
                         <i>Default value : </i><code>createSelector(
   selectOrganization,
   (state: OrganizationState) &#x3D;&gt; state.error,
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectUpdateOrganizationPictureStatus"></a>
+                    <span class="name">
+                        <span ><b>selectUpdateOrganizationPictureStatus</b></span>
+                        <a href="#selectUpdateOrganizationPictureStatus"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(
+  selectOrganization,
+  (state: OrganizationState) &#x3D;&gt; state.updatePictureStatus,
 )</code>
                     </td>
                 </tr>

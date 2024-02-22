@@ -304,6 +304,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/CreateTeamRequestDto.html" data-type="entity-link" >CreateTeamRequestDto</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/FileDto.html" data-type="entity-link" >FileDto</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/ForgotPasswordRequestDto.html" data-type="entity-link" >ForgotPasswordRequestDto</a>
                             </li>
                             <li class="link">

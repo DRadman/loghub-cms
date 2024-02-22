@@ -105,7 +105,7 @@
   <li class="breadcrumb-item">Interfaces</li>
   <li class="breadcrumb-item"
   >
-  OrganizationState</li>
+  FileDto</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -129,7 +129,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/core/state/organization/organization.reducer.ts</code>
+            <code>src/app/core/domain/dto/file.dto.ts</code>
         </p>
 
 
@@ -148,33 +148,39 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                        <a href="#error" 
+                                        <a href="#contentType" 
 >
-                                            error
+                                            contentType
                                         </a>
                                 </li>
                                 <li>
-                                        <a href="#organization" 
+                                        <a href="#createdTime" 
 >
-                                            organization
+                                            createdTime
                                         </a>
                                 </li>
                                 <li>
-                                        <a href="#status" 
+                                        <a href="#fileName" 
 >
-                                            status
+                                            fileName
                                         </a>
                                 </li>
                                 <li>
-                                        <a href="#updatePictureError" 
+                                        <a href="#fileSize" 
 >
-                                            updatePictureError
+                                            fileSize
                                         </a>
                                 </li>
                                 <li>
-                                        <a href="#updatePictureStatus" 
+                                        <a href="#stream" 
 >
-                                            updatePictureStatus
+                                            stream
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#url" 
+>
+                                            url
                                         </a>
                                 </li>
                             </ul>
@@ -192,9 +198,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="error"></a>
-                                        <span class="name "><b>error</b>
-                                            <a href="#error">
+                                        <a name="contentType"></a>
+                                        <span class="name "><b>contentType</b>
+                                            <a href="#contentType">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -202,7 +208,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>error:     <code>any | null</code>
+                                        <code>contentType:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -210,7 +216,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>    <code>any | null</code>
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                                         </td>
                                     </tr>
@@ -225,9 +231,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="organization"></a>
-                                        <span class="name "><b>organization</b>
-                                            <a href="#organization">
+                                        <a name="createdTime"></a>
+                                        <span class="name "><b>createdTime</b>
+                                            <a href="#createdTime">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -235,7 +241,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>organization:         <code><a href="../interfaces/Organization.html" target="_self" >Organization | null</a></code>
+                                        <code>createdTime:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -243,7 +249,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="../interfaces/Organization.html" target="_self" >Organization | null</a></code>
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
 
                                         </td>
                                     </tr>
@@ -258,9 +264,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="status"></a>
-                                        <span class="name "><b>status</b>
-                                            <a href="#status">
+                                        <a name="fileName"></a>
+                                        <span class="name "><b>fileName</b>
+                                            <a href="#fileName">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -268,7 +274,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>status:         <code><a href="../miscellaneous/enumerations.html#StateStatus" target="_self" >StateStatus</a></code>
+                                        <code>fileName:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -276,7 +282,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="../miscellaneous/enumerations.html#StateStatus" target="_self" >StateStatus</a></code>
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                                         </td>
                                     </tr>
@@ -291,9 +297,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="updatePictureError"></a>
-                                        <span class="name "><b>updatePictureError</b>
-                                            <a href="#updatePictureError">
+                                        <a name="fileSize"></a>
+                                        <span class="name "><b>fileSize</b>
+                                            <a href="#fileSize">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -301,7 +307,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>updatePictureError:     <code>any | null</code>
+                                        <code>fileSize:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -309,7 +315,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>    <code>any | null</code>
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
 
                                         </td>
                                     </tr>
@@ -324,9 +330,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="updatePictureStatus"></a>
-                                        <span class="name "><b>updatePictureStatus</b>
-                                            <a href="#updatePictureStatus">
+                                        <a name="stream"></a>
+                                        <span class="name "><b>stream</b>
+                                            <a href="#stream">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -334,7 +340,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>updatePictureStatus:         <code><a href="../miscellaneous/enumerations.html#StateStatus" target="_self" >StateStatus</a></code>
+                                        <code>stream:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -342,7 +348,40 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="../miscellaneous/enumerations.html#StateStatus" target="_self" >StateStatus</a></code>
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="url"></a>
+                                        <span class="name "><b>url</b>
+                                            <a href="#url">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>url:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                                         </td>
                                     </tr>
@@ -358,108 +397,14 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { createReducer, on } from &#x27;@ngrx/store&#x27;;
-import { StateStatus } from &#x27;../../domain/models/enums/state-status.enum&#x27;;
-import { Organization } from &#x27;../../domain/models/organization.entity&#x27;;
-import {
-  createOrganization,
-  createOrganizationFailure,
-  createOrganizationSuccess,
-  loadCurrentOrganization,
-  loadCurrentOrganizationFailure,
-  loadCurrentOrganizationSuccess,
-  updateOrganizationPicture,
-  updateOrganizationPictureFailure,
-  updateOrganizationPictureSuccess,
-} from &#x27;./organization.actions&#x27;;
-
-export interface OrganizationState {
-  organization: Organization | null;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  error: any | null;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  updatePictureError: any | null;
-  status: StateStatus;
-  updatePictureStatus: StateStatus;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface FileDto {
+  fileName: string;
+  url: string;
+  contentType: string;
+  fileSize: number;
+  createdTime: Date;
+  stream: string;
 }
-
-export const initialState: OrganizationState &#x3D; {
-  organization: null,
-  error: undefined,
-  status: StateStatus.PENDING,
-  updatePictureError: undefined,
-  updatePictureStatus: StateStatus.PENDING
-};
-
-export const organizationReducer &#x3D; createReducer(
-  initialState,
-
-  //Handle loading current organization
-  on(loadCurrentOrganization, (state) &#x3D;&gt; ({
-    ...state,
-    error: null,
-    status: StateStatus.LOADING,
-  })),
-
-  //Handle load success
-  on(loadCurrentOrganizationSuccess, (state, organization) &#x3D;&gt; ({
-    ...state,
-    organization: organization,
-    error: null,
-    status: StateStatus.SUCCESS,
-  })),
-
-  //Handle load failure
-  on(loadCurrentOrganizationFailure, (state, { error }) &#x3D;&gt; ({
-    ...state,
-    error: error,
-    status: StateStatus.ERROR,
-  })),
-
-  //Handle create new organization
-  on(createOrganization, (state) &#x3D;&gt; ({
-    ...state,
-    error: null,
-    status: StateStatus.LOADING,
-  })),
-
-  //Handle create new organization success
-  on(createOrganizationSuccess, (state, organization) &#x3D;&gt; ({
-    ...state,
-    organization: organization,
-    error: null,
-    status: StateStatus.SUCCESS,
-  })),
-
-  //Handle create new organization failure
-  on(createOrganizationFailure, (state, { error }) &#x3D;&gt; ({
-    ...state,
-    error: error,
-    status: StateStatus.ERROR,
-  })),
-
-  //Handle update organization picture
-  on(updateOrganizationPicture, (state) &#x3D;&gt; ({
-    ...state,
-    updatePictureError: null,
-    updatePictureStatus: StateStatus.LOADING,
-  })),
-
-  //Handle update organization picture success
-  on(updateOrganizationPictureSuccess, (state, fileDto) &#x3D;&gt; ({
-    ...state,
-    organization: {...state.organization!, pictureUrl: fileDto.url},
-    updatePictureError: null,
-    updatePictureStatus: StateStatus.SUCCESS,
-  })),
-
-  //Handleupdate organization picture failure
-  on(updateOrganizationPictureFailure, (state, { error }) &#x3D;&gt; ({
-    ...state,
-    updatePictureError: error,
-    updatePictureStatus: StateStatus.ERROR,
-  })),
-);
 </code></pre>
     </div>
 </div>
@@ -497,7 +442,7 @@ export const organizationReducer &#x3D; createReducer(
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
-            var COMPODOC_CURRENT_PAGE_URL = 'OrganizationState.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'FileDto.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
