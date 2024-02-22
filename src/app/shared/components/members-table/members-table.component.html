@@ -122,7 +122,7 @@
         {{ member.role.name }}
       </td>
       <td style="text-align: center">
-        @if (!member.pictureUrl || member.pictureUrl == null) {
+        @if (!member.pictureUrl || member.pictureUrl === null) {
           <p-avatar
             [label]="getUserInitials(member)"
             styleClass="mr-2"

@@ -218,6 +218,7 @@ export class MembersTableComponent {
     this.store.dispatch(removeMember({ memberId: memberId }));
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   getUserInitials(member: any): string | undefined {
     if (member.lastName || member.firstName) {
       return member.firstName?.charAt(0) + member.lastName?.charAt(0);

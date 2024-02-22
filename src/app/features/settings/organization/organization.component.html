@@ -5,10 +5,10 @@
 >
   <ng-template pTemplate="icons">
     <p-button
-      *ngIf="(hasUpdatePermission | async)"
+      *ngIf="hasUpdatePermission | async"
       [disabled]="
-        (organization | async)?.slug == slug.value &&
-        (organization | async)?.name == name.value
+        (organization | async)?.slug === slug.value &&
+        (organization | async)?.name === name.value
       "
       [label]="'organization.save' | translate"
       styleClass="mr-2 h-2rem"
@@ -29,7 +29,7 @@
         pInputText
         type="text"
         class="w-full"
-        style="min-width: 20rem;"
+        style="min-width: 20rem"
         disabled="true"
         [value]="(organization | async)?.organizationId"
         [placeholder]="'organization.id' | translate"
@@ -53,12 +53,12 @@
         }
         <input
           #slug
-          style="min-width: 20rem;"
+          style="min-width: 20rem"
           pInputText
           type="text"
           class="w-full"
           (input)="slug.value = toSlugValue(slug.value)"
-          [disabled]="!(hasUpdatePermission | async)"
+          [disabled]="(hasUpdatePermission | async) === false"
           [value]="(organization | async)?.slug"
           [placeholder]="'organization.slug' | translate"
         />
@@ -76,12 +76,12 @@
     <div class="col">
       <input
         #name
-        style="min-width: 20rem;"
+        style="min-width: 20rem"
         pInputText
         type="text"
         class="w-full"
         [value]="(organization | async)?.name"
-        [disabled]="!(hasUpdatePermission | async)"
+        [disabled]="(hasUpdatePermission | async) === false"
         [placeholder]="'organization.name' | translate"
       />
     </div>
@@ -94,7 +94,7 @@
     <div class="col flex align-items-center">
       @if (
         !(organization | async)?.pictureUrl ||
-        (organization | async)?.pictureUrl == null
+        (organization | async)?.pictureUrl === null
       ) {
         <p-avatar
           [label]="getOrganizationInitials(organization | async) | uppercase"
@@ -118,7 +118,7 @@
       <p-fileUpload
         #fileUpload
         [disabled]="
-          !(hasUpdatePermission | async) || (isUploadInProgress | async) == true
+          (hasUpdatePermission | async) === false || (isUploadInProgress | async) === true
         "
         mode="basic"
         styleClass="ml-4"
@@ -156,7 +156,7 @@
         [(ngModel)]="archivePeriod"
         [showButtons]="true"
         inputId="archivePeriod"
-        [disabled]="!(hasUpdatePermission | async)"
+        [disabled]="(hasUpdatePermission | async) === false"
         [suffix]="' ' + ('organization.days' | translate)"
       >
       </p-inputNumber>
@@ -175,7 +175,7 @@
         [(ngModel)]="cleanupPeriod"
         [showButtons]="true"
         inputId="cleanupPeriod"
-        [disabled]="!(hasUpdatePermission | async)"
+        [disabled]="(hasUpdatePermission | async) === false"
         [suffix]="' ' + ('organization.days' | translate)"
       >
       </p-inputNumber>
@@ -201,7 +201,7 @@
         severity="danger"
         [label]="'organization.delete' | translate"
         (onClick)="deleteOrganization()"
-        [disabled]="!(hasDeletePermission | async)"
+        [disabled]="(hasDeletePermission | async) === false"
       />
     </div>
   </div>

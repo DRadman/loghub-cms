@@ -34,7 +34,7 @@ export class OrganizationService {
   }
 
   updateOrganizationPicture(picture: File): Observable<FileDto> {
-    let data = new FormData();
+    const data = new FormData();
     data.append('picture', picture);
     return this.http.patch<FileDto>(
       api.organizationUrl + '/update-picture',

@@ -6,23 +6,25 @@ import {
   OnDestroy,
   ViewChild,
 } from '@angular/core';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { PanelModule } from 'primeng/panel';
-import { DividerModule } from 'primeng/divider';
-import { BadgeModule } from 'primeng/badge';
-import { InputTextModule } from 'primeng/inputtext';
+import { FormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { AppState } from '../../../core/state/app.state';
-import {
-  isUpdateOrganizationPictureLoading,
-  selectCurrentOrganization,
-  selectUpdateOrganizationPictureStatus,
-} from '../../../core/state/organization/organization.selectors';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { MessageService } from 'primeng/api';
+import { AvatarModule } from 'primeng/avatar';
+import { BadgeModule } from 'primeng/badge';
 import { ButtonModule } from 'primeng/button';
-import { Ripple, RippleModule } from 'primeng/ripple';
-import { selectHasPermission } from '../../../core/state/auth/auth.selectors';
-import { ResourceType } from '../../../core/domain/models/enums/resource-type.enum';
-import { Permission } from '../../../core/domain/models/enums/permission.enum';
+import { DividerModule } from 'primeng/divider';
+import {
+  FileUpload,
+  FileUploadHandlerEvent,
+  FileUploadModule
+} from 'primeng/fileupload';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { InputTextModule } from 'primeng/inputtext';
+import { PanelModule } from 'primeng/panel';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { RippleModule } from 'primeng/ripple';
+import { ToastModule } from 'primeng/toast';
 import {
   Subscription,
   debounceTime,
@@ -32,22 +34,19 @@ import {
   map,
   take,
 } from 'rxjs';
-import { OrganizationService } from '../../../core/services/api/organization.api.service';
-import { InputNumberModule } from 'primeng/inputnumber';
-import { FormsModule } from '@angular/forms';
-import { AvatarModule } from 'primeng/avatar';
-import {
-  FileUpload,
-  FileUploadEvent,
-  FileUploadHandlerEvent,
-  FileUploadModule,
-} from 'primeng/fileupload';
-import { Organization } from '../../../core/domain/models/organization.entity';
+import { Permission } from '../../../core/domain/models/enums/permission.enum';
+import { ResourceType } from '../../../core/domain/models/enums/resource-type.enum';
 import { StateStatus } from '../../../core/domain/models/enums/state-status.enum';
-import { MessageService } from 'primeng/api';
-import { ToastModule } from 'primeng/toast';
-import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { Organization } from '../../../core/domain/models/organization.entity';
+import { OrganizationService } from '../../../core/services/api/organization.api.service';
+import { AppState } from '../../../core/state/app.state';
+import { selectHasPermission } from '../../../core/state/auth/auth.selectors';
 import { updateOrganizationPicture } from '../../../core/state/organization/organization.actions';
+import {
+  isUpdateOrganizationPictureLoading,
+  selectCurrentOrganization,
+  selectUpdateOrganizationPictureStatus,
+} from '../../../core/state/organization/organization.selectors';
 
 @Component({
   selector: 'app-organization',
@@ -98,6 +97,7 @@ export class OrganizationComponent implements OnDestroy, AfterViewInit {
   private slugCheckSubscription?: Subscription;
 
   ngAfterViewInit() {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     fromEvent<any>(this.slugInput.nativeElement, 'input')
       .pipe(
         map((event: Event) => (event.target as HTMLInputElement).value),
@@ -179,6 +179,7 @@ export class OrganizationComponent implements OnDestroy, AfterViewInit {
     }
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   updateOrganizationNameAndSlug(name: string, slug: string) {
     throw new Error('Method not implemented.');
   }

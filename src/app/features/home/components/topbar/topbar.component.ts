@@ -1,21 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { MenuItem } from 'primeng/api';
 import { AvatarModule } from 'primeng/avatar';
 import { ButtonModule } from 'primeng/button';
 import { DropdownModule } from 'primeng/dropdown';
 import { RippleModule } from 'primeng/ripple';
-import { signOut } from '../../../../core/state/auth/auth.actions';
-import { Store } from '@ngrx/store';
-import { AppState } from '../../../../core/state/app.state';
-import { LayoutService } from '../../../../core/services/layout.service';
-import { Router } from '@angular/router';
-import { MenuItem } from 'primeng/api';
-import { selectCurrentUser } from '../../../../core/state/auth/auth.selectors';
 import { environment } from '../../../../../environments/environment';
+import { LayoutService } from '../../../../core/services/layout.service';
+import { AppState } from '../../../../core/state/app.state';
+import { signOut } from '../../../../core/state/auth/auth.actions';
+import { selectCurrentUser } from '../../../../core/state/auth/auth.selectors';
 import { selectCurrentOrganization } from '../../../../core/state/organization/organization.selectors';
-import { User } from '../../../../core/domain/models/user.entity';
 
 @Component({
   selector: 'app-topbar',
