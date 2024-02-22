@@ -1,1 +1,208 @@
-<p>organization works!</p>
+<p-toast />
+<p-panel
+  [header]="'organization.general' | translate | uppercase"
+  [toggleable]="true"
+>
+  <ng-template pTemplate="icons">
+    <p-button
+      *ngIf="(hasUpdatePermission | async)"
+      [disabled]="
+        (organization | async)?.slug == slug.value &&
+        (organization | async)?.name == name.value
+      "
+      [label]="'organization.save' | translate"
+      styleClass="mr-2 h-2rem"
+      icon="pi pi-save"
+      severity="warning"
+      (onClick)="updateOrganizationNameAndSlug(name.value, slug.value)"
+    />
+  </ng-template>
+  <div class="grid">
+    <div class="col">
+      <h6 pBadge class="w-max mb-0" severity="danger">
+        {{ "organization.id" | translate }}
+      </h6>
+      <p>{{ "organization.id_description" | translate }}</p>
+    </div>
+    <div class="col">
+      <input
+        pInputText
+        type="text"
+        class="w-full"
+        style="min-width: 20rem;"
+        disabled="true"
+        [value]="(organization | async)?.organizationId"
+        [placeholder]="'organization.id' | translate"
+      />
+    </div>
+  </div>
+  <p-divider styleClass="mt-0" />
+  <div class="grid">
+    <div class="col">
+      <h6 pBadge class="w-max mb-0" severity="danger">
+        {{ "organization.slug" | translate }}
+      </h6>
+      <p>{{ "organization.slug_description" | translate }}</p>
+    </div>
+    <div class="col">
+      <span class="p-input-icon-right w-full">
+        @if (!isSlugTaken) {
+          <i class="pi pi-check text-green-500"></i>
+        } @else {
+          <i class="pi pi-times text-red-500"></i>
+        }
+        <input
+          #slug
+          style="min-width: 20rem;"
+          pInputText
+          type="text"
+          class="w-full"
+          (input)="slug.value = toSlugValue(slug.value)"
+          [disabled]="!(hasUpdatePermission | async)"
+          [value]="(organization | async)?.slug"
+          [placeholder]="'organization.slug' | translate"
+        />
+      </span>
+    </div>
+  </div>
+  <p-divider styleClass="mt-0" />
+  <div class="grid">
+    <div class="col">
+      <h6 pBadge class="w-max mb-0" severity="danger">
+        {{ "organization.name" | translate }}
+      </h6>
+      <p>{{ "organization.name_description" | translate }}</p>
+    </div>
+    <div class="col">
+      <input
+        #name
+        style="min-width: 20rem;"
+        pInputText
+        type="text"
+        class="w-full"
+        [value]="(organization | async)?.name"
+        [disabled]="!(hasUpdatePermission | async)"
+        [placeholder]="'organization.name' | translate"
+      />
+    </div>
+  </div>
+  <p-divider styleClass="mt-0" />
+  <div class="grid">
+    <div class="col flex">
+      <h6 class="w-max mb-0">{{ "organization.avatar" | translate }}</h6>
+    </div>
+    <div class="col flex align-items-center">
+      @if (
+        !(organization | async)?.pictureUrl ||
+        (organization | async)?.pictureUrl == null
+      ) {
+        <p-avatar
+          [label]="getOrganizationInitials(organization | async) | uppercase"
+          styleClass="mr-2"
+          [style]="{
+            'background-color': stringToColour(
+              (organization | async)?.name ?? ''
+            ),
+            color: '#ffffff'
+          }"
+          size="xlarge"
+        ></p-avatar>
+      } @else {
+        <p-avatar
+          [image]="(organization | async)?.pictureUrl"
+          styleClass="mr-2"
+          size="xlarge"
+        ></p-avatar>
+      }
+
+      <p-fileUpload
+        #fileUpload
+        [disabled]="
+          !(hasUpdatePermission | async) || (isUploadInProgress | async) == true
+        "
+        mode="basic"
+        styleClass="ml-4"
+        [multiple]="false"
+        [chooseLabel]="'organization.choose' | translate"
+        accept="image/*"
+        [maxFileSize]="2000000"
+        [customUpload]="true"
+        (uploadHandler)="uploadNewAvatar($event)"
+      />
+      <p-progressSpinner
+        *ngIf="isUploadInProgress | async"
+        ariaLabel="loading"
+        styleClass="w-2rem h-2rem ml-2"
+        strokeWidth="4"
+      />
+    </div>
+  </div>
+</p-panel>
+
+<p-panel
+  [header]="'organization.cleanup_policies' | translate | uppercase"
+  [toggleable]="true"
+  styleClass="mt-5"
+>
+  <div class="grid">
+    <div class="col">
+      <h6 class="w-max mb-0" severity="danger">
+        {{ "organization.archive_period" | translate }}
+      </h6>
+      <p>{{ "organization.archive_period_description" | translate }}</p>
+    </div>
+    <div class="col">
+      <p-inputNumber
+        [(ngModel)]="archivePeriod"
+        [showButtons]="true"
+        inputId="archivePeriod"
+        [disabled]="!(hasUpdatePermission | async)"
+        [suffix]="' ' + ('organization.days' | translate)"
+      >
+      </p-inputNumber>
+    </div>
+  </div>
+  <p-divider styleClass="mt-0" />
+  <div class="grid">
+    <div class="col">
+      <h6 class="w-max mb-0" severity="danger">
+        {{ "organization.cleanup_period" | translate }}
+      </h6>
+      <p>{{ "organization.cleanup_period_description" | translate }}</p>
+    </div>
+    <div class="col">
+      <p-inputNumber
+        [(ngModel)]="cleanupPeriod"
+        [showButtons]="true"
+        inputId="cleanupPeriod"
+        [disabled]="!(hasUpdatePermission | async)"
+        [suffix]="' ' + ('organization.days' | translate)"
+      >
+      </p-inputNumber>
+    </div>
+  </div>
+</p-panel>
+
+<p-panel
+  [header]="'organization.danger_zone' | translate | uppercase"
+  [toggleable]="true"
+  styleClass="mt-5 panel-danger"
+>
+  <div class="grid">
+    <div class="col">
+      <h6 class="w-max mb-0" severity="danger">
+        {{ "organization.delete" | translate }}
+      </h6>
+      <p>{{ "organization.delete_description" | translate }}</p>
+    </div>
+    <div class="col flex align-items-center justify-content-end">
+      <p-button
+        pRipple
+        severity="danger"
+        [label]="'organization.delete' | translate"
+        (onClick)="deleteOrganization()"
+        [disabled]="!(hasDeletePermission | async)"
+      />
+    </div>
+  </div>
+</p-panel>

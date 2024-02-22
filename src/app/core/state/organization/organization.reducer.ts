@@ -8,19 +8,27 @@ import {
   loadCurrentOrganization,
   loadCurrentOrganizationFailure,
   loadCurrentOrganizationSuccess,
+  updateOrganizationPicture,
+  updateOrganizationPictureFailure,
+  updateOrganizationPictureSuccess,
 } from './organization.actions';
 
 export interface OrganizationState {
   organization: Organization | null;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   error: any | null;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  updatePictureError: any | null;
   status: StateStatus;
+  updatePictureStatus: StateStatus;
 }
 
 export const initialState: OrganizationState = {
   organization: null,
   error: undefined,
   status: StateStatus.PENDING,
+  updatePictureError: undefined,
+  updatePictureStatus: StateStatus.PENDING
 };
 
 export const organizationReducer = createReducer(
@@ -68,5 +76,27 @@ export const organizationReducer = createReducer(
     ...state,
     error: error,
     status: StateStatus.ERROR,
+  })),
+
+  //Handle update organization picture
+  on(updateOrganizationPicture, (state) => ({
+    ...state,
+    updatePictureError: null,
+    updatePictureStatus: StateStatus.LOADING,
+  })),
+
+  //Handle update organization picture success
+  on(updateOrganizationPictureSuccess, (state, fileDto) => ({
+    ...state,
+    organization: {...state.organization!, pictureUrl: fileDto.url},
+    updatePictureError: null,
+    updatePictureStatus: StateStatus.SUCCESS,
+  })),
+
+  //Handleupdate organization picture failure
+  on(updateOrganizationPictureFailure, (state, { error }) => ({
+    ...state,
+    updatePictureError: error,
+    updatePictureStatus: StateStatus.ERROR,
   })),
 );

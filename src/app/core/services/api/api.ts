@@ -27,6 +27,12 @@ export const api = {
     }),
     context: new HttpContext().set(AUTHENTICATE, true),
   },
+  authOptionsAutoContentType: {
+    headers: new HttpHeaders({
+      'ngrok-skip-browser-warning': 'true',
+    }),
+    context: new HttpContext().set(AUTHENTICATE, true),
+  },
   noAuthOptions: {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
