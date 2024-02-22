@@ -15,7 +15,17 @@ export const isLoadingOrganization = createSelector(
   (state: OrganizationState) => state.status == StateStatus.LOADING,
 );
 
+export const selectUpdateOrganizationPictureStatus = createSelector(
+  selectOrganization,
+  (state: OrganizationState) => state.updatePictureStatus,
+);
+
 export const selectOrganizationError = createSelector(
   selectOrganization,
   (state: OrganizationState) => state.error,
+);
+
+export const isUpdateOrganizationPictureLoading = createSelector(
+  selectOrganization,
+  (state: OrganizationState) => state.updatePictureStatus == StateStatus.LOADING,
 );

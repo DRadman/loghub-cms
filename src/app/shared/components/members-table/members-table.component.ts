@@ -159,8 +159,12 @@ export class MembersTableComponent {
   showRemoveMemberConfirmation(member: any, event: Event) {
     this.confirmationService.confirm({
       target: event.target as EventTarget,
-      message: this.translateService.instant('members-table.delete_confirmation_message'),
-      header: this.translateService.instant('members-table.delete_confirmation'),
+      message: this.translateService.instant(
+        'members-table.delete_confirmation_message',
+      ),
+      header: this.translateService.instant(
+        'members-table.delete_confirmation',
+      ),
       icon: 'pi pi-info-circle',
       acceptButtonStyleClass: 'p-button-danger p-button-text',
       rejectButtonStyleClass: 'p-button-text p-button-text',
@@ -212,5 +216,27 @@ export class MembersTableComponent {
       memberId = member.invitationId;
     }
     this.store.dispatch(removeMember({ memberId: memberId }));
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  getUserInitials(member: any): string | undefined {
+    if (member.lastName || member.firstName) {
+      return member.firstName?.charAt(0) + member.lastName?.charAt(0);
+    } else {
+      return member.email.charAt(0);
+    }
+  }
+
+  stringToColour(str: string): string {
+    let hash = 0;
+    str.split('').forEach((char) => {
+      hash = char.charCodeAt(0) + ((hash << 5) - hash);
+    });
+    let colour = '#';
+    for (let i = 0; i < 3; i++) {
+      const value = (hash >> (i * 8)) & 0xff;
+      colour += value.toString(16).padStart(2, '0');
+    }
+    return colour;
   }
 }

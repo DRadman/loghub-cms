@@ -181,6 +181,29 @@
   "project-settings": {
     "projects": "Projects"
   },
+  "organization": {
+    "general": "General",
+    "cleanup_policies": "Cleanup Policies",
+    "danger_zone": "Danger Zone",
+    "name": "Display Name",
+    "name_description": "A human-friendly name for the organization",
+    "slug": "Organization Slug",
+    "slug_description": "A unique slug used to identify this organization",
+    "id": "Organization ID",
+    "id_description": "A unique ID used to identify this organization",
+    "avatar": "Avatar",
+    "archive_period": "Auto Archive Period",
+    "archive_period_description": "Automatically mark resource as `archived` after specified number of days of inactivity",
+    "cleanup_period": "Auto Cleanup Period",
+    "cleanup_period_description": "Automatically cleanup `archived` resources older than specified number of days",
+    "delete": "Delete Organization",
+    "delete_description": "Performing this acction will delete whole organization and close all organization accounts. Resources that will be deleted: Accounts, Devices, Sessions, Recordings, Logs, Projects, Issues, Releases, Messages.",
+    "days": "days",
+    "choose": "Choose New",
+    "error": "API Error",
+    "failed_to_upload_picture": "Failed to upload a picture (Unsupported)",
+    "save": "Save Changes"
+  },
   "members-table": {
     "first_name": "First Name",
     "last_name": "Last Name",

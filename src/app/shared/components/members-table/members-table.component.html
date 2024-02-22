@@ -122,14 +122,23 @@
         {{ member.role.name }}
       </td>
       <td style="text-align: center">
-        <p-avatar
-          styleClass="profile-avatar-border"
-          [image]="member.profileIconUrl ?? '/assets/icons/user.svg'"
-          styleClass="mr-2"
-          size="normal"
-          shape="circle"
-          [style]="{ background: 'transparent' }"
-        ></p-avatar>
+        @if (!member.pictureUrl || member.pictureUrl === null) {
+          <p-avatar
+            [label]="getUserInitials(member)"
+            styleClass="mr-2"
+            size="large"
+            [style]="{
+              'background-color': stringToColour(member.email),
+              color: '#ffffff'
+            }"
+          ></p-avatar>
+        } @else {
+          <p-avatar
+            [image]="member.pictureUrl"
+            styleClass="mr-2"
+            size="large"
+          ></p-avatar>
+        }
       </td>
       <td style="text-align: center">
         <p-button
@@ -218,7 +227,7 @@
         >
 
         <div class="flex w-full justify-content-end mt-5">
-            <p-button 
+          <p-button
             pRipple
             [label]="'members-table.cancel' | translate"
             [outlined]="true"
@@ -227,7 +236,7 @@
             severity="danger"
             [loading]="(isLoadingSendInvitation | async) ?? false"
             (onClick)="isInviteDialogVisible = !isInviteDialogVisible"
-            />
+          />
           <p-button
             pRipple
             styleClass="ml-4"
