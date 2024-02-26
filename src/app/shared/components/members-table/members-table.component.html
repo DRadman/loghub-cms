@@ -100,7 +100,7 @@
           {{ "members-table.avatar" | translate }}
         </div>
       </th>
-      <th style="width: 8rem">
+      <th style="width: 8rem" *ngIf="enableRemoveAction">
         <div class="flex justify-content-center align-items-center">
           {{ "members-table.actions" | translate }}
         </div>
@@ -140,7 +140,7 @@
           ></p-avatar>
         }
       </td>
-      <td style="text-align: center">
+      <td style="text-align: center" *ngIf="enableRemoveAction">
         <p-button
           pRipple
           [disabled]="!enableRemoveAction"
@@ -156,7 +156,7 @@
   </ng-template>
   <ng-template pTemplate="emptymessage">
     <tr>
-      <td colspan="3">{{ "members-table.no_members_found" | translate }}</td>
+      <td colspan="6">{{ "members-table.no_members_found" | translate }}</td>
     </tr>
   </ng-template>
 </p-table>

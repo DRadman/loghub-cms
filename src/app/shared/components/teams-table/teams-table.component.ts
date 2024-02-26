@@ -46,6 +46,7 @@ import { StateStatus } from '../../../core/domain/models/enums/state-status.enum
 import { createTeam, deleteTeam } from '../../../core/state/team/team.actions';
 import { TeamService } from '../../../core/services/api/team.api.service';
 import { CalendarModule } from 'primeng/calendar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-teams-table',
@@ -78,6 +79,7 @@ export class TeamsTableComponent implements AfterViewInit, OnDestroy {
     private translateService: TranslateService,
     private teamService: TeamService,
     private confirmationService: ConfirmationService,
+    private router: Router,
   ) {}
 
   @ViewChild('dt') dt: Table | undefined;
@@ -232,6 +234,16 @@ export class TeamsTableComponent implements AfterViewInit, OnDestroy {
       });
 
     this.store.dispatch(deleteTeam({ teamId: team.teamId }));
+  }
+
+  openSingleTeam(event: MouseEvent, team: Team) {
+    const isDeleteButtonClicked = (event.target as HTMLElement).closest(
+      '.p-button',
+    );
+
+    if (!isDeleteButtonClicked) {
+      this.router.navigate([`/home/settings/teams/${team.teamId}`]);
+    }
   }
 
   private resetTeamsForm() {

@@ -12,7 +12,7 @@ import { selectHasPermission } from '../../../core/state/auth/auth.selectors';
 import { loadOrganizationMembers } from '../../../core/state/members/members.actions';
 import {
   isLoadingMembers,
-  selectActiveMembers,
+  selectOrganizationMembers,
   selectInvitedMembers,
   selectOwnerAsArray,
 } from '../../../core/state/members/members.selectors';
@@ -49,7 +49,7 @@ export class MembersComponent implements OnInit {
   );
   isLoadingMembers = this.store.select(isLoadingMembers);
   activeMembers = this.store
-    .select(selectActiveMembers)
+    .select(selectOrganizationMembers)
     .pipe(map((value) => [...(value ?? [])]));
   invitedMembers = this.store
     .select(selectInvitedMembers)

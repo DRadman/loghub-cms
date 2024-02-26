@@ -15,6 +15,8 @@ import { TeamEffects } from './team/team.effects';
 import { TeamState, teamReducer } from './team/team.reducer';
 import { PlatformState, platformReducer } from './platform/platform.reducer';
 import { PlatformEffects } from './platform/platform.effects';
+import { SingleTeamEffects } from './single-team/single-team.effects';
+import { SingleTeamState, singleTeamReducer } from './single-team/single-team.reducer';
 
 export interface AppState {
   authState: AuthState;
@@ -24,6 +26,7 @@ export interface AppState {
   teamState: TeamState;
   projectState: ProjectState;
   platformState: PlatformState;
+  singleTeamState: SingleTeamState;
 }
 
 export const appEfects = [
@@ -33,7 +36,8 @@ export const appEfects = [
   RoleEffects,
   TeamEffects,
   ProjectEffects,
-  PlatformEffects
+  PlatformEffects,
+  SingleTeamEffects
 ];
 
 export const appStore = {
@@ -43,5 +47,6 @@ export const appStore = {
   roleState: roleReducer,
   teamState: teamReducer,
   projectState: projectReducer,
-  platformState: platformReducer
+  platformState: platformReducer,
+  singleTeamState: singleTeamReducer,
 };

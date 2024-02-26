@@ -59,5 +59,12 @@ export const routes: Routes = [
       breadcrumb: 'Settings_Teams',
     },
   },
-  { path: '**', redirectTo: '', pathMatch: 'full' }
+  {
+    path: 'teams/:teamId',
+    loadComponent: () =>
+      import('./teams/components/single-team/single-team.component').then(
+        (c) => c.SingleTeamComponent,
+      ),
+  },
+  { path: '**', redirectTo: '', pathMatch: 'full' },
 ];

@@ -5,10 +5,16 @@ import { StateStatus } from '../../domain/models/enums/state-status.enum';
 
 export const selectMembers = (state: AppState) => state.membersState;
 
-export const selectActiveMembers = createSelector(
+export const selectOrganizationMembers = createSelector(
   selectMembers,
   (state: MembersState) => state.members?.users,
 );
+
+export const selectActiveMembers = createSelector(
+  selectMembers,
+  (state: MembersState) => state.activeMembers,
+);
+
 
 export const selectInvitedMembers = createSelector(
   selectMembers,
@@ -27,6 +33,11 @@ export const selectOwnerAsArray = createSelector(selectOwner, (owner) =>
 export const isLoadingMembers = createSelector(
   selectMembers,
   (state: MembersState) => state.status == StateStatus.LOADING,
+);
+
+export const isLoadingActiveMembers = createSelector(
+  selectMembers,
+  (state: MembersState) => state.activeMembersStatus == StateStatus.LOADING,
 );
 
 export const isLoadingSendInvitation = createSelector(

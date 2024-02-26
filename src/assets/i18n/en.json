@@ -269,5 +269,38 @@
     "platform_label": "Platform [REQUIRED]",
     "select_platform": "Select platform",
     "platform": "Platform"
+  },
+  "single-team": {
+    "members": "Members",
+    "projects": "Projects",
+    "settings": "Settings",
+    "team_settings": "Team Settings",
+    "team_administration": "Team Administration",
+    "delete_confirmation": "Delete Confirmation",
+    "delete_confirmation_message":"Are you sure that you want to delete this team?",
+    "delete": "Delete Team",
+    "delete_description": "This may affect team members' access to projects and associated alert delivery.",
+    "failed_to_delete_team": "Failed to delete team",
+    "failed_to_update_team": "Failed to update team",
+    "error": "API Error",
+    "slug": "Team Slug",
+    "slug_description": "A unique slug used to identify this team",
+    "id": "Team ID",
+    "id_description": "A unique ID used to identify this team",
+    "save": "Save Changes"
+  },
+  "member-picker": {
+    "edit": "Assign Members",
+    "available_members": "Available",
+    "selected_members": "Selected",
+    "search": "Search",
+    "ok": "OK"
+  },
+  "project-picker": {
+    "edit": "Assign Projects",
+    "available_projects": "Available",
+    "selected_projects": "Selected",
+    "search": "Search",
+    "ok": "OK"
   }
 }

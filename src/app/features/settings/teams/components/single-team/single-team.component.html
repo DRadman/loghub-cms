@@ -1,0 +1,137 @@
+<p-toast />
+<p-confirmDialog />
+@if ((team | async) === null || (team | async) === undefined) {
+  <app-not-found />
+} @else {
+  <h3>#{{ (team | async)?.slug }}</h3>
+  @if ((hasReadPermission | async) === false) {
+    <app-access-denied />
+  } @else {
+    <p-tabView>
+      <p-tabPanel [header]="'single-team.members' | translate">
+        <div
+          *ngIf="(hasUpdatePermission | async) === true"
+          class="mb-4 w-full flex justify-content-end"
+        >
+          <app-member-picker
+            [selectedMembers]="(members | async) ?? []"
+            [onMembersPicked]="onAddMembers"
+            [onMembersRemoved]="onRemoveMembers"
+          />
+        </div>
+        <app-members-table
+          [isLoading]="(isLoadingMembers | async) === true"
+          [data]="(members | async) ?? undefined"
+        />
+      </p-tabPanel>
+      <p-tabPanel [header]="'single-team.projects' | translate">
+        <div
+          *ngIf="(hasUpdatePermission | async) === true"
+          class="mb-4 w-full flex justify-content-end"
+        >
+          <app-project-picker
+            [selectedProjects]="(projects | async) ?? []"
+            [onProjectsPicked]="onAddProjects"
+            [onProjectsRemoved]="onRemoveProjects"
+          />
+        </div>
+        <app-projects-table
+          [isLoading]="(isLoadingProjects | async) === true"
+          [data]="(projects | async) ?? undefined"
+        />
+      </p-tabPanel>
+      <p-tabPanel [header]="'single-team.settings' | translate">
+        <p-panel
+          [header]="'single-team.team_settings' | translate | uppercase"
+          [toggleable]="true"
+        >
+          <ng-template pTemplate="icons">
+            <p-button
+              *ngIf="hasUpdatePermission | async"
+              [disabled]="(team | async)?.slug === slug.value"
+              [label]="'single-team.save' | translate"
+              styleClass="mr-2 h-2rem"
+              icon="pi pi-save"
+              severity="warning"
+              [loading]="(isLoadingUpdateTeam | async) === true"
+              (onClick)="updateTeamSlug(slug.value)"
+            />
+          </ng-template>
+          <div class="grid">
+            <div class="col">
+              <h6 pBadge class="w-max mb-0" severity="danger">
+                {{ "single-team.id" | translate }}
+              </h6>
+              <p>{{ "single-team.id_description" | translate }}</p>
+            </div>
+            <div class="col">
+              <input
+                pInputText
+                type="text"
+                class="w-full"
+                style="min-width: 20rem"
+                disabled="true"
+                [value]="(team | async)?.teamId"
+                [placeholder]="'organization.id' | translate"
+              />
+            </div>
+          </div>
+          <p-divider styleClass="mt-0" />
+          <div class="grid">
+            <div class="col">
+              <h6 pBadge class="w-max mb-0" severity="danger">
+                {{ "single-team.slug" | translate }}
+              </h6>
+              <p>{{ "single-team.slug_description" | translate }}</p>
+            </div>
+            <div class="col">
+              <span class="p-input-icon-right w-full">
+                @if (!isSlugTaken) {
+                  <i class="pi pi-check text-green-500"></i>
+                } @else {
+                  <i class="pi pi-times text-red-500"></i>
+                }
+                <input
+                  #slug
+                  style="min-width: 20rem"
+                  pInputText
+                  type="text"
+                  class="w-full"
+                  (input)="slug.value = toSlugValue(slug.value)"
+                  [disabled]="(hasUpdatePermission | async) === false"
+                  [value]="(team | async)?.slug"
+                  [placeholder]="'single-team.slug' | translate"
+                />
+              </span>
+            </div>
+          </div>
+        </p-panel>
+        <p-panel
+          [header]="'single-team.team_administration' | translate | uppercase"
+          [toggleable]="true"
+          styleClass="mt-5"
+        >
+          <div class="grid">
+            <div class="col">
+              <h6 class="w-max mb-0" severity="danger">
+                {{ "single-team.delete" | translate }}
+              </h6>
+              <p>{{ "single-team.delete_description" | translate }}</p>
+            </div>
+            <div class="col flex align-items-center justify-content-end">
+              <p-button
+                pRipple
+                severity="danger"
+                icon="pi pi-trash"
+                iconPos="left"
+                [label]="'single-team.delete' | translate"
+                (onClick)="showDeleteTeamConfirmation($event)"
+                [disabled]="(hasDeletePermission | async) === false"
+              />
+            </div>
+          </div>
+        </p-panel>
+      </p-tabPanel>
+    </p-tabView>
+  }
+}

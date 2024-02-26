@@ -89,8 +89,8 @@
       </th>
     </tr>
   </ng-template>
-  <ng-template pTemplate="body" let-team>
-    <tr class="p-selectable-row">
+  <ng-template pTemplate="body" let-team >
+    <tr class="p-selectable-row" (click)="openSingleTeam($event, team)">
       <td>
         {{ team?.slug }}
       </td>

@@ -1,0 +1,73 @@
+<p-button
+  [label]="'member-picker.edit' | translate"
+  severity="warning"
+  icon="pi pi-pencil"
+  [loading]="(isLoadingMembers | async) === true"
+  (onClick)="showPickerDialog()"
+/>
+<p-dialog
+  [header]="'member-picker.edit' | translate"
+  [(visible)]="isPickerDialogVisible"
+  [modal]="true"
+  [maximizable]="true"
+>
+  <p-pickList
+    [source]="availableMembers"
+    [target]="selectedMembers"
+    [sourceHeader]="'member-picker.available_members' | translate"
+    [targetHeader]="'member-picker.selected_members' | translate"
+    [dragdrop]="true"
+    [responsive]="true"
+    [sourceStyle]="{ height: '30rem', width: '25rem' }"
+    [targetStyle]="{ height: '30rem', width: '25rem' }"
+    [showSourceControls]="false"
+    [showTargetControls]="false"
+    (onMoveToTarget)="onMoveToTarget($event)"
+    (onMoveAllToTarget)="onMoveAllToTarget($event)"
+    (onMoveToSource)="onMoveToSource($event)"
+    (onMoveAllToSource)="onMoveAllToSource($event)"
+    filterBy="firstName,lastName,email"
+    [sourceFilterPlaceholder]="'member-picker.search' | translate"
+    [targetFilterPlaceholder]="'member-picker.search' | translate"
+    breakpoint="1280px"
+  >
+    <ng-template let-user pTemplate="item">
+      <div class="flex flex-wrap p-2 align-items-center gap-3">
+        @if (!user.pictureUrl || user.pictureUrl === null) {
+          <p-avatar
+            [label]="getUserInitials(user)"
+            styleClass="mr-2"
+            size="large"
+            [style]="{
+              'background-color': stringToColour(user.email),
+              color: '#ffffff'
+            }"
+          ></p-avatar>
+        } @else {
+          <p-avatar
+            [image]="user.pictureUrl"
+            styleClass="mr-2"
+            size="large"
+          ></p-avatar>
+        }
+        <div class="flex-1 flex flex-column gap-2">
+          <span class="font-bold"
+            >{{ user.firstName }} {{ user.lastName }}</span
+          >
+          <div class="flex align-products-center gap-2">
+            <span>{{ user.email }}</span>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-pickList>
+
+  <ng-template pTemplate="footer">
+    <p-button
+      icon="pi pi-check"
+      [outlined]="true"
+      (click)="isPickerDialogVisible = false"
+      [label]="'member-picker.ok' | translate"
+    ></p-button>
+  </ng-template>
+</p-dialog>
