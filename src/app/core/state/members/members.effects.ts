@@ -4,6 +4,9 @@ import {
   inviteMember,
   inviteMemberFailure,
   inviteMemberSuccess,
+  loadActiveMembers,
+  loadActiveMembersFailure,
+  loadActiveMembersSuccess,
   loadOrganizationMembers,
   loadOrganizationMembersFailure,
   loadOrganizationMembersSuccess,
@@ -30,6 +33,18 @@ export class MembersEffects {
         this.membersService.getMembers().pipe(
           map((members) => loadOrganizationMembersSuccess(members)),
           catchError((error) => of(loadOrganizationMembersFailure({ error }))),
+        ),
+      ),
+    ),
+  );
+
+  loadActiveMembers$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(loadActiveMembers),
+      switchMap(() =>
+        this.membersService.getActiveMembers().pipe(
+          map((members) => loadActiveMembersSuccess({members: members})),
+          catchError((error) => of(loadActiveMembersFailure({ error }))),
         ),
       ),
     ),

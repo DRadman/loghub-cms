@@ -1,0 +1,57 @@
+<p-button
+  [label]="'project-picker.edit' | translate"
+  severity="warning"
+  icon="pi pi-pencil"
+  [loading]="(isLoadingProjects | async) === true"
+  (onClick)="showPickerDialog()"
+/>
+<p-dialog
+  [header]="'project-picker.edit' | translate"
+  [(visible)]="isPickerDialogVisible"
+  [modal]="true"
+  [maximizable]="true"
+>
+  <p-pickList
+    [source]="availableProjects"
+    [target]="selectedProjects"
+    [sourceHeader]="'project-picker.available_projects' | translate"
+    [targetHeader]="'project-picker.selected_projects' | translate"
+    [dragdrop]="true"
+    [responsive]="true"
+    [sourceStyle]="{ height: '30rem', width: '25rem' }"
+    [targetStyle]="{ height: '30rem', width: '25rem' }"
+    [showSourceControls]="false"
+    [showTargetControls]="false"
+    (onMoveToTarget)="onMoveToTarget($event)"
+    (onMoveAllToTarget)="onMoveAllToTarget($event)"
+    (onMoveToSource)="onMoveToSource($event)"
+    (onMoveAllToSource)="onMoveAllToSource($event)"
+    filterBy="name,platform.type"
+    [sourceFilterPlaceholder]="'project-picker.search' | translate"
+    [targetFilterPlaceholder]="'project-picker.search' | translate"
+    breakpoint="1280px"
+  >
+    <ng-template let-project pTemplate="item">
+      <div class="flex flex-wrap p-2 align-items-center gap-3">
+        <img [src]="project.platform.iconUrl" class="w-2rem" alt="platform_logo" />
+        <div class="flex-1 flex flex-column gap-2">
+          <span class="font-bold"
+            >{{ project.name }}</span
+          >
+          <div class="flex align-products-center gap-2">
+            <span>{{ project.platform.type | titlecase }} {{project.platform.version}}</span>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-pickList>
+
+  <ng-template pTemplate="footer">
+    <p-button
+      icon="pi pi-check"
+      [outlined]="true"
+      (click)="isPickerDialogVisible = false"
+      [label]="'project-picker.ok' | translate"
+    ></p-button>
+  </ng-template>
+</p-dialog>

@@ -147,7 +147,6 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
           error.status !== 0 &&
           error.status !== 401
         ) {
-          console.log(error);
           this.router.navigate(['/create-organization']);
         }
       });

@@ -161,7 +161,6 @@ export class OrganizationComponent implements OnDestroy, AfterViewInit {
           take(1), // unsubscribe after one emitted value
         )
         .subscribe((status) => {
-          console.log(status);
           if (status && status == StateStatus.ERROR) {
             this.messageService.add({
               severity: 'error',
