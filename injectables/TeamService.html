@@ -143,6 +143,12 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#addTeamMembers" >addTeamMembers</a>
+                            </li>
+                            <li>
+                                <a href="#addTeamProjects" >addTeamProjects</a>
+                            </li>
+                            <li>
                                 <a href="#createNewTeam" >createNewTeam</a>
                             </li>
                             <li>
@@ -155,7 +161,25 @@
                                 <a href="#getOrganizationTeams" >getOrganizationTeams</a>
                             </li>
                             <li>
+                                <a href="#getTeamById" >getTeamById</a>
+                            </li>
+                            <li>
+                                <a href="#getTeamMembers" >getTeamMembers</a>
+                            </li>
+                            <li>
+                                <a href="#getTeamProjects" >getTeamProjects</a>
+                            </li>
+                            <li>
                                 <a href="#isSlugTaken" >isSlugTaken</a>
+                            </li>
+                            <li>
+                                <a href="#removeTeamMembers" >removeTeamMembers</a>
+                            </li>
+                            <li>
+                                <a href="#removeTeamProjects" >removeTeamProjects</a>
+                            </li>
+                            <li>
+                                <a href="#updateTeam" >updateTeam</a>
                             </li>
                         </ul>
                     </td>
@@ -180,7 +204,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/core/services/api/team.api.service.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/core/services/api/team.api.service.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -227,6 +251,164 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="addTeamMembers"></a>
+                    <span class="name">
+                        <span ><b>addTeamMembers</b></span>
+                        <a href="#addTeamMembers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addTeamMembers(teamId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, ids: string[])</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="67"
+                                    class="link-to-prism">src/app/core/services/api/team.api.service.ts:67</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>teamId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>ids</td>
+                                            <td>
+                                                        <code>string[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;UserDto[]&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addTeamProjects"></a>
+                    <span class="name">
+                        <span ><b>addTeamProjects</b></span>
+                        <a href="#addTeamProjects"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addTeamProjects(teamId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, ids: string[])</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="85"
+                                    class="link-to-prism">src/app/core/services/api/team.api.service.ts:85</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>teamId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>ids</td>
+                                            <td>
+                                                        <code>string[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;ProjectDto[]&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="createNewTeam"></a>
                     <span class="name">
                         <span ><b>createNewTeam</b></span>
@@ -243,8 +425,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="29"
-                                    class="link-to-prism">src/app/core/services/api/team.api.service.ts:29</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="51"
+                                    class="link-to-prism">src/app/core/services/api/team.api.service.ts:51</a></div>
                         </td>
                     </tr>
 
@@ -310,8 +492,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="33"
-                                    class="link-to-prism">src/app/core/services/api/team.api.service.ts:33</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="55"
+                                    class="link-to-prism">src/app/core/services/api/team.api.service.ts:55</a></div>
                         </td>
                     </tr>
 
@@ -377,8 +559,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="18"
-                                    class="link-to-prism">src/app/core/services/api/team.api.service.ts:18</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="22"
+                                    class="link-to-prism">src/app/core/services/api/team.api.service.ts:22</a></div>
                         </td>
                     </tr>
 
@@ -414,8 +596,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="14"
-                                    class="link-to-prism">src/app/core/services/api/team.api.service.ts:14</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="18"
+                                    class="link-to-prism">src/app/core/services/api/team.api.service.ts:18</a></div>
                         </td>
                     </tr>
 
@@ -427,6 +609,207 @@
                             <b>Returns : </b>    <code>Observable&lt;TeamDto[]&gt;</code>
 
                         </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTeamById"></a>
+                    <span class="name">
+                        <span ><b>getTeamById</b></span>
+                        <a href="#getTeamById"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getTeamById(teamId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="26"
+                                    class="link-to-prism">src/app/core/services/api/team.api.service.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>teamId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;TeamDto&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTeamMembers"></a>
+                    <span class="name">
+                        <span ><b>getTeamMembers</b></span>
+                        <a href="#getTeamMembers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getTeamMembers(teamId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="30"
+                                    class="link-to-prism">src/app/core/services/api/team.api.service.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>teamId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/User.html" target="_self" >Observable&lt;User[]&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTeamProjects"></a>
+                    <span class="name">
+                        <span ><b>getTeamProjects</b></span>
+                        <a href="#getTeamProjects"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getTeamProjects(teamId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="37"
+                                    class="link-to-prism">src/app/core/services/api/team.api.service.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>teamId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Project.html" target="_self" >Observable&lt;Project[]&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -451,8 +834,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="22"
-                                    class="link-to-prism">src/app/core/services/api/team.api.service.ts:22</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="44"
+                                    class="link-to-prism">src/app/core/services/api/team.api.service.ts:44</a></div>
                         </td>
                     </tr>
 
@@ -498,6 +881,243 @@
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeTeamMembers"></a>
+                    <span class="name">
+                        <span ><b>removeTeamMembers</b></span>
+                        <a href="#removeTeamMembers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>removeTeamMembers(teamId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, ids: string[])</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="78"
+                                    class="link-to-prism">src/app/core/services/api/team.api.service.ts:78</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>teamId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>ids</td>
+                                            <td>
+                                                        <code>string[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;UserDto[]&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeTeamProjects"></a>
+                    <span class="name">
+                        <span ><b>removeTeamProjects</b></span>
+                        <a href="#removeTeamProjects"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>removeTeamProjects(teamId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, ids: string[])</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="96"
+                                    class="link-to-prism">src/app/core/services/api/team.api.service.ts:96</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>teamId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>ids</td>
+                                            <td>
+                                                        <code>string[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;ProjectDto[]&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateTeam"></a>
+                    <span class="name">
+                        <span ><b>updateTeam</b></span>
+                        <a href="#updateTeam"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateTeam(teamId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, dto: literal type)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="59"
+                                    class="link-to-prism">src/app/core/services/api/team.api.service.ts:59</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>teamId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>dto</td>
+                                            <td>
+                                                        <code>literal type</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;TeamDto&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
 
     </div>
@@ -507,9 +1127,13 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
 import { Injectable } from &#x27;@angular/core&#x27;;
 import { Observable } from &#x27;rxjs&#x27;;
-import { TeamDto } from &#x27;../../domain/dto/team.dto&#x27;;
-import { api } from &#x27;./api&#x27;;
+import { ProjectDto } from &#x27;../../domain/dto/project.dto&#x27;;
 import { CreateTeamRequestDto } from &#x27;../../domain/dto/requests/create-team-request.dto&#x27;;
+import { TeamDto } from &#x27;../../domain/dto/team.dto&#x27;;
+import { UserDto } from &#x27;../../domain/dto/user.dto&#x27;;
+import { Project } from &#x27;../../domain/models/project.entity&#x27;;
+import { User } from &#x27;../../domain/models/user.entity&#x27;;
+import { api } from &#x27;./api&#x27;;
 
 @Injectable({
   providedIn: &#x27;root&#x27;,
@@ -525,6 +1149,24 @@ export class TeamService {
     return this.http.get&lt;TeamDto[]&gt;(api.teamUrl + &#x27;/my&#x27;, api.authOptions);
   }
 
+  getTeamById(teamId: string): Observable&lt;TeamDto&gt; {
+    return this.http.get&lt;TeamDto&gt;(api.teamUrl + &#x27;/&#x27; + teamId, api.authOptions);
+  }
+
+  getTeamMembers(teamId: string): Observable&lt;User[]&gt; {
+    return this.http.get&lt;User[]&gt;(
+      api.teamUrl + &#x60;/${teamId}/members&#x60;,
+      api.authOptions,
+    );
+  }
+
+  getTeamProjects(teamId: string): Observable&lt;Project[]&gt; {
+    return this.http.get&lt;Project[]&gt;(
+      api.teamUrl + &#x60;/${teamId}/projects&#x60;,
+      api.authOptions,
+    );
+  }
+
   isSlugTaken(slug: string): Observable&lt;boolean&gt; {
     return this.http.get&lt;boolean&gt;(
       api.teamUrl + &#x27;/slug/taken?slug&#x3D;&#x27; + slug,
@@ -538,6 +1180,50 @@ export class TeamService {
 
   deleteTeam(teamId: string) {
     return this.http.delete(api.teamUrl + &#x27;/&#x27; + teamId, api.authOptions);
+  }
+
+  updateTeam(teamId: string, dto: { slug: string }): Observable&lt;TeamDto&gt; {
+    return this.http.patch&lt;TeamDto&gt;(
+      api.teamUrl + &#x27;/&#x27; + teamId,
+      dto,
+      api.authOptions,
+    );
+  }
+
+  addTeamMembers(teamId: string, ids: string[]): Observable&lt;UserDto[]&gt; {
+    return this.http.put&lt;UserDto[]&gt;(
+      api.teamUrl + &#x60;/${teamId}/members&#x60;,
+      undefined,
+      {
+        ...api.authOptions,
+        params: { ids: ids },
+      },
+    );
+  }
+
+  removeTeamMembers(teamId: string, ids: string[]): Observable&lt;UserDto[]&gt; {
+    return this.http.delete&lt;UserDto[]&gt;(api.teamUrl + &#x60;/${teamId}/members&#x60;, {
+      ...api.authOptions,
+      params: { ids: ids },
+    });
+  }
+
+  addTeamProjects(teamId: string, ids: string[]): Observable&lt;ProjectDto[]&gt; {
+    return this.http.put&lt;ProjectDto[]&gt;(
+      api.teamUrl + &#x60;/${teamId}/projects&#x60;,
+      undefined,
+      {
+        ...api.authOptions,
+        params: { ids: ids },
+      },
+    );
+  }
+
+  removeTeamProjects(teamId: string, ids: string[]): Observable&lt;ProjectDto[]&gt; {
+    return this.http.delete&lt;ProjectDto[]&gt;(api.teamUrl + &#x60;/${teamId}/projects&#x60;, {
+      ...api.authOptions,
+      params: { ids: ids },
+    });
   }
 }
 </code></pre>

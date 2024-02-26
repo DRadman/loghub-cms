@@ -98,7 +98,7 @@
 
 <ol class="breadcrumb">
   <li class="breadcrumb-item">Injectables</li>
-  <li class="breadcrumb-item" >MembersEffects</li>
+  <li class="breadcrumb-item" >SingleTeamEffects</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -122,7 +122,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/core/state/members/members.effects.ts</code>
+            <code>src/app/core/state/single-team/single-team.effects.ts</code>
         </p>
 
 
@@ -142,19 +142,28 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#inviteMember$" >inviteMember$</a>
+                                <a href="#addTeamMembers$" >addTeamMembers$</a>
                             </li>
                             <li>
-                                <a href="#loadActiveMembers$" >loadActiveMembers$</a>
+                                <a href="#addTeamProjects$" >addTeamProjects$</a>
                             </li>
                             <li>
-                                <a href="#loadOrganizationMembers$" >loadOrganizationMembers$</a>
+                                <a href="#loadTeamById$" >loadTeamById$</a>
                             </li>
                             <li>
-                                <a href="#removeMember$" >removeMember$</a>
+                                <a href="#loadTeamMembers$" >loadTeamMembers$</a>
                             </li>
                             <li>
-                                <a href="#removeMemberSuccess$" >removeMemberSuccess$</a>
+                                <a href="#loadTeamProjects$" >loadTeamProjects$</a>
+                            </li>
+                            <li>
+                                <a href="#removeTeamMembers$" >removeTeamMembers$</a>
+                            </li>
+                            <li>
+                                <a href="#removeTeamProjectss$" >removeTeamProjectss$</a>
+                            </li>
+                            <li>
+                                <a href="#updateTeam$" >updateTeam$</a>
                             </li>
                         </ul>
                     </td>
@@ -175,12 +184,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(membersService: <a href="../injectables/MembersService.html" target="_self">MembersService</a>, invitationService: <a href="../injectables/InvitationService.html" target="_self">InvitationService</a>, actions$: Actions)</code>
+<code>constructor(teamService: <a href="../injectables/TeamService.html" target="_self">TeamService</a>, actions$: Actions)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/core/state/members/members.effects.ts:22</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/core/state/single-team/single-team.effects.ts:33</a></div>
                             </td>
                         </tr>
 
@@ -198,22 +207,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>membersService</td>
+                                                        <td>teamService</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/MembersService.html" target="_self" >MembersService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>invitationService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/InvitationService.html" target="_self" >InvitationService</a></code>
+                                                                        <code><a href="../injectables/TeamService.html" target="_self" >TeamService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -252,10 +249,10 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="inviteMember$"></a>
+                    <a name="addTeamMembers$"></a>
                     <span class="name">
-                        <span ><b>inviteMember$</b></span>
-                        <a href="#inviteMember$"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>addTeamMembers$</b></span>
+                        <a href="#addTeamMembers$"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -263,11 +260,11 @@
                     <td class="col-md-4">
                         <i>Default value : </i><code>createEffect(() &#x3D;&gt;
     this.actions$.pipe(
-      ofType(inviteMember),
-      switchMap((request) &#x3D;&gt;
-        this.invitationService.inviteMember(request).pipe(
-          map((invitation) &#x3D;&gt; inviteMemberSuccess(invitation)),
-          catchError((error) &#x3D;&gt; of(inviteMemberFailure({ error }))),
+      ofType(addTeamMembers),
+      switchMap((args) &#x3D;&gt;
+        this.teamService.addTeamMembers(args.teamId, args.ids).pipe(
+          map((members) &#x3D;&gt; addTeamMembersSuccess({ members: members })),
+          catchError((error) &#x3D;&gt; of(addTeamMembersFailure({ error }))),
         ),
       ),
     ),
@@ -276,7 +273,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/core/state/members/members.effects.ts:53</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">src/app/core/state/single-team/single-team.effects.ts:87</a></div>
                         </td>
                     </tr>
 
@@ -287,10 +284,10 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="loadActiveMembers$"></a>
+                    <a name="addTeamProjects$"></a>
                     <span class="name">
-                        <span ><b>loadActiveMembers$</b></span>
-                        <a href="#loadActiveMembers$"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>addTeamProjects$</b></span>
+                        <a href="#addTeamProjects$"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -298,11 +295,11 @@
                     <td class="col-md-4">
                         <i>Default value : </i><code>createEffect(() &#x3D;&gt;
     this.actions$.pipe(
-      ofType(loadActiveMembers),
-      switchMap(() &#x3D;&gt;
-        this.membersService.getActiveMembers().pipe(
-          map((members) &#x3D;&gt; loadActiveMembersSuccess({members: members})),
-          catchError((error) &#x3D;&gt; of(loadActiveMembersFailure({ error }))),
+      ofType(addTeamProjects),
+      switchMap((args) &#x3D;&gt;
+        this.teamService.addTeamProjects(args.teamId, args.ids).pipe(
+          map((projects) &#x3D;&gt; addTeamProjectsSuccess({ projects: projects })),
+          catchError((error) &#x3D;&gt; of(addTeamProjectsFailure({ error }))),
         ),
       ),
     ),
@@ -311,7 +308,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/core/state/members/members.effects.ts:41</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="111" class="link-to-prism">src/app/core/state/single-team/single-team.effects.ts:111</a></div>
                         </td>
                     </tr>
 
@@ -322,10 +319,10 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="loadOrganizationMembers$"></a>
+                    <a name="loadTeamById$"></a>
                     <span class="name">
-                        <span ><b>loadOrganizationMembers$</b></span>
-                        <a href="#loadOrganizationMembers$"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>loadTeamById$</b></span>
+                        <a href="#loadTeamById$"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -333,11 +330,11 @@
                     <td class="col-md-4">
                         <i>Default value : </i><code>createEffect(() &#x3D;&gt;
     this.actions$.pipe(
-      ofType(loadOrganizationMembers),
-      switchMap(() &#x3D;&gt;
-        this.membersService.getMembers().pipe(
-          map((members) &#x3D;&gt; loadOrganizationMembersSuccess(members)),
-          catchError((error) &#x3D;&gt; of(loadOrganizationMembersFailure({ error }))),
+      ofType(loadTeamById),
+      switchMap((args) &#x3D;&gt;
+        this.teamService.getTeamById(args.teamId).pipe(
+          map((team) &#x3D;&gt; loadTeamByIdSuccess({ team: team })),
+          catchError((error) &#x3D;&gt; of(loadTeamByIdFailure({ error }))),
         ),
       ),
     ),
@@ -346,7 +343,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/core/state/members/members.effects.ts:29</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/core/state/single-team/single-team.effects.ts:39</a></div>
                         </td>
                     </tr>
 
@@ -357,10 +354,10 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="removeMember$"></a>
+                    <a name="loadTeamMembers$"></a>
                     <span class="name">
-                        <span ><b>removeMember$</b></span>
-                        <a href="#removeMember$"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>loadTeamMembers$</b></span>
+                        <a href="#loadTeamMembers$"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -368,11 +365,11 @@
                     <td class="col-md-4">
                         <i>Default value : </i><code>createEffect(() &#x3D;&gt;
     this.actions$.pipe(
-      ofType(removeMember),
-      switchMap((request) &#x3D;&gt;
-        this.membersService.removeMember(request.memberId).pipe(
-          map(() &#x3D;&gt; removeMemberSuccess()),
-          catchError((error) &#x3D;&gt; of(removeMemberFailure({ error }))),
+      ofType(loadTeamMembers),
+      switchMap((args) &#x3D;&gt;
+        this.teamService.getTeamMembers(args.teamId).pipe(
+          map((members) &#x3D;&gt; loadTeamMembersSuccess({ members: members })),
+          catchError((error) &#x3D;&gt; of(loadTeamMembersFailure({ error }))),
         ),
       ),
     ),
@@ -381,7 +378,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/app/core/state/members/members.effects.ts:65</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/core/state/single-team/single-team.effects.ts:51</a></div>
                         </td>
                     </tr>
 
@@ -392,10 +389,10 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="removeMemberSuccess$"></a>
+                    <a name="loadTeamProjects$"></a>
                     <span class="name">
-                        <span ><b>removeMemberSuccess$</b></span>
-                        <a href="#removeMemberSuccess$"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>loadTeamProjects$</b></span>
+                        <a href="#loadTeamProjects$"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -403,9 +400,12 @@
                     <td class="col-md-4">
                         <i>Default value : </i><code>createEffect(() &#x3D;&gt;
     this.actions$.pipe(
-      ofType(removeMemberSuccess),
-      switchMap(
-        () &#x3D;&gt; of(loadOrganizationMembers()), // Dispatch loadOrganizationMembers action after successful removal
+      ofType(loadTeamProjects),
+      switchMap((args) &#x3D;&gt;
+        this.teamService.getTeamProjects(args.teamId).pipe(
+          map((projects) &#x3D;&gt; loadTeamProjectsSuccess({ projects: projects })),
+          catchError((error) &#x3D;&gt; of(loadTeamProjectsFailure({ error }))),
+        ),
       ),
     ),
   )</code>
@@ -413,7 +413,112 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/app/core/state/members/members.effects.ts:77</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/core/state/single-team/single-team.effects.ts:63</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeTeamMembers$"></a>
+                    <span class="name">
+                        <span ><b>removeTeamMembers$</b></span>
+                        <a href="#removeTeamMembers$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(removeTeamMembers),
+      switchMap((args) &#x3D;&gt;
+        this.teamService.removeTeamMembers(args.teamId, args.ids).pipe(
+          map((members) &#x3D;&gt; removeTeamMembersSuccess({ members: members })),
+          catchError((error) &#x3D;&gt; of(removeTeamMembersFailure({ error }))),
+        ),
+      ),
+    ),
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="99" class="link-to-prism">src/app/core/state/single-team/single-team.effects.ts:99</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeTeamProjectss$"></a>
+                    <span class="name">
+                        <span ><b>removeTeamProjectss$</b></span>
+                        <a href="#removeTeamProjectss$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(removeTeamProjects),
+      switchMap((args) &#x3D;&gt;
+        this.teamService.removeTeamProjects(args.teamId, args.ids).pipe(
+          map((projects) &#x3D;&gt; removeTeamProjectsSuccess({ projects: projects })),
+          catchError((error) &#x3D;&gt; of(removeTeamProjectsFailure({ error }))),
+        ),
+      ),
+    ),
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="123" class="link-to-prism">src/app/core/state/single-team/single-team.effects.ts:123</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateTeam$"></a>
+                    <span class="name">
+                        <span ><b>updateTeam$</b></span>
+                        <a href="#updateTeam$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(updateTeam),
+      switchMap((args) &#x3D;&gt;
+        this.teamService.updateTeam(args.teamId, args.dto).pipe(
+          map((team) &#x3D;&gt; updateTeamSuccess({ team: team })),
+          catchError((error) &#x3D;&gt; of(updateTeamFailure({ error }))),
+        ),
+      ),
+    ),
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/app/core/state/single-team/single-team.effects.ts:75</a></div>
                         </td>
                     </tr>
 
@@ -426,87 +531,136 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Actions, createEffect, ofType } from &#x27;@ngrx/effects&#x27;;
-import { catchError, map, of, switchMap } from &#x27;rxjs&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { TeamService } from &#x27;../../services/api/team.api.service&#x27;;
+import { Actions, createEffect, ofType } from &#x27;@ngrx/effects&#x27;;
 import {
-  inviteMember,
-  inviteMemberFailure,
-  inviteMemberSuccess,
-  loadActiveMembers,
-  loadActiveMembersFailure,
-  loadActiveMembersSuccess,
-  loadOrganizationMembers,
-  loadOrganizationMembersFailure,
-  loadOrganizationMembersSuccess,
-  removeMember,
-  removeMemberFailure,
-  removeMemberSuccess,
-} from &#x27;./members.actions&#x27;;
-import { MembersService } from &#x27;../../services/api/members.api.service&#x27;;
-import { Injectable } from &#x27;@angular/core&#x27;;
-import { InvitationService } from &#x27;../../services/api/invitation.api.service&#x27;;
+  addTeamMembers,
+  addTeamMembersFailure,
+  addTeamMembersSuccess,
+  addTeamProjects,
+  addTeamProjectsFailure,
+  addTeamProjectsSuccess,
+  loadTeamById,
+  loadTeamByIdFailure,
+  loadTeamByIdSuccess,
+  loadTeamMembers,
+  loadTeamMembersFailure,
+  loadTeamMembersSuccess,
+  loadTeamProjects,
+  loadTeamProjectsFailure,
+  loadTeamProjectsSuccess,
+  removeTeamMembers,
+  removeTeamMembersFailure,
+  removeTeamMembersSuccess,
+  removeTeamProjects,
+  removeTeamProjectsFailure,
+  removeTeamProjectsSuccess,
+  updateTeam,
+  updateTeamFailure,
+  updateTeamSuccess,
+} from &#x27;./single-team.actions&#x27;;
+import { catchError, map, of, switchMap } from &#x27;rxjs&#x27;;
 
 @Injectable()
-export class MembersEffects {
+export class SingleTeamEffects {
   constructor(
-    private membersService: MembersService,
-    private invitationService: InvitationService,
+    private teamService: TeamService,
     private actions$: Actions,
   ) {}
 
-  loadOrganizationMembers$ &#x3D; createEffect(() &#x3D;&gt;
+  loadTeamById$ &#x3D; createEffect(() &#x3D;&gt;
     this.actions$.pipe(
-      ofType(loadOrganizationMembers),
-      switchMap(() &#x3D;&gt;
-        this.membersService.getMembers().pipe(
-          map((members) &#x3D;&gt; loadOrganizationMembersSuccess(members)),
-          catchError((error) &#x3D;&gt; of(loadOrganizationMembersFailure({ error }))),
+      ofType(loadTeamById),
+      switchMap((args) &#x3D;&gt;
+        this.teamService.getTeamById(args.teamId).pipe(
+          map((team) &#x3D;&gt; loadTeamByIdSuccess({ team: team })),
+          catchError((error) &#x3D;&gt; of(loadTeamByIdFailure({ error }))),
         ),
       ),
     ),
   );
 
-  loadActiveMembers$ &#x3D; createEffect(() &#x3D;&gt;
+  loadTeamMembers$ &#x3D; createEffect(() &#x3D;&gt;
     this.actions$.pipe(
-      ofType(loadActiveMembers),
-      switchMap(() &#x3D;&gt;
-        this.membersService.getActiveMembers().pipe(
-          map((members) &#x3D;&gt; loadActiveMembersSuccess({members: members})),
-          catchError((error) &#x3D;&gt; of(loadActiveMembersFailure({ error }))),
+      ofType(loadTeamMembers),
+      switchMap((args) &#x3D;&gt;
+        this.teamService.getTeamMembers(args.teamId).pipe(
+          map((members) &#x3D;&gt; loadTeamMembersSuccess({ members: members })),
+          catchError((error) &#x3D;&gt; of(loadTeamMembersFailure({ error }))),
         ),
       ),
     ),
   );
 
-  inviteMember$ &#x3D; createEffect(() &#x3D;&gt;
+  loadTeamProjects$ &#x3D; createEffect(() &#x3D;&gt;
     this.actions$.pipe(
-      ofType(inviteMember),
-      switchMap((request) &#x3D;&gt;
-        this.invitationService.inviteMember(request).pipe(
-          map((invitation) &#x3D;&gt; inviteMemberSuccess(invitation)),
-          catchError((error) &#x3D;&gt; of(inviteMemberFailure({ error }))),
+      ofType(loadTeamProjects),
+      switchMap((args) &#x3D;&gt;
+        this.teamService.getTeamProjects(args.teamId).pipe(
+          map((projects) &#x3D;&gt; loadTeamProjectsSuccess({ projects: projects })),
+          catchError((error) &#x3D;&gt; of(loadTeamProjectsFailure({ error }))),
         ),
       ),
     ),
   );
 
-  removeMember$ &#x3D; createEffect(() &#x3D;&gt;
+  updateTeam$ &#x3D; createEffect(() &#x3D;&gt;
     this.actions$.pipe(
-      ofType(removeMember),
-      switchMap((request) &#x3D;&gt;
-        this.membersService.removeMember(request.memberId).pipe(
-          map(() &#x3D;&gt; removeMemberSuccess()),
-          catchError((error) &#x3D;&gt; of(removeMemberFailure({ error }))),
+      ofType(updateTeam),
+      switchMap((args) &#x3D;&gt;
+        this.teamService.updateTeam(args.teamId, args.dto).pipe(
+          map((team) &#x3D;&gt; updateTeamSuccess({ team: team })),
+          catchError((error) &#x3D;&gt; of(updateTeamFailure({ error }))),
         ),
       ),
     ),
   );
 
-  removeMemberSuccess$ &#x3D; createEffect(() &#x3D;&gt;
+  addTeamMembers$ &#x3D; createEffect(() &#x3D;&gt;
     this.actions$.pipe(
-      ofType(removeMemberSuccess),
-      switchMap(
-        () &#x3D;&gt; of(loadOrganizationMembers()), // Dispatch loadOrganizationMembers action after successful removal
+      ofType(addTeamMembers),
+      switchMap((args) &#x3D;&gt;
+        this.teamService.addTeamMembers(args.teamId, args.ids).pipe(
+          map((members) &#x3D;&gt; addTeamMembersSuccess({ members: members })),
+          catchError((error) &#x3D;&gt; of(addTeamMembersFailure({ error }))),
+        ),
+      ),
+    ),
+  );
+
+  removeTeamMembers$ &#x3D; createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(removeTeamMembers),
+      switchMap((args) &#x3D;&gt;
+        this.teamService.removeTeamMembers(args.teamId, args.ids).pipe(
+          map((members) &#x3D;&gt; removeTeamMembersSuccess({ members: members })),
+          catchError((error) &#x3D;&gt; of(removeTeamMembersFailure({ error }))),
+        ),
+      ),
+    ),
+  );
+
+  addTeamProjects$ &#x3D; createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(addTeamProjects),
+      switchMap((args) &#x3D;&gt;
+        this.teamService.addTeamProjects(args.teamId, args.ids).pipe(
+          map((projects) &#x3D;&gt; addTeamProjectsSuccess({ projects: projects })),
+          catchError((error) &#x3D;&gt; of(addTeamProjectsFailure({ error }))),
+        ),
+      ),
+    ),
+  );
+
+  removeTeamProjectss$ &#x3D; createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(removeTeamProjects),
+      switchMap((args) &#x3D;&gt;
+        this.teamService.removeTeamProjects(args.teamId, args.ids).pipe(
+          map((projects) &#x3D;&gt; removeTeamProjectsSuccess({ projects: projects })),
+          catchError((error) &#x3D;&gt; of(removeTeamProjectsFailure({ error }))),
+        ),
       ),
     ),
   );
@@ -554,7 +708,7 @@ export class MembersEffects {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'MembersEffects.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'SingleTeamEffects.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
