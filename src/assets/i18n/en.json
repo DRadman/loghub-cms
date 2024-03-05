@@ -302,5 +302,15 @@
     "selected_projects": "Selected",
     "search": "Search",
     "ok": "OK"
+  },
+  "projects": {
+    "projects":"Projects",
+    "my_teams": "My Teams",
+    "sessions": "Sessions:",
+    "search_by_name": "Search Projects by Name",
+    "errors": "Errors:",
+    "transactions": "Transactions:",
+    "crash_free_sessions": "Crash Free Sessions",
+    "latest_deploys": "Latest Deploys"
   }
 }

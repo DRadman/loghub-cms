@@ -15,10 +15,21 @@ export const selectAllProjects = createSelector(
   (state: ProjectState) => state.allProjects,
 );
 
+export const selectMyProjects = createSelector(
+  selectProjectState,
+  (state: ProjectState) => state.myProjects,
+);
+
 export const isLoadingCreateProject = createSelector(
   selectProjectState,
   (state: ProjectState) =>
     state.createProjectStatus == StateStatus.LOADING,
+);
+
+export const isLoadingMyProjects = createSelector(
+  selectProjectState,
+  (state: ProjectState) =>
+    state.myProjectsStatus == StateStatus.LOADING,
 );
 
 export const selectCreateProjectStatus = createSelector(
