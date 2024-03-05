@@ -149,6 +149,12 @@
                                 <a href="#getAllProjects" >getAllProjects</a>
                             </li>
                             <li>
+                                <a href="#getMyProjects" >getMyProjects</a>
+                            </li>
+                            <li>
+                                <a href="#getProjectStats" >getProjectStats</a>
+                            </li>
+                            <li>
                                 <a href="#isNameTaken" >isNameTaken</a>
                             </li>
                         </ul>
@@ -174,7 +180,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/core/services/api/project.api.service.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/core/services/api/project.api.service.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -237,8 +243,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="18"
-                                    class="link-to-prism">src/app/core/services/api/project.api.service.ts:18</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="40"
+                                    class="link-to-prism">src/app/core/services/api/project.api.service.ts:40</a></div>
                         </td>
                     </tr>
 
@@ -304,8 +310,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="14"
-                                    class="link-to-prism">src/app/core/services/api/project.api.service.ts:14</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="15"
+                                    class="link-to-prism">src/app/core/services/api/project.api.service.ts:15</a></div>
                         </td>
                     </tr>
 
@@ -317,6 +323,140 @@
                             <b>Returns : </b>    <code>Observable&lt;ProjectDto[]&gt;</code>
 
                         </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getMyProjects"></a>
+                    <span class="name">
+                        <span ><b>getMyProjects</b></span>
+                        <a href="#getMyProjects"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getMyProjects(teamIds?: string[])</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="19"
+                                    class="link-to-prism">src/app/core/services/api/project.api.service.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>teamIds</td>
+                                            <td>
+                                                        <code>string[]</code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;ProjectDto[]&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getProjectStats"></a>
+                    <span class="name">
+                        <span ><b>getProjectStats</b></span>
+                        <a href="#getProjectStats"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getProjectStats(projectId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="33"
+                                    class="link-to-prism">src/app/core/services/api/project.api.service.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>projectId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Observable&lt;ProjectStatDto&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -341,8 +481,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="22"
-                                    class="link-to-prism">src/app/core/services/api/project.api.service.ts:22</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="44"
+                                    class="link-to-prism">src/app/core/services/api/project.api.service.ts:44</a></div>
                         </td>
                     </tr>
 
@@ -400,6 +540,7 @@ import { Observable } from &#x27;rxjs&#x27;;
 import { ProjectDto } from &#x27;../../domain/dto/project.dto&#x27;;
 import { CreateProjectRequestDto } from &#x27;../../domain/dto/requests/create-project-request.dto&#x27;;
 import { api } from &#x27;./api&#x27;;
+import { ProjectStatDto } from &#x27;../../domain/dto/project-stat.dto&#x27;;
 
 @Injectable({
   providedIn: &#x27;root&#x27;,
@@ -409,6 +550,27 @@ export class ProjectService {
 
   getAllProjects(): Observable&lt;ProjectDto[]&gt; {
     return this.http.get&lt;ProjectDto[]&gt;(api.projectUrl, api.authOptions);
+  }
+
+  getMyProjects(teamIds?: string[]): Observable&lt;ProjectDto[]&gt; {
+    if (teamIds) {
+      return this.http.get&lt;ProjectDto[]&gt;(api.projectUrl + &#x27;/my&#x27;, {
+        ...api.authOptions,
+        params: { teamId: teamIds },
+      });
+    } else {
+      return this.http.get&lt;ProjectDto[]&gt;(
+        api.projectUrl + &#x27;/my&#x27;,
+        api.authOptions,
+      );
+    }
+  }
+
+  getProjectStats(projectId: string): Observable&lt;ProjectStatDto&gt; {
+    return this.http.get&lt;ProjectStatDto&gt;(
+      api.projectUrl + &#x60;/${projectId}/stats&#x60;,
+      api.authOptions,
+    );
   }
 
   createProject(dto: CreateProjectRequestDto): Observable&lt;ProjectDto&gt; {

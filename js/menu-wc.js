@@ -188,6 +188,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/SidebarComponent.html" data-type="entity-link" >SidebarComponent</a>
                             </li>
                             <li class="link">
+                                <a href="components/SingleProjectCardComponent.html" data-type="entity-link" >SingleProjectCardComponent</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/SingleTeamComponent.html" data-type="entity-link" >SingleTeamComponent</a>
                             </li>
                             <li class="link">
@@ -365,6 +368,15 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/ProjectDto.html" data-type="entity-link" >ProjectDto</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/ProjectHourByHourStatDto.html" data-type="entity-link" >ProjectHourByHourStatDto</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/ProjectReleaseDto.html" data-type="entity-link" >ProjectReleaseDto</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/ProjectStatDto.html" data-type="entity-link" >ProjectStatDto</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/ProjectState.html" data-type="entity-link" >ProjectState</a>

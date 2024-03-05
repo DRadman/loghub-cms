@@ -147,6 +147,9 @@
                             <li>
                                 <a href="#loadAllProjects$" >loadAllProjects$</a>
                             </li>
+                            <li>
+                                <a href="#loadMyProjects$" >loadMyProjects$</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -255,7 +258,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/core/state/project/project.effects.ts:26</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/core/state/project/project.effects.ts:39</a></div>
                         </td>
                     </tr>
 
@@ -297,6 +300,41 @@
 
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadMyProjects$"></a>
+                    <span class="name">
+                        <span ><b>loadMyProjects$</b></span>
+                        <a href="#loadMyProjects$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(loadMyProjects),
+      switchMap((request) &#x3D;&gt;
+        this.projectService.getMyProjects(request.teamIds).pipe(
+          map((projects) &#x3D;&gt; loadMyProjectsSuccess({projects: projects})),
+          catchError((error) &#x3D;&gt; of(loadMyProjectsFailure({ error }))),
+        ),
+      ),
+    ),
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/core/state/project/project.effects.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
 </section>
 
     </div>
@@ -305,7 +343,7 @@
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Actions, createEffect, ofType } from &quot;@ngrx/effects&quot;;
 import { ProjectService } from &quot;../../services/api/project.api.service&quot;;
-import { createProject, createProjectFailure, createProjectSuccess, loadAllProjects, loadAllProjectsFailure, loadAllProjectsSuccess } from &quot;./project.actions&quot;;
+import { createProject, createProjectFailure, createProjectSuccess, loadAllProjects, loadAllProjectsFailure, loadAllProjectsSuccess, loadMyProjects, loadMyProjectsFailure, loadMyProjectsSuccess } from &quot;./project.actions&quot;;
 import { Injectable } from &quot;@angular/core&quot;;
 import { switchMap, map, catchError, of } from &quot;rxjs&quot;;
 
@@ -327,6 +365,19 @@ export class ProjectEffects {
       ),
     ),
   );
+
+  loadMyProjects$ &#x3D; createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(loadMyProjects),
+      switchMap((request) &#x3D;&gt;
+        this.projectService.getMyProjects(request.teamIds).pipe(
+          map((projects) &#x3D;&gt; loadMyProjectsSuccess({projects: projects})),
+          catchError((error) &#x3D;&gt; of(loadMyProjectsFailure({ error }))),
+        ),
+      ),
+    ),
+  );
+
 
   createProject$ &#x3D; createEffect(() &#x3D;&gt;
     this.actions$.pipe(

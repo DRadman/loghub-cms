@@ -293,6 +293,9 @@
                             <a href="#isLoadingMembers" title="src/app/core/state/members/members.selectors.ts" ><b>isLoadingMembers</b>&nbsp;&nbsp;&nbsp;(src/.../members.selectors.ts)</a>
                         </li>
                         <li>
+                            <a href="#isLoadingMyProjects" title="src/app/core/state/project/project.selectors.ts" ><b>isLoadingMyProjects</b>&nbsp;&nbsp;&nbsp;(src/.../project.selectors.ts)</a>
+                        </li>
+                        <li>
                             <a href="#isLoadingMyTeams" title="src/app/core/state/team/team.selectors.ts" ><b>isLoadingMyTeams</b>&nbsp;&nbsp;&nbsp;(src/.../team.selectors.ts)</a>
                         </li>
                         <li>
@@ -360,6 +363,15 @@
                         </li>
                         <li>
                             <a href="#loadCurrentUserSuccess" title="src/app/core/state/auth/auth.actions.ts" ><b>loadCurrentUserSuccess</b>&nbsp;&nbsp;&nbsp;(src/.../auth.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#loadMyProjects" title="src/app/core/state/project/project.actions.ts" ><b>loadMyProjects</b>&nbsp;&nbsp;&nbsp;(src/.../project.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#loadMyProjectsFailure" title="src/app/core/state/project/project.actions.ts" ><b>loadMyProjectsFailure</b>&nbsp;&nbsp;&nbsp;(src/.../project.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#loadMyProjectsSuccess" title="src/app/core/state/project/project.actions.ts" ><b>loadMyProjectsSuccess</b>&nbsp;&nbsp;&nbsp;(src/.../project.actions.ts)</a>
                         </li>
                         <li>
                             <a href="#loadMyTeams" title="src/app/core/state/team/team.actions.ts" ><b>loadMyTeams</b>&nbsp;&nbsp;&nbsp;(src/.../team.actions.ts)</a>
@@ -558,6 +570,9 @@
                         </li>
                         <li>
                             <a href="#selectMembers" title="src/app/core/state/members/members.selectors.ts" ><b>selectMembers</b>&nbsp;&nbsp;&nbsp;(src/.../members.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectMyProjects" title="src/app/core/state/project/project.selectors.ts" ><b>selectMyProjects</b>&nbsp;&nbsp;&nbsp;(src/.../project.selectors.ts)</a>
                         </li>
                         <li>
                             <a href="#selectMyTeams" title="src/app/core/state/team/team.selectors.ts" ><b>selectMyTeams</b>&nbsp;&nbsp;&nbsp;(src/.../team.selectors.ts)</a>
@@ -2730,6 +2745,76 @@
 
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadMyProjects"></a>
+                    <span class="name">
+                        <span ><b>loadMyProjects</b></span>
+                        <a href="#loadMyProjects"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(
+  &#x27;[Projects Page] Load my projects&#x27;,
+  props&lt;{ teamIds?: string[] }&gt;(),
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadMyProjectsFailure"></a>
+                    <span class="name">
+                        <span ><b>loadMyProjectsFailure</b></span>
+                        <a href="#loadMyProjectsFailure"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(
+  &#x27;[Project API] Get my projects failure&#x27;,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  props&lt;{ error: any }&gt;(),
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadMyProjectsSuccess"></a>
+                    <span class="name">
+                        <span ><b>loadMyProjectsSuccess</b></span>
+                        <a href="#loadMyProjectsSuccess"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(
+  &#x27;[Project API] Get my projects success&#x27;,
+  props&lt;{ projects: Project[] }&gt;(),
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
 </section>
     <h3>src/app/core/state/team/team.actions.ts</h3>
     <section data-compodoc="block-properties">
@@ -3551,10 +3636,13 @@
                     <td class="col-md-4">
                         <i>Default value : </i><code>{
   allProjects: null,
+  myProjects: null,
   allProjectsError: undefined,
   allProjectsStatus: StateStatus.PENDING,
   createProjectError: undefined,
-  createProjectStatus: StateStatus.PENDING
+  createProjectStatus: StateStatus.PENDING,
+  myProjectsError: undefined,
+  myProjectsStatus: StateStatus.PENDING,
 }</code>
                     </td>
                 </tr>
@@ -3598,6 +3686,28 @@
     ...state,
     allProjectsError: error,
     allProjectsStatus: StateStatus.ERROR,
+  })),
+
+  //Handle loading my projects
+  on(loadMyProjects, (state) &#x3D;&gt; ({
+    ...state,
+    myProjectsError: null,
+    myProjectsStatus: StateStatus.LOADING,
+  })),
+
+  //Handle load success
+  on(loadMyProjectsSuccess, (state, {projects}) &#x3D;&gt; ({
+    ...state,
+    myProjects: projects,
+    myProjectsError: null,
+    myProjectsStatus: StateStatus.SUCCESS,
+  })),
+
+  //Handle load failure
+  on(loadMyProjectsFailure, (state, { error }) &#x3D;&gt; ({
+    ...state,
+    myProjectsError: error,
+    myProjectsStatus: StateStatus.ERROR,
   })),
 
   //Handle create new team
@@ -4689,6 +4799,30 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="isLoadingMyProjects"></a>
+                    <span class="name">
+                        <span ><b>isLoadingMyProjects</b></span>
+                        <a href="#isLoadingMyProjects"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(
+  selectProjectState,
+  (state: ProjectState) &#x3D;&gt;
+    state.myProjectsStatus &#x3D;&#x3D; StateStatus.LOADING,
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="selectAllProjects"></a>
                     <span class="name">
                         <span ><b>selectAllProjects</b></span>
@@ -4724,6 +4858,29 @@
                         <i>Default value : </i><code>createSelector(
   selectProjectState,
   (state: ProjectState) &#x3D;&gt; state.createProjectStatus,
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectMyProjects"></a>
+                    <span class="name">
+                        <span ><b>selectMyProjects</b></span>
+                        <a href="#selectMyProjects"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(
+  selectProjectState,
+  (state: ProjectState) &#x3D;&gt; state.myProjects,
 )</code>
                     </td>
                 </tr>

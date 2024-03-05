@@ -129,6 +129,12 @@
 
 
 
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
 
 
 <section data-compodoc="block-metadata">
@@ -145,6 +151,12 @@
 
 
 
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                            <code>FilterService</code>
+                </td>
+            </tr>
 
 
             <tr>
@@ -157,6 +169,21 @@
                 <td class="col-md-9"><code>true</code></td>
             </tr>
 
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>CommonModule</code>
+                            <code>TranslateModule</code>
+                            <code>MultiSelectModule</code>
+                            <code>InputTextModule</code>
+                            <code>FormsModule</code>
+                            <code>ReactiveFormsModule</code>
+                            <code>ProgressSpinnerModule</code>
+                            <code>ButtonModule</code>
+                            <code>RippleModule</code>
+                                <code><a href="../components/SingleProjectCardComponent.html" target="_self" >SingleProjectCardComponent</a></code>
+                </td>
+            </tr>
 
 
 
@@ -181,35 +208,599 @@
     </table>
 </section>
 
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#filteredProjects" >filteredProjects</a>
+                            </li>
+                            <li>
+                                <a href="#filterValue" >filterValue</a>
+                            </li>
+                            <li>
+                                <a href="#isLoadingMyProjects" >isLoadingMyProjects</a>
+                            </li>
+                            <li>
+                                <a href="#isLoadingMyTeams" >isLoadingMyTeams</a>
+                            </li>
+                            <li>
+                                <a href="#myProjects" >myProjects</a>
+                            </li>
+                            <li>
+                                <a href="#myTeams" >myTeams</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#filterMyTeams" >filterMyTeams</a>
+                            </li>
+                            <li>
+                                <a href="#filterProjects" >filterProjects</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
 
 
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(store: <a href="../interfaces/AppState.html" target="_self">Store&lt;AppState&gt;</a>, filterService: FilterService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/features/projects/projects.component.ts:46</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>store</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../interfaces/AppState.html" target="_self" >Store&lt;AppState&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>filterService</td>
+                                                  
+                                                        <td>
+                                                                    <code>FilterService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
 
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterMyTeams"></a>
+                    <span class="name">
+                        <span ><b>filterMyTeams</b></span>
+                        <a href="#filterMyTeams"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>filterMyTeams($event: MultiSelectChangeEvent)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="78"
+                                    class="link-to-prism">src/app/features/projects/projects.component.ts:78</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>$event</td>
+                                            <td>
+                                                        <code>MultiSelectChangeEvent</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterProjects"></a>
+                    <span class="name">
+                        <span ><b>filterProjects</b></span>
+                        <a href="#filterProjects"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>filterProjects()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="93"
+                                    class="link-to-prism">src/app/features/projects/projects.component.ts:93</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="73"
+                                    class="link-to-prism">src/app/features/projects/projects.component.ts:73</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filteredProjects"></a>
+                    <span class="name">
+                        <span ><b>filteredProjects</b></span>
+                        <a href="#filteredProjects"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.myProjects.pipe(
+    map((value) &#x3D;&gt;
+      value.filter((project) &#x3D;&gt;
+        this.filterValue &#x3D;&#x3D; &#x27;&#x27; ? true : project.name.includes(this.filterValue),
+      ),
+    ),
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/features/projects/projects.component.ts:63</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterValue"></a>
+                    <span class="name">
+                        <span ><b>filterValue</b></span>
+                        <a href="#filterValue"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/features/projects/projects.component.ts:57</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isLoadingMyProjects"></a>
+                    <span class="name">
+                        <span ><b>isLoadingMyProjects</b></span>
+                        <a href="#isLoadingMyProjects"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.store.select(isLoadingMyProjects)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/app/features/projects/projects.component.ts:71</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isLoadingMyTeams"></a>
+                    <span class="name">
+                        <span ><b>isLoadingMyTeams</b></span>
+                        <a href="#isLoadingMyTeams"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.store.select(isLoadingMyTeams)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/features/projects/projects.component.ts:55</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="myProjects"></a>
+                    <span class="name">
+                        <span ><b>myProjects</b></span>
+                        <a href="#myProjects"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.store
+    .select(selectMyProjects)
+    .pipe(map((value) &#x3D;&gt; [...(value ?? [])]))</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/features/projects/projects.component.ts:59</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="myTeams"></a>
+                    <span class="name">
+                        <span ><b>myTeams</b></span>
+                        <a href="#myTeams"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.store
+    .select(selectMyTeams)
+    .pipe(map((value) &#x3D;&gt; [...(value ?? [])]))</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/features/projects/projects.component.ts:52</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { CommonModule } from &#x27;@angular/common&#x27;;
+import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { FormsModule, ReactiveFormsModule } from &#x27;@angular/forms&#x27;;
+import { Store } from &#x27;@ngrx/store&#x27;;
+import { TranslateModule } from &#x27;@ngx-translate/core&#x27;;
+import { FilterService } from &#x27;primeng/api&#x27;;
+import { ButtonModule } from &#x27;primeng/button&#x27;;
+import { InputTextModule } from &#x27;primeng/inputtext&#x27;;
+import { MultiSelectChangeEvent, MultiSelectModule } from &#x27;primeng/multiselect&#x27;;
+import { ProgressSpinnerModule } from &#x27;primeng/progressspinner&#x27;;
+import { RippleModule } from &#x27;primeng/ripple&#x27;;
+import { map } from &#x27;rxjs&#x27;;
+import { Team } from &#x27;../../core/domain/models/team.entity&#x27;;
+import { AppState } from &#x27;../../core/state/app.state&#x27;;
+import { loadMyProjects } from &#x27;../../core/state/project/project.actions&#x27;;
+import {
+  isLoadingMyProjects,
+  selectMyProjects,
+} from &#x27;../../core/state/project/project.selectors&#x27;;
+import { loadMyTeams } from &#x27;../../core/state/team/team.actions&#x27;;
+import {
+  isLoadingMyTeams,
+  selectMyTeams,
+} from &#x27;../../core/state/team/team.selectors&#x27;;
+import { SingleProjectCardComponent } from &#x27;./components/single-project-card/single-project-card.component&#x27;;
 
 @Component({
   selector: &#x27;app-projects&#x27;,
   standalone: true,
-  imports: [],
+  imports: [
+    CommonModule,
+    TranslateModule,
+    MultiSelectModule,
+    InputTextModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ProgressSpinnerModule,
+    ButtonModule,
+    RippleModule,
+    SingleProjectCardComponent,
+  ],
+  providers: [FilterService],
   templateUrl: &#x27;./projects.component.html&#x27;,
-  styleUrl: &#x27;./projects.component.scss&#x27;
+  styleUrl: &#x27;./projects.component.scss&#x27;,
 })
-export class ProjectsComponent {
+export class ProjectsComponent implements OnInit {
+  constructor(
+    private store: Store&lt;AppState&gt;,
+    private filterService: FilterService,
+  ) {}
 
+  myTeams &#x3D; this.store
+    .select(selectMyTeams)
+    .pipe(map((value) &#x3D;&gt; [...(value ?? [])]));
+  isLoadingMyTeams &#x3D; this.store.select(isLoadingMyTeams);
+
+  filterValue: string &#x3D; &#x27;&#x27;;
+
+  myProjects &#x3D; this.store
+    .select(selectMyProjects)
+    .pipe(map((value) &#x3D;&gt; [...(value ?? [])]));
+
+  filteredProjects &#x3D; this.myProjects.pipe(
+    map((value) &#x3D;&gt;
+      value.filter((project) &#x3D;&gt;
+        this.filterValue &#x3D;&#x3D; &#x27;&#x27; ? true : project.name.includes(this.filterValue),
+      ),
+    ),
+  );
+
+  isLoadingMyProjects &#x3D; this.store.select(isLoadingMyProjects);
+
+  ngOnInit(): void {
+    this.store.dispatch(loadMyTeams());
+    this.store.dispatch(loadMyProjects({}));
+  }
+
+  filterMyTeams($event: MultiSelectChangeEvent) {
+    let teams: Team[] | undefined &#x3D; $event.value ?? undefined;
+    if (teams?.length &#x3D;&#x3D;&#x3D; 0) {
+      teams &#x3D; undefined;
+    }
+
+    if (teams) {
+      this.store.dispatch(
+        loadMyProjects({ teamIds: teams.map((team) &#x3D;&gt; team.teamId) }),
+      );
+    } else {
+      this.store.dispatch(loadMyTeams());
+    }
+  }
+
+  filterProjects() {
+    this.filteredProjects &#x3D; this.myProjects.pipe(
+      map((value) &#x3D;&gt;
+        value.filter((project) &#x3D;&gt;
+          this.filterValue &#x3D;&#x3D; &#x27;&#x27; ? true : project.name.includes(this.filterValue),
+        ),
+      ),
+    );
+  }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;p&gt;projects works!&lt;/p&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;h3&gt;{{ &quot;projects.projects&quot; | translate }}&lt;/h3&gt;
+&lt;div class&#x3D;&quot;flex w-full flex-wrap gap-5 align-items-top&quot;&gt;
+  &lt;p-multiSelect
+    [options]&#x3D;&quot;(myTeams | async) ?? undefined&quot;
+    optionLabel&#x3D;&quot;slug&quot;
+    [placeholder]&#x3D;&quot;&#x27;projects.my_teams&#x27; | translate&quot;
+    display&#x3D;&quot;chip&quot;
+    [disabled]&#x3D;&quot;(isLoadingMyTeams | async) &#x3D;&#x3D;&#x3D; true&quot;
+    (onChange)&#x3D;&quot;filterMyTeams($event)&quot;
+    styleClass&#x3D;&quot;w-24rem&quot;
+  /&gt;
+  &lt;span class&#x3D;&quot;p-input-icon-left flex-grow-1&quot;&gt;
+    &lt;i class&#x3D;&quot;pi pi-search&quot;&gt;&lt;/i&gt;
+    &lt;input
+      type&#x3D;&quot;text&quot;
+      pInputText
+      class&#x3D;&quot;w-full&quot;
+      [(ngModel)]&#x3D;&quot;filterValue&quot;
+      (input)&#x3D;&quot;filterProjects()&quot;
+      [placeholder]&#x3D;&quot;&#x27;projects.search_by_name&#x27; | translate&quot;
+    /&gt;
+  &lt;/span&gt;
+&lt;/div&gt;
+
+@if ((isLoadingMyProjects | async) &#x3D;&#x3D;&#x3D; true) {
+  &lt;div class&#x3D;&quot;flex w-full justify-content-center mt-8&quot;&gt;
+    &lt;p-progressSpinner ariaLabel&#x3D;&quot;loading&quot; /&gt;
+  &lt;/div&gt;
+} @else {
+  &lt;div class&#x3D;&quot;flex flex-wrap w-full justify-content-start gap-5 mt-5&quot;&gt;
+    @for (project of filteredProjects | async; track $index) {
+      &lt;app-single-project-card [project]&#x3D;&quot;project&quot; /&gt;
+    }
+  &lt;/div&gt;
+}
 </code></pre>
     </div>
 
@@ -239,8 +830,8 @@ export class ProjectsComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><p>projects works!</p></div>'
-    var COMPONENTS = [{'name': 'AccessDeniedComponent', 'selector': 'app-access-denied'},{'name': 'AlertsComponent', 'selector': 'app-alerts'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CloseComponent', 'selector': 'app-close'},{'name': 'ConfigComponent', 'selector': 'app-config'},{'name': 'CreateOrganizationComponent', 'selector': 'app-create-organization'},{'name': 'DetailsComponent', 'selector': 'app-details'},{'name': 'DevicesComponent', 'selector': 'app-devices'},{'name': 'DocumentationComponent', 'selector': 'app-documentation'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'GuidesComponent', 'selector': 'app-guides'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InvitationComponent', 'selector': 'app-invitation'},{'name': 'IssuesComponent', 'selector': 'app-issues'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogsComponent', 'selector': 'app-logs'},{'name': 'MemberPickerComponent', 'selector': 'app-member-picker'},{'name': 'MembersComponent', 'selector': 'app-members'},{'name': 'MembersTableComponent', 'selector': 'app-members-table'},{'name': 'MenuitemComponent', 'selector': '[app-menuitem]'},{'name': 'MessagesComponent', 'selector': 'app-messages'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationsComponent', 'selector': 'app-notifications'},{'name': 'OrganizationComponent', 'selector': 'app-organization'},{'name': 'ProjectDetailsComponent', 'selector': 'app-project-details'},{'name': 'ProjectPickerComponent', 'selector': 'app-project-picker'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'ProjectsComponent', 'selector': 'app-projects-settings'},{'name': 'ProjectsTableComponent', 'selector': 'app-projects-table'},{'name': 'QueriesComponent', 'selector': 'app-queries'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ReleasesComponent', 'selector': 'app-releases'},{'name': 'ReplaysComponent', 'selector': 'app-replays'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'ScreenLoadsComponent', 'selector': 'app-screen-loads'},{'name': 'SdksComponent', 'selector': 'app-sdks'},{'name': 'SecurityComponent', 'selector': 'app-security'},{'name': 'SessionsComponent', 'selector': 'app-sessions'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SingleTeamComponent', 'selector': 'app-single-team'},{'name': 'StatsComponent', 'selector': 'app-stats'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TeamsComponent', 'selector': 'app-teams'},{'name': 'TeamsTableComponent', 'selector': 'app-teams-table'},{'name': 'TopbarComponent', 'selector': 'app-topbar'},{'name': 'VitalsComponent', 'selector': 'app-vitals'}];
+        var COMPONENT_TEMPLATE = '<div><h3>{{ "projects.projects" | translate }}</h3><div class="flex w-full flex-wrap gap-5 align-items-top">  <p-multiSelect    [options]="(myTeams | async) ?? undefined"    optionLabel="slug"    [placeholder]="\'projects.my_teams\' | translate"    display="chip"    [disabled]="(isLoadingMyTeams | async) === true"    (onChange)="filterMyTeams($event)"    styleClass="w-24rem"  />  <span class="p-input-icon-left flex-grow-1">    <i class="pi pi-search"></i>    <input      type="text"      pInputText      class="w-full"      [(ngModel)]="filterValue"      (input)="filterProjects()"      [placeholder]="\'projects.search_by_name\' | translate"    />  </span></div>@if ((isLoadingMyProjects | async) === true) {  <div class="flex w-full justify-content-center mt-8">    <p-progressSpinner ariaLabel="loading" />  </div>} @else {  <div class="flex flex-wrap w-full justify-content-start gap-5 mt-5">    @for (project of filteredProjects | async; track $index) {      <app-single-project-card [project]="project" />    }  </div>}</div>'
+    var COMPONENTS = [{'name': 'AccessDeniedComponent', 'selector': 'app-access-denied'},{'name': 'AlertsComponent', 'selector': 'app-alerts'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CloseComponent', 'selector': 'app-close'},{'name': 'ConfigComponent', 'selector': 'app-config'},{'name': 'CreateOrganizationComponent', 'selector': 'app-create-organization'},{'name': 'DetailsComponent', 'selector': 'app-details'},{'name': 'DevicesComponent', 'selector': 'app-devices'},{'name': 'DocumentationComponent', 'selector': 'app-documentation'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'GuidesComponent', 'selector': 'app-guides'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InvitationComponent', 'selector': 'app-invitation'},{'name': 'IssuesComponent', 'selector': 'app-issues'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogsComponent', 'selector': 'app-logs'},{'name': 'MemberPickerComponent', 'selector': 'app-member-picker'},{'name': 'MembersComponent', 'selector': 'app-members'},{'name': 'MembersTableComponent', 'selector': 'app-members-table'},{'name': 'MenuitemComponent', 'selector': '[app-menuitem]'},{'name': 'MessagesComponent', 'selector': 'app-messages'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationsComponent', 'selector': 'app-notifications'},{'name': 'OrganizationComponent', 'selector': 'app-organization'},{'name': 'ProjectDetailsComponent', 'selector': 'app-project-details'},{'name': 'ProjectPickerComponent', 'selector': 'app-project-picker'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'ProjectsComponent', 'selector': 'app-projects-settings'},{'name': 'ProjectsTableComponent', 'selector': 'app-projects-table'},{'name': 'QueriesComponent', 'selector': 'app-queries'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ReleasesComponent', 'selector': 'app-releases'},{'name': 'ReplaysComponent', 'selector': 'app-replays'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'ScreenLoadsComponent', 'selector': 'app-screen-loads'},{'name': 'SdksComponent', 'selector': 'app-sdks'},{'name': 'SecurityComponent', 'selector': 'app-security'},{'name': 'SessionsComponent', 'selector': 'app-sessions'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SingleProjectCardComponent', 'selector': 'app-single-project-card'},{'name': 'SingleTeamComponent', 'selector': 'app-single-team'},{'name': 'StatsComponent', 'selector': 'app-stats'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TeamsComponent', 'selector': 'app-teams'},{'name': 'TeamsTableComponent', 'selector': 'app-teams-table'},{'name': 'TopbarComponent', 'selector': 'app-topbar'},{'name': 'VitalsComponent', 'selector': 'app-vitals'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ProjectsComponent'};
 </script>
