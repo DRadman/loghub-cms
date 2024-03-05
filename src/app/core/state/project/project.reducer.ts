@@ -1,23 +1,29 @@
 import { createReducer, on } from '@ngrx/store';
 import { StateStatus } from '../../domain/models/enums/state-status.enum';
 import { Project } from '../../domain/models/project.entity';
-import { createProject, createProjectFailure, createProjectSuccess, loadAllProjects, loadAllProjectsFailure, loadAllProjectsSuccess } from './project.actions';
+import { createProject, createProjectFailure, createProjectSuccess, loadAllProjects, loadAllProjectsFailure, loadAllProjectsSuccess, loadMyProjects, loadMyProjectsFailure, loadMyProjectsSuccess } from './project.actions';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export interface ProjectState {
   allProjects: Project[] | null;
+  myProjects: Project[] | null;
   allProjectsError: any | null;
   createProjectError: any | null;
+  myProjectsError: any | null;
   allProjectsStatus: StateStatus;
   createProjectStatus: StateStatus;
+  myProjectsStatus: StateStatus
 }
 
 export const initialState: ProjectState = {
   allProjects: null,
+  myProjects: null,
   allProjectsError: undefined,
   allProjectsStatus: StateStatus.PENDING,
   createProjectError: undefined,
-  createProjectStatus: StateStatus.PENDING
+  createProjectStatus: StateStatus.PENDING,
+  myProjectsError: undefined,
+  myProjectsStatus: StateStatus.PENDING,
 };
 
 export const projectReducer = createReducer(
@@ -43,6 +49,28 @@ export const projectReducer = createReducer(
     ...state,
     allProjectsError: error,
     allProjectsStatus: StateStatus.ERROR,
+  })),
+
+  //Handle loading my projects
+  on(loadMyProjects, (state) => ({
+    ...state,
+    myProjectsError: null,
+    myProjectsStatus: StateStatus.LOADING,
+  })),
+
+  //Handle load success
+  on(loadMyProjectsSuccess, (state, {projects}) => ({
+    ...state,
+    myProjects: projects,
+    myProjectsError: null,
+    myProjectsStatus: StateStatus.SUCCESS,
+  })),
+
+  //Handle load failure
+  on(loadMyProjectsFailure, (state, { error }) => ({
+    ...state,
+    myProjectsError: error,
+    myProjectsStatus: StateStatus.ERROR,
   })),
 
   //Handle create new team

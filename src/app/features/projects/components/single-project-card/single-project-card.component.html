@@ -1,0 +1,106 @@
+<p-card [style]="{ width: '500px' }">
+  <ng-template pTemplate="header">
+    <div class="flex w-full align-items-center p-3">
+      <p-avatar
+        styleClass="flex-none"
+        size="large"
+        [image]="project?.platform?.iconUrl ?? undefined"
+      />
+      <div class="flex flex-column flex-grow-1 ml-3">
+        <a
+          [routerLink]="['/home/projects/' + project?.projectId]"
+          routerLinkActive="router-link-active"
+          style="color: var(--primary-color)"
+          class="text-xl font-medium underline mb-1 cursor-pointer"
+        >
+        {{ project?.name }}
+        </a>
+        @if (isLoading) {
+          <p-skeleton />
+        } @else {
+          <div>
+            <span
+              >{{ "projects.transactions" | translate }}
+              {{ projectStat?.totalTransactions }} |
+              {{ "projects.errors" | translate }}
+              {{ projectStat?.totalErrors }} |
+              {{ "projects.sessions" | translate }}
+              {{ projectStat?.totalSessions }}
+            </span>
+          </div>
+        }
+      </div>
+      <p-button
+        styleClass="flex-none"
+        icon="pi pi-cog"
+        [rounded]="true"
+        [text]="true"
+        severity="secondary"
+        (onClick)="navigateToProjectSettings()"
+      />
+    </div>
+  </ng-template>
+  @if (isLoading) {
+    <p-skeleton height="19rem" />
+  } @else {
+    <p-chart type="line" [data]="chartData" [options]="chartOptions"></p-chart>
+  }
+  <div class="flex align-items-top mt-5">
+    <div class="w-6">
+      <h6 class="mt-0 mb-0 w-full">
+        {{ "projects.crash_free_sessions" | translate }}
+      </h6>
+      @if (isLoading) {
+        <p-skeleton height="5rem" />
+      } @else {
+        <h2 class="w-full mb-0 mt-2">
+          {{ projectStat?.crashFreePercentage | number: ".1-3" }}%
+        </h2>
+        @if (projectStat?.crashFreePercentageGain === 0) {
+          <div class="flex align-items-center">
+            <i class="pi pi-arrow-up text-gray-400"></i>
+            <h4 class="mb-0 mt-0 flex-grow-1 ml-2 text-gray-400">
+              {{ projectStat?.crashFreePercentageGain | number: ".1-3" }}%
+            </h4>
+          </div>
+        } @else if (projectStat?.crashFreePercentageGain ?? 0 > 0) {
+          <div class="flex align-items-center">
+            <i class="pi pi-arrow-up text-green-500"></i>
+            <h4 class="mb-0 mt-0 flex-grow-1 ml-2 text-green-500">
+              {{ projectStat?.crashFreePercentageGain | number: ".1-3" }}%
+            </h4>
+          </div>
+        } @else if (projectStat?.crashFreePercentageGain ?? 0 < 0) {
+          <div class="flex align-items-center">
+            <i class="pi pi-arrow-down text-red-500"></i>
+            <h4 class="mb-0 mt-0 flex-grow-1 ml-2 text-red-500">
+              {{ projectStat?.crashFreePercentageGain | number: ".1-3" }}%
+            </h4>
+          </div>
+        }
+      }
+    </div>
+    <div class="w-6">
+      <h6 class="mt-0 mb-0 w-full">
+        {{ "projects.latest_deploys" | translate }}
+      </h6>
+      @if (isLoading) {
+        <p-skeleton height="5rem" />
+      } @else {
+        @if (!projectStat?.releases || projectStat?.releases?.length === 0) {
+          <h4 class="mt-2 mb-0 w-full">-</h4>
+        } @else {
+          @for (
+            release of projectStat?.releases?.constructor(3);
+            track $index
+          ) {
+            <h4 class="mt-2 mb-0 w-full">
+              {{ release.version }} -
+              {{ release.releaseTimestamp | date: "MMM d h:mm a" }}
+            </h4>
+          }
+        }
+      }
+    </div>
+  </div>
+</p-card>

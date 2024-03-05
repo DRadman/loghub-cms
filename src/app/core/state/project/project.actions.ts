@@ -32,3 +32,19 @@ export const createProjectFailure = createAction(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   props<{ error: any }>(),
 );
+
+export const loadMyProjects = createAction(
+  '[Projects Page] Load my projects',
+  props<{ teamIds?: string[] }>(),
+);
+
+export const loadMyProjectsSuccess = createAction(
+  '[Project API] Get my projects success',
+  props<{ projects: Project[] }>(),
+);
+
+export const loadMyProjectsFailure = createAction(
+  '[Project API] Get my projects failure',
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  props<{ error: any }>(),
+);

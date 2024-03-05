@@ -1,1 +1,35 @@
-<p>projects works!</p>
+<h3>{{ "projects.projects" | translate }}</h3>
+<div class="flex w-full flex-wrap gap-5 align-items-top">
+  <p-multiSelect
+    [options]="(myTeams | async) ?? undefined"
+    optionLabel="slug"
+    [placeholder]="'projects.my_teams' | translate"
+    display="chip"
+    [disabled]="(isLoadingMyTeams | async) === true"
+    (onChange)="filterMyTeams($event)"
+    styleClass="w-24rem"
+  />
+  <span class="p-input-icon-left flex-grow-1">
+    <i class="pi pi-search"></i>
+    <input
+      type="text"
+      pInputText
+      class="w-full"
+      [(ngModel)]="filterValue"
+      (input)="filterProjects()"
+      [placeholder]="'projects.search_by_name' | translate"
+    />
+  </span>
+</div>
+
+@if ((isLoadingMyProjects | async) === true) {
+  <div class="flex w-full justify-content-center mt-8">
+    <p-progressSpinner ariaLabel="loading" />
+  </div>
+} @else {
+  <div class="flex flex-wrap w-full justify-content-start gap-5 mt-5">
+    @for (project of filteredProjects | async; track $index) {
+      <app-single-project-card [project]="project" />
+    }
+  </div>
+}
