@@ -17,6 +17,8 @@ import { PlatformState, platformReducer } from './platform/platform.reducer';
 import { PlatformEffects } from './platform/platform.effects';
 import { SingleTeamEffects } from './single-team/single-team.effects';
 import { SingleTeamState, singleTeamReducer } from './single-team/single-team.reducer';
+import { SingleProjectState, singleProjectReducer } from './single-project/single-project.reducer';
+import { SingleProjectEffects } from './single-project/single-project.effects';
 
 export interface AppState {
   authState: AuthState;
@@ -27,6 +29,7 @@ export interface AppState {
   projectState: ProjectState;
   platformState: PlatformState;
   singleTeamState: SingleTeamState;
+  singleProjectState: SingleProjectState;
 }
 
 export const appEfects = [
@@ -37,7 +40,8 @@ export const appEfects = [
   TeamEffects,
   ProjectEffects,
   PlatformEffects,
-  SingleTeamEffects
+  SingleTeamEffects,
+  SingleProjectEffects,
 ];
 
 export const appStore = {
@@ -49,4 +53,5 @@ export const appStore = {
   projectState: projectReducer,
   platformState: platformReducer,
   singleTeamState: singleTeamReducer,
+  singleProjectState: singleProjectReducer,
 };

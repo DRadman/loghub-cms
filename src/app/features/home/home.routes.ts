@@ -23,7 +23,7 @@ export const routes: Routes = [
             (c) => c.ProjectDetailsComponent,
           ),
         data: {
-          breadcrumb: 'Project Details',
+          breadcrumb: 'Project_Details',
         },
       },
       {

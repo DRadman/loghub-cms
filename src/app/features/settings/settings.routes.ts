@@ -66,5 +66,12 @@ export const routes: Routes = [
         (c) => c.SingleTeamComponent,
       ),
   },
+  {
+    path: 'projects/:projectId',
+    loadComponent: () =>
+      import('./projects/components/single-project/single-project.component').then(
+        (c) => c.SingleProjectComponent,
+      ),
+  },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
