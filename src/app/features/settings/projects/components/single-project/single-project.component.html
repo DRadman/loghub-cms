@@ -238,22 +238,22 @@
 
       <!-- PROJECT TEAMS -->
       <p-tabPanel [header]="'single-project.project_teams' | translate">
-        <div
-          *ngIf="(hasUpdatePermission | async) === true"
-          class="mb-4 w-full flex justify-content-end"
-        >
-          <ng-template pTemplate="content">
+        <ng-template pTemplate="content">
+          <div
+            *ngIf="(hasUpdatePermission | async) === true"
+            class="mb-4 w-full flex justify-content-end"
+          >
             <app-team-picker
               [selectedTeams]="(teams | async) ?? []"
               [onTeamsPicked]="onAddTeams"
               [onTeamsRemoved]="onRemoveTeams"
             />
-          </ng-template>
-        </div>
-        <app-teams-table
-          [isLoading]="(isLoadingProjectTeams | async) === true"
-          [data]="(teams | async) ?? undefined"
-        />
+          </div>
+          <app-teams-table
+            [isLoading]="(isLoadingProjectTeams | async) === true"
+            [data]="(teams | async) ?? undefined"
+          />
+        </ng-template>
       </p-tabPanel>
 
       <!-- PROJECT TAGS -->
@@ -271,7 +271,7 @@
       <!-- PROJECT ENVIRONMENTS -->
       <p-tabPanel [header]="'single-project.environments' | translate">
         <ng-template pTemplate="content">
-            <app-environments-table
+          <app-environments-table
             [project]="(project | async) ?? undefined"
             [enableAddAction]="(hasUpdatePermission | async) === true"
             [enableRemoveAction]="(hasUpdatePermission | async) === true"
@@ -283,7 +283,7 @@
       <!-- PROJECT RELEASES -->
       <p-tabPanel [header]="'single-project.releases' | translate">
         <ng-template pTemplate="content">
-            <app-releases-table
+          <app-releases-table
             [project]="(project | async) ?? undefined"
             [enableAddAction]="(hasUpdatePermission | async) === true"
             [enableRemoveAction]="(hasUpdatePermission | async) === true"
@@ -295,7 +295,7 @@
       <!-- PROJECT DEBUG FILES -->
       <p-tabPanel [header]="'single-project.debug_files' | translate">
         <ng-template pTemplate="content">
-            <app-debug-files-table
+          <app-debug-files-table
             [project]="(project | async) ?? undefined"
             [enableAddAction]="(hasUpdatePermission | async) === true"
             [enableRemoveAction]="(hasUpdatePermission | async) === true"
