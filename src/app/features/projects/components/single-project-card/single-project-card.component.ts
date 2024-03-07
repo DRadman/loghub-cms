@@ -117,6 +117,6 @@ export class SingleProjectCardComponent implements AfterViewInit {
   }
 
   navigateToProjectSettings() {
-    this.router.navigate(['/settings/projects/' + this.project?.projectId])
+    this.router.navigate(['/home/settings/projects/' + this.project?.projectId])
   }
 }

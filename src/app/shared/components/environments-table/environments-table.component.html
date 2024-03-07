@@ -1,0 +1,175 @@
+<p-toast />
+<p-confirmDialog />
+@if ((hasReadPermission | async) === false) {
+  <app-access-denied />
+} @else {
+  <p-table
+    #dt
+    [value]="(environments | async) ?? []"
+    dataKey="environment"
+    [rowHover]="true"
+    [rows]="10"
+    [(selection)]="selectedEnvironments"
+    [showCurrentPageReport]="enablePagination"
+    [rowsPerPageOptions]="[10, 25, 50]"
+    [loading]="(isLoadingEnvironments | async) === true"
+    [paginator]="enablePagination"
+    [currentPageReportTemplate]="'table.pagination_template' | translate"
+    [filterDelay]="0"
+    [globalFilterFields]="['environment']"
+  >
+    <ng-template
+      pTemplate="caption"
+      *ngIf="enableGlobalSearch || enableAddAction || enableRemoveAction"
+    >
+      <div class="table-header w-full flex gap-4">
+        <span class="p-input-icon-left flex-grow-1">
+          <i class="pi pi-search"></i>
+          <input
+            class="w-full"
+            pInputText
+            type="text"
+            (input)="applyFilterGlobal($event, 'contains')"
+            [placeholder]="'table.search' | translate"
+          />
+        </span>
+        <p-button
+          *ngIf="enableAddAction"
+          pRipple
+          styleClass=""
+          severity="success"
+          icon="pi pi-plus"
+          (onClick)="showAddDialog()"
+          [label]="'environments-table.new_environment' | translate"
+          iconPos="left"
+        />
+        <p-button
+          *ngIf="enableAddAction"
+          pRipple
+          styleClass=""
+          severity="danger"
+          [disabled]="!selectedEnvironments || selectedEnvironments.length === 0"
+          icon="pi pi-trash"
+          (onClick)="showDeleteSelectionConfirmation($event)"
+          [label]="'environments-table.delete_environments' | translate"
+          iconPos="left"
+        />
+      </div>
+    </ng-template>
+
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="width: 4rem">
+          <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+        </th>
+        <th pSortableColumn="environment" style="min-width: 14rem">
+          <div class="flex justify-content-between align-items-center">
+            {{ "environments-table.environment" | translate }}
+            <p-sortIcon field="environment" *ngIf="enableSorting" />
+            <p-columnFilter
+              type="text"
+              field="environment"
+              display="menu"
+              class="ml-auto"
+              *ngIf="enableFiltering"
+            />
+          </div>
+        </th>
+        <th style="width: 16rem" *ngIf="enableRemoveAction">
+          <div class="flex justify-content-center align-items-center">
+            {{ "environments-table.actions" | translate }}
+          </div>
+        </th>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-environment>
+      <tr class="p-selectable-row">
+        <td>
+          <p-tableCheckbox [value]="environment"></p-tableCheckbox>
+        </td>
+        <td>
+          {{ environment.environment }}
+        </td>
+        <td style="text-align: center" *ngIf="enableRemoveAction">
+            <p-button
+              pRipple
+              [disabled]="!enableRemoveAction"
+              severity="danger"
+              icon="pi pi-minus"
+              [label]="'environments-table.delete_environment' | translate"
+              iconPos="left"
+              [loading]="(isLoadingRemoveEnvironments | async) ?? false"
+              (onClick)="showDeleteConfirmation(environment.environment, $event)"
+            />
+          </td>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="emptymessage">
+        <tr>
+          <td colspan="3">{{ "environments-table.no_environments_found" | translate }}</td>
+        </tr>
+      </ng-template>
+  </p-table>
+}
+
+<p-dialog
+  [header]="'environments-table.new_environment' | translate"
+  [(visible)]="isAddNewDialogVisible"
+  [style]="{ width: '40vw' }"
+  [modal]="true"
+>
+  <div class="flex py-2 justify-content-center">
+    <form [formGroup]="environmentsForm" class="w-full">
+      <div class="w-full">
+        <label
+          for="environment"
+          class="block text-900 font-medium text-md mb-2 mt-2"
+          >{{ "environments-table.environment_label" | translate }}</label
+        >
+          <input
+            type="text"
+            formControlName="environment"
+            [placeholder]="'environments-table.environment' | translate"
+            pInputText
+            class="w-full"
+            style="padding: 1rem"
+          />
+        <small
+          *ngIf="
+            environmentsForm.get('environment')?.hasError('required') &&
+            environmentsForm.get('environment')?.dirty
+          "
+          class="p-error block"
+          >{{ "environments-table.environment_is_required" | translate }}</small
+        >
+
+        <div class="flex w-full justify-content-end mt-5">
+          <p-button
+            pRipple
+            [label]="'environments-table.cancel' | translate"
+            [outlined]="true"
+            icon="pi pi-times"
+            iconPos="left"
+            severity="danger"
+            [loading]="(isLoadingCreateNew | async) ?? false"
+            (onClick)="isAddNewDialogVisible = !isAddNewDialogVisible"
+          />
+          <p-button
+            pRipple
+            styleClass="ml-4"
+            type="submit"
+            [label]="'environments-table.create_new_environment' | translate"
+            [outlined]="true"
+            icon="pi pi-check"
+            iconPos="left"
+            [loading]="(isLoadingCreateNew | async) ?? false"
+            (onClick)="createNewEnvironment()"
+            [disabled]="environmentsForm.invalid"
+          />
+        </div>
+      </div>
+    </form>
+  </div>
+</p-dialog>

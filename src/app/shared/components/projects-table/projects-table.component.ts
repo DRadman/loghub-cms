@@ -47,6 +47,7 @@ import {
   isLoadingCreateProject,
   selectCreateProjectStatus,
 } from '../../../core/state/project/project.selectors';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-projects-table',
@@ -78,6 +79,7 @@ export class ProjectsTableComponent implements AfterViewInit, OnDestroy {
     private messageService: MessageService,
     private translateService: TranslateService,
     private projectService: ProjectService,
+    private router: Router,
   ) {}
 
   @ViewChild('dt') dt: Table | undefined;
@@ -190,6 +192,16 @@ export class ProjectsTableComponent implements AfterViewInit, OnDestroy {
       name: ['', [Validators.required]],
       platform: [undefined as Platform | undefined, [Validators.required]],
     });
+  }
+
+  openSingleProject(event: MouseEvent, project: Project) {
+    const isDeleteButtonClicked = (event.target as HTMLElement).closest(
+      '.p-button',
+    );
+
+    if (!isDeleteButtonClicked) {
+      this.router.navigate([`/home/settings/projects/${project.projectId}`]);
+    }
   }
 
   private checkName(name: string) {

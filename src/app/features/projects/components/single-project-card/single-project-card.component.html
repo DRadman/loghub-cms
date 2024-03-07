@@ -16,7 +16,7 @@
         {{ project?.name }}
         </a>
         @if (isLoading) {
-          <p-skeleton />
+          <p-skeleton *ngIf="isLoading"/>
         } @else {
           <div>
             <span
@@ -91,7 +91,7 @@
           <h4 class="mt-2 mb-0 w-full">-</h4>
         } @else {
           @for (
-            release of projectStat?.releases?.constructor(3);
+            release of projectStat?.releases?.slice(0, 3);
             track $index
           ) {
             <h4 class="mt-2 mb-0 w-full">

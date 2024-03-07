@@ -1,0 +1,53 @@
+<p-button
+  [label]="'team-picker.edit' | translate"
+  severity="warning"
+  icon="pi pi-pencil"
+  [loading]="(isLoadingTeams | async) === true"
+  (onClick)="showPickerDialog()"
+/>
+<p-dialog
+  [header]="'team-picker.edit' | translate"
+  [(visible)]="isPickerDialogVisible"
+  [modal]="true"
+  [maximizable]="true"
+>
+  <p-pickList
+    [source]="avaialbleTeams"
+    [target]="selectedTeams"
+    [sourceHeader]="'team-picker.available_projects' | translate"
+    [targetHeader]="'team-picker.selected_projects' | translate"
+    [dragdrop]="true"
+    [responsive]="true"
+    [sourceStyle]="{ height: '30rem', width: '25rem' }"
+    [targetStyle]="{ height: '30rem', width: '25rem' }"
+    [showSourceControls]="false"
+    [showTargetControls]="false"
+    (onMoveToTarget)="onMoveToTarget($event)"
+    (onMoveAllToTarget)="onMoveAllToTarget($event)"
+    (onMoveToSource)="onMoveToSource($event)"
+    (onMoveAllToSource)="onMoveAllToSource($event)"
+    filterBy="slug"
+    [sourceFilterPlaceholder]="'team-picker.search' | translate"
+    [targetFilterPlaceholder]="'team-picker.search' | translate"
+    breakpoint="1280px"
+  >
+    <ng-template let-team pTemplate="item">
+      <div class="flex flex-wrap p-2 align-items-center gap-3">
+        <div class="flex-1 flex flex-column gap-2">
+          <span class="font-bold"
+            >{{ team.slug }}</span
+          >
+        </div>
+      </div>
+    </ng-template>
+  </p-pickList>
+
+  <ng-template pTemplate="footer">
+    <p-button
+      icon="pi pi-check"
+      [outlined]="true"
+      (click)="isPickerDialogVisible = false"
+      [label]="'team-picker.ok' | translate"
+    ></p-button>
+  </ng-template>
+</p-dialog>

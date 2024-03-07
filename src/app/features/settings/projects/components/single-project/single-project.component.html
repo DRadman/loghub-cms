@@ -1,0 +1,323 @@
+<p-toast />
+<p-confirmDialog />
+@if ((project | async) === null || (project | async) === undefined) {
+  <app-not-found />
+} @else {
+  <h3>#{{ (project | async)?.name }}</h3>
+  @if ((hasReadPermission | async) === false) {
+    <app-access-denied />
+  } @else {
+    <p-tabView [scrollable]="true">
+      <!-- GENERAL SETTINGS -->
+      <p-tabPanel [header]="'single-project.general_settings' | translate">
+        <p-panel
+          [header]="'single-project.project_details' | translate | uppercase"
+          [toggleable]="true"
+        >
+          <ng-template pTemplate="icons">
+            <p-button
+              *ngIf="hasUpdatePermission | async"
+              [disabled]="projectDetailsForm.invalid"
+              [label]="'single-project.save' | translate"
+              styleClass="mr-2 h-2rem"
+              icon="pi pi-save"
+              severity="warning"
+              [loading]="(isLoadingUpdateProjectDetails | async) === true"
+              (onClick)="updateProjectDetails()"
+            />
+          </ng-template>
+          <form [formGroup]="projectDetailsForm">
+            <div class="grid">
+              <div class="col">
+                <h6 pBadge class="w-max mb-0" severity="danger">
+                  {{ "single-project.id" | translate }}
+                </h6>
+                <p>{{ "single-project.id_description" | translate }}</p>
+              </div>
+              <div class="col">
+                <input
+                  pInputText
+                  type="text"
+                  class="w-full"
+                  style="min-width: 20rem"
+                  formControlName="projectId"
+                  [placeholder]="'single-project.id' | translate"
+                />
+              </div>
+            </div>
+            <p-divider styleClass="mt-0" />
+            <div class="grid">
+              <div class="col">
+                <h6 pBadge class="w-max mb-0" severity="danger">
+                  {{ "single-project.name" | translate }}
+                </h6>
+                <p>{{ "single-project.name_description" | translate }}</p>
+              </div>
+              <div class="col">
+                <span class="p-input-icon-right w-full">
+                  @if (!isNameTaken || isNameTaken === null) {
+                    <i class="pi pi-check text-green-500"></i>
+                  } @else {
+                    <i class="pi pi-times text-red-500"></i>
+                  }
+                  <input
+                    #name
+                    id="name"
+                    pInputText
+                    (input)="name.value = toSlugValue(name.value)"
+                    type="text"
+                    class="w-full"
+                    style="min-width: 20rem"
+                    formControlName="name"
+                    [placeholder]="'single-project.name' | translate"
+                  />
+                </span>
+              </div>
+            </div>
+            <p-divider styleClass="mt-0" />
+            <div class="grid">
+              <div class="col">
+                <h6 pBadge class="w-max mb-0" severity="danger">
+                  {{ "single-project.platform" | translate }}
+                </h6>
+                <p>{{ "single-project.platform_description" | translate }}</p>
+              </div>
+              <div class="col">
+                <p-dropdown
+                  appendTo="body"
+                  [options]="(platforms | async) ?? []"
+                  formControlName="platform"
+                  [placeholder]="'single-project.platform' | translate"
+                  optionLabel="type"
+                  styleClass="w-full"
+                >
+                  <ng-template pTemplate="selectedItem" let-platform>
+                    <div class="flex align-items-center gap-2" *ngIf="platform">
+                      <img
+                        [src]="platform.iconUrl"
+                        class="w-2rem"
+                        alt="platform_logo"
+                      />
+                      <div>
+                        {{ platform.type | titlecase }} {{ platform.version }}
+                      </div>
+                    </div>
+                  </ng-template>
+                  <ng-template let-platform pTemplate="item">
+                    <div class="flex align-items-center gap-2">
+                      <img
+                        [src]="platform.iconUrl"
+                        class="w-2rem"
+                        alt="platform_logo"
+                      />
+                      <div>
+                        {{ platform.type | titlecase }} {{ platform.version }}
+                      </div>
+                    </div>
+                  </ng-template>
+                </p-dropdown>
+              </div>
+            </div>
+          </form>
+        </p-panel>
+        <p-panel
+          [header]="'single-project.client_security' | translate | uppercase"
+          [toggleable]="true"
+          styleClass="mt-5"
+        >
+          <ng-template pTemplate="icons">
+            <p-button
+              *ngIf="hasUpdatePermission | async"
+              [disabled]="clientSecurityForm.invalid"
+              [label]="'single-project.save' | translate"
+              styleClass="mr-2 h-2rem"
+              icon="pi pi-save"
+              severity="warning"
+              [loading]="isLoadingUpdateClientSecurity"
+              (onClick)="updateProjectClientSecurity()"
+            />
+          </ng-template>
+          <form [formGroup]="clientSecurityForm">
+            <div class="grid">
+              <div class="col">
+                <h6 pBadge class="w-max mb-0" severity="danger">
+                  {{ "single-project.allowed_domains" | translate }}
+                </h6>
+                <p>
+                  {{ "single-project.allowed_domains_description" | translate }}
+                </p>
+              </div>
+              <div class="col">
+                <input
+                  pInputText
+                  type="text"
+                  class="w-full"
+                  formControlName="allowedDomains"
+                  style="min-width: 20rem"
+                  [placeholder]="'single-project.allowed_domains' | translate"
+                />
+              </div>
+            </div>
+            <p-divider styleClass="mt-0" />
+            <div class="grid">
+              <div class="col">
+                <h6 pBadge class="w-max mb-0" severity="danger">
+                  {{ "single-project.security_token" | translate }}
+                </h6>
+                <p>
+                  {{ "single-project.security_token_description" | translate }}
+                </p>
+              </div>
+              <div class="col">
+                <input
+                  pInputText
+                  type="text"
+                  class="w-full"
+                  formControlName="securityToken"
+                  style="min-width: 20rem"
+                  [placeholder]="'single-project.security_token' | translate"
+                />
+              </div>
+            </div>
+            <p-divider styleClass="mt-0" />
+            <div class="grid">
+              <div class="col">
+                <h6 pBadge class="w-max mb-0" severity="danger">
+                  {{ "single-project.security_header" | translate }}
+                </h6>
+                <p>
+                  {{ "single-project.security_header_description" | translate }}
+                </p>
+              </div>
+              <div class="col">
+                <input
+                  pInputText
+                  type="text"
+                  class="w-full"
+                  formControlName="securityHeader"
+                  style="min-width: 20rem"
+                  [placeholder]="'single-project.security_header' | translate"
+                />
+              </div>
+            </div>
+          </form>
+        </p-panel>
+        <p-panel
+          [header]="
+            'single-project.project_administration' | translate | uppercase
+          "
+          [toggleable]="true"
+          styleClass="mt-5"
+        >
+          <div class="grid">
+            <div class="col">
+              <h6 class="w-max mb-0" severity="danger">
+                {{ "single-project.delete" | translate }}
+              </h6>
+              <p>
+                {{
+                  "single-project.delete_description"
+                    | translate: { projectName: (project | async)?.name }
+                }}
+              </p>
+            </div>
+            <div class="col flex align-items-center justify-content-end">
+              <p-button
+                pRipple
+                severity="danger"
+                icon="pi pi-trash"
+                iconPos="left"
+                [label]="'single-project.delete' | translate"
+                (onClick)="showDeleteProjectConfirmation($event)"
+                [disabled]="(hasDeletePermission | async) === false"
+              />
+            </div>
+          </div>
+        </p-panel>
+      </p-tabPanel>
+
+      <!-- PROJECT TEAMS -->
+      <p-tabPanel [header]="'single-project.project_teams' | translate">
+        <div
+          *ngIf="(hasUpdatePermission | async) === true"
+          class="mb-4 w-full flex justify-content-end"
+        >
+          <ng-template pTemplate="content">
+            <app-team-picker
+              [selectedTeams]="(teams | async) ?? []"
+              [onTeamsPicked]="onAddTeams"
+              [onTeamsRemoved]="onRemoveTeams"
+            />
+          </ng-template>
+        </div>
+        <app-teams-table
+          [isLoading]="(isLoadingProjectTeams | async) === true"
+          [data]="(teams | async) ?? undefined"
+        />
+      </p-tabPanel>
+
+      <!-- PROJECT TAGS -->
+      <p-tabPanel [header]="'single-project.tags' | translate">
+        <ng-template pTemplate="content">
+          <app-tags-table
+            [project]="(project | async) ?? undefined"
+            [enableAddAction]="(hasUpdatePermission | async) === true"
+            [enableRemoveAction]="(hasUpdatePermission | async) === true"
+            [enableEditAction]="(hasUpdatePermission | async) === true"
+          />
+        </ng-template>
+      </p-tabPanel>
+
+      <!-- PROJECT ENVIRONMENTS -->
+      <p-tabPanel [header]="'single-project.environments' | translate">
+        <ng-template pTemplate="content">
+            <app-environments-table
+            [project]="(project | async) ?? undefined"
+            [enableAddAction]="(hasUpdatePermission | async) === true"
+            [enableRemoveAction]="(hasUpdatePermission | async) === true"
+            [enableEditAction]="(hasUpdatePermission | async) === true"
+          />
+        </ng-template>
+      </p-tabPanel>
+
+      <!-- PROJECT RELEASES -->
+      <p-tabPanel [header]="'single-project.releases' | translate">
+        <ng-template pTemplate="content">
+            <app-releases-table
+            [project]="(project | async) ?? undefined"
+            [enableAddAction]="(hasUpdatePermission | async) === true"
+            [enableRemoveAction]="(hasUpdatePermission | async) === true"
+            [enableEditAction]="(hasUpdatePermission | async) === true"
+          />
+        </ng-template>
+      </p-tabPanel>
+
+      <!-- PROJECT DEBUG FILES -->
+      <p-tabPanel [header]="'single-project.debug_files' | translate">
+        <ng-template pTemplate="content">
+            <app-debug-files-table
+            [project]="(project | async) ?? undefined"
+            [enableAddAction]="(hasUpdatePermission | async) === true"
+            [enableRemoveAction]="(hasUpdatePermission | async) === true"
+            [enableEditAction]="(hasUpdatePermission | async) === true"
+          />
+        </ng-template>
+      </p-tabPanel>
+
+      <!-- PROJECT REPLAY SETTINGS -->
+      <p-tabPanel [header]="'single-project.replay_settings' | translate">
+        <ng-template pTemplate="content"></ng-template>
+      </p-tabPanel>
+
+      <!-- PROJECT PERFORMANCE SETTINGS -->
+      <p-tabPanel [header]="'single-project.performance_settings' | translate">
+        <ng-template pTemplate="content"></ng-template>
+      </p-tabPanel>
+
+      <!-- SDK SETUP -->
+      <p-tabPanel [header]="'single-project.sdk_setup' | translate">
+        <ng-template pTemplate="content"></ng-template>
+      </p-tabPanel>
+    </p-tabView>
+  }
+}

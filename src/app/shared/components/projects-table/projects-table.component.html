@@ -72,7 +72,7 @@
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-project>
-    <tr class="p-selectable-row">
+    <tr class="p-selectable-row" (click)="openSingleProject($event, project)">
       <td>
         {{ project?.name }}
       </td>
