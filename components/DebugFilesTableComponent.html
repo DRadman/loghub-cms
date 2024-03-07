@@ -96,7 +96,7 @@
   <li class="breadcrumb-item">Components</li>
   <li class="breadcrumb-item"
   >
-  TeamsTableComponent</li>
+  DebugFilesTableComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -123,7 +123,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/shared/components/teams-table/teams-table.component.ts</code>
+    <code>src/app/shared/components/debug-files-table/debug-files-table.component.ts</code>
 </p>
 
 
@@ -133,8 +133,7 @@
         <h3>Implements</h3>
     </p>
     <p class="comment">
-                <code>AfterViewInit</code>
-                <code>OnDestroy</code>
+                <code>OnInit</code>
     </p>
 
 
@@ -163,7 +162,7 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-teams-table</code></td>
+                <td class="col-md-9"><code>app-debug-files-table</code></td>
             </tr>
 
             <tr>
@@ -175,19 +174,19 @@
                 <td class="col-md-3">imports</td>
                 <td class="col-md-9">
                             <code>CommonModule</code>
-                            <code>ToastModule</code>
-                            <code>ConfirmDialogModule</code>
-                            <code>TableModule</code>
                             <code>TranslateModule</code>
                             <code>ButtonModule</code>
                             <code>RippleModule</code>
-                            <code>InputTextModule</code>
-                            <code>AvatarModule</code>
+                            <code>ToastModule</code>
+                            <code>ConfirmDialogModule</code>
                             <code>DialogModule</code>
-                            <code>DropdownModule</code>
-                            <code>FormsModule</code>
+                            <code>TableModule</code>
+                            <code>InputTextModule</code>
                             <code>ReactiveFormsModule</code>
-                            <code>CalendarModule</code>
+                            <code>FormsModule</code>
+                                <code><a href="../components/AccessDeniedComponent.html" target="_self" >AccessDeniedComponent</a></code>
+                            <code>DropdownModule</code>
+                            <code>InputGroupModule</code>
                 </td>
             </tr>
 
@@ -196,14 +195,14 @@
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./teams-table.component.html</code></td>
+                <td class="col-md-9"><code>./debug-files-table.component.html</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">styleUrl</td>
-                <td class="col-md-9"><code>./teams-table.component.scss</code></td>
+                <td class="col-md-9"><code>./debug-files-table.component.scss</code></td>
             </tr>
 
 
@@ -227,32 +226,39 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#createNewTeamForm" >createNewTeamForm</a>
+                                <a href="#createDebugFileForm" >createDebugFileForm</a>
+                            </li>
+                            <li>
+                                <a href="#debugFiles" >debugFiles</a>
                             </li>
                             <li>
                                     <span class="modifier"></span>
                                 <a href="#dt" >dt</a>
                             </li>
                             <li>
-                                <a href="#isAddNewTeamDialogVisible" >isAddNewTeamDialogVisible</a>
+                                <a href="#hasReadPermission" >hasReadPermission</a>
                             </li>
                             <li>
-                                <a href="#isLoadingCreateNewTeam" >isLoadingCreateNewTeam</a>
+                                <a href="#isAddNewDialogVisible" >isAddNewDialogVisible</a>
                             </li>
                             <li>
-                                <a href="#isLoadingDeleteTeam" >isLoadingDeleteTeam</a>
+                                <a href="#isLoadingCreateNew" >isLoadingCreateNew</a>
                             </li>
                             <li>
-                                <a href="#isSlugTaken" >isSlugTaken</a>
+                                <a href="#isLoadingDebugFiles" >isLoadingDebugFiles</a>
+                            </li>
+                            <li>
+                                <a href="#isLoadingRemoveDebugFiles" >isLoadingRemoveDebugFiles</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
-                                    <span class="modifier">Optional</span>
-                                <a href="#slugCheckSubscription" >slugCheckSubscription</a>
+                                <a href="#platformId" >platformId</a>
                             </li>
                             <li>
-                                    <span class="modifier"></span>
-                                <a href="#slugInput" >slugInput</a>
+                                <a href="#selectedDebugFiles" >selectedDebugFiles</a>
+                            </li>
+                            <li>
+                                <a href="#types" >types</a>
                             </li>
                         </ul>
                     </td>
@@ -270,27 +276,24 @@
                                 <a href="#applyFilterGlobal" >applyFilterGlobal</a>
                             </li>
                             <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#checkSlug" >checkSlug</a>
+                                <a href="#createNewDebugFile" >createNewDebugFile</a>
                             </li>
                             <li>
-                                <a href="#createNewTeam" >createNewTeam</a>
+                                <a href="#downloadFile" >downloadFile</a>
                             </li>
                             <li>
-                                <a href="#ngAfterViewInit" >ngAfterViewInit</a>
+                                <a href="#ngOnInit" >ngOnInit</a>
                             </li>
                             <li>
-                                <a href="#ngOnDestroy" >ngOnDestroy</a>
-                            </li>
-                            <li>
-                                <a href="#openSingleTeam" >openSingleTeam</a>
-                            </li>
-                            <li>
-                                <a href="#removeMember" >removeMember</a>
+                                <a href="#onFilePicked" >onFilePicked</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#resetTeamsForm" >resetTeamsForm</a>
+                                <a href="#removeDebugFiles" >removeDebugFiles</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#resetDebugFilesForm" >resetDebugFilesForm</a>
                             </li>
                             <li>
                                 <a href="#showAddDialog" >showAddDialog</a>
@@ -299,7 +302,7 @@
                                 <a href="#showDeleteConfirmation" >showDeleteConfirmation</a>
                             </li>
                             <li>
-                                <a href="#toSlugValue" >toSlugValue</a>
+                                <a href="#showDeleteSelectionConfirmation" >showDeleteSelectionConfirmation</a>
                             </li>
                         </ul>
                     </td>
@@ -314,13 +317,10 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#data" >data</a>
-                            </li>
-                            <li>
                                 <a href="#enableAddAction" >enableAddAction</a>
                             </li>
                             <li>
-                                <a href="#enableDeleteAction" >enableDeleteAction</a>
+                                <a href="#enableEditAction" >enableEditAction</a>
                             </li>
                             <li>
                                 <a href="#enableFiltering" >enableFiltering</a>
@@ -332,10 +332,13 @@
                                 <a href="#enablePagination" >enablePagination</a>
                             </li>
                             <li>
+                                <a href="#enableRemoveAction" >enableRemoveAction</a>
+                            </li>
+                            <li>
                                 <a href="#enableSorting" >enableSorting</a>
                             </li>
                             <li>
-                                <a href="#isLoading" >isLoading</a>
+                                <a href="#project" >project</a>
                             </li>
                         </ul>
                     </td>
@@ -354,12 +357,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(formBuilder: FormBuilder, store: <a href="../interfaces/AppState.html" target="_self">Store&lt;AppState&gt;</a>, messageService: MessageService, translateService: TranslateService, teamService: <a href="../injectables/TeamService.html" target="_self">TeamService</a>, confirmationService: ConfirmationService, router: Router)</code>
+<code>constructor(store: <a href="../interfaces/AppState.html" target="_self">Store&lt;AppState&gt;</a>, formBuilder: FormBuilder, confirmationService: ConfirmationService, translateService: TranslateService, messageService: MessageService, projectService: <a href="../injectables/ProjectService.html" target="_self">ProjectService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/app/shared/components/teams-table/teams-table.component.ts:74</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/app/shared/components/debug-files-table/debug-files-table.component.ts:72</a></div>
                             </td>
                         </tr>
 
@@ -377,18 +380,6 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>formBuilder</td>
-                                                  
-                                                        <td>
-                                                                    <code>FormBuilder</code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
                                                         <td>store</td>
                                                   
                                                         <td>
@@ -401,34 +392,10 @@
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>messageService</td>
+                                                        <td>formBuilder</td>
                                                   
                                                         <td>
-                                                                    <code>MessageService</code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>translateService</td>
-                                                  
-                                                        <td>
-                                                                    <code>TranslateService</code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>teamService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/TeamService.html" target="_self" >TeamService</a></code>
+                                                                    <code>FormBuilder</code>
                                                         </td>
                                                   
                                                     <td>
@@ -449,10 +416,34 @@
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>router</td>
+                                                        <td>translateService</td>
                                                   
                                                         <td>
-                                                                    <code>Router</code>
+                                                                    <code>TranslateService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>messageService</td>
+                                                  
+                                                        <td>
+                                                                    <code>MessageService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>projectService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ProjectService.html" target="_self" >ProjectService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -475,32 +466,6 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="data"></a>
-                        <b>data</b>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../interfaces/Team.html" target="_self" >Team[]</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>undefined</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">src/app/shared/components/teams-table/teams-table.component.ts:87</a></div>
-                            </td>
-                        </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
                         <a name="enableAddAction"></a>
                         <b>enableAddAction</b>
                     </td>
@@ -518,7 +483,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="107" class="link-to-prism">src/app/shared/components/teams-table/teams-table.component.ts:107</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="102" class="link-to-prism">src/app/shared/components/debug-files-table/debug-files-table.component.ts:102</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -527,8 +492,8 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="enableDeleteAction"></a>
-                        <b>enableDeleteAction</b>
+                        <a name="enableEditAction"></a>
+                        <b>enableEditAction</b>
                     </td>
                 </tr>
                 <tr>
@@ -544,7 +509,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="110" class="link-to-prism">src/app/shared/components/teams-table/teams-table.component.ts:110</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="105" class="link-to-prism">src/app/shared/components/debug-files-table/debug-files-table.component.ts:105</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -570,7 +535,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="95" class="link-to-prism">src/app/shared/components/teams-table/teams-table.component.ts:95</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="96" class="link-to-prism">src/app/shared/components/debug-files-table/debug-files-table.component.ts:96</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -596,7 +561,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="101" class="link-to-prism">src/app/shared/components/teams-table/teams-table.component.ts:101</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="93" class="link-to-prism">src/app/shared/components/debug-files-table/debug-files-table.component.ts:93</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -622,7 +587,33 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="104" class="link-to-prism">src/app/shared/components/teams-table/teams-table.component.ts:104</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="90" class="link-to-prism">src/app/shared/components/debug-files-table/debug-files-table.component.ts:90</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="enableRemoveAction"></a>
+                        <b>enableRemoveAction</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="108" class="link-to-prism">src/app/shared/components/debug-files-table/debug-files-table.component.ts:108</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -648,7 +639,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="98" class="link-to-prism">src/app/shared/components/teams-table/teams-table.component.ts:98</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="99" class="link-to-prism">src/app/shared/components/debug-files-table/debug-files-table.component.ts:99</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -657,24 +648,19 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="isLoading"></a>
-                        <b>isLoading</b>
+                        <a name="project"></a>
+                        <b>project</b>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                        <i>Type : </i>        <code><a href="../interfaces/Project.html" target="_self" >Project</a></code>
 
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>true</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="92" class="link-to-prism">src/app/shared/components/teams-table/teams-table.component.ts:92</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">src/app/shared/components/debug-files-table/debug-files-table.component.ts:87</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -709,7 +695,7 @@
                     <tr>
                         <td class="col-md-4">
                             <div class="io-line">Defined in <a href="" data-line="137"
-                                    class="link-to-prism">src/app/shared/components/teams-table/teams-table.component.ts:137</a></div>
+                                    class="link-to-prism">src/app/shared/components/debug-files-table/debug-files-table.component.ts:137</a></div>
                         </td>
                     </tr>
 
@@ -771,26 +757,61 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="checkSlug"></a>
+                    <a name="createNewDebugFile"></a>
                     <span class="name">
-                            <span class="modifier">Private</span>
-                        <span ><b>checkSlug</b></span>
-                        <a href="#checkSlug"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>createNewDebugFile</b></span>
+                        <a href="#createNewDebugFile"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>checkSlug(slug: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>createNewDebugFile()</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="255"
-                                    class="link-to-prism">src/app/shared/components/teams-table/teams-table.component.ts:255</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="194"
+                                    class="link-to-prism">src/app/shared/components/debug-files-table/debug-files-table.component.ts:194</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="downloadFile"></a>
+                    <span class="name">
+                        <span ><b>downloadFile</b></span>
+                        <a href="#downloadFile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>downloadFile(file: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, fileUrl: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="247"
+                                    class="link-to-prism">src/app/shared/components/debug-files-table/debug-files-table.component.ts:247</a></div>
                         </td>
                     </tr>
 
@@ -811,7 +832,19 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                                <td>slug</td>
+                                                <td>file</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>fileUrl</td>
                                             <td>
                                                             <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                             </td>
@@ -840,24 +873,24 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="createNewTeam"></a>
+                    <a name="ngOnInit"></a>
                     <span class="name">
-                        <span ><b>createNewTeam</b></span>
-                        <a href="#createNewTeam"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>createNewTeam()</code>
+<code>ngOnInit()</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="167"
-                                    class="link-to-prism">src/app/shared/components/teams-table/teams-table.component.ts:167</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="131"
+                                    class="link-to-prism">src/app/shared/components/debug-files-table/debug-files-table.component.ts:131</a></div>
                         </td>
                     </tr>
 
@@ -877,98 +910,24 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="ngAfterViewInit"></a>
+                    <a name="onFilePicked"></a>
                     <span class="name">
-                        <span ><b>ngAfterViewInit</b></span>
-                        <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>onFilePicked</b></span>
+                        <a href="#onFilePicked"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>ngAfterViewInit()</code>
+<code>onFilePicked(event: Event)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="122"
-                                    class="link-to-prism">src/app/shared/components/teams-table/teams-table.component.ts:122</a></div>
-                        </td>
-                    </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                        <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                        </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="ngOnDestroy"></a>
-                    <span class="name">
-                        <span ><b>ngOnDestroy</b></span>
-                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>ngOnDestroy()</code>
-                </td>
-            </tr>
-
-
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="133"
-                                    class="link-to-prism">src/app/shared/components/teams-table/teams-table.component.ts:133</a></div>
-                        </td>
-                    </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                        <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                        </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="openSingleTeam"></a>
-                    <span class="name">
-                        <span ><b>openSingleTeam</b></span>
-                        <a href="#openSingleTeam"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>openSingleTeam(event: MouseEvent, team: <a href="../interfaces/Team.html" target="_self">Team</a>)</code>
-                </td>
-            </tr>
-
-
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="239"
-                                    class="link-to-prism">src/app/shared/components/teams-table/teams-table.component.ts:239</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="238"
+                                    class="link-to-prism">src/app/shared/components/debug-files-table/debug-files-table.component.ts:238</a></div>
                         </td>
                     </tr>
 
@@ -991,19 +950,7 @@
                                         <tr>
                                                 <td>event</td>
                                             <td>
-                                                        <code>MouseEvent</code>
-                                            </td>
-
-                                            <td>
-                                                    No
-                                            </td>
-
-
-                                        </tr>
-                                        <tr>
-                                                <td>team</td>
-                                            <td>
-                                                            <code><a href="../interfaces/Team.html" target="_self" >Team</a></code>
+                                                        <code>Event</code>
                                             </td>
 
                                             <td>
@@ -1030,24 +977,26 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="removeMember"></a>
+                    <a name="removeDebugFiles"></a>
                     <span class="name">
-                        <span ><b>removeMember</b></span>
-                        <a href="#removeMember"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier">Private</span>
+                        <span ><b>removeDebugFiles</b></span>
+                        <a href="#removeDebugFiles"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>removeMember(team: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>removeDebugFiles(ids: string[])</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="208"
-                                    class="link-to-prism">src/app/shared/components/teams-table/teams-table.component.ts:208</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="251"
+                                    class="link-to-prism">src/app/shared/components/debug-files-table/debug-files-table.component.ts:251</a></div>
                         </td>
                     </tr>
 
@@ -1068,9 +1017,9 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                                <td>team</td>
+                                                <td>ids</td>
                                             <td>
-                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        <code>string[]</code>
                                             </td>
 
                                             <td>
@@ -1097,26 +1046,26 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="resetTeamsForm"></a>
+                    <a name="resetDebugFilesForm"></a>
                     <span class="name">
                             <span class="modifier">Private</span>
-                        <span ><b>resetTeamsForm</b></span>
-                        <a href="#resetTeamsForm"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>resetDebugFilesForm</b></span>
+                        <a href="#resetDebugFilesForm"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>resetTeamsForm()</code>
+                    <code>resetDebugFilesForm()</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="249"
-                                    class="link-to-prism">src/app/shared/components/teams-table/teams-table.component.ts:249</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="289"
+                                    class="link-to-prism">src/app/shared/components/debug-files-table/debug-files-table.component.ts:289</a></div>
                         </td>
                     </tr>
 
@@ -1152,8 +1101,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="141"
-                                    class="link-to-prism">src/app/shared/components/teams-table/teams-table.component.ts:141</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="189"
+                                    class="link-to-prism">src/app/shared/components/debug-files-table/debug-files-table.component.ts:189</a></div>
                         </td>
                     </tr>
 
@@ -1182,15 +1131,15 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>showDeleteConfirmation(team: <a href="../interfaces/Team.html" target="_self">Team</a>, event: Event)</code>
+<code>showDeleteConfirmation(debugFileId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, event: Event)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="147"
-                                    class="link-to-prism">src/app/shared/components/teams-table/teams-table.component.ts:147</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="142"
+                                    class="link-to-prism">src/app/shared/components/debug-files-table/debug-files-table.component.ts:142</a></div>
                         </td>
                     </tr>
 
@@ -1211,9 +1160,9 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                                <td>team</td>
+                                                <td>debugFileId</td>
                                             <td>
-                                                            <code><a href="../interfaces/Team.html" target="_self" >Team</a></code>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                             </td>
 
                                             <td>
@@ -1252,24 +1201,24 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="toSlugValue"></a>
+                    <a name="showDeleteSelectionConfirmation"></a>
                     <span class="name">
-                        <span ><b>toSlugValue</b></span>
-                        <a href="#toSlugValue"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>showDeleteSelectionConfirmation</b></span>
+                        <a href="#showDeleteSelectionConfirmation"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>toSlugValue(slug: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>showDeleteSelectionConfirmation(event: Event)</code>
                 </td>
             </tr>
 
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="202"
-                                    class="link-to-prism">src/app/shared/components/teams-table/teams-table.component.ts:202</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="165"
+                                    class="link-to-prism">src/app/shared/components/debug-files-table/debug-files-table.component.ts:165</a></div>
                         </td>
                     </tr>
 
@@ -1290,9 +1239,9 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                                <td>slug</td>
+                                                <td>event</td>
                                             <td>
-                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        <code>Event</code>
                                             </td>
 
                                             <td>
@@ -1305,7 +1254,7 @@
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                         </div>
                             <div class="io-description">
@@ -1325,23 +1274,51 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="createNewTeamForm"></a>
+                    <a name="createDebugFileForm"></a>
                     <span class="name">
-                        <span ><b>createNewTeamForm</b></span>
-                        <a href="#createNewTeamForm"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>createDebugFileForm</b></span>
+                        <a href="#createDebugFileForm"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
                         <i>Default value : </i><code>this.formBuilder.group({
-    slug: [&#x27;&#x27;, [Validators.required]],
+    type: [DebugFileType.UNKNOWN, [Validators.required]],
+    file: [undefined, [Validators.required]],
   })</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="112" class="link-to-prism">src/app/shared/components/teams-table/teams-table.component.ts:112</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="110" class="link-to-prism">src/app/shared/components/debug-files-table/debug-files-table.component.ts:110</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="debugFiles"></a>
+                    <span class="name">
+                        <span ><b>debugFiles</b></span>
+                        <a href="#debugFiles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.store
+    .select(selectSingleProjectDebugFiles)
+    .pipe(map((files) &#x3D;&gt; [...(files ?? [])]))</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="117" class="link-to-prism">src/app/shared/components/debug-files-table/debug-files-table.component.ts:117</a></div>
                         </td>
                     </tr>
 
@@ -1377,7 +1354,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/app/shared/components/teams-table/teams-table.component.ts:85</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="84" class="link-to-prism">src/app/shared/components/debug-files-table/debug-files-table.component.ts:84</a></div>
                         </td>
                     </tr>
 
@@ -1388,10 +1365,37 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="isAddNewTeamDialogVisible"></a>
+                    <a name="hasReadPermission"></a>
                     <span class="name">
-                        <span ><b>isAddNewTeamDialogVisible</b></span>
-                        <a href="#isAddNewTeamDialogVisible"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>hasReadPermission</b></span>
+                        <a href="#hasReadPermission"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.store.select(
+    selectHasPermission(ResourceType.PROJECT, Permission.READ),
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="125" class="link-to-prism">src/app/shared/components/debug-files-table/debug-files-table.component.ts:125</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isAddNewDialogVisible"></a>
+                    <span class="name">
+                        <span ><b>isAddNewDialogVisible</b></span>
+                        <a href="#isAddNewDialogVisible"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -1408,7 +1412,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="115" class="link-to-prism">src/app/shared/components/teams-table/teams-table.component.ts:115</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="114" class="link-to-prism">src/app/shared/components/debug-files-table/debug-files-table.component.ts:114</a></div>
                         </td>
                     </tr>
 
@@ -1419,21 +1423,21 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="isLoadingCreateNewTeam"></a>
+                    <a name="isLoadingCreateNew"></a>
                     <span class="name">
-                        <span ><b>isLoadingCreateNewTeam</b></span>
-                        <a href="#isLoadingCreateNewTeam"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>isLoadingCreateNew</b></span>
+                        <a href="#isLoadingCreateNew"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>this.store.select(isLoadingCreateNewTeam)</code>
+                        <i>Default value : </i><code>this.store.select(isLoadingSingleProjectAddDebugFile)</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="117" class="link-to-prism">src/app/shared/components/teams-table/teams-table.component.ts:117</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="121" class="link-to-prism">src/app/shared/components/debug-files-table/debug-files-table.component.ts:121</a></div>
                         </td>
                     </tr>
 
@@ -1444,21 +1448,21 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="isLoadingDeleteTeam"></a>
+                    <a name="isLoadingDebugFiles"></a>
                     <span class="name">
-                        <span ><b>isLoadingDeleteTeam</b></span>
-                        <a href="#isLoadingDeleteTeam"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>isLoadingDebugFiles</b></span>
+                        <a href="#isLoadingDebugFiles"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>this.store.select(isLoadingDeleteTeam)</code>
+                        <i>Default value : </i><code>this.store.select(isLoadingSingleProjectDebugFiles)</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="118" class="link-to-prism">src/app/shared/components/teams-table/teams-table.component.ts:118</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="120" class="link-to-prism">src/app/shared/components/debug-files-table/debug-files-table.component.ts:120</a></div>
                         </td>
                     </tr>
 
@@ -1469,27 +1473,23 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="isSlugTaken"></a>
+                    <a name="isLoadingRemoveDebugFiles"></a>
                     <span class="name">
-                        <span ><b>isSlugTaken</b></span>
-                        <a href="#isSlugTaken"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>isLoadingRemoveDebugFiles</b></span>
+                        <a href="#isLoadingRemoveDebugFiles"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>    <code>boolean | null</code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>null</code>
+                        <i>Default value : </i><code>this.store.select(
+    isLoadingSingleProjectRemoveDebugFiles,
+  )</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="116" class="link-to-prism">src/app/shared/components/teams-table/teams-table.component.ts:116</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="122" class="link-to-prism">src/app/shared/components/debug-files-table/debug-files-table.component.ts:122</a></div>
                         </td>
                     </tr>
 
@@ -1500,24 +1500,17 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="slugCheckSubscription"></a>
+                    <a name="platformId"></a>
                     <span class="name">
                             <span class="modifier">Private</span>
-                            <span class="modifier">Optional</span>
-                        <span ><b>slugCheckSubscription</b></span>
-                        <a href="#slugCheckSubscription"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>platformId</b></span>
+                        <a href="#platformId"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>    <code>Subscription</code>
-
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="120" class="link-to-prism">src/app/shared/components/teams-table/teams-table.component.ts:120</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/app/shared/components/debug-files-table/debug-files-table.component.ts:72</a></div>
                         </td>
                     </tr>
 
@@ -1528,32 +1521,52 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="slugInput"></a>
+                    <a name="selectedDebugFiles"></a>
                     <span class="name">
-                            <span class="modifier"></span>
-                        <span ><b>slugInput</b></span>
-                        <a href="#slugInput"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>selectedDebugFiles</b></span>
+                        <a href="#selectedDebugFiles"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>    <code>ElementRef</code>
+                        <i>Type : </i>    <code>ProjectDebugFile[]</code>
 
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <b>Decorators : </b>
-                        <br />
-                        <code>
-                            @ViewChild(&#x27;slug&#x27;)<br />
-                        </code>
+                        <i>Default value : </i><code>[]</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="89" class="link-to-prism">src/app/shared/components/teams-table/teams-table.component.ts:89</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="116" class="link-to-prism">src/app/shared/components/debug-files-table/debug-files-table.component.ts:116</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="types"></a>
+                    <span class="name">
+                        <span ><b>types</b></span>
+                        <a href="#types"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>Object.values(DebugFileType)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="129" class="link-to-prism">src/app/shared/components/debug-files-table/debug-files-table.component.ts:129</a></div>
                         </td>
                     </tr>
 
@@ -1567,97 +1580,98 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { CommonModule } from &#x27;@angular/common&#x27;;
+import { Component, Input, OnInit, PLATFORM_ID, ViewChild, inject } from &#x27;@angular/core&#x27;;
 import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  Input,
-  OnDestroy,
-  ViewChild,
-} from &#x27;@angular/core&#x27;;
-import {
-  FormBuilder,
-  FormsModule,
   ReactiveFormsModule,
+  FormsModule,
+  FormBuilder,
   Validators,
 } from &#x27;@angular/forms&#x27;;
 import { TranslateModule, TranslateService } from &#x27;@ngx-translate/core&#x27;;
-import { ConfirmationService, MessageService } from &#x27;primeng/api&#x27;;
-import { AvatarModule } from &#x27;primeng/avatar&#x27;;
+import { MessageService, ConfirmationService } from &#x27;primeng/api&#x27;;
 import { ButtonModule } from &#x27;primeng/button&#x27;;
 import { ConfirmDialogModule } from &#x27;primeng/confirmdialog&#x27;;
 import { DialogModule } from &#x27;primeng/dialog&#x27;;
-import { DropdownModule } from &#x27;primeng/dropdown&#x27;;
 import { InputTextModule } from &#x27;primeng/inputtext&#x27;;
 import { RippleModule } from &#x27;primeng/ripple&#x27;;
 import { Table, TableModule } from &#x27;primeng/table&#x27;;
 import { ToastModule } from &#x27;primeng/toast&#x27;;
-import { Team } from &#x27;../../../core/domain/models/team.entity&#x27;;
-import { AppState } from &#x27;../../../core/state/app.state&#x27;;
+import { AccessDeniedComponent } from &#x27;../access-denied/access-denied.component&#x27;;
 import { Store } from &#x27;@ngrx/store&#x27;;
+import { AppState } from &#x27;../../../core/state/app.state&#x27;;
+import { Project } from &#x27;../../../core/domain/models/project.entity&#x27;;
+import { ProjectDebugFile } from &#x27;../../../core/domain/models/project-debug-file.entity&#x27;;
 import {
-  isLoadingCreateNewTeam,
-  isLoadingDeleteTeam,
-  selectCreateNewTeamStatus,
-  selectDeleteTeamStatus,
-} from &#x27;../../../core/state/team/team.selectors&#x27;;
+  isLoadingSingleProjectAddDebugFile,
+  isLoadingSingleProjectDebugFiles,
+  isLoadingSingleProjectRemoveDebugFiles,
+  selectAddProjectDebugFileStatus,
+  selectRemoveProjectDebugFilesStatus,
+  selectSingleProjectDebugFiles,
+} from &#x27;../../../core/state/single-project/single-project.selectors&#x27;;
+import { filter, map, take } from &#x27;rxjs&#x27;;
+import { selectHasPermission } from &#x27;../../../core/state/auth/auth.selectors&#x27;;
+import { ResourceType } from &#x27;../../../core/domain/models/enums/resource-type.enum&#x27;;
+import { Permission } from &#x27;../../../core/domain/models/enums/permission.enum&#x27;;
 import {
-  Subscription,
-  debounceTime,
-  distinctUntilChanged,
-  filter,
-  fromEvent,
-  map,
-  take,
-} from &#x27;rxjs&#x27;;
+  addProjectDebugFile,
+  loadProjectDebugFiles,
+  removeProjectDebugFiles,
+} from &#x27;../../../core/state/single-project/single-project.actions&#x27;;
 import { StateStatus } from &#x27;../../../core/domain/models/enums/state-status.enum&#x27;;
-import { createTeam, deleteTeam } from &#x27;../../../core/state/team/team.actions&#x27;;
-import { TeamService } from &#x27;../../../core/services/api/team.api.service&#x27;;
-import { CalendarModule } from &#x27;primeng/calendar&#x27;;
-import { Router } from &#x27;@angular/router&#x27;;
+import { DebugFileType } from &#x27;../../../core/domain/models/enums/debug-file-type.enum&#x27;;
+import { CreateProjectDebugFileDto } from &#x27;../../../core/domain/dto/requests/create-project-debug-file.dto&#x27;;
+import { DropdownModule } from &#x27;primeng/dropdown&#x27;;
+import { InputGroupModule } from &#x27;primeng/inputgroup&#x27;;
+import { ProjectService } from &#x27;../../../core/services/api/project.api.service&#x27;;
+import { saveAs } from &#x27;file-saver&#x27;;
 
 @Component({
-  selector: &#x27;app-teams-table&#x27;,
+  selector: &#x27;app-debug-files-table&#x27;,
   standalone: true,
   imports: [
     CommonModule,
-    ToastModule,
-    ConfirmDialogModule,
-    TableModule,
     TranslateModule,
     ButtonModule,
     RippleModule,
-    InputTextModule,
-    AvatarModule,
+    ToastModule,
+    ConfirmDialogModule,
     DialogModule,
-    DropdownModule,
-    FormsModule,
+    TableModule,
+    InputTextModule,
     ReactiveFormsModule,
-    CalendarModule,
+    FormsModule,
+    AccessDeniedComponent,
+    DropdownModule,
+    InputGroupModule,
   ],
   providers: [MessageService, ConfirmationService],
-  templateUrl: &#x27;./teams-table.component.html&#x27;,
-  styleUrl: &#x27;./teams-table.component.scss&#x27;,
+  templateUrl: &#x27;./debug-files-table.component.html&#x27;,
+  styleUrl: &#x27;./debug-files-table.component.scss&#x27;,
 })
-export class TeamsTableComponent implements AfterViewInit, OnDestroy {
+export class DebugFilesTableComponent implements OnInit {
+  private platformId;
   constructor(
-    private formBuilder: FormBuilder,
     private store: Store&lt;AppState&gt;,
-    private messageService: MessageService,
-    private translateService: TranslateService,
-    private teamService: TeamService,
+    private formBuilder: FormBuilder,
     private confirmationService: ConfirmationService,
-    private router: Router,
-  ) {}
+    private translateService: TranslateService,
+    private messageService: MessageService,
+    private projectService: ProjectService,
+  ) {
+    this.platformId &#x3D; inject(PLATFORM_ID);
+  }
 
   @ViewChild(&#x27;dt&#x27;) dt: Table | undefined;
-  @Input()
-  data?: Team[] &#x3D; undefined;
-
-  @ViewChild(&#x27;slug&#x27;) slugInput!: ElementRef;
 
   @Input()
-  isLoading: boolean &#x3D; true;
+  project?: Project;
+
+  @Input()
+  enablePagination: boolean &#x3D; true;
+
+  @Input()
+  enableGlobalSearch: boolean &#x3D; true;
 
   @Input()
   enableFiltering: boolean &#x3D; true;
@@ -1666,59 +1680,55 @@ export class TeamsTableComponent implements AfterViewInit, OnDestroy {
   enableSorting: boolean &#x3D; true;
 
   @Input()
-  enableGlobalSearch: boolean &#x3D; true;
-
-  @Input()
-  enablePagination: boolean &#x3D; true;
-
-  @Input()
   enableAddAction: boolean &#x3D; false;
 
   @Input()
-  enableDeleteAction: boolean &#x3D; false;
+  enableEditAction: boolean &#x3D; false;
 
-  createNewTeamForm &#x3D; this.formBuilder.group({
-    slug: [&#x27;&#x27;, [Validators.required]],
+  @Input()
+  enableRemoveAction: boolean &#x3D; false;
+
+  createDebugFileForm &#x3D; this.formBuilder.group({
+    type: [DebugFileType.UNKNOWN, [Validators.required]],
+    file: [undefined, [Validators.required]],
   });
-  isAddNewTeamDialogVisible: boolean &#x3D; false;
-  isSlugTaken: boolean | null &#x3D; null;
-  isLoadingCreateNewTeam &#x3D; this.store.select(isLoadingCreateNewTeam);
-  isLoadingDeleteTeam &#x3D; this.store.select(isLoadingDeleteTeam);
+  isAddNewDialogVisible: boolean &#x3D; false;
 
-  private slugCheckSubscription?: Subscription;
+  selectedDebugFiles: ProjectDebugFile[] &#x3D; [];
+  debugFiles &#x3D; this.store
+    .select(selectSingleProjectDebugFiles)
+    .pipe(map((files) &#x3D;&gt; [...(files ?? [])]));
+  isLoadingDebugFiles &#x3D; this.store.select(isLoadingSingleProjectDebugFiles);
+  isLoadingCreateNew &#x3D; this.store.select(isLoadingSingleProjectAddDebugFile);
+  isLoadingRemoveDebugFiles &#x3D; this.store.select(
+    isLoadingSingleProjectRemoveDebugFiles,
+  );
+  hasReadPermission &#x3D; this.store.select(
+    selectHasPermission(ResourceType.PROJECT, Permission.READ),
+  );
 
-  ngAfterViewInit(): void {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    fromEvent&lt;any&gt;(this.slugInput.nativeElement, &#x27;input&#x27;)
-      .pipe(
-        map((event: Event) &#x3D;&gt; (event.target as HTMLInputElement).value),
-        debounceTime(500),
-        distinctUntilChanged(),
-      )
-      .subscribe((data) &#x3D;&gt; this.checkSlug(data));
-  }
+  types &#x3D; Object.values(DebugFileType);
 
-  ngOnDestroy() {
-    this.slugCheckSubscription?.unsubscribe();
+  ngOnInit(): void {
+    this.store.dispatch(
+      loadProjectDebugFiles({ projectId: this.project?.projectId ?? &#x27;&#x27; }),
+    );
   }
 
   applyFilterGlobal($event: Event, stringVal: string) {
     this.dt?.filterGlobal(($event.target as HTMLInputElement).value, stringVal);
   }
 
-  showAddDialog() {
-    this.resetTeamsForm();
-    this.isAddNewTeamDialogVisible &#x3D; true;
-  }
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  showDeleteConfirmation(team: Team, event: Event) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  showDeleteConfirmation(debugFileId: string, event: Event) {
     this.confirmationService.confirm({
       target: event.target as EventTarget,
       message: this.translateService.instant(
-        &#x27;teams-table.delete_confirmation_message&#x27;,
+        &#x27;debug-files-table.delete_confirmation_message&#x27;,
       ),
-      header: this.translateService.instant(&#x27;teams-table.delete_confirmation&#x27;),
+      header: this.translateService.instant(
+        &#x27;debug-files-table.delete_confirmation&#x27;,
+      ),
       icon: &#x27;pi pi-info-circle&#x27;,
       acceptButtonStyleClass: &#x27;p-button-danger p-button-text&#x27;,
       rejectButtonStyleClass: &#x27;p-button-text p-button-text&#x27;,
@@ -1726,109 +1736,141 @@ export class TeamsTableComponent implements AfterViewInit, OnDestroy {
       rejectIcon: &#x27;none&#x27;,
 
       accept: () &#x3D;&gt; {
-        this.removeMember(team);
+        this.removeDebugFiles([debugFileId]);
       },
       reject: () &#x3D;&gt; {},
     });
   }
 
-  createNewTeam() {
-    this.store
-      .select(selectCreateNewTeamStatus)
-      .pipe(
-        filter(
-          (status) &#x3D;&gt;
-            status &#x3D;&#x3D; StateStatus.ERROR || status &#x3D;&#x3D; StateStatus.SUCCESS,
-        ),
-        take(1), // unsubscribe after one emitted value
-      )
-      .subscribe((status) &#x3D;&gt; {
-        if (status &amp;&amp; status &#x3D;&#x3D; StateStatus.ERROR) {
-          this.messageService.add({
-            severity: &#x27;error&#x27;,
-            summary: this.translateService.instant(&#x27;teams-table.error&#x27;),
-            detail: this.translateService.instant(
-              &#x27;teams-table.failed_to_create_team&#x27;,
-            ),
-          });
-        } else if (status &amp;&amp; status &#x3D;&#x3D; StateStatus.SUCCESS) {
-          this.messageService.add({
-            severity: &#x27;success&#x27;,
-            summary: this.translateService.instant(&#x27;teams-table.success&#x27;),
-            detail: this.translateService.instant(&#x27;teams-table.team_created&#x27;),
-          });
-          this.isAddNewTeamDialogVisible &#x3D; !this.isAddNewTeamDialogVisible;
-        }
-      });
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  showDeleteSelectionConfirmation(event: Event) {
+    this.confirmationService.confirm({
+      target: event.target as EventTarget,
+      message: this.translateService.instant(
+        &#x27;debug-files-table.delete_confirmation_message&#x27;,
+      ),
+      header: this.translateService.instant(
+        &#x27;debug-files-table.delete_confirmation&#x27;,
+      ),
+      icon: &#x27;pi pi-info-circle&#x27;,
+      acceptButtonStyleClass: &#x27;p-button-danger p-button-text&#x27;,
+      rejectButtonStyleClass: &#x27;p-button-text p-button-text&#x27;,
+      acceptIcon: &#x27;none&#x27;,
+      rejectIcon: &#x27;none&#x27;,
 
-    const dto &#x3D; {
-      slug: this.createNewTeamForm.get(&#x27;slug&#x27;)?.value ?? &#x27;&#x27;,
-    };
-    this.store.dispatch(createTeam(dto));
-  }
-
-  toSlugValue(slug: string): string {
-    const result &#x3D; slug.toLowerCase().replaceAll(&#x27; &#x27;, &#x27;-&#x27;);
-    return result;
-  }
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  removeMember(team: any) {
-    this.store
-      .select(selectDeleteTeamStatus)
-      .pipe(
-        filter(
-          (status) &#x3D;&gt;
-            status &#x3D;&#x3D; StateStatus.ERROR || status &#x3D;&#x3D; StateStatus.SUCCESS,
-        ),
-        take(1), // unsubscribe after one emitted value
-      )
-      .subscribe((status) &#x3D;&gt; {
-        if (status &amp;&amp; status &#x3D;&#x3D; StateStatus.ERROR) {
-          this.messageService.add({
-            severity: &#x27;error&#x27;,
-            summary: this.translateService.instant(&#x27;teams-table.error&#x27;),
-            detail: this.translateService.instant(
-              &#x27;teams-table.failed_to_delete_team&#x27;,
-            ),
-          });
-        } else if (status &amp;&amp; status &#x3D;&#x3D; StateStatus.SUCCESS) {
-          this.messageService.add({
-            severity: &#x27;success&#x27;,
-            summary: this.translateService.instant(&#x27;teams-table.success&#x27;),
-            detail: this.translateService.instant(&#x27;teams-table.removed_team&#x27;),
-          });
-        }
-      });
-
-    this.store.dispatch(deleteTeam({ teamId: team.teamId }));
-  }
-
-  openSingleTeam(event: MouseEvent, team: Team) {
-    const isDeleteButtonClicked &#x3D; (event.target as HTMLElement).closest(
-      &#x27;.p-button&#x27;,
-    );
-
-    if (!isDeleteButtonClicked) {
-      this.router.navigate([&#x60;/home/settings/teams/${team.teamId}&#x60;]);
-    }
-  }
-
-  private resetTeamsForm() {
-    this.createNewTeamForm &#x3D; this.formBuilder.group({
-      slug: [&#x27;&#x27;, [Validators.required]],
+      accept: () &#x3D;&gt; {
+        this.removeDebugFiles(
+          this.selectedDebugFiles.map((value) &#x3D;&gt; value.debugFileId),
+        );
+      },
+      reject: () &#x3D;&gt; {},
     });
   }
 
-  private checkSlug(slug: string) {
-    this.slugCheckSubscription?.unsubscribe();
-    this.slugCheckSubscription &#x3D; this.teamService.isSlugTaken(slug).subscribe({
-      next: (result) &#x3D;&gt; {
-        this.isSlugTaken &#x3D; result;
-      },
-      error: () &#x3D;&gt; {
-        this.isSlugTaken &#x3D; null;
-      },
+  showAddDialog() {
+    this.resetDebugFilesForm();
+    this.isAddNewDialogVisible &#x3D; true;
+  }
+
+  createNewDebugFile() {
+    const dto: CreateProjectDebugFileDto &#x3D; {
+      type:
+        this.createDebugFileForm.get(&#x27;type&#x27;)?.value ?? DebugFileType.UNKNOWN,
+      // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
+      file: this.createDebugFileForm.get(&#x27;file&#x27;)?.value!,
+    };
+    this.store.dispatch(
+      addProjectDebugFile({
+        projectId: this.project?.projectId ?? &#x27;&#x27;,
+        dto: dto,
+      }),
+    );
+    this.store
+      .select(selectAddProjectDebugFileStatus)
+      .pipe(
+        filter(
+          (status) &#x3D;&gt;
+            status &#x3D;&#x3D; StateStatus.ERROR || status &#x3D;&#x3D; StateStatus.SUCCESS,
+        ),
+        take(1), // unsubscribe after one emitted value
+      )
+      .subscribe((status) &#x3D;&gt; {
+        if (status &amp;&amp; status &#x3D;&#x3D; StateStatus.ERROR) {
+          this.messageService.add({
+            severity: &#x27;error&#x27;,
+            summary: this.translateService.instant(&#x27;debug-files-table.error&#x27;),
+            detail: this.translateService.instant(
+              &#x27;debug-files-table.failed_to_create_file&#x27;,
+            ),
+          });
+        } else if (status &amp;&amp; status &#x3D;&#x3D; StateStatus.SUCCESS) {
+          this.messageService.add({
+            severity: &#x27;success&#x27;,
+            summary: this.translateService.instant(&#x27;debug-files-table.success&#x27;),
+            detail: this.translateService.instant(
+              &#x27;debug-files-table.file_created&#x27;,
+            ),
+          });
+          this.isAddNewDialogVisible &#x3D; !this.isAddNewDialogVisible;
+        }
+      });
+  }
+
+  onFilePicked(event: Event) {
+    const inputElement &#x3D; event.target as HTMLInputElement;
+    if (inputElement.files &amp;&amp; inputElement.files.length &gt; 0) {
+      const file &#x3D; inputElement.files[0];
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (this.createDebugFileForm.get(&#x27;file&#x27;) as any)?.setValue(file);
+    }
+  }
+
+  downloadFile(file: string, fileUrl: string) {
+    this.projectService.downloadFile(fileUrl).subscribe((blob) &#x3D;&gt; saveAs(blob, file))
+  }
+
+  private removeDebugFiles(ids: string[]) {
+    this.store.dispatch(
+      removeProjectDebugFiles({
+        projectId: this.project?.projectId ?? &#x27;&#x27;,
+        ids: ids,
+      }),
+    );
+    this.store
+      .select(selectRemoveProjectDebugFilesStatus)
+      .pipe(
+        filter(
+          (status) &#x3D;&gt;
+            status &#x3D;&#x3D; StateStatus.ERROR || status &#x3D;&#x3D; StateStatus.SUCCESS,
+        ),
+        take(1), // unsubscribe after one emitted value
+      )
+      .subscribe((status) &#x3D;&gt; {
+        if (status &amp;&amp; status &#x3D;&#x3D; StateStatus.ERROR) {
+          this.messageService.add({
+            severity: &#x27;error&#x27;,
+            summary: this.translateService.instant(&#x27;debug-files-table.error&#x27;),
+            detail: this.translateService.instant(
+              &#x27;debug-files-table.failed_to_delete_files&#x27;,
+            ),
+          });
+        } else if (status &amp;&amp; status &#x3D;&#x3D; StateStatus.SUCCESS) {
+          this.messageService.add({
+            severity: &#x27;success&#x27;,
+            summary: this.translateService.instant(&#x27;debug-files-table.success&#x27;),
+            detail: this.translateService.instant(
+              &#x27;debug-files-table.removed_files&#x27;,
+            ),
+          });
+          this.selectedDebugFiles &#x3D; [];
+        }
+      });
+  }
+
+  private resetDebugFilesForm() {
+    this.createDebugFileForm &#x3D; this.formBuilder.group({
+      type: [DebugFileType.UNKNOWN, [Validators.required]],
+      file: [undefined, [Validators.required]],
     });
   }
 }
@@ -1838,187 +1880,245 @@ export class TeamsTableComponent implements AfterViewInit, OnDestroy {
     <div class="tab-pane fade " id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;p-toast /&gt;
 &lt;p-confirmDialog /&gt;
-&lt;p-table
-  #dt
-  [value]&#x3D;&quot;data ?? []&quot;
-  dataKey&#x3D;&quot;teamId&quot;
-  [rowHover]&#x3D;&quot;true&quot;
-  [rows]&#x3D;&quot;10&quot;
-  [showCurrentPageReport]&#x3D;&quot;enablePagination&quot;
-  [rowsPerPageOptions]&#x3D;&quot;[10, 25, 50]&quot;
-  [loading]&#x3D;&quot;isLoading&quot;
-  [paginator]&#x3D;&quot;enablePagination&quot;
-  [currentPageReportTemplate]&#x3D;&quot;&#x27;table.pagination_template&#x27; | translate&quot;
-  [filterDelay]&#x3D;&quot;0&quot;
-  [globalFilterFields]&#x3D;&quot;[&#x27;slug&#x27;]&quot;
-&gt;
-  &lt;ng-template
-    pTemplate&#x3D;&quot;caption&quot;
-    *ngIf&#x3D;&quot;enableGlobalSearch || enableAddAction&quot;
+@if ((hasReadPermission | async) &#x3D;&#x3D;&#x3D; false) {
+  &lt;app-access-denied /&gt;
+} @else {
+  &lt;p-table
+    #dt
+    [value]&#x3D;&quot;(debugFiles | async) ?? []&quot;
+    dataKey&#x3D;&quot;debugFileId&quot;
+    [rowHover]&#x3D;&quot;true&quot;
+    [rows]&#x3D;&quot;10&quot;
+    [(selection)]&#x3D;&quot;selectedDebugFiles&quot;
+    [showCurrentPageReport]&#x3D;&quot;enablePagination&quot;
+    [rowsPerPageOptions]&#x3D;&quot;[10, 25, 50]&quot;
+    [loading]&#x3D;&quot;(isLoadingDebugFiles | async) &#x3D;&#x3D;&#x3D; true&quot;
+    [paginator]&#x3D;&quot;enablePagination&quot;
+    [currentPageReportTemplate]&#x3D;&quot;&#x27;table.pagination_template&#x27; | translate&quot;
+    [filterDelay]&#x3D;&quot;0&quot;
+    [globalFilterFields]&#x3D;&quot;[&#x27;debugFileId&#x27;, &#x27;type&#x27;]&quot;
   &gt;
-    &lt;div class&#x3D;&quot;table-header w-full flex&quot;&gt;
-      &lt;span class&#x3D;&quot;p-input-icon-left w-full&quot;&gt;
-        &lt;i class&#x3D;&quot;pi pi-search&quot;&gt;&lt;/i&gt;
-        &lt;input
-          class&#x3D;&quot;w-full&quot;
-          pInputText
-          type&#x3D;&quot;text&quot;
-          (input)&#x3D;&quot;applyFilterGlobal($event, &#x27;contains&#x27;)&quot;
-          [placeholder]&#x3D;&quot;&#x27;table.search&#x27; | translate&quot;
-        /&gt;
-      &lt;/span&gt;
-      &lt;p-button
-        *ngIf&#x3D;&quot;enableAddAction&quot;
-        pRipple
-        styleClass&#x3D;&quot;mr-4 ml-4 w-10rem&quot;
-        severity&#x3D;&quot;success&quot;
-        icon&#x3D;&quot;pi pi-plus&quot;
-        (onClick)&#x3D;&quot;showAddDialog()&quot;
-        [label]&#x3D;&quot;&#x27;teams-table.new_team&#x27; | translate&quot;
-        iconPos&#x3D;&quot;left&quot;
-      /&gt;
-    &lt;/div&gt;
-  &lt;/ng-template&gt;
-  &lt;ng-template pTemplate&#x3D;&quot;header&quot;&gt;
-    &lt;tr&gt;
-      &lt;th pSortableColumn&#x3D;&quot;slug&quot; style&#x3D;&quot;min-width: 14rem&quot;&gt;
-        &lt;div class&#x3D;&quot;flex justify-content-between align-items-center&quot;&gt;
-          {{ &quot;teams-table.slug&quot; | translate }}
-          &lt;p-sortIcon field&#x3D;&quot;slug&quot; *ngIf&#x3D;&quot;enableSorting&quot; /&gt;
-          &lt;p-columnFilter
+    &lt;ng-template
+      pTemplate&#x3D;&quot;caption&quot;
+      *ngIf&#x3D;&quot;enableGlobalSearch || enableAddAction || enableRemoveAction&quot;
+    &gt;
+      &lt;div class&#x3D;&quot;table-header w-full flex gap-4&quot;&gt;
+        &lt;span class&#x3D;&quot;p-input-icon-left flex-grow-1&quot;&gt;
+          &lt;i class&#x3D;&quot;pi pi-search&quot;&gt;&lt;/i&gt;
+          &lt;input
+            class&#x3D;&quot;w-full&quot;
+            pInputText
             type&#x3D;&quot;text&quot;
-            field&#x3D;&quot;slug&quot;
-            display&#x3D;&quot;menu&quot;
-            class&#x3D;&quot;ml-auto&quot;
-            *ngIf&#x3D;&quot;enableFiltering&quot;
+            (input)&#x3D;&quot;applyFilterGlobal($event, &#x27;contains&#x27;)&quot;
+            [placeholder]&#x3D;&quot;&#x27;table.search&#x27; | translate&quot;
           /&gt;
-        &lt;/div&gt;
-      &lt;/th&gt;
-      &lt;th pSortableColumn&#x3D;&quot;createdAt&quot; class&#x3D;&quot;w-14rem&quot;&gt;
-        &lt;div class&#x3D;&quot;flex justify-content-between align-items-center&quot;&gt;
-          {{ &quot;teams-table.added_on&quot; | translate }}
-          &lt;p-sortIcon field&#x3D;&quot;createdAt&quot; *ngIf&#x3D;&quot;enableSorting&quot; /&gt;
-          &lt;p-columnFilter
-            type&#x3D;&quot;date&quot;
-            field&#x3D;&quot;createdAt&quot;
-            display&#x3D;&quot;menu&quot;
-            class&#x3D;&quot;ml-auto&quot;
-            *ngIf&#x3D;&quot;enableFiltering&quot;
-          &gt;
-            &lt;ng-template
-              pTemplate&#x3D;&quot;filter&quot;
-              let-value
-              let-filter&#x3D;&quot;filterCallback&quot;
-            &gt;
-              &lt;p-calendar
-                #calendar
-                [ngModel]&#x3D;&quot;value&quot;
-                (onSelect)&#x3D;&quot;filter(calendar.value)&quot;
-                dateFormat&#x3D;&quot;M dd, yy&quot;
-              &gt;&lt;/p-calendar&gt;
-            &lt;/ng-template&gt;
-          &lt;/p-columnFilter&gt;
-        &lt;/div&gt;
-      &lt;/th&gt;
-      &lt;th style&#x3D;&quot;width: 8rem&quot; *ngIf&#x3D;&quot;enableDeleteAction&quot;&gt;
-        &lt;div class&#x3D;&quot;flex justify-content-center align-items-center&quot;&gt;
-          {{ &quot;teams-table.actions&quot; | translate }}
-        &lt;/div&gt;
-      &lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/ng-template&gt;
-  &lt;ng-template pTemplate&#x3D;&quot;body&quot; let-team &gt;
-    &lt;tr class&#x3D;&quot;p-selectable-row&quot; (click)&#x3D;&quot;openSingleTeam($event, team)&quot;&gt;
-      &lt;td&gt;
-        {{ team?.slug }}
-      &lt;/td&gt;
-      &lt;td&gt;
-        {{ team?.createdAt | date }}
-      &lt;/td&gt;
-      &lt;td style&#x3D;&quot;text-align: center&quot; *ngIf&#x3D;&quot;enableDeleteAction&quot;&gt;
+        &lt;/span&gt;
         &lt;p-button
+          *ngIf&#x3D;&quot;enableAddAction&quot;
           pRipple
-          [disabled]&#x3D;&quot;!enableDeleteAction&quot;
-          severity&#x3D;&quot;danger&quot;
-          icon&#x3D;&quot;pi pi-minus&quot;
-          [label]&#x3D;&quot;&#x27;teams-table.delete&#x27; | translate&quot;
+          styleClass&#x3D;&quot;&quot;
+          severity&#x3D;&quot;success&quot;
+          icon&#x3D;&quot;pi pi-plus&quot;
+          (onClick)&#x3D;&quot;showAddDialog()&quot;
+          [label]&#x3D;&quot;&#x27;debug-files-table.new_file&#x27; | translate&quot;
           iconPos&#x3D;&quot;left&quot;
-          [loading]&#x3D;&quot;(isLoadingDeleteTeam | async) ?? false&quot;
-          (onClick)&#x3D;&quot;showDeleteConfirmation(team, $event)&quot;
         /&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/ng-template&gt;
-  &lt;ng-template pTemplate&#x3D;&quot;emptymessage&quot;&gt;
-    &lt;tr&gt;
-      &lt;td colspan&#x3D;&quot;3&quot;&gt;{{ &quot;teams-table.no_teams_found&quot; | translate }}&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/ng-template&gt;
-&lt;/p-table&gt;
+        &lt;p-button
+          *ngIf&#x3D;&quot;enableAddAction&quot;
+          pRipple
+          styleClass&#x3D;&quot;&quot;
+          severity&#x3D;&quot;danger&quot;
+          [disabled]&#x3D;&quot;!selectedDebugFiles || selectedDebugFiles.length &#x3D;&#x3D;&#x3D; 0&quot;
+          icon&#x3D;&quot;pi pi-trash&quot;
+          (onClick)&#x3D;&quot;showDeleteSelectionConfirmation($event)&quot;
+          [label]&#x3D;&quot;&#x27;debug-files-table.delete_files&#x27; | translate&quot;
+          iconPos&#x3D;&quot;left&quot;
+        /&gt;
+      &lt;/div&gt;
+    &lt;/ng-template&gt;
+
+    &lt;ng-template pTemplate&#x3D;&quot;header&quot;&gt;
+      &lt;tr&gt;
+        &lt;th style&#x3D;&quot;width: 4rem&quot;&gt;
+          &lt;p-tableHeaderCheckbox&gt;&lt;/p-tableHeaderCheckbox&gt;
+        &lt;/th&gt;
+        &lt;th pSortableColumn&#x3D;&quot;id&quot; style&#x3D;&quot;width: 14rem&quot;&gt;
+          &lt;div class&#x3D;&quot;flex justify-content-between align-items-center&quot;&gt;
+            {{ &quot;debug-files-table.id&quot; | translate }}
+            &lt;p-sortIcon field&#x3D;&quot;debugFileId&quot; *ngIf&#x3D;&quot;enableSorting&quot; /&gt;
+            &lt;p-columnFilter
+              type&#x3D;&quot;text&quot;
+              field&#x3D;&quot;debugFileId&quot;
+              display&#x3D;&quot;menu&quot;
+              class&#x3D;&quot;ml-auto&quot;
+              *ngIf&#x3D;&quot;enableFiltering&quot;
+            /&gt;
+          &lt;/div&gt;
+        &lt;/th&gt;
+        &lt;th pSortableColumn&#x3D;&quot;type&quot; style&#x3D;&quot;min-width: 14rem&quot;&gt;
+          &lt;div class&#x3D;&quot;flex justify-content-between align-items-center&quot;&gt;
+            {{ &quot;debug-files-table.type&quot; | translate }}
+            &lt;p-sortIcon field&#x3D;&quot;type&quot; *ngIf&#x3D;&quot;enableSorting&quot; /&gt;
+            &lt;p-columnFilter
+              type&#x3D;&quot;text&quot;
+              field&#x3D;&quot;type&quot;
+              display&#x3D;&quot;menu&quot;
+              class&#x3D;&quot;ml-auto&quot;
+              *ngIf&#x3D;&quot;enableFiltering&quot;
+            /&gt;
+          &lt;/div&gt;
+        &lt;/th&gt;
+        &lt;th pSortableColumn&#x3D;&quot;createdAt&quot; style&#x3D;&quot;min-width: 14rem&quot;&gt;
+          &lt;div class&#x3D;&quot;flex justify-content-between align-items-center&quot;&gt;
+            {{ &quot;debug-files-table.created_at&quot; | translate }}
+            &lt;p-sortIcon field&#x3D;&quot;createdAt&quot; *ngIf&#x3D;&quot;enableSorting&quot; /&gt;
+            &lt;p-columnFilter
+              type&#x3D;&quot;date&quot;
+              field&#x3D;&quot;createdAt&quot;
+              display&#x3D;&quot;menu&quot;
+              class&#x3D;&quot;ml-auto&quot;
+              *ngIf&#x3D;&quot;enableFiltering&quot;
+            /&gt;
+          &lt;/div&gt;
+        &lt;/th&gt;
+        &lt;th
+          style&#x3D;&quot;width: 20rem&quot;
+          *ngIf&#x3D;&quot;enableRemoveAction || (hasReadPermission | async) &#x3D;&#x3D;&#x3D; true&quot;
+        &gt;
+          &lt;div class&#x3D;&quot;flex justify-content-center align-items-center&quot;&gt;
+            {{ &quot;debug-files-table.actions&quot; | translate }}
+          &lt;/div&gt;
+        &lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/ng-template&gt;
+
+    &lt;ng-template pTemplate&#x3D;&quot;body&quot; let-debugFile&gt;
+      &lt;tr class&#x3D;&quot;p-selectable-row&quot;&gt;
+        &lt;td&gt;
+          &lt;p-tableCheckbox [value]&#x3D;&quot;debugFile&quot;&gt;&lt;/p-tableCheckbox&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          {{ debugFile.debugFileId }}
+        &lt;/td&gt;
+        &lt;td&gt;
+          {{ debugFile.type }}
+        &lt;/td&gt;
+        &lt;td&gt;
+          {{ debugFile.createdAt | date: &quot;MMM d, yyyy - h:mm:ss a&quot; }} (UTC)
+        &lt;/td&gt;
+        &lt;td
+          style&#x3D;&quot;text-align: center&quot;
+          *ngIf&#x3D;&quot;enableRemoveAction || (hasReadPermission | async) &#x3D;&#x3D;&#x3D; true&quot;
+        &gt;
+          &lt;div class&#x3D;&quot;flex gap-4&quot;&gt;
+            &lt;p-button
+              pRipple
+              [disabled]&#x3D;&quot;!enableRemoveAction&quot;
+              icon&#x3D;&quot;pi pi-download&quot;
+              [rounded]&#x3D;&quot;true&quot;
+              iconPos&#x3D;&quot;left&quot;
+              [loading]&#x3D;&quot;(isLoadingRemoveDebugFiles | async) ?? false&quot;
+              (onClick)&#x3D;&quot;downloadFile(debugFile.file, debugFile.fileUrl)&quot;
+            /&gt;
+            &lt;p-button
+              pRipple
+              [disabled]&#x3D;&quot;!enableRemoveAction&quot;
+              severity&#x3D;&quot;danger&quot;
+              icon&#x3D;&quot;pi pi-minus&quot;
+              [label]&#x3D;&quot;&#x27;debug-files-table.delete_file&#x27; | translate&quot;
+              iconPos&#x3D;&quot;left&quot;
+              [loading]&#x3D;&quot;(isLoadingRemoveDebugFiles | async) ?? false&quot;
+              (onClick)&#x3D;&quot;showDeleteConfirmation(debugFile.debugFileId, $event)&quot;
+            /&gt;
+          &lt;/div&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/ng-template&gt;
+
+    &lt;ng-template pTemplate&#x3D;&quot;emptymessage&quot;&gt;
+      &lt;tr&gt;
+        &lt;td colspan&#x3D;&quot;5&quot;&gt;
+          {{ &quot;debug-files-table.no_files_found&quot; | translate }}
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/ng-template&gt;
+  &lt;/p-table&gt;
+}
 
 &lt;p-dialog
-  [header]&#x3D;&quot;&#x27;teams-table.new_team&#x27; | translate&quot;
-  [(visible)]&#x3D;&quot;isAddNewTeamDialogVisible&quot;
+  [header]&#x3D;&quot;&#x27;debug-files-table.new_file&#x27; | translate&quot;
+  [(visible)]&#x3D;&quot;isAddNewDialogVisible&quot;
   [style]&#x3D;&quot;{ width: &#x27;40vw&#x27; }&quot;
   [modal]&#x3D;&quot;true&quot;
 &gt;
   &lt;div class&#x3D;&quot;flex py-2 justify-content-center&quot;&gt;
-    &lt;form [formGroup]&#x3D;&quot;createNewTeamForm&quot; class&#x3D;&quot;w-full&quot;&gt;
+    &lt;form [formGroup]&#x3D;&quot;createDebugFileForm&quot; class&#x3D;&quot;w-full&quot;&gt;
       &lt;div class&#x3D;&quot;w-full&quot;&gt;
         &lt;label
-          for&#x3D;&quot;slug&quot;
+          for&#x3D;&quot;type&quot;
           class&#x3D;&quot;block text-900 font-medium text-md mb-2 mt-2&quot;
-          &gt;{{ &quot;teams-table.slug_label&quot; | translate }}&lt;/label
+          &gt;{{ &quot;debug-files-table.type_label&quot; | translate }}&lt;/label
         &gt;
-        &lt;span class&#x3D;&quot;p-input-icon-right w-full&quot;&gt;
-          @if (isSlugTaken !&#x3D;&#x3D; null &amp;&amp; !isSlugTaken) {
-            &lt;i class&#x3D;&quot;pi pi-check text-green-500&quot;&gt;&lt;/i&gt;
-          } @else {
-            &lt;i class&#x3D;&quot;pi pi-times text-red-500&quot;&gt;&lt;/i&gt;
-          }
-          &lt;input
-            #slug
-            id&#x3D;&quot;slug&quot;
-            type&#x3D;&quot;text&quot;
-            (input)&#x3D;&quot;slug.value &#x3D; toSlugValue(slug.value)&quot;
-            formControlName&#x3D;&quot;slug&quot;
-            [placeholder]&#x3D;&quot;&#x27;teams-table.slug&#x27; | translate&quot;
-            pInputText
-            class&#x3D;&quot;w-full&quot;
-            style&#x3D;&quot;padding: 1rem&quot;
-          /&gt;
-        &lt;/span&gt;
+        &lt;p-dropdown
+          appendTo&#x3D;&quot;body&quot;
+          [options]&#x3D;&quot;types&quot;
+          formControlName&#x3D;&quot;type&quot;
+          [placeholder]&#x3D;&quot;&#x27;debug-files-table.select_type&#x27; | translate&quot;
+          styleClass&#x3D;&quot;w-full&quot;
+        &gt;&lt;/p-dropdown&gt;
         &lt;small
           *ngIf&#x3D;&quot;
-            createNewTeamForm.get(&#x27;slug&#x27;)?.hasError(&#x27;required&#x27;) &amp;&amp;
-            createNewTeamForm.get(&#x27;slug&#x27;)?.dirty
+            createDebugFileForm.get(&#x27;type&#x27;)?.hasError(&#x27;required&#x27;) &amp;&amp;
+            createDebugFileForm.get(&#x27;type&#x27;)?.dirty
           &quot;
           class&#x3D;&quot;p-error block&quot;
-          &gt;{{ &quot;teams-table.slug_is_required&quot; | translate }}&lt;/small
+          &gt;{{ &quot;debug-files-table.type_is_required&quot; | translate }}&lt;/small
+        &gt;
+
+        &lt;label
+          for&#x3D;&quot;file&quot;
+          class&#x3D;&quot;block text-900 font-medium text-md mb-2 mt-2&quot;
+          &gt;{{ &quot;debug-files-table.file_label&quot; | translate }}&lt;/label
+        &gt;
+        &lt;input
+          type&#x3D;&quot;file&quot;
+          class&#x3D;&quot;w-full&quot;
+          pInputText
+          (change)&#x3D;&quot;onFilePicked($event)&quot;
+          formControlName&#x3D;&quot;file&quot;
+          [placeholder]&#x3D;&quot;&#x27;debug-files-table.file&#x27; | translate&quot;
+        /&gt;
+        &lt;small
+          *ngIf&#x3D;&quot;
+            createDebugFileForm.get(&#x27;file&#x27;)?.hasError(&#x27;required&#x27;) &amp;&amp;
+            createDebugFileForm.get(&#x27;file&#x27;)?.dirty
+          &quot;
+          class&#x3D;&quot;p-error block&quot;
+          &gt;{{ &quot;debug-files-table.file_is_required&quot; | translate }}&lt;/small
         &gt;
 
         &lt;div class&#x3D;&quot;flex w-full justify-content-end mt-5&quot;&gt;
           &lt;p-button
             pRipple
-            [label]&#x3D;&quot;&#x27;teams-table.cancel&#x27; | translate&quot;
+            [label]&#x3D;&quot;&#x27;debug-files-table.cancel&#x27; | translate&quot;
             [outlined]&#x3D;&quot;true&quot;
             icon&#x3D;&quot;pi pi-times&quot;
             iconPos&#x3D;&quot;left&quot;
             severity&#x3D;&quot;danger&quot;
-            [loading]&#x3D;&quot;(isLoadingCreateNewTeam | async) ?? false&quot;
-            (onClick)&#x3D;&quot;isAddNewTeamDialogVisible &#x3D; !isAddNewTeamDialogVisible&quot;
+            [loading]&#x3D;&quot;(isLoadingCreateNew | async) ?? false&quot;
+            (onClick)&#x3D;&quot;isAddNewDialogVisible &#x3D; !isAddNewDialogVisible&quot;
           /&gt;
           &lt;p-button
             pRipple
             styleClass&#x3D;&quot;ml-4&quot;
             type&#x3D;&quot;submit&quot;
-            [label]&#x3D;&quot;&#x27;teams-table.create_new_team&#x27; | translate&quot;
+            [label]&#x3D;&quot;&#x27;debug-files-table.create_new_file&#x27; | translate&quot;
             [outlined]&#x3D;&quot;true&quot;
             icon&#x3D;&quot;pi pi-check&quot;
             iconPos&#x3D;&quot;left&quot;
-            [loading]&#x3D;&quot;(isLoadingCreateNewTeam | async) ?? false&quot;
-            (onClick)&#x3D;&quot;createNewTeam()&quot;
-            [disabled]&#x3D;&quot;createNewTeamForm.invalid&quot;
+            [loading]&#x3D;&quot;(isLoadingCreateNew | async) ?? false&quot;
+            (onClick)&#x3D;&quot;createNewDebugFile()&quot;
+            [disabled]&#x3D;&quot;createDebugFileForm.invalid&quot;
           /&gt;
         &lt;/div&gt;
       &lt;/div&gt;
@@ -2054,10 +2154,10 @@ export class TeamsTableComponent implements AfterViewInit, OnDestroy {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><p-toast /><p-confirmDialog /><p-table  #dt  [value]="data ?? []"  dataKey="teamId"  [rowHover]="true"  [rows]="10"  [showCurrentPageReport]="enablePagination"  [rowsPerPageOptions]="[10, 25, 50]"  [loading]="isLoading"  [paginator]="enablePagination"  [currentPageReportTemplate]="\'table.pagination_template\' | translate"  [filterDelay]="0"  [globalFilterFields]="[\'slug\']">  <ng-template    pTemplate="caption"    *ngIf="enableGlobalSearch || enableAddAction"  >    <div class="table-header w-full flex">      <span class="p-input-icon-left w-full">        <i class="pi pi-search"></i>        <input          class="w-full"          pInputText          type="text"          (input)="applyFilterGlobal($event, \'contains\')"          [placeholder]="\'table.search\' | translate"        />      </span>      <p-button        *ngIf="enableAddAction"        pRipple        styleClass="mr-4 ml-4 w-10rem"        severity="success"        icon="pi pi-plus"        (onClick)="showAddDialog()"        [label]="\'teams-table.new_team\' | translate"        iconPos="left"      />    </div>  </ng-template>  <ng-template pTemplate="header">    <tr>      <th pSortableColumn="slug" style="min-width: 14rem">        <div class="flex justify-content-between align-items-center">          {{ "teams-table.slug" | translate }}          <p-sortIcon field="slug" *ngIf="enableSorting" />          <p-columnFilter            type="text"            field="slug"            display="menu"            class="ml-auto"            *ngIf="enableFiltering"          />        </div>      </th>      <th pSortableColumn="createdAt" class="w-14rem">        <div class="flex justify-content-between align-items-center">          {{ "teams-table.added_on" | translate }}          <p-sortIcon field="createdAt" *ngIf="enableSorting" />          <p-columnFilter            type="date"            field="createdAt"            display="menu"            class="ml-auto"            *ngIf="enableFiltering"          >            <ng-template              pTemplate="filter"              let-value              let-filter="filterCallback"            >              <p-calendar                #calendar                [ngModel]="value"                (onSelect)="filter(calendar.value)"                dateFormat="M dd, yy"              ></p-calendar>            </ng-template>          </p-columnFilter>        </div>      </th>      <th style="width: 8rem" *ngIf="enableDeleteAction">        <div class="flex justify-content-center align-items-center">          {{ "teams-table.actions" | translate }}        </div>      </th>    </tr>  </ng-template>  <ng-template pTemplate="body" let-team >    <tr class="p-selectable-row" (click)="openSingleTeam($event, team)">      <td>        {{ team?.slug }}      </td>      <td>        {{ team?.createdAt | date }}      </td>      <td style="text-align: center" *ngIf="enableDeleteAction">        <p-button          pRipple          [disabled]="!enableDeleteAction"          severity="danger"          icon="pi pi-minus"          [label]="\'teams-table.delete\' | translate"          iconPos="left"          [loading]="(isLoadingDeleteTeam | async) ?? false"          (onClick)="showDeleteConfirmation(team, $event)"        />      </td>    </tr>  </ng-template>  <ng-template pTemplate="emptymessage">    <tr>      <td colspan="3">{{ "teams-table.no_teams_found" | translate }}</td>    </tr>  </ng-template></p-table><p-dialog  [header]="\'teams-table.new_team\' | translate"  [(visible)]="isAddNewTeamDialogVisible"  [style]="{ width: \'40vw\' }"  [modal]="true">  <div class="flex py-2 justify-content-center">    <form [formGroup]="createNewTeamForm" class="w-full">      <div class="w-full">        <label          for="slug"          class="block text-900 font-medium text-md mb-2 mt-2"          >{{ "teams-table.slug_label" | translate }}</label        >        <span class="p-input-icon-right w-full">          @if (isSlugTaken !== null && !isSlugTaken) {            <i class="pi pi-check text-green-500"></i>          } @else {            <i class="pi pi-times text-red-500"></i>          }          <input            #slug            id="slug"            type="text"            (input)="slug.value = toSlugValue(slug.value)"            formControlName="slug"            [placeholder]="\'teams-table.slug\' | translate"            pInputText            class="w-full"            style="padding: 1rem"          />        </span>        <small          *ngIf="            createNewTeamForm.get(\'slug\')?.hasError(\'required\') &&            createNewTeamForm.get(\'slug\')?.dirty          "          class="p-error block"          >{{ "teams-table.slug_is_required" | translate }}</small        >        <div class="flex w-full justify-content-end mt-5">          <p-button            pRipple            [label]="\'teams-table.cancel\' | translate"            [outlined]="true"            icon="pi pi-times"            iconPos="left"            severity="danger"            [loading]="(isLoadingCreateNewTeam | async) ?? false"            (onClick)="isAddNewTeamDialogVisible = !isAddNewTeamDialogVisible"          />          <p-button            pRipple            styleClass="ml-4"            type="submit"            [label]="\'teams-table.create_new_team\' | translate"            [outlined]="true"            icon="pi pi-check"            iconPos="left"            [loading]="(isLoadingCreateNewTeam | async) ?? false"            (onClick)="createNewTeam()"            [disabled]="createNewTeamForm.invalid"          />        </div>      </div>    </form>  </div></p-dialog></div>'
+        var COMPONENT_TEMPLATE = '<div><p-toast /><p-confirmDialog />@if ((hasReadPermission | async) === false) {  <app-access-denied />} @else {  <p-table    #dt    [value]="(debugFiles | async) ?? []"    dataKey="debugFileId"    [rowHover]="true"    [rows]="10"    [(selection)]="selectedDebugFiles"    [showCurrentPageReport]="enablePagination"    [rowsPerPageOptions]="[10, 25, 50]"    [loading]="(isLoadingDebugFiles | async) === true"    [paginator]="enablePagination"    [currentPageReportTemplate]="\'table.pagination_template\' | translate"    [filterDelay]="0"    [globalFilterFields]="[\'debugFileId\', \'type\']"  >    <ng-template      pTemplate="caption"      *ngIf="enableGlobalSearch || enableAddAction || enableRemoveAction"    >      <div class="table-header w-full flex gap-4">        <span class="p-input-icon-left flex-grow-1">          <i class="pi pi-search"></i>          <input            class="w-full"            pInputText            type="text"            (input)="applyFilterGlobal($event, \'contains\')"            [placeholder]="\'table.search\' | translate"          />        </span>        <p-button          *ngIf="enableAddAction"          pRipple          styleClass=""          severity="success"          icon="pi pi-plus"          (onClick)="showAddDialog()"          [label]="\'debug-files-table.new_file\' | translate"          iconPos="left"        />        <p-button          *ngIf="enableAddAction"          pRipple          styleClass=""          severity="danger"          [disabled]="!selectedDebugFiles || selectedDebugFiles.length === 0"          icon="pi pi-trash"          (onClick)="showDeleteSelectionConfirmation($event)"          [label]="\'debug-files-table.delete_files\' | translate"          iconPos="left"        />      </div>    </ng-template>    <ng-template pTemplate="header">      <tr>        <th style="width: 4rem">          <p-tableHeaderCheckbox></p-tableHeaderCheckbox>        </th>        <th pSortableColumn="id" style="width: 14rem">          <div class="flex justify-content-between align-items-center">            {{ "debug-files-table.id" | translate }}            <p-sortIcon field="debugFileId" *ngIf="enableSorting" />            <p-columnFilter              type="text"              field="debugFileId"              display="menu"              class="ml-auto"              *ngIf="enableFiltering"            />          </div>        </th>        <th pSortableColumn="type" style="min-width: 14rem">          <div class="flex justify-content-between align-items-center">            {{ "debug-files-table.type" | translate }}            <p-sortIcon field="type" *ngIf="enableSorting" />            <p-columnFilter              type="text"              field="type"              display="menu"              class="ml-auto"              *ngIf="enableFiltering"            />          </div>        </th>        <th pSortableColumn="createdAt" style="min-width: 14rem">          <div class="flex justify-content-between align-items-center">            {{ "debug-files-table.created_at" | translate }}            <p-sortIcon field="createdAt" *ngIf="enableSorting" />            <p-columnFilter              type="date"              field="createdAt"              display="menu"              class="ml-auto"              *ngIf="enableFiltering"            />          </div>        </th>        <th          style="width: 20rem"          *ngIf="enableRemoveAction || (hasReadPermission | async) === true"        >          <div class="flex justify-content-center align-items-center">            {{ "debug-files-table.actions" | translate }}          </div>        </th>      </tr>    </ng-template>    <ng-template pTemplate="body" let-debugFile>      <tr class="p-selectable-row">        <td>          <p-tableCheckbox [value]="debugFile"></p-tableCheckbox>        </td>        <td>          {{ debugFile.debugFileId }}        </td>        <td>          {{ debugFile.type }}        </td>        <td>          {{ debugFile.createdAt | date: "MMM d, yyyy - h:mm:ss a" }} (UTC)        </td>        <td          style="text-align: center"          *ngIf="enableRemoveAction || (hasReadPermission | async) === true"        >          <div class="flex gap-4">            <p-button              pRipple              [disabled]="!enableRemoveAction"              icon="pi pi-download"              [rounded]="true"              iconPos="left"              [loading]="(isLoadingRemoveDebugFiles | async) ?? false"              (onClick)="downloadFile(debugFile.file, debugFile.fileUrl)"            />            <p-button              pRipple              [disabled]="!enableRemoveAction"              severity="danger"              icon="pi pi-minus"              [label]="\'debug-files-table.delete_file\' | translate"              iconPos="left"              [loading]="(isLoadingRemoveDebugFiles | async) ?? false"              (onClick)="showDeleteConfirmation(debugFile.debugFileId, $event)"            />          </div>        </td>      </tr>    </ng-template>    <ng-template pTemplate="emptymessage">      <tr>        <td colspan="5">          {{ "debug-files-table.no_files_found" | translate }}        </td>      </tr>    </ng-template>  </p-table>}<p-dialog  [header]="\'debug-files-table.new_file\' | translate"  [(visible)]="isAddNewDialogVisible"  [style]="{ width: \'40vw\' }"  [modal]="true">  <div class="flex py-2 justify-content-center">    <form [formGroup]="createDebugFileForm" class="w-full">      <div class="w-full">        <label          for="type"          class="block text-900 font-medium text-md mb-2 mt-2"          >{{ "debug-files-table.type_label" | translate }}</label        >        <p-dropdown          appendTo="body"          [options]="types"          formControlName="type"          [placeholder]="\'debug-files-table.select_type\' | translate"          styleClass="w-full"        ></p-dropdown>        <small          *ngIf="            createDebugFileForm.get(\'type\')?.hasError(\'required\') &&            createDebugFileForm.get(\'type\')?.dirty          "          class="p-error block"          >{{ "debug-files-table.type_is_required" | translate }}</small        >        <label          for="file"          class="block text-900 font-medium text-md mb-2 mt-2"          >{{ "debug-files-table.file_label" | translate }}</label        >        <input          type="file"          class="w-full"          pInputText          (change)="onFilePicked($event)"          formControlName="file"          [placeholder]="\'debug-files-table.file\' | translate"        />        <small          *ngIf="            createDebugFileForm.get(\'file\')?.hasError(\'required\') &&            createDebugFileForm.get(\'file\')?.dirty          "          class="p-error block"          >{{ "debug-files-table.file_is_required" | translate }}</small        >        <div class="flex w-full justify-content-end mt-5">          <p-button            pRipple            [label]="\'debug-files-table.cancel\' | translate"            [outlined]="true"            icon="pi pi-times"            iconPos="left"            severity="danger"            [loading]="(isLoadingCreateNew | async) ?? false"            (onClick)="isAddNewDialogVisible = !isAddNewDialogVisible"          />          <p-button            pRipple            styleClass="ml-4"            type="submit"            [label]="\'debug-files-table.create_new_file\' | translate"            [outlined]="true"            icon="pi pi-check"            iconPos="left"            [loading]="(isLoadingCreateNew | async) ?? false"            (onClick)="createNewDebugFile()"            [disabled]="createDebugFileForm.invalid"          />        </div>      </div>    </form>  </div></p-dialog></div>'
     var COMPONENTS = [{'name': 'AccessDeniedComponent', 'selector': 'app-access-denied'},{'name': 'AlertsComponent', 'selector': 'app-alerts'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CloseComponent', 'selector': 'app-close'},{'name': 'ConfigComponent', 'selector': 'app-config'},{'name': 'CreateOrganizationComponent', 'selector': 'app-create-organization'},{'name': 'DebugFilesTableComponent', 'selector': 'app-debug-files-table'},{'name': 'DetailsComponent', 'selector': 'app-details'},{'name': 'DevicesComponent', 'selector': 'app-devices'},{'name': 'DocumentationComponent', 'selector': 'app-documentation'},{'name': 'EnvironmentsTableComponent', 'selector': 'app-environments-table'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'GuidesComponent', 'selector': 'app-guides'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InvitationComponent', 'selector': 'app-invitation'},{'name': 'IssuesComponent', 'selector': 'app-issues'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogsComponent', 'selector': 'app-logs'},{'name': 'MemberPickerComponent', 'selector': 'app-member-picker'},{'name': 'MembersComponent', 'selector': 'app-members'},{'name': 'MembersTableComponent', 'selector': 'app-members-table'},{'name': 'MenuitemComponent', 'selector': '[app-menuitem]'},{'name': 'MessagesComponent', 'selector': 'app-messages'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationsComponent', 'selector': 'app-notifications'},{'name': 'OrganizationComponent', 'selector': 'app-organization'},{'name': 'ProjectDetailsComponent', 'selector': 'app-project-details'},{'name': 'ProjectPickerComponent', 'selector': 'app-project-picker'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'ProjectsComponent', 'selector': 'app-projects-settings'},{'name': 'ProjectsTableComponent', 'selector': 'app-projects-table'},{'name': 'QueriesComponent', 'selector': 'app-queries'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ReleasesComponent', 'selector': 'app-releases'},{'name': 'ReleasesTableComponent', 'selector': 'app-releases-table'},{'name': 'ReplaysComponent', 'selector': 'app-replays'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'ScreenLoadsComponent', 'selector': 'app-screen-loads'},{'name': 'SdksComponent', 'selector': 'app-sdks'},{'name': 'SecurityComponent', 'selector': 'app-security'},{'name': 'SessionsComponent', 'selector': 'app-sessions'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SingleProjectCardComponent', 'selector': 'app-single-project-card'},{'name': 'SingleProjectComponent', 'selector': 'app-single-project'},{'name': 'SingleTeamComponent', 'selector': 'app-single-team'},{'name': 'StatsComponent', 'selector': 'app-stats'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TagsTableComponent', 'selector': 'app-tags-table'},{'name': 'TeamPickerComponent', 'selector': 'app-team-picker'},{'name': 'TeamsComponent', 'selector': 'app-teams'},{'name': 'TeamsTableComponent', 'selector': 'app-teams-table'},{'name': 'TopbarComponent', 'selector': 'app-topbar'},{'name': 'VitalsComponent', 'selector': 'app-vitals'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'TeamsTableComponent'};
+    var ACTUAL_COMPONENT = {'name': 'DebugFilesTableComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -2103,7 +2203,7 @@ export class TeamsTableComponent implements AfterViewInit, OnDestroy {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'TeamsTableComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'DebugFilesTableComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

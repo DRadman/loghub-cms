@@ -1,0 +1,1168 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>loghub-cms documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">loghub-cms documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >SingleProjectEffects</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/core/state/single-project/single-project.effects.ts</code>
+        </p>
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addProjectDebugFile$" >addProjectDebugFile$</a>
+                            </li>
+                            <li>
+                                <a href="#addProjectEnvironments$" >addProjectEnvironments$</a>
+                            </li>
+                            <li>
+                                <a href="#addProjectRelease$" >addProjectRelease$</a>
+                            </li>
+                            <li>
+                                <a href="#addProjectTags$" >addProjectTags$</a>
+                            </li>
+                            <li>
+                                <a href="#addProjectTeams$" >addProjectTeams$</a>
+                            </li>
+                            <li>
+                                <a href="#loadProjectById$" >loadProjectById$</a>
+                            </li>
+                            <li>
+                                <a href="#loadProjectDebugFiles$" >loadProjectDebugFiles$</a>
+                            </li>
+                            <li>
+                                <a href="#loadProjectEnvironments$" >loadProjectEnvironments$</a>
+                            </li>
+                            <li>
+                                <a href="#loadProjectReleases$" >loadProjectReleases$</a>
+                            </li>
+                            <li>
+                                <a href="#loadProjectTags$" >loadProjectTags$</a>
+                            </li>
+                            <li>
+                                <a href="#loadProjectTeams$" >loadProjectTeams$</a>
+                            </li>
+                            <li>
+                                <a href="#removeProjectDebugFiles$" >removeProjectDebugFiles$</a>
+                            </li>
+                            <li>
+                                <a href="#removeProjectEnvironments$" >removeProjectEnvironments$</a>
+                            </li>
+                            <li>
+                                <a href="#removeProjectReleases$" >removeProjectReleases$</a>
+                            </li>
+                            <li>
+                                <a href="#removeProjectTags$" >removeProjectTags$</a>
+                            </li>
+                            <li>
+                                <a href="#removeProjectTeams$" >removeProjectTeams$</a>
+                            </li>
+                            <li>
+                                <a href="#updateProject$" >updateProject$</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(projectService: <a href="../injectables/ProjectService.html" target="_self">ProjectService</a>, actions$: Actions)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/core/state/single-project/single-project.effects.ts:8</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>projectService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ProjectService.html" target="_self" >ProjectService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>actions$</td>
+                                                  
+                                                        <td>
+                                                                    <code>Actions</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addProjectDebugFile$"></a>
+                    <span class="name">
+                        <span ><b>addProjectDebugFile$</b></span>
+                        <a href="#addProjectDebugFile$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(addProjectDebugFile),
+      switchMap((args) &#x3D;&gt;
+        this.projectService.addProjectDebugFile(args.projectId, args.dto).pipe(
+          map((files) &#x3D;&gt; addProjectDebugFileSuccess({ debugFiles: files })),
+          catchError((error) &#x3D;&gt; of(addProjectDebugFileFailure({ error }))),
+        ),
+      ),
+    ),
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="206" class="link-to-prism">src/app/core/state/single-project/single-project.effects.ts:206</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addProjectEnvironments$"></a>
+                    <span class="name">
+                        <span ><b>addProjectEnvironments$</b></span>
+                        <a href="#addProjectEnvironments$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(addProjectEnvironments),
+      switchMap((args) &#x3D;&gt;
+        this.projectService.addProjectEnvironments(args.projectId, args.environments).pipe(
+          map((environments) &#x3D;&gt; addProjectEnvironmentsSuccess({ environments: environments })),
+          catchError((error) &#x3D;&gt; of(addProjectEnvironmentsFailure({ error }))),
+        ),
+      ),
+    ),
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="158" class="link-to-prism">src/app/core/state/single-project/single-project.effects.ts:158</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addProjectRelease$"></a>
+                    <span class="name">
+                        <span ><b>addProjectRelease$</b></span>
+                        <a href="#addProjectRelease$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(addProjectRelease),
+      switchMap((args) &#x3D;&gt;
+        this.projectService.addProjectRelease(args.projectId, args.dto).pipe(
+          map((releases) &#x3D;&gt; addProjectReleaseSuccess({ releases: releases })),
+          catchError((error) &#x3D;&gt; of(addProjectReleaseFailure({ error }))),
+        ),
+      ),
+    ),
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="182" class="link-to-prism">src/app/core/state/single-project/single-project.effects.ts:182</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addProjectTags$"></a>
+                    <span class="name">
+                        <span ><b>addProjectTags$</b></span>
+                        <a href="#addProjectTags$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(addProjectTags),
+      switchMap((args) &#x3D;&gt;
+        this.projectService.addProjectTags(args.projectId, args.tags).pipe(
+          map((tags) &#x3D;&gt; addProjectTagsSuccess({ tags: tags })),
+          catchError((error) &#x3D;&gt; of(addProjectTagsFailure({ error }))),
+        ),
+      ),
+    ),
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="134" class="link-to-prism">src/app/core/state/single-project/single-project.effects.ts:134</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addProjectTeams$"></a>
+                    <span class="name">
+                        <span ><b>addProjectTeams$</b></span>
+                        <a href="#addProjectTeams$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(addProjectTeams),
+      switchMap((args) &#x3D;&gt;
+        this.projectService.addProjectTeams(args.projectId, args.ids).pipe(
+          map((teams) &#x3D;&gt; addProjectTeamsSuccess({ teams: teams })),
+          catchError((error) &#x3D;&gt; of(addProjectTeamsFailure({ error }))),
+        ),
+      ),
+    ),
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="98" class="link-to-prism">src/app/core/state/single-project/single-project.effects.ts:98</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadProjectById$"></a>
+                    <span class="name">
+                        <span ><b>loadProjectById$</b></span>
+                        <a href="#loadProjectById$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(loadProjectById),
+      switchMap((args) &#x3D;&gt;
+        this.projectService.getProjectById(args.projectId).pipe(
+          map((project) &#x3D;&gt; loadProjectByIdSuccess({ project: project })),
+          catchError((error) &#x3D;&gt; of(loadProjectByIdFailure({ error }))),
+        ),
+      ),
+    ),
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/core/state/single-project/single-project.effects.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadProjectDebugFiles$"></a>
+                    <span class="name">
+                        <span ><b>loadProjectDebugFiles$</b></span>
+                        <a href="#loadProjectDebugFiles$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(loadProjectDebugFiles),
+      switchMap((args) &#x3D;&gt;
+        this.projectService.getProjectDebugFiles(args.projectId).pipe(
+          map((files) &#x3D;&gt; loadProjectDebugFilesSuccess({ debugFiles: files })),
+          catchError((error) &#x3D;&gt; of(loadProjectDebugFilesFailure({ error }))),
+        ),
+      ),
+    ),
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/app/core/state/single-project/single-project.effects.ts:74</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadProjectEnvironments$"></a>
+                    <span class="name">
+                        <span ><b>loadProjectEnvironments$</b></span>
+                        <a href="#loadProjectEnvironments$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(loadProjectEnvironments),
+      switchMap((args) &#x3D;&gt;
+        this.projectService.getProjectEnvironments(args.projectId).pipe(
+          map((environments) &#x3D;&gt; loadProjectEnvironmentsSuccess({ environments: environments })),
+          catchError((error) &#x3D;&gt; of(loadProjectEnvironmentsFailure({ error }))),
+        ),
+      ),
+    ),
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/core/state/single-project/single-project.effects.ts:62</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadProjectReleases$"></a>
+                    <span class="name">
+                        <span ><b>loadProjectReleases$</b></span>
+                        <a href="#loadProjectReleases$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(loadProjectReleases),
+      switchMap((args) &#x3D;&gt;
+        this.projectService.getProjectReleases(args.projectId).pipe(
+          map((releases) &#x3D;&gt; loadProjectReleasesSuccess({ releases: releases })),
+          catchError((error) &#x3D;&gt; of(loadProjectReleasesFailure({ error }))),
+        ),
+      ),
+    ),
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">src/app/core/state/single-project/single-project.effects.ts:86</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadProjectTags$"></a>
+                    <span class="name">
+                        <span ><b>loadProjectTags$</b></span>
+                        <a href="#loadProjectTags$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(loadProjectTags),
+      switchMap((args) &#x3D;&gt;
+        this.projectService.getProjectTags(args.projectId).pipe(
+          map((tags) &#x3D;&gt; loadProjectTagsSuccess({ tags: tags })),
+          catchError((error) &#x3D;&gt; of(loadProjectTagsFailure({ error }))),
+        ),
+      ),
+    ),
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/core/state/single-project/single-project.effects.ts:50</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadProjectTeams$"></a>
+                    <span class="name">
+                        <span ><b>loadProjectTeams$</b></span>
+                        <a href="#loadProjectTeams$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(loadProjectTeams),
+      switchMap((args) &#x3D;&gt;
+        this.projectService.getProjectTeams(args.projectId).pipe(
+          map((teams) &#x3D;&gt; loadProjectTeamsSuccess({ teams: teams })),
+          catchError((error) &#x3D;&gt; of(loadProjectTeamsFailure({ error }))),
+        ),
+      ),
+    ),
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/core/state/single-project/single-project.effects.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeProjectDebugFiles$"></a>
+                    <span class="name">
+                        <span ><b>removeProjectDebugFiles$</b></span>
+                        <a href="#removeProjectDebugFiles$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(removeProjectDebugFiles),
+      switchMap((args) &#x3D;&gt;
+        this.projectService.removeProjectDebugFiles(args.projectId, args.ids).pipe(
+          map((files) &#x3D;&gt; removeProjectDebugFilesSuccess({ debugFiles: files })),
+          catchError((error) &#x3D;&gt; of(removeProjectDebugFilesFailure({ error }))),
+        ),
+      ),
+    ),
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="194" class="link-to-prism">src/app/core/state/single-project/single-project.effects.ts:194</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeProjectEnvironments$"></a>
+                    <span class="name">
+                        <span ><b>removeProjectEnvironments$</b></span>
+                        <a href="#removeProjectEnvironments$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(removeProjectEnvironments),
+      switchMap((args) &#x3D;&gt;
+        this.projectService.removeProjectEnvironments(args.projectId, args.environments).pipe(
+          map((environments) &#x3D;&gt; removeProjectEnvironmentsSuccess({ environments: environments })),
+          catchError((error) &#x3D;&gt; of(removeProjectEnvironmentsFailure({ error }))),
+        ),
+      ),
+    ),
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="146" class="link-to-prism">src/app/core/state/single-project/single-project.effects.ts:146</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeProjectReleases$"></a>
+                    <span class="name">
+                        <span ><b>removeProjectReleases$</b></span>
+                        <a href="#removeProjectReleases$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(removeProjectReleases),
+      switchMap((args) &#x3D;&gt;
+        this.projectService.removeProjectReleases(args.projectId, args.ids).pipe(
+          map((releases) &#x3D;&gt; removeProjectReleasesSuccess({ releases: releases })),
+          catchError((error) &#x3D;&gt; of(removeProjectReleasesFailure({ error }))),
+        ),
+      ),
+    ),
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="170" class="link-to-prism">src/app/core/state/single-project/single-project.effects.ts:170</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeProjectTags$"></a>
+                    <span class="name">
+                        <span ><b>removeProjectTags$</b></span>
+                        <a href="#removeProjectTags$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(removeProjectTags),
+      switchMap((args) &#x3D;&gt;
+        this.projectService.removeProjectTags(args.projectId, args.tags).pipe(
+          map((tags) &#x3D;&gt; removeProjectTagsSuccess({ tags: tags })),
+          catchError((error) &#x3D;&gt; of(removeProjectTagsFailure({ error }))),
+        ),
+      ),
+    ),
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="122" class="link-to-prism">src/app/core/state/single-project/single-project.effects.ts:122</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeProjectTeams$"></a>
+                    <span class="name">
+                        <span ><b>removeProjectTeams$</b></span>
+                        <a href="#removeProjectTeams$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(removeProjectTeams),
+      switchMap((args) &#x3D;&gt;
+        this.projectService.removeProjectTeams(args.projectId, args.ids).pipe(
+          map((teams) &#x3D;&gt; removeProjectTeamsSuccess({ teams: teams })),
+          catchError((error) &#x3D;&gt; of(removeProjectTeamsFailure({ error }))),
+        ),
+      ),
+    ),
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="110" class="link-to-prism">src/app/core/state/single-project/single-project.effects.ts:110</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateProject$"></a>
+                    <span class="name">
+                        <span ><b>updateProject$</b></span>
+                        <a href="#updateProject$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(updateProject),
+      switchMap((args) &#x3D;&gt;
+        this.projectService.updateProject(args.projectId, args.dto).pipe(
+          map((project) &#x3D;&gt; updateProjectSucess({ project: project })),
+          catchError((error) &#x3D;&gt; of(updateProjectFailure({ error }))),
+        ),
+      ),
+    ),
+  )</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/core/state/single-project/single-project.effects.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &quot;@angular/core&quot;;
+import { ProjectService } from &quot;../../services/api/project.api.service&quot;;
+import { Actions, createEffect, ofType } from &quot;@ngrx/effects&quot;;
+import { addProjectDebugFile, addProjectDebugFileFailure, addProjectDebugFileSuccess, addProjectEnvironments, addProjectEnvironmentsFailure, addProjectEnvironmentsSuccess, addProjectRelease, addProjectReleaseFailure, addProjectReleaseSuccess, addProjectTags, addProjectTagsFailure, addProjectTagsSuccess, addProjectTeams, addProjectTeamsFailure, addProjectTeamsSuccess, loadProjectById, loadProjectByIdFailure, loadProjectByIdSuccess, loadProjectDebugFiles, loadProjectDebugFilesFailure, loadProjectDebugFilesSuccess, loadProjectEnvironments, loadProjectEnvironmentsFailure, loadProjectEnvironmentsSuccess, loadProjectReleases, loadProjectReleasesFailure, loadProjectReleasesSuccess, loadProjectTags, loadProjectTagsFailure, loadProjectTagsSuccess, loadProjectTeams, loadProjectTeamsFailure, loadProjectTeamsSuccess, removeProjectDebugFiles, removeProjectDebugFilesFailure, removeProjectDebugFilesSuccess, removeProjectEnvironments, removeProjectEnvironmentsFailure, removeProjectEnvironmentsSuccess, removeProjectReleases, removeProjectReleasesFailure, removeProjectReleasesSuccess, removeProjectTags, removeProjectTagsFailure, removeProjectTagsSuccess, removeProjectTeams, removeProjectTeamsFailure, removeProjectTeamsSuccess, updateProject, updateProjectFailure, updateProjectSucess } from &quot;./single-project.actions&quot;;
+import { catchError, map, of, switchMap } from &quot;rxjs&quot;;
+
+@Injectable()
+export class SingleProjectEffects {
+  constructor(
+    private projectService: ProjectService,
+    private actions$: Actions,
+  ) {}
+
+  loadProjectById$ &#x3D; createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(loadProjectById),
+      switchMap((args) &#x3D;&gt;
+        this.projectService.getProjectById(args.projectId).pipe(
+          map((project) &#x3D;&gt; loadProjectByIdSuccess({ project: project })),
+          catchError((error) &#x3D;&gt; of(loadProjectByIdFailure({ error }))),
+        ),
+      ),
+    ),
+  );
+
+  updateProject$ &#x3D; createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(updateProject),
+      switchMap((args) &#x3D;&gt;
+        this.projectService.updateProject(args.projectId, args.dto).pipe(
+          map((project) &#x3D;&gt; updateProjectSucess({ project: project })),
+          catchError((error) &#x3D;&gt; of(updateProjectFailure({ error }))),
+        ),
+      ),
+    ),
+  );
+
+  loadProjectTeams$ &#x3D; createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(loadProjectTeams),
+      switchMap((args) &#x3D;&gt;
+        this.projectService.getProjectTeams(args.projectId).pipe(
+          map((teams) &#x3D;&gt; loadProjectTeamsSuccess({ teams: teams })),
+          catchError((error) &#x3D;&gt; of(loadProjectTeamsFailure({ error }))),
+        ),
+      ),
+    ),
+  );
+
+  loadProjectTags$ &#x3D; createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(loadProjectTags),
+      switchMap((args) &#x3D;&gt;
+        this.projectService.getProjectTags(args.projectId).pipe(
+          map((tags) &#x3D;&gt; loadProjectTagsSuccess({ tags: tags })),
+          catchError((error) &#x3D;&gt; of(loadProjectTagsFailure({ error }))),
+        ),
+      ),
+    ),
+  );
+
+  loadProjectEnvironments$ &#x3D; createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(loadProjectEnvironments),
+      switchMap((args) &#x3D;&gt;
+        this.projectService.getProjectEnvironments(args.projectId).pipe(
+          map((environments) &#x3D;&gt; loadProjectEnvironmentsSuccess({ environments: environments })),
+          catchError((error) &#x3D;&gt; of(loadProjectEnvironmentsFailure({ error }))),
+        ),
+      ),
+    ),
+  );
+
+  loadProjectDebugFiles$ &#x3D; createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(loadProjectDebugFiles),
+      switchMap((args) &#x3D;&gt;
+        this.projectService.getProjectDebugFiles(args.projectId).pipe(
+          map((files) &#x3D;&gt; loadProjectDebugFilesSuccess({ debugFiles: files })),
+          catchError((error) &#x3D;&gt; of(loadProjectDebugFilesFailure({ error }))),
+        ),
+      ),
+    ),
+  );
+
+  loadProjectReleases$ &#x3D; createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(loadProjectReleases),
+      switchMap((args) &#x3D;&gt;
+        this.projectService.getProjectReleases(args.projectId).pipe(
+          map((releases) &#x3D;&gt; loadProjectReleasesSuccess({ releases: releases })),
+          catchError((error) &#x3D;&gt; of(loadProjectReleasesFailure({ error }))),
+        ),
+      ),
+    ),
+  );
+
+  addProjectTeams$ &#x3D; createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(addProjectTeams),
+      switchMap((args) &#x3D;&gt;
+        this.projectService.addProjectTeams(args.projectId, args.ids).pipe(
+          map((teams) &#x3D;&gt; addProjectTeamsSuccess({ teams: teams })),
+          catchError((error) &#x3D;&gt; of(addProjectTeamsFailure({ error }))),
+        ),
+      ),
+    ),
+  );
+
+  removeProjectTeams$ &#x3D; createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(removeProjectTeams),
+      switchMap((args) &#x3D;&gt;
+        this.projectService.removeProjectTeams(args.projectId, args.ids).pipe(
+          map((teams) &#x3D;&gt; removeProjectTeamsSuccess({ teams: teams })),
+          catchError((error) &#x3D;&gt; of(removeProjectTeamsFailure({ error }))),
+        ),
+      ),
+    ),
+  );
+
+  removeProjectTags$ &#x3D; createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(removeProjectTags),
+      switchMap((args) &#x3D;&gt;
+        this.projectService.removeProjectTags(args.projectId, args.tags).pipe(
+          map((tags) &#x3D;&gt; removeProjectTagsSuccess({ tags: tags })),
+          catchError((error) &#x3D;&gt; of(removeProjectTagsFailure({ error }))),
+        ),
+      ),
+    ),
+  );
+
+  addProjectTags$ &#x3D; createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(addProjectTags),
+      switchMap((args) &#x3D;&gt;
+        this.projectService.addProjectTags(args.projectId, args.tags).pipe(
+          map((tags) &#x3D;&gt; addProjectTagsSuccess({ tags: tags })),
+          catchError((error) &#x3D;&gt; of(addProjectTagsFailure({ error }))),
+        ),
+      ),
+    ),
+  );
+
+  removeProjectEnvironments$ &#x3D; createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(removeProjectEnvironments),
+      switchMap((args) &#x3D;&gt;
+        this.projectService.removeProjectEnvironments(args.projectId, args.environments).pipe(
+          map((environments) &#x3D;&gt; removeProjectEnvironmentsSuccess({ environments: environments })),
+          catchError((error) &#x3D;&gt; of(removeProjectEnvironmentsFailure({ error }))),
+        ),
+      ),
+    ),
+  );
+
+  addProjectEnvironments$ &#x3D; createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(addProjectEnvironments),
+      switchMap((args) &#x3D;&gt;
+        this.projectService.addProjectEnvironments(args.projectId, args.environments).pipe(
+          map((environments) &#x3D;&gt; addProjectEnvironmentsSuccess({ environments: environments })),
+          catchError((error) &#x3D;&gt; of(addProjectEnvironmentsFailure({ error }))),
+        ),
+      ),
+    ),
+  );
+
+  removeProjectReleases$ &#x3D; createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(removeProjectReleases),
+      switchMap((args) &#x3D;&gt;
+        this.projectService.removeProjectReleases(args.projectId, args.ids).pipe(
+          map((releases) &#x3D;&gt; removeProjectReleasesSuccess({ releases: releases })),
+          catchError((error) &#x3D;&gt; of(removeProjectReleasesFailure({ error }))),
+        ),
+      ),
+    ),
+  );
+
+  addProjectRelease$ &#x3D; createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(addProjectRelease),
+      switchMap((args) &#x3D;&gt;
+        this.projectService.addProjectRelease(args.projectId, args.dto).pipe(
+          map((releases) &#x3D;&gt; addProjectReleaseSuccess({ releases: releases })),
+          catchError((error) &#x3D;&gt; of(addProjectReleaseFailure({ error }))),
+        ),
+      ),
+    ),
+  );
+
+  removeProjectDebugFiles$ &#x3D; createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(removeProjectDebugFiles),
+      switchMap((args) &#x3D;&gt;
+        this.projectService.removeProjectDebugFiles(args.projectId, args.ids).pipe(
+          map((files) &#x3D;&gt; removeProjectDebugFilesSuccess({ debugFiles: files })),
+          catchError((error) &#x3D;&gt; of(removeProjectDebugFilesFailure({ error }))),
+        ),
+      ),
+    ),
+  );
+
+  addProjectDebugFile$ &#x3D; createEffect(() &#x3D;&gt;
+    this.actions$.pipe(
+      ofType(addProjectDebugFile),
+      switchMap((args) &#x3D;&gt;
+        this.projectService.addProjectDebugFile(args.projectId, args.dto).pipe(
+          map((files) &#x3D;&gt; addProjectDebugFileSuccess({ debugFiles: files })),
+          catchError((error) &#x3D;&gt; of(addProjectDebugFileFailure({ error }))),
+        ),
+      ),
+    ),
+  );
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'SingleProjectEffects.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

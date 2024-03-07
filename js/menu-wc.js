@@ -80,6 +80,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/CreateOrganizationComponent.html" data-type="entity-link" >CreateOrganizationComponent</a>
                             </li>
                             <li class="link">
+                                <a href="components/DebugFilesTableComponent.html" data-type="entity-link" >DebugFilesTableComponent</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/DetailsComponent.html" data-type="entity-link" >DetailsComponent</a>
                             </li>
                             <li class="link">
@@ -87,6 +90,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="components/DocumentationComponent.html" data-type="entity-link" >DocumentationComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/EnvironmentsTableComponent.html" data-type="entity-link" >EnvironmentsTableComponent</a>
                             </li>
                             <li class="link">
                                 <a href="components/FooterComponent.html" data-type="entity-link" >FooterComponent</a>
@@ -161,6 +167,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/ReleasesComponent.html" data-type="entity-link" >ReleasesComponent</a>
                             </li>
                             <li class="link">
+                                <a href="components/ReleasesTableComponent.html" data-type="entity-link" >ReleasesTableComponent</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/ReplaysComponent.html" data-type="entity-link" >ReplaysComponent</a>
                             </li>
                             <li class="link">
@@ -191,6 +200,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/SingleProjectCardComponent.html" data-type="entity-link" >SingleProjectCardComponent</a>
                             </li>
                             <li class="link">
+                                <a href="components/SingleProjectComponent.html" data-type="entity-link" >SingleProjectComponent</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/SingleTeamComponent.html" data-type="entity-link" >SingleTeamComponent</a>
                             </li>
                             <li class="link">
@@ -198,6 +210,12 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="components/SupportComponent.html" data-type="entity-link" >SupportComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/TagsTableComponent.html" data-type="entity-link" >TagsTableComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/TeamPickerComponent.html" data-type="entity-link" >TeamPickerComponent</a>
                             </li>
                             <li class="link">
                                 <a href="components/TeamsComponent.html" data-type="entity-link" >TeamsComponent</a>
@@ -279,6 +297,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     <a href="injectables/SessionStorage.html" data-type="entity-link" >SessionStorage</a>
                                 </li>
                                 <li class="link">
+                                    <a href="injectables/SingleProjectEffects.html" data-type="entity-link" >SingleProjectEffects</a>
+                                </li>
+                                <li class="link">
                                     <a href="injectables/SingleTeamEffects.html" data-type="entity-link" >SingleTeamEffects</a>
                                 </li>
                                 <li class="link">
@@ -311,6 +332,12 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/CreateOrganizationRequestDto.html" data-type="entity-link" >CreateOrganizationRequestDto</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/CreateProjectDebugFileDto.html" data-type="entity-link" >CreateProjectDebugFileDto</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/CreateProjectReleaseDto.html" data-type="entity-link" >CreateProjectReleaseDto</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/CreateProjectRequestDto.html" data-type="entity-link" >CreateProjectRequestDto</a>
@@ -367,13 +394,25 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/Project.html" data-type="entity-link" >Project</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/ProjectDebugFile.html" data-type="entity-link" >ProjectDebugFile</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/ProjectDebugFileDto.html" data-type="entity-link" >ProjectDebugFileDto</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/ProjectDto.html" data-type="entity-link" >ProjectDto</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/ProjectHourByHourStatDto.html" data-type="entity-link" >ProjectHourByHourStatDto</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/ProjectRelease.html" data-type="entity-link" >ProjectRelease</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/ProjectReleaseDto.html" data-type="entity-link" >ProjectReleaseDto</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/ProjectSecurityClientDto.html" data-type="entity-link" >ProjectSecurityClientDto</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/ProjectStatDto.html" data-type="entity-link" >ProjectStatDto</a>
@@ -392,6 +431,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/RoleState.html" data-type="entity-link" >RoleState</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/SingleProjectState.html" data-type="entity-link" >SingleProjectState</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/SingleTeamState.html" data-type="entity-link" >SingleTeamState</a>
