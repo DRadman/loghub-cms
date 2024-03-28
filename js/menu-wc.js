@@ -161,6 +161,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/QueriesComponent.html" data-type="entity-link" >QueriesComponent</a>
                             </li>
                             <li class="link">
+                                <a href="components/QueryInputComponent.html" data-type="entity-link" >QueryInputComponent</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/RegisterComponent.html" data-type="entity-link" >RegisterComponent</a>
                             </li>
                             <li class="link">
@@ -231,6 +234,19 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                         </ul>
                     </li>
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-bs-toggle="collapse" ${ isNormalMode ? 'data-bs-target="#classes-links"' :
+                            'data-bs-target="#xs-classes-links"' }>
+                            <span class="icon ion-ios-paper"></span>
+                            <span>Classes</span>
+                            <span class="icon ion-ios-arrow-down"></span>
+                        </div>
+                        <ul class="links collapse " ${ isNormalMode ? 'id="classes-links"' : 'id="xs-classes-links"' }>
+                            <li class="link">
+                                <a href="classes/PageableDefault.html" data-type="entity-link" >PageableDefault</a>
+                            </li>
+                        </ul>
+                    </li>
                         <li class="chapter">
                             <div class="simple menu-toggler" data-bs-toggle="collapse" ${ isNormalMode ? 'data-bs-target="#injectables-links"' :
                                 'data-bs-target="#xs-injectables-links"' }>
@@ -256,6 +272,12 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 </li>
                                 <li class="link">
                                     <a href="injectables/LocalStorage.html" data-type="entity-link" >LocalStorage</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/LogSessionService.html" data-type="entity-link" >LogSessionService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/LogSourceService.html" data-type="entity-link" >LogSourceService</a>
                                 </li>
                                 <li class="link">
                                     <a href="injectables/MembersEffects.html" data-type="entity-link" >MembersEffects</a>
@@ -364,6 +386,12 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/LayoutState.html" data-type="entity-link" >LayoutState</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/LogSessionDto.html" data-type="entity-link" >LogSessionDto</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/LogSourceDto.html" data-type="entity-link" >LogSourceDto</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/MembersDto.html" data-type="entity-link" >MembersDto</a>
                             </li>
                             <li class="link">
@@ -380,6 +408,12 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/OrganizationState.html" data-type="entity-link" >OrganizationState</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/Page.html" data-type="entity-link" >Page</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/Pageable.html" data-type="entity-link" >Pageable</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/Platform.html" data-type="entity-link" >Platform</a>

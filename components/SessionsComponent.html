@@ -129,6 +129,13 @@
 
 
 
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+                <code>OnDestroy</code>
+    </p>
 
 
 <section data-compodoc="block-metadata">
@@ -157,6 +164,18 @@
                 <td class="col-md-9"><code>true</code></td>
             </tr>
 
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>CommonModule</code>
+                            <code>ReactiveFormsModule</code>
+                            <code>FormsModule</code>
+                            <code>TableModule</code>
+                            <code>TranslateModule</code>
+                            <code>MultiSelectModule</code>
+                                <code><a href="../components/QueryInputComponent.html" target="_self" >QueryInputComponent</a></code>
+                </td>
+            </tr>
 
 
 
@@ -181,35 +200,1078 @@
     </table>
 </section>
 
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#currentPage" >currentPage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#currentPageable" >currentPageable</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#data" >data</a>
+                            </li>
+                            <li>
+                                <a href="#isLoadingData" >isLoadingData</a>
+                            </li>
+                            <li>
+                                <a href="#isLoadingProjects" >isLoadingProjects</a>
+                            </li>
+                            <li>
+                                <a href="#projects" >projects</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#projectSubscription" >projectSubscription</a>
+                            </li>
+                            <li>
+                                <a href="#queryKeys" >queryKeys</a>
+                            </li>
+                            <li>
+                                <a href="#queryKeysDescription" >queryKeysDescription</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#search" >search</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#selectedProjects" >selectedProjects</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#fetchData" >fetchData</a>
+                            </li>
+                            <li>
+                                <a href="#loadPage" >loadPage</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onQueryChanged" >onQueryChanged</a>
+                            </li>
+                            <li>
+                                <a href="#selectProjects" >selectProjects</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
 
 
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(store: <a href="../interfaces/AppState.html" target="_self">Store&lt;AppState&gt;</a>, logSessionService: <a href="../injectables/LogSessionService.html" target="_self">LogSessionService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/features/sessions/sessions.component.ts:40</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>store</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../interfaces/AppState.html" target="_self" >Store&lt;AppState&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>logSessionService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LogSessionService.html" target="_self" >LogSessionService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
 
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchData"></a>
+                    <span class="name">
+                        <span ><b>fetchData</b></span>
+                        <a href="#fetchData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>fetchData()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="116"
+                                    class="link-to-prism">src/app/features/sessions/sessions.component.ts:116</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadPage"></a>
+                    <span class="name">
+                        <span ><b>loadPage</b></span>
+                        <a href="#loadPage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>loadPage($event: TableLazyLoadEvent)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="137"
+                                    class="link-to-prism">src/app/features/sessions/sessions.component.ts:137</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>$event</td>
+                                            <td>
+                                                        <code>TableLazyLoadEvent</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="102"
+                                    class="link-to-prism">src/app/features/sessions/sessions.component.ts:102</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="79"
+                                    class="link-to-prism">src/app/features/sessions/sessions.component.ts:79</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onQueryChanged"></a>
+                    <span class="name">
+                        <span ><b>onQueryChanged</b></span>
+                        <a href="#onQueryChanged"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onQueryChanged($event: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="106"
+                                    class="link-to-prism">src/app/features/sessions/sessions.component.ts:106</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>$event</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectProjects"></a>
+                    <span class="name">
+                        <span ><b>selectProjects</b></span>
+                        <a href="#selectProjects"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>selectProjects()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="111"
+                                    class="link-to-prism">src/app/features/sessions/sessions.component.ts:111</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="currentPage"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>currentPage</b></span>
+                        <a href="#currentPage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Observable&lt;Page&lt;LogSessionDto&gt;&gt;</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/features/sessions/sessions.component.ts:53</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="currentPageable"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>currentPageable</b></span>
+                        <a href="#currentPageable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Pageable.html" target="_self" >Pageable</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new PageableDefault()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/features/sessions/sessions.component.ts:52</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="data"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>data</b></span>
+                        <a href="#data"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/LogSessionDto.html" target="_self" >Observable&lt;LogSessionDto[]&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/features/sessions/sessions.component.ts:54</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isLoadingData"></a>
+                    <span class="name">
+                        <span ><b>isLoadingData</b></span>
+                        <a href="#isLoadingData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/features/sessions/sessions.component.ts:50</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isLoadingProjects"></a>
+                    <span class="name">
+                        <span ><b>isLoadingProjects</b></span>
+                        <a href="#isLoadingProjects"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.store.select(isLoadingMyProjects)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/features/sessions/sessions.component.ts:49</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="projects"></a>
+                    <span class="name">
+                        <span ><b>projects</b></span>
+                        <a href="#projects"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.store
+    .select(selectMyProjects)
+    .pipe(map((value) &#x3D;&gt; [...(value ?? [])]))</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/features/sessions/sessions.component.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="projectSubscription"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>projectSubscription</b></span>
+                        <a href="#projectSubscription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subscription</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/features/sessions/sessions.component.ts:58</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="queryKeys"></a>
+                    <span class="name">
+                        <span ><b>queryKeys</b></span>
+                        <a href="#queryKeys"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Record&lt;string | string&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    sessionId: &#x27;string&#x27;,
+    startTime: &#x27;date&#x27;,
+    endTime: &#x27;date&#x27;,
+    crashFree: &#x27;boolean&#x27;,
+    networkType: &#x27;string&#x27;,
+    networkSpeed: &#x27;string&#x27;,
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/app/features/sessions/sessions.component.ts:61</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="queryKeysDescription"></a>
+                    <span class="name">
+                        <span ><b>queryKeysDescription</b></span>
+                        <a href="#queryKeysDescription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Record&lt;string | string&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    sessionId: &#x27;sessions.session_id_description&#x27;,
+    startTime: &#x27;sessions.start_time_description&#x27;,
+    endTime: &#x27;sessions.end_time_description&#x27;,
+    crashFree: &#x27;sessions.crash_free_description&#x27;,
+    networkType: &#x27;sessions.network_type_description&#x27;,
+    networkSpeed: &#x27;sessions.network_speed_description&#x27;,
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/app/features/sessions/sessions.component.ts:70</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="search"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>search</b></span>
+                        <a href="#search"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/features/sessions/sessions.component.ts:59</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedProjects"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>selectedProjects</b></span>
+                        <a href="#selectedProjects"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Project.html" target="_self" >Project[]</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/features/sessions/sessions.component.ts:56</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { CommonModule } from &#x27;@angular/common&#x27;;
+import { Component, OnDestroy, OnInit } from &#x27;@angular/core&#x27;;
+import { FormsModule, ReactiveFormsModule } from &#x27;@angular/forms&#x27;;
+import { TranslateModule } from &#x27;@ngx-translate/core&#x27;;
+import { MultiSelectModule } from &#x27;primeng/multiselect&#x27;;
+import { TableLazyLoadEvent, TableModule } from &#x27;primeng/table&#x27;;
+import { QueryInputComponent } from &#x27;../../shared/components/query-input/query-input.component&#x27;;
+import {
+  Pageable,
+  PageableDefault,
+} from &#x27;../../core/domain/pageable/pageable.dto&#x27;;
+import { AppState } from &#x27;../../core/state/app.state&#x27;;
+import { Store } from &#x27;@ngrx/store&#x27;;
+import {
+  isLoadingMyProjects,
+  selectMyProjects,
+} from &#x27;../../core/state/project/project.selectors&#x27;;
+import { Observable, Subscription, map } from &#x27;rxjs&#x27;;
+import { Page } from &#x27;../../core/domain/pageable/page.dto&#x27;;
+import { LogSessionDto } from &#x27;../../core/domain/dto/log-session.dto&#x27;;
+import { LogSessionService } from &#x27;../../core/services/api/log-session.api.service&#x27;;
+import { Project } from &#x27;../../core/domain/models/project.entity&#x27;;
+import { loadMyProjects } from &#x27;../../core/state/project/project.actions&#x27;;
 
 @Component({
   selector: &#x27;app-sessions&#x27;,
   standalone: true,
-  imports: [],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    TableModule,
+    TranslateModule,
+    MultiSelectModule,
+    QueryInputComponent,
+  ],
   templateUrl: &#x27;./sessions.component.html&#x27;,
-  styleUrl: &#x27;./sessions.component.scss&#x27;
+  styleUrl: &#x27;./sessions.component.scss&#x27;,
 })
-export class SessionsComponent {
+export class SessionsComponent implements OnInit, OnDestroy {
+  constructor(
+    private store: Store&lt;AppState&gt;,
+    private logSessionService: LogSessionService,
+  ) {}
 
+  projects &#x3D; this.store
+    .select(selectMyProjects)
+    .pipe(map((value) &#x3D;&gt; [...(value ?? [])]));
+  isLoadingProjects &#x3D; this.store.select(isLoadingMyProjects);
+  isLoadingData &#x3D; true;
+
+  private currentPageable: Pageable &#x3D; new PageableDefault();
+  currentPage?: Observable&lt;Page&lt;LogSessionDto&gt;&gt;;
+  data?: Observable&lt;LogSessionDto[]&gt;;
+
+  selectedProjects?: Project[];
+
+  private projectSubscription?: Subscription;
+  private search: string &#x3D; &#x27;&#x27;;
+
+  queryKeys: Record&lt;string, string&gt; &#x3D; {
+    sessionId: &#x27;string&#x27;,
+    startTime: &#x27;date&#x27;,
+    endTime: &#x27;date&#x27;,
+    crashFree: &#x27;boolean&#x27;,
+    networkType: &#x27;string&#x27;,
+    networkSpeed: &#x27;string&#x27;,
+  };
+
+  queryKeysDescription: Record&lt;string, string&gt; &#x3D; {
+    sessionId: &#x27;sessions.session_id_description&#x27;,
+    startTime: &#x27;sessions.start_time_description&#x27;,
+    endTime: &#x27;sessions.end_time_description&#x27;,
+    crashFree: &#x27;sessions.crash_free_description&#x27;,
+    networkType: &#x27;sessions.network_type_description&#x27;,
+    networkSpeed: &#x27;sessions.network_speed_description&#x27;,
+  };
+
+  ngOnInit(): void {
+    this.store.dispatch(loadMyProjects({}));
+    this.projectSubscription &#x3D; this.projects.subscribe((projects) &#x3D;&gt; {
+      if (projects &amp;&amp; projects !&#x3D;&#x3D; null) {
+        this.selectedProjects &#x3D; projects;
+
+        this.currentPage &#x3D; this.logSessionService.findAll(
+          this.currentPageable,
+          {
+            projectIds: projects.map((project) &#x3D;&gt; project.projectId),
+          },
+        );
+
+        this.data &#x3D; this.currentPage.pipe(
+          map((page) &#x3D;&gt; {
+            this.isLoadingData &#x3D; false;
+            return page.content;
+          }),
+        );
+      }
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.projectSubscription?.unsubscribe();
+  }
+
+  onQueryChanged($event: string) {
+    this.search &#x3D; $event;
+    this.fetchData();
+  }
+
+  selectProjects() {
+    this.currentPageable.page &#x3D; 0;
+    this.fetchData();
+  }
+
+  fetchData() {
+    this.isLoadingData &#x3D; true;
+    let search: string | undefined &#x3D; undefined;
+    if (this.search !&#x3D;&#x3D; &#x27;&#x27;) {
+      search &#x3D; this.search;
+    }
+    console.log(&#x27;Search is: &#x27; + search)
+    this.currentPage &#x3D; this.logSessionService.findAll(this.currentPageable, {
+      projectIds:
+        this.selectedProjects?.map((project) &#x3D;&gt; project.projectId) ?? [],
+      search: search,
+    });
+
+    this.data &#x3D; this.currentPage.pipe(
+      map((page) &#x3D;&gt; {
+        this.isLoadingData &#x3D; false;
+        return page.content;
+      }),
+    );
+  }
+
+  loadPage($event: TableLazyLoadEvent) {
+    this.currentPageable.size &#x3D; $event.rows ?? this.currentPageable.size;
+    this.currentPageable.page &#x3D; $event.first ?? 0 / this.currentPageable.size;
+    if ($event.sortField) {
+      let sortField: string;
+      if (Array.isArray($event.sortField)) {
+        sortField &#x3D; $event.sortField[0];
+      } else {
+        sortField &#x3D; $event.sortField;
+      }
+      let sortOrder: &#x27;ASC&#x27; | &#x27;DESC&#x27; &#x3D; &#x27;ASC&#x27;;
+      if ($event.sortOrder &amp;&amp; $event.sortOrder &#x3D;&#x3D;&#x3D; 1) {
+        sortOrder &#x3D; &#x27;ASC&#x27;;
+      } else {
+        sortOrder &#x3D; &#x27;DESC&#x27;;
+      }
+      this.currentPageable.sort &#x3D; [sortField + &#x27;,&#x27; + sortOrder];
+    }
+    this.fetchData();
+  }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;p&gt;sessions works!&lt;/p&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;flex w-full gap-4&quot;&gt;
+  &lt;p-multiSelect
+    styleClass&#x3D;&quot;flex-grow-1&quot;
+    optionLabel&#x3D;&quot;name&quot;
+    [options]&#x3D;&quot;(projects | async) ?? []&quot;
+    [(ngModel)]&#x3D;&quot;selectedProjects&quot;
+    [filter]&#x3D;&quot;true&quot;
+    [disabled]&#x3D;&quot;(isLoadingProjects | async) &#x3D;&#x3D;&#x3D; true&quot;
+    filterBy&#x3D;&quot;name&quot;
+    [showClear]&#x3D;&quot;true&quot;
+    [placeholder]&#x3D;&quot;&#x27;sessions.select_projects&#x27; | translate&quot;
+    (ngModelChange)&#x3D;&quot;selectProjects()&quot;
+  /&gt;
+  &lt;app-query-input
+    class&#x3D;&quot;flex-grow-1&quot;
+    [allowedKeys]&#x3D;&quot;queryKeys&quot;
+    [allowedKeysDescription]&#x3D;&quot;queryKeysDescription&quot;
+    (queryResult)&#x3D;&quot;onQueryChanged($event)&quot;
+  /&gt;
+&lt;/div&gt;
+&lt;p-table
+  [value]&#x3D;&quot;(data | async) ?? []&quot;
+  dataKey&#x3D;&quot;sessionId&quot;
+  [lazy]&#x3D;&quot;true&quot;
+  (onLazyLoad)&#x3D;&quot;loadPage($event)&quot;
+  [totalRecords]&#x3D;&quot;(currentPage | async)?.totalElements ?? 0&quot;
+  [rowHover]&#x3D;&quot;true&quot;
+  [rows]&#x3D;&quot;10&quot;
+  [showCurrentPageReport]&#x3D;&quot;true&quot;
+  [rowsPerPageOptions]&#x3D;&quot;[10, 25, 50]&quot;
+  [loading]&#x3D;&quot;isLoadingData&quot;
+  [paginator]&#x3D;&quot;true&quot;
+  [currentPageReportTemplate]&#x3D;&quot;&#x27;table.pagination_template&#x27; | translate&quot;
+  styleClass&#x3D;&quot;mt-4&quot;
+&gt;
+  &lt;ng-template pTemplate&#x3D;&quot;header&quot;&gt;
+    &lt;tr&gt;
+      &lt;th pSortableColumn&#x3D;&quot;sessionId&quot;&gt;
+        &lt;div class&#x3D;&quot;flex justify-content-between align-items-center&quot;&gt;
+          {{ &quot;sessions.id&quot; | translate }}
+          &lt;p-sortIcon field&#x3D;&quot;sessionId&quot; /&gt;
+        &lt;/div&gt;
+      &lt;/th&gt;
+      &lt;th pSortableColumn&#x3D;&quot;source&quot;&gt;
+        &lt;div class&#x3D;&quot;flex justify-content-between align-items-center&quot;&gt;
+          {{ &quot;sessions.device_id&quot; | translate }}
+          &lt;p-sortIcon field&#x3D;&quot;source&quot; /&gt;
+        &lt;/div&gt;
+      &lt;/th&gt;
+      &lt;th pSortableColumn&#x3D;&quot;project&quot;&gt;
+        &lt;div class&#x3D;&quot;flex justify-content-between align-items-center&quot;&gt;
+          {{ &quot;sessions.project_id&quot; | translate }}
+          &lt;p-sortIcon field&#x3D;&quot;project_id&quot; /&gt;
+        &lt;/div&gt;
+      &lt;/th&gt;
+      &lt;th pSortableColumn&#x3D;&quot;networkType&quot;&gt;
+        &lt;div class&#x3D;&quot;flex justify-content-between align-items-center&quot;&gt;
+          {{ &quot;sessions.network_type&quot; | translate }}
+          &lt;p-sortIcon field&#x3D;&quot;networkType&quot; /&gt;
+        &lt;/div&gt;
+      &lt;/th&gt;
+      &lt;th pSortableColumn&#x3D;&quot;networkSpeed&quot;&gt;
+        &lt;div class&#x3D;&quot;flex justify-content-between align-items-center&quot;&gt;
+          {{ &quot;sessions.network_speed&quot; | translate }}
+          &lt;p-sortIcon field&#x3D;&quot;networkSpeed&quot; /&gt;
+        &lt;/div&gt;
+      &lt;/th&gt;
+      &lt;th pSortableColumn&#x3D;&quot;crashFree&quot; style&#x3D;&quot;width: 9rem&quot;&gt;
+        &lt;div class&#x3D;&quot;flex justify-content-between align-items-center&quot;&gt;
+          {{ &quot;sessions.crash_free&quot; | translate }}
+          &lt;p-sortIcon field&#x3D;&quot;crashFree&quot; /&gt;
+        &lt;/div&gt;
+      &lt;/th&gt;
+      &lt;th pSortableColumn&#x3D;&quot;startTime&quot;&gt;
+        &lt;div class&#x3D;&quot;flex justify-content-between align-items-center&quot;&gt;
+          {{ &quot;sessions.start_time&quot; | translate }}
+          &lt;p-sortIcon field&#x3D;&quot;startTime&quot; /&gt;
+        &lt;/div&gt;
+      &lt;/th&gt;
+      &lt;th pSortableColumn&#x3D;&quot;endTime&quot;&gt;
+        &lt;div class&#x3D;&quot;flex justify-content-between align-items-center&quot;&gt;
+          {{ &quot;sessions.end_time&quot; | translate }}
+          &lt;p-sortIcon field&#x3D;&quot;endTime&quot; /&gt;
+        &lt;/div&gt;
+      &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/ng-template&gt;
+  &lt;ng-template pTemplate&#x3D;&quot;body&quot; let-session&gt;
+    &lt;tr class&#x3D;&quot;p-selectable-row&quot;&gt;
+      &lt;td&gt;
+        {{ session?.sessionId }}
+      &lt;/td&gt;
+      &lt;td&gt;
+        {{ session?.logSourceId }}
+      &lt;/td&gt;
+      &lt;td&gt;
+        {{ session?.projectId }}
+      &lt;/td&gt;
+      &lt;td&gt;
+        {{ session?.networkType }}
+      &lt;/td&gt;
+      &lt;td&gt;
+        {{ session?.networkSpeed }}
+      &lt;/td&gt;
+      &lt;td&gt;
+        &lt;div class&#x3D;&quot;flex align-items-center w-full justify-content-center&quot;&gt;
+          @if (session.crashFree) {
+            &lt;i class&#x3D;&quot;pi pi-check-circle text-green-500&quot;&gt;&lt;/i&gt;
+          } @else {
+            &lt;i class&#x3D;&quot;pi pi-times-circle text-red-500&quot;&gt;&lt;/i&gt;
+          }
+        &lt;/div&gt;
+      &lt;/td&gt;
+      &lt;td&gt;
+        {{ session?.startTime | date: &quot;MMM d, yyyy - h:mm:ss a (UTC)&quot; }}
+      &lt;/td&gt;
+      &lt;td&gt;
+        {{ session?.endTime | date: &quot;MMM d, yyyy - h:mm:ss a (UTC)&quot; }}
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/ng-template&gt;
+  &lt;ng-template pTemplate&#x3D;&quot;emptymessage&quot;&gt;
+    &lt;tr&gt;
+      &lt;td colspan&#x3D;&quot;8&quot;&gt;{{ &quot;sessions.no_sessions_found&quot; | translate }}&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/ng-template&gt;
+&lt;/p-table&gt;
 </code></pre>
     </div>
 
@@ -239,8 +1301,8 @@ export class SessionsComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><p>sessions works!</p></div>'
-    var COMPONENTS = [{'name': 'AccessDeniedComponent', 'selector': 'app-access-denied'},{'name': 'AlertsComponent', 'selector': 'app-alerts'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CloseComponent', 'selector': 'app-close'},{'name': 'ConfigComponent', 'selector': 'app-config'},{'name': 'CreateOrganizationComponent', 'selector': 'app-create-organization'},{'name': 'DebugFilesTableComponent', 'selector': 'app-debug-files-table'},{'name': 'DetailsComponent', 'selector': 'app-details'},{'name': 'DevicesComponent', 'selector': 'app-devices'},{'name': 'DocumentationComponent', 'selector': 'app-documentation'},{'name': 'EnvironmentsTableComponent', 'selector': 'app-environments-table'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'GuidesComponent', 'selector': 'app-guides'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InvitationComponent', 'selector': 'app-invitation'},{'name': 'IssuesComponent', 'selector': 'app-issues'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogsComponent', 'selector': 'app-logs'},{'name': 'MemberPickerComponent', 'selector': 'app-member-picker'},{'name': 'MembersComponent', 'selector': 'app-members'},{'name': 'MembersTableComponent', 'selector': 'app-members-table'},{'name': 'MenuitemComponent', 'selector': '[app-menuitem]'},{'name': 'MessagesComponent', 'selector': 'app-messages'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationsComponent', 'selector': 'app-notifications'},{'name': 'OrganizationComponent', 'selector': 'app-organization'},{'name': 'ProjectDetailsComponent', 'selector': 'app-project-details'},{'name': 'ProjectPickerComponent', 'selector': 'app-project-picker'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'ProjectsComponent', 'selector': 'app-projects-settings'},{'name': 'ProjectsTableComponent', 'selector': 'app-projects-table'},{'name': 'QueriesComponent', 'selector': 'app-queries'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ReleasesComponent', 'selector': 'app-releases'},{'name': 'ReleasesTableComponent', 'selector': 'app-releases-table'},{'name': 'ReplaysComponent', 'selector': 'app-replays'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'ScreenLoadsComponent', 'selector': 'app-screen-loads'},{'name': 'SdksComponent', 'selector': 'app-sdks'},{'name': 'SecurityComponent', 'selector': 'app-security'},{'name': 'SessionsComponent', 'selector': 'app-sessions'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SingleProjectCardComponent', 'selector': 'app-single-project-card'},{'name': 'SingleProjectComponent', 'selector': 'app-single-project'},{'name': 'SingleTeamComponent', 'selector': 'app-single-team'},{'name': 'StatsComponent', 'selector': 'app-stats'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TagsTableComponent', 'selector': 'app-tags-table'},{'name': 'TeamPickerComponent', 'selector': 'app-team-picker'},{'name': 'TeamsComponent', 'selector': 'app-teams'},{'name': 'TeamsTableComponent', 'selector': 'app-teams-table'},{'name': 'TopbarComponent', 'selector': 'app-topbar'},{'name': 'VitalsComponent', 'selector': 'app-vitals'}];
+        var COMPONENT_TEMPLATE = '<div><div class="flex w-full gap-4">  <p-multiSelect    styleClass="flex-grow-1"    optionLabel="name"    [options]="(projects | async) ?? []"    [(ngModel)]="selectedProjects"    [filter]="true"    [disabled]="(isLoadingProjects | async) === true"    filterBy="name"    [showClear]="true"    [placeholder]="\'sessions.select_projects\' | translate"    (ngModelChange)="selectProjects()"  />  <app-query-input    class="flex-grow-1"    [allowedKeys]="queryKeys"    [allowedKeysDescription]="queryKeysDescription"    (queryResult)="onQueryChanged($event)"  /></div><p-table  [value]="(data | async) ?? []"  dataKey="sessionId"  [lazy]="true"  (onLazyLoad)="loadPage($event)"  [totalRecords]="(currentPage | async)?.totalElements ?? 0"  [rowHover]="true"  [rows]="10"  [showCurrentPageReport]="true"  [rowsPerPageOptions]="[10, 25, 50]"  [loading]="isLoadingData"  [paginator]="true"  [currentPageReportTemplate]="\'table.pagination_template\' | translate"  styleClass="mt-4">  <ng-template pTemplate="header">    <tr>      <th pSortableColumn="sessionId">        <div class="flex justify-content-between align-items-center">          {{ "sessions.id" | translate }}          <p-sortIcon field="sessionId" />        </div>      </th>      <th pSortableColumn="source">        <div class="flex justify-content-between align-items-center">          {{ "sessions.device_id" | translate }}          <p-sortIcon field="source" />        </div>      </th>      <th pSortableColumn="project">        <div class="flex justify-content-between align-items-center">          {{ "sessions.project_id" | translate }}          <p-sortIcon field="project_id" />        </div>      </th>      <th pSortableColumn="networkType">        <div class="flex justify-content-between align-items-center">          {{ "sessions.network_type" | translate }}          <p-sortIcon field="networkType" />        </div>      </th>      <th pSortableColumn="networkSpeed">        <div class="flex justify-content-between align-items-center">          {{ "sessions.network_speed" | translate }}          <p-sortIcon field="networkSpeed" />        </div>      </th>      <th pSortableColumn="crashFree" style="width: 9rem">        <div class="flex justify-content-between align-items-center">          {{ "sessions.crash_free" | translate }}          <p-sortIcon field="crashFree" />        </div>      </th>      <th pSortableColumn="startTime">        <div class="flex justify-content-between align-items-center">          {{ "sessions.start_time" | translate }}          <p-sortIcon field="startTime" />        </div>      </th>      <th pSortableColumn="endTime">        <div class="flex justify-content-between align-items-center">          {{ "sessions.end_time" | translate }}          <p-sortIcon field="endTime" />        </div>      </th>    </tr>  </ng-template>  <ng-template pTemplate="body" let-session>    <tr class="p-selectable-row">      <td>        {{ session?.sessionId }}      </td>      <td>        {{ session?.logSourceId }}      </td>      <td>        {{ session?.projectId }}      </td>      <td>        {{ session?.networkType }}      </td>      <td>        {{ session?.networkSpeed }}      </td>      <td>        <div class="flex align-items-center w-full justify-content-center">          @if (session.crashFree) {            <i class="pi pi-check-circle text-green-500"></i>          } @else {            <i class="pi pi-times-circle text-red-500"></i>          }        </div>      </td>      <td>        {{ session?.startTime | date: "MMM d, yyyy - h:mm:ss a (UTC)" }}      </td>      <td>        {{ session?.endTime | date: "MMM d, yyyy - h:mm:ss a (UTC)" }}      </td>    </tr>  </ng-template>  <ng-template pTemplate="emptymessage">    <tr>      <td colspan="8">{{ "sessions.no_sessions_found" | translate }}</td>    </tr>  </ng-template></p-table></div>'
+    var COMPONENTS = [{'name': 'AccessDeniedComponent', 'selector': 'app-access-denied'},{'name': 'AlertsComponent', 'selector': 'app-alerts'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CloseComponent', 'selector': 'app-close'},{'name': 'ConfigComponent', 'selector': 'app-config'},{'name': 'CreateOrganizationComponent', 'selector': 'app-create-organization'},{'name': 'DebugFilesTableComponent', 'selector': 'app-debug-files-table'},{'name': 'DetailsComponent', 'selector': 'app-details'},{'name': 'DevicesComponent', 'selector': 'app-devices'},{'name': 'DocumentationComponent', 'selector': 'app-documentation'},{'name': 'EnvironmentsTableComponent', 'selector': 'app-environments-table'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'GuidesComponent', 'selector': 'app-guides'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InvitationComponent', 'selector': 'app-invitation'},{'name': 'IssuesComponent', 'selector': 'app-issues'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogsComponent', 'selector': 'app-logs'},{'name': 'MemberPickerComponent', 'selector': 'app-member-picker'},{'name': 'MembersComponent', 'selector': 'app-members'},{'name': 'MembersTableComponent', 'selector': 'app-members-table'},{'name': 'MenuitemComponent', 'selector': '[app-menuitem]'},{'name': 'MessagesComponent', 'selector': 'app-messages'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationsComponent', 'selector': 'app-notifications'},{'name': 'OrganizationComponent', 'selector': 'app-organization'},{'name': 'ProjectDetailsComponent', 'selector': 'app-project-details'},{'name': 'ProjectPickerComponent', 'selector': 'app-project-picker'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'ProjectsComponent', 'selector': 'app-projects-settings'},{'name': 'ProjectsTableComponent', 'selector': 'app-projects-table'},{'name': 'QueriesComponent', 'selector': 'app-queries'},{'name': 'QueryInputComponent', 'selector': 'app-query-input'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ReleasesComponent', 'selector': 'app-releases'},{'name': 'ReleasesTableComponent', 'selector': 'app-releases-table'},{'name': 'ReplaysComponent', 'selector': 'app-replays'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'ScreenLoadsComponent', 'selector': 'app-screen-loads'},{'name': 'SdksComponent', 'selector': 'app-sdks'},{'name': 'SecurityComponent', 'selector': 'app-security'},{'name': 'SessionsComponent', 'selector': 'app-sessions'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SingleProjectCardComponent', 'selector': 'app-single-project-card'},{'name': 'SingleProjectComponent', 'selector': 'app-single-project'},{'name': 'SingleTeamComponent', 'selector': 'app-single-team'},{'name': 'StatsComponent', 'selector': 'app-stats'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TagsTableComponent', 'selector': 'app-tags-table'},{'name': 'TeamPickerComponent', 'selector': 'app-team-picker'},{'name': 'TeamsComponent', 'selector': 'app-teams'},{'name': 'TeamsTableComponent', 'selector': 'app-teams-table'},{'name': 'TopbarComponent', 'selector': 'app-topbar'},{'name': 'VitalsComponent', 'selector': 'app-vitals'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'SessionsComponent'};
 </script>

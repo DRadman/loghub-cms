@@ -129,6 +129,13 @@
 
 
 
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+                <code>OnDestroy</code>
+    </p>
 
 
 <section data-compodoc="block-metadata">
@@ -157,6 +164,22 @@
                 <td class="col-md-9"><code>true</code></td>
             </tr>
 
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>CommonModule</code>
+                            <code>ButtonModule</code>
+                            <code>RippleModule</code>
+                            <code>TableModule</code>
+                            <code>DropdownModule</code>
+                            <code>InputTextModule</code>
+                            <code>ReactiveFormsModule</code>
+                            <code>FormsModule</code>
+                            <code>MultiSelectModule</code>
+                            <code>TranslateModule</code>
+                                <code><a href="../components/QueryInputComponent.html" target="_self" >QueryInputComponent</a></code>
+                </td>
+            </tr>
 
 
 
@@ -181,35 +204,1418 @@
     </table>
 </section>
 
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#currentPage" >currentPage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#currentPageable" >currentPageable</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#data" >data</a>
+                            </li>
+                            <li>
+                                <a href="#environments" >environments</a>
+                            </li>
+                            <li>
+                                <a href="#isLoadingData" >isLoadingData</a>
+                            </li>
+                            <li>
+                                <a href="#isLoadingProjects" >isLoadingProjects</a>
+                            </li>
+                            <li>
+                                <a href="#projects" >projects</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#projectSubscription" >projectSubscription</a>
+                            </li>
+                            <li>
+                                <a href="#queryKeys" >queryKeys</a>
+                            </li>
+                            <li>
+                                <a href="#queryKeysDescription" >queryKeysDescription</a>
+                            </li>
+                            <li>
+                                <a href="#releases" >releases</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#search" >search</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#selectedEnvironments" >selectedEnvironments</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#selectedProjects" >selectedProjects</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#selectedReleases" >selectedReleases</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#fetchData" >fetchData</a>
+                            </li>
+                            <li>
+                                <a href="#loadPage" >loadPage</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onQueryChanged" >onQueryChanged</a>
+                            </li>
+                            <li>
+                                <a href="#selectEnvironment" >selectEnvironment</a>
+                            </li>
+                            <li>
+                                <a href="#selectProjects" >selectProjects</a>
+                            </li>
+                            <li>
+                                <a href="#selectRelease" >selectRelease</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
 
 
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(store: <a href="../interfaces/AppState.html" target="_self">Store&lt;AppState&gt;</a>, logSourceService: <a href="../injectables/LogSourceService.html" target="_self">LogSourceService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/features/devices/devices.component.ts:49</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>store</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../interfaces/AppState.html" target="_self" >Store&lt;AppState&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>logSourceService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LogSourceService.html" target="_self" >LogSourceService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
 
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchData"></a>
+                    <span class="name">
+                        <span ><b>fetchData</b></span>
+                        <a href="#fetchData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>fetchData()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="154"
+                                    class="link-to-prism">src/app/features/devices/devices.component.ts:154</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadPage"></a>
+                    <span class="name">
+                        <span ><b>loadPage</b></span>
+                        <a href="#loadPage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>loadPage($event: TableLazyLoadEvent)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="176"
+                                    class="link-to-prism">src/app/features/devices/devices.component.ts:176</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>$event</td>
+                                            <td>
+                                                        <code>TableLazyLoadEvent</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="197"
+                                    class="link-to-prism">src/app/features/devices/devices.component.ts:197</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="116"
+                                    class="link-to-prism">src/app/features/devices/devices.component.ts:116</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onQueryChanged"></a>
+                    <span class="name">
+                        <span ><b>onQueryChanged</b></span>
+                        <a href="#onQueryChanged"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onQueryChanged($event: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="149"
+                                    class="link-to-prism">src/app/features/devices/devices.component.ts:149</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>$event</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectEnvironment"></a>
+                    <span class="name">
+                        <span ><b>selectEnvironment</b></span>
+                        <a href="#selectEnvironment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>selectEnvironment()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="220"
+                                    class="link-to-prism">src/app/features/devices/devices.component.ts:220</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectProjects"></a>
+                    <span class="name">
+                        <span ><b>selectProjects</b></span>
+                        <a href="#selectProjects"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>selectProjects()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="201"
+                                    class="link-to-prism">src/app/features/devices/devices.component.ts:201</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectRelease"></a>
+                    <span class="name">
+                        <span ><b>selectRelease</b></span>
+                        <a href="#selectRelease"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>selectRelease()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="225"
+                                    class="link-to-prism">src/app/features/devices/devices.component.ts:225</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="currentPage"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>currentPage</b></span>
+                        <a href="#currentPage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Observable&lt;Page&lt;LogSourceDto&gt;&gt;</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="107" class="link-to-prism">src/app/features/devices/devices.component.ts:107</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="currentPageable"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>currentPageable</b></span>
+                        <a href="#currentPageable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Pageable.html" target="_self" >Pageable</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new PageableDefault()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="106" class="link-to-prism">src/app/features/devices/devices.component.ts:106</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="data"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>data</b></span>
+                        <a href="#data"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/LogSourceDto.html" target="_self" >Observable&lt;LogSourceDto[]&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="108" class="link-to-prism">src/app/features/devices/devices.component.ts:108</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="environments"></a>
+                    <span class="name">
+                        <span ><b>environments</b></span>
+                        <a href="#environments"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="105" class="link-to-prism">src/app/features/devices/devices.component.ts:105</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isLoadingData"></a>
+                    <span class="name">
+                        <span ><b>isLoadingData</b></span>
+                        <a href="#isLoadingData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="103" class="link-to-prism">src/app/features/devices/devices.component.ts:103</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isLoadingProjects"></a>
+                    <span class="name">
+                        <span ><b>isLoadingProjects</b></span>
+                        <a href="#isLoadingProjects"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.store.select(isLoadingMyProjects)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="102" class="link-to-prism">src/app/features/devices/devices.component.ts:102</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="projects"></a>
+                    <span class="name">
+                        <span ><b>projects</b></span>
+                        <a href="#projects"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.store
+    .select(selectMyProjects)
+    .pipe(map((value) &#x3D;&gt; [...(value ?? [])]))</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="99" class="link-to-prism">src/app/features/devices/devices.component.ts:99</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="projectSubscription"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>projectSubscription</b></span>
+                        <a href="#projectSubscription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subscription</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="97" class="link-to-prism">src/app/features/devices/devices.component.ts:97</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="queryKeys"></a>
+                    <span class="name">
+                        <span ><b>queryKeys</b></span>
+                        <a href="#queryKeys"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Record&lt;string | string&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    &quot;id&quot;: &quot;string&quot;,
+    &quot;uniqueIdentifier&quot;: &quot;string&quot;,
+    &quot;os&quot;: &quot;string&quot;,
+    &quot;osVersion&quot;: &quot;string&quot;,
+    &quot;environment&quot;: &quot;string&quot;,
+    &quot;ipAddress&quot;: &quot;string&quot;,
+    &quot;macAddress&quot;: &quot;string&quot;,
+    &quot;cpuInfo.model&quot;: &quot;string&quot;,
+    &quot;cpuInfo.speed&quot;: &quot;number&quot;,
+    &quot;cpuInfo.cores&quot;: &quot;number&quot;,
+    &quot;cpuInfo.threads&quot;: &quot;number&quot;,
+    &quot;release.releaseId&quot;: &quot;string&quot;,
+    &quot;release.version&quot;: &quot;string&quot;,
+    &quot;release.releaseTimestamp&quot;: &quot;date&quot;,
+    &quot;maxRam&quot;: &quot;number&quot;,
+    &quot;architecture&quot;: &quot;string&quot;,
+    &quot;createdAt&quot;: &quot;date&quot;,
+    &quot;updatedAt&quot;: &quot;date&quot;
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/features/devices/devices.component.ts:55</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="queryKeysDescription"></a>
+                    <span class="name">
+                        <span ><b>queryKeysDescription</b></span>
+                        <a href="#queryKeysDescription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Record&lt;string | string&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    &quot;id&quot;: &quot;devices.id_description&quot;,
+    &quot;uniqueIdentifier&quot;: &quot;devices.unique_identifier_description&quot;,
+    &quot;os&quot;: &quot;devices.os_description&quot;,
+    &quot;osVersion&quot;: &quot;devices.os_version_description&quot;,
+    &quot;environment&quot;: &quot;devices.environment_description&quot;,
+    &quot;ipAddress&quot;: &quot;devices.ip_address_description&quot;,
+    &quot;macAddress&quot;: &quot;devices.mac_address_description&quot;,
+    &quot;cpuInfo.model&quot;: &quot;devices.cpu_info_model_description&quot;,
+    &quot;cpuInfo.speed&quot;: &quot;devices.cpu_info_speed_description&quot;,
+    &quot;cpuInfo.cores&quot;: &quot;devices.cpu_info_cores_description&quot;,
+    &quot;cpuInfo.threads&quot;: &quot;devices.cpu_info_threads_description&quot;,
+    &quot;release.releaseId&quot;: &quot;devices.release_release_id_description&quot;,
+    &quot;release.version&quot;: &quot;devices.release_version_description&quot;,
+    &quot;release.releaseTimestamp&quot;: &quot;devices.release_timestamp_description&quot;,
+    &quot;maxRam&quot;: &quot;devices.max_ram_description&quot;,
+    &quot;architecture&quot;: &quot;devices.architecture_description&quot;,
+    &quot;createdAt&quot;: &quot;devices.created_at_description&quot;,
+    &quot;updatedAt&quot;: &quot;devices.updated_at_description&quot;
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/app/features/devices/devices.component.ts:76</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="releases"></a>
+                    <span class="name">
+                        <span ><b>releases</b></span>
+                        <a href="#releases"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ProjectRelease[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="104" class="link-to-prism">src/app/features/devices/devices.component.ts:104</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="search"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>search</b></span>
+                        <a href="#search"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="114" class="link-to-prism">src/app/features/devices/devices.component.ts:114</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedEnvironments"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>selectedEnvironments</b></span>
+                        <a href="#selectedEnvironments"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="112" class="link-to-prism">src/app/features/devices/devices.component.ts:112</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedProjects"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>selectedProjects</b></span>
+                        <a href="#selectedProjects"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Project.html" target="_self" >Project[]</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="110" class="link-to-prism">src/app/features/devices/devices.component.ts:110</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedReleases"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>selectedReleases</b></span>
+                        <a href="#selectedReleases"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ProjectRelease[]</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="111" class="link-to-prism">src/app/features/devices/devices.component.ts:111</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnDestroy, OnInit } from &#x27;@angular/core&#x27;;
+import { Store } from &#x27;@ngrx/store&#x27;;
+import { Observable, Subscription, map } from &#x27;rxjs&#x27;;
+import { ProjectRelease } from &#x27;../../core/domain/models/project-release.entity&#x27;;
+import { Project } from &#x27;../../core/domain/models/project.entity&#x27;;
+import { AppState } from &#x27;../../core/state/app.state&#x27;;
+import { loadMyProjects } from &#x27;../../core/state/project/project.actions&#x27;;
+import {
+  isLoadingMyProjects,
+  selectMyProjects,
+} from &#x27;../../core/state/project/project.selectors&#x27;;
+import { LogSourceDto } from &#x27;../../core/domain/dto/log-source.dto&#x27;;
+import { Page } from &#x27;../../core/domain/pageable/page.dto&#x27;;
+import { LogSourceService } from &#x27;../../core/services/api/log-source.api.service&#x27;;
+import {
+  Pageable,
+  PageableDefault,
+} from &#x27;../../core/domain/pageable/pageable.dto&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
+import { ButtonModule } from &#x27;primeng/button&#x27;;
+import { RippleModule } from &#x27;primeng/ripple&#x27;;
+import { TableLazyLoadEvent, TableModule } from &#x27;primeng/table&#x27;;
+import { DropdownModule } from &#x27;primeng/dropdown&#x27;;
+import { InputTextModule } from &#x27;primeng/inputtext&#x27;;
+import { FormsModule, ReactiveFormsModule } from &#x27;@angular/forms&#x27;;
+import { MultiSelectModule } from &#x27;primeng/multiselect&#x27;;
+import { TranslateModule } from &#x27;@ngx-translate/core&#x27;;
+import { QueryInputComponent } from &#x27;../../shared/components/query-input/query-input.component&#x27;;
 
 @Component({
   selector: &#x27;app-devices&#x27;,
   standalone: true,
-  imports: [],
+  imports: [
+    CommonModule,
+    ButtonModule,
+    RippleModule,
+    TableModule,
+    DropdownModule,
+    InputTextModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MultiSelectModule,
+    TranslateModule,
+    QueryInputComponent,
+  ],
   templateUrl: &#x27;./devices.component.html&#x27;,
-  styleUrl: &#x27;./devices.component.scss&#x27;
+  styleUrl: &#x27;./devices.component.scss&#x27;,
 })
-export class DevicesComponent {
+export class DevicesComponent implements OnInit, OnDestroy {
+  constructor(
+    private store: Store&lt;AppState&gt;,
+    private logSourceService: LogSourceService,
+  ) {}
 
+  queryKeys: Record&lt;string, string&gt; &#x3D; {
+    &quot;id&quot;: &quot;string&quot;,
+    &quot;uniqueIdentifier&quot;: &quot;string&quot;,
+    &quot;os&quot;: &quot;string&quot;,
+    &quot;osVersion&quot;: &quot;string&quot;,
+    &quot;environment&quot;: &quot;string&quot;,
+    &quot;ipAddress&quot;: &quot;string&quot;,
+    &quot;macAddress&quot;: &quot;string&quot;,
+    &quot;cpuInfo.model&quot;: &quot;string&quot;,
+    &quot;cpuInfo.speed&quot;: &quot;number&quot;,
+    &quot;cpuInfo.cores&quot;: &quot;number&quot;,
+    &quot;cpuInfo.threads&quot;: &quot;number&quot;,
+    &quot;release.releaseId&quot;: &quot;string&quot;,
+    &quot;release.version&quot;: &quot;string&quot;,
+    &quot;release.releaseTimestamp&quot;: &quot;date&quot;,
+    &quot;maxRam&quot;: &quot;number&quot;,
+    &quot;architecture&quot;: &quot;string&quot;,
+    &quot;createdAt&quot;: &quot;date&quot;,
+    &quot;updatedAt&quot;: &quot;date&quot;
+  };
+
+  queryKeysDescription: Record&lt;string, string&gt; &#x3D; {
+    &quot;id&quot;: &quot;devices.id_description&quot;,
+    &quot;uniqueIdentifier&quot;: &quot;devices.unique_identifier_description&quot;,
+    &quot;os&quot;: &quot;devices.os_description&quot;,
+    &quot;osVersion&quot;: &quot;devices.os_version_description&quot;,
+    &quot;environment&quot;: &quot;devices.environment_description&quot;,
+    &quot;ipAddress&quot;: &quot;devices.ip_address_description&quot;,
+    &quot;macAddress&quot;: &quot;devices.mac_address_description&quot;,
+    &quot;cpuInfo.model&quot;: &quot;devices.cpu_info_model_description&quot;,
+    &quot;cpuInfo.speed&quot;: &quot;devices.cpu_info_speed_description&quot;,
+    &quot;cpuInfo.cores&quot;: &quot;devices.cpu_info_cores_description&quot;,
+    &quot;cpuInfo.threads&quot;: &quot;devices.cpu_info_threads_description&quot;,
+    &quot;release.releaseId&quot;: &quot;devices.release_release_id_description&quot;,
+    &quot;release.version&quot;: &quot;devices.release_version_description&quot;,
+    &quot;release.releaseTimestamp&quot;: &quot;devices.release_timestamp_description&quot;,
+    &quot;maxRam&quot;: &quot;devices.max_ram_description&quot;,
+    &quot;architecture&quot;: &quot;devices.architecture_description&quot;,
+    &quot;createdAt&quot;: &quot;devices.created_at_description&quot;,
+    &quot;updatedAt&quot;: &quot;devices.updated_at_description&quot;
+  };
+
+  private projectSubscription?: Subscription;
+
+  projects &#x3D; this.store
+    .select(selectMyProjects)
+    .pipe(map((value) &#x3D;&gt; [...(value ?? [])]));
+  isLoadingProjects &#x3D; this.store.select(isLoadingMyProjects);
+  isLoadingData &#x3D; true;
+  releases: ProjectRelease[] &#x3D; [];
+  environments: string[] &#x3D; [];
+  private currentPageable: Pageable &#x3D; new PageableDefault();
+  currentPage?: Observable&lt;Page&lt;LogSourceDto&gt;&gt;;
+  data?: Observable&lt;LogSourceDto[]&gt;;
+
+  selectedProjects?: Project[];
+  selectedReleases?: ProjectRelease[];
+  selectedEnvironments?: string[];
+
+  private search: string &#x3D; &#x27;&#x27;;
+
+  ngOnInit(): void {
+    this.store.dispatch(loadMyProjects({}));
+    this.projectSubscription &#x3D; this.projects.subscribe((projects) &#x3D;&gt; {
+      if (projects &amp;&amp; projects !&#x3D;&#x3D; null) {
+        const environments: Set&lt;string&gt; &#x3D; new Set();
+        const releases: Set&lt;ProjectRelease&gt; &#x3D; new Set();
+        for (const project of projects) {
+          project.environments.forEach((environment) &#x3D;&gt;
+            environments.add(environment),
+          );
+          project.releases.forEach((release) &#x3D;&gt; releases.add(release));
+        }
+        this.releases &#x3D; [...releases];
+        this.environments &#x3D; [...environments];
+
+        this.selectedProjects &#x3D; projects;
+        this.selectedEnvironments &#x3D; undefined;
+        this.selectedReleases &#x3D; undefined;
+
+        this.currentPage &#x3D; this.logSourceService.findAll(this.currentPageable, {
+          projectIds: projects.map((project) &#x3D;&gt; project.projectId),
+        });
+
+        this.data &#x3D; this.currentPage.pipe(
+          map((page) &#x3D;&gt; {
+            this.isLoadingData &#x3D; false;
+            return page.content;
+          }),
+        );
+      }
+    });
+  }
+
+  onQueryChanged($event: string) {
+    this.search &#x3D; $event;
+    this.fetchData();
+  }
+
+  fetchData() {
+    this.isLoadingData &#x3D; true;
+    let search: string | undefined &#x3D; undefined;
+    if (this.search !&#x3D;&#x3D; &#x27;&#x27;) {
+      search &#x3D; this.search;
+    }
+    this.currentPage &#x3D; this.logSourceService.findAll(this.currentPageable, {
+      projectIds:
+        this.selectedProjects?.map((project) &#x3D;&gt; project.projectId) ?? [],
+      environments: this.selectedEnvironments,
+      releaseIds: this.selectedReleases?.map((release) &#x3D;&gt; release.releaseId),
+      search: search,
+    });
+
+    this.data &#x3D; this.currentPage.pipe(
+      map((page) &#x3D;&gt; {
+        this.isLoadingData &#x3D; false;
+        return page.content;
+      }),
+    );
+  }
+
+  loadPage($event: TableLazyLoadEvent) {
+    this.currentPageable.size &#x3D; $event.rows ?? this.currentPageable.size;
+    this.currentPageable.page &#x3D; $event.first ?? 0 / this.currentPageable.size;
+    if ($event.sortField) {
+      let sortField: string;
+      if (Array.isArray($event.sortField)) {
+        sortField &#x3D; $event.sortField[0];
+      } else {
+        sortField &#x3D; $event.sortField;
+      }
+      let sortOrder: &#x27;ASC&#x27; | &#x27;DESC&#x27; &#x3D; &#x27;ASC&#x27;;
+      if ($event.sortOrder &amp;&amp; $event.sortOrder &#x3D;&#x3D;&#x3D; 1) {
+        sortOrder &#x3D; &#x27;ASC&#x27;;
+      } else {
+        sortOrder &#x3D; &#x27;DESC&#x27;;
+      }
+      this.currentPageable.sort &#x3D; [sortField + &#x27;,&#x27; + sortOrder];
+    }
+    this.fetchData();
+  }
+
+  ngOnDestroy(): void {
+    this.projectSubscription?.unsubscribe();
+  }
+
+  selectProjects() {
+    this.currentPageable.page &#x3D; 0;
+    const environments: Set&lt;string&gt; &#x3D; new Set();
+    const releases: Set&lt;ProjectRelease&gt; &#x3D; new Set();
+    this.selectedProjects?.forEach((project: Project) &#x3D;&gt; {
+      project.environments.forEach((environment) &#x3D;&gt;
+        environments.add(environment),
+      );
+      project.releases.forEach((release) &#x3D;&gt; releases.add(release));
+    });
+    this.releases &#x3D; [...releases];
+    this.environments &#x3D; [...environments];
+
+    this.selectedEnvironments &#x3D; undefined;
+    this.selectedReleases &#x3D; undefined;
+
+    this.fetchData();
+  }
+
+  selectEnvironment() {
+    this.currentPageable.page &#x3D; 0;
+    this.fetchData();
+  }
+
+  selectRelease() {
+    this.currentPageable.page &#x3D; 0;
+    this.fetchData();
+  }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;p&gt;devices works!&lt;/p&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;flex w-full gap-4&quot;&gt;
+  &lt;p-multiSelect
+    styleClass&#x3D;&quot;flex-grow-1&quot;
+    optionLabel&#x3D;&quot;name&quot;
+    [options]&#x3D;&quot;(projects | async) ?? []&quot;
+    [(ngModel)]&#x3D;&quot;selectedProjects&quot;
+    [filter]&#x3D;&quot;true&quot;
+    [disabled]&#x3D;&quot;(isLoadingProjects | async) &#x3D;&#x3D;&#x3D; true&quot;
+    filterBy&#x3D;&quot;name&quot;
+    [showClear]&#x3D;&quot;true&quot;
+    [placeholder]&#x3D;&quot;&#x27;devices.select_projects&#x27; | translate&quot;
+    (ngModelChange)&#x3D;&quot;selectProjects()&quot;
+  /&gt;
+  &lt;p-multiSelect
+    styleClass&#x3D;&quot;flex-grow-1&quot;
+    [options]&#x3D;&quot;environments&quot;
+    [(ngModel)]&#x3D;&quot;selectedEnvironments&quot;
+    [filter]&#x3D;&quot;true&quot;
+    [disabled]&#x3D;&quot;(isLoadingProjects | async) &#x3D;&#x3D;&#x3D; true&quot;
+    [showClear]&#x3D;&quot;true&quot;
+    [placeholder]&#x3D;&quot;&#x27;devices.select_environments&#x27; | translate&quot;
+    (ngModelChange)&#x3D;&quot;selectEnvironment()&quot;
+  /&gt;
+  &lt;p-multiSelect
+    styleClass&#x3D;&quot;flex-grow-1&quot;
+    optionLabel&#x3D;&quot;version&quot;
+    [options]&#x3D;&quot;releases&quot;
+    [(ngModel)]&#x3D;&quot;selectedReleases&quot;
+    [filter]&#x3D;&quot;true&quot;
+    [disabled]&#x3D;&quot;(isLoadingProjects | async) &#x3D;&#x3D;&#x3D; true&quot;
+    filterBy&#x3D;&quot;version&quot;
+    [showClear]&#x3D;&quot;true&quot;
+    [placeholder]&#x3D;&quot;&#x27;devices.select_releases&#x27; | translate&quot;
+    (ngModelChange)&#x3D;&quot;selectRelease()&quot;
+  /&gt;
+&lt;/div&gt;
+&lt;div class&#x3D;&quot;flex w-full mt-4&quot;&gt;
+  &lt;app-query-input
+    class&#x3D;&quot;flex-grow-1&quot;
+    [allowedKeys]&#x3D;&quot;queryKeys&quot;
+    [allowedKeysDescription]&#x3D;&quot;queryKeysDescription&quot;
+    (queryResult)&#x3D;&quot;onQueryChanged($event)&quot;
+  /&gt;
+&lt;/div&gt;
+
+&lt;p-table
+  [value]&#x3D;&quot;(data | async) ?? []&quot;
+  dataKey&#x3D;&quot;logSourceId&quot;
+  [lazy]&#x3D;&quot;true&quot;
+  (onLazyLoad)&#x3D;&quot;loadPage($event)&quot;
+  [totalRecords]&#x3D;&quot;(currentPage | async)?.totalElements ?? 0&quot;
+  [rowHover]&#x3D;&quot;true&quot;
+  [rows]&#x3D;&quot;10&quot;
+  [showCurrentPageReport]&#x3D;&quot;true&quot;
+  [rowsPerPageOptions]&#x3D;&quot;[10, 25, 50]&quot;
+  [loading]&#x3D;&quot;isLoadingData&quot;
+  [paginator]&#x3D;&quot;true&quot;
+  [currentPageReportTemplate]&#x3D;&quot;&#x27;table.pagination_template&#x27; | translate&quot;
+  styleClass&#x3D;&quot;mt-4&quot;
+&gt;
+  &lt;ng-template pTemplate&#x3D;&quot;header&quot;&gt;
+    &lt;tr&gt;
+      &lt;th pSortableColumn&#x3D;&quot;logSourceId&quot;&gt;
+        &lt;div class&#x3D;&quot;flex justify-content-between align-items-center&quot;&gt;
+          {{ &quot;devices.id&quot; | translate }}
+          &lt;p-sortIcon field&#x3D;&quot;logSourceId&quot; /&gt;
+        &lt;/div&gt;
+      &lt;/th&gt;
+      &lt;th pSortableColumn&#x3D;&quot;os&quot;&gt;
+        &lt;div class&#x3D;&quot;flex justify-content-between align-items-center&quot;&gt;
+          {{ &quot;devices.os&quot; | translate }}
+          &lt;p-sortIcon field&#x3D;&quot;os&quot; /&gt;
+        &lt;/div&gt;
+      &lt;/th&gt;
+      &lt;th pSortableColumn&#x3D;&quot;environment&quot;&gt;
+        &lt;div class&#x3D;&quot;flex justify-content-between align-items-center&quot;&gt;
+          {{ &quot;devices.environment&quot; | translate }}
+          &lt;p-sortIcon field&#x3D;&quot;environment&quot; /&gt;
+        &lt;/div&gt;
+      &lt;/th&gt;
+      &lt;th pSortableColumn&#x3D;&quot;release&quot;&gt;
+        &lt;div class&#x3D;&quot;flex justify-content-between align-items-center&quot;&gt;
+          {{ &quot;devices.version&quot; | translate }}
+          &lt;p-sortIcon field&#x3D;&quot;release&quot; /&gt;
+        &lt;/div&gt;
+      &lt;/th&gt;
+      &lt;th pSortableColumn&#x3D;&quot;architecture&quot;&gt;
+        &lt;div class&#x3D;&quot;flex justify-content-between align-items-center&quot;&gt;
+          {{ &quot;devices.architecture&quot; | translate }}
+          &lt;p-sortIcon field&#x3D;&quot;architecture&quot; /&gt;
+        &lt;/div&gt;
+      &lt;/th&gt;
+      &lt;th pSortableColumn&#x3D;&quot;ipAddress&quot;&gt;
+        &lt;div class&#x3D;&quot;flex justify-content-between align-items-center&quot;&gt;
+          {{ &quot;devices.ip_address&quot; | translate }}
+          &lt;p-sortIcon field&#x3D;&quot;ipAddress&quot; /&gt;
+        &lt;/div&gt;
+      &lt;/th&gt;
+      &lt;th pSortableColumn&#x3D;&quot;macAddress&quot;&gt;
+        &lt;div class&#x3D;&quot;flex justify-content-between align-items-center&quot;&gt;
+          {{ &quot;devices.mac_address&quot; | translate }}
+          &lt;p-sortIcon field&#x3D;&quot;macAddress&quot; /&gt;
+        &lt;/div&gt;
+      &lt;/th&gt;
+      &lt;th pSortableColumn&#x3D;&quot;online&quot; style&#x3D;&quot;width: 8rem&quot;&gt;
+        &lt;div class&#x3D;&quot;flex justify-content-between align-items-center&quot;&gt;
+          {{ &quot;devices.online&quot; | translate }}
+          &lt;p-sortIcon field&#x3D;&quot;online&quot; /&gt;
+        &lt;/div&gt;
+      &lt;/th&gt;
+      &lt;th pSortableColumn&#x3D;&quot;updatedAt&quot;&gt;
+        &lt;div class&#x3D;&quot;flex justify-content-between align-items-center&quot;&gt;
+          {{ &quot;devices.last_registration&quot; | translate }}
+          &lt;p-sortIcon field&#x3D;&quot;updatedAt&quot; /&gt;
+        &lt;/div&gt;
+      &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/ng-template&gt;
+  &lt;ng-template pTemplate&#x3D;&quot;body&quot; let-device&gt;
+    &lt;tr class&#x3D;&quot;p-selectable-row&quot;&gt;
+      &lt;td&gt;
+        {{ device?.logSourceId }}
+      &lt;/td&gt;
+      &lt;td&gt;
+        {{ device?.os }}
+      &lt;/td&gt;
+      &lt;td&gt;
+        {{ device?.environment }}
+      &lt;/td&gt;
+      &lt;td&gt;
+        {{ device?.release.version }}
+      &lt;/td&gt;
+      &lt;td&gt;
+        {{ device?.architecture }}
+      &lt;/td&gt;
+      &lt;td&gt;
+        {{ device?.ipAddress }}
+      &lt;/td&gt;
+      &lt;td&gt;
+        {{ device?.macAddress }}
+      &lt;/td&gt;
+      &lt;td&gt;
+        &lt;div class&#x3D;&quot;flex align-items-center w-full justify-content-center&quot;&gt;
+          @if (device.online) {
+            &lt;i class&#x3D;&quot;pi pi-check-circle text-green-500&quot;&gt;&lt;/i&gt;
+          } @else {
+            &lt;i class&#x3D;&quot;pi pi-times-circle text-red-500&quot;&gt;&lt;/i&gt;
+          }
+        &lt;/div&gt;
+      &lt;/td&gt;
+      &lt;td&gt;
+        {{ device?.updatedAt | date: &quot;MMM d, yyyy - h:mm:ss a (UTC)&quot; }}
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/ng-template&gt;
+  &lt;ng-template pTemplate&#x3D;&quot;emptymessage&quot;&gt;
+    &lt;tr&gt;
+      &lt;td colspan&#x3D;&quot;9&quot;&gt;{{ &quot;devices.no_devices_found&quot; | translate }}&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/ng-template&gt;
+&lt;/p-table&gt;
 </code></pre>
     </div>
 
@@ -239,8 +1645,8 @@ export class DevicesComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><p>devices works!</p></div>'
-    var COMPONENTS = [{'name': 'AccessDeniedComponent', 'selector': 'app-access-denied'},{'name': 'AlertsComponent', 'selector': 'app-alerts'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CloseComponent', 'selector': 'app-close'},{'name': 'ConfigComponent', 'selector': 'app-config'},{'name': 'CreateOrganizationComponent', 'selector': 'app-create-organization'},{'name': 'DebugFilesTableComponent', 'selector': 'app-debug-files-table'},{'name': 'DetailsComponent', 'selector': 'app-details'},{'name': 'DevicesComponent', 'selector': 'app-devices'},{'name': 'DocumentationComponent', 'selector': 'app-documentation'},{'name': 'EnvironmentsTableComponent', 'selector': 'app-environments-table'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'GuidesComponent', 'selector': 'app-guides'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InvitationComponent', 'selector': 'app-invitation'},{'name': 'IssuesComponent', 'selector': 'app-issues'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogsComponent', 'selector': 'app-logs'},{'name': 'MemberPickerComponent', 'selector': 'app-member-picker'},{'name': 'MembersComponent', 'selector': 'app-members'},{'name': 'MembersTableComponent', 'selector': 'app-members-table'},{'name': 'MenuitemComponent', 'selector': '[app-menuitem]'},{'name': 'MessagesComponent', 'selector': 'app-messages'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationsComponent', 'selector': 'app-notifications'},{'name': 'OrganizationComponent', 'selector': 'app-organization'},{'name': 'ProjectDetailsComponent', 'selector': 'app-project-details'},{'name': 'ProjectPickerComponent', 'selector': 'app-project-picker'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'ProjectsComponent', 'selector': 'app-projects-settings'},{'name': 'ProjectsTableComponent', 'selector': 'app-projects-table'},{'name': 'QueriesComponent', 'selector': 'app-queries'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ReleasesComponent', 'selector': 'app-releases'},{'name': 'ReleasesTableComponent', 'selector': 'app-releases-table'},{'name': 'ReplaysComponent', 'selector': 'app-replays'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'ScreenLoadsComponent', 'selector': 'app-screen-loads'},{'name': 'SdksComponent', 'selector': 'app-sdks'},{'name': 'SecurityComponent', 'selector': 'app-security'},{'name': 'SessionsComponent', 'selector': 'app-sessions'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SingleProjectCardComponent', 'selector': 'app-single-project-card'},{'name': 'SingleProjectComponent', 'selector': 'app-single-project'},{'name': 'SingleTeamComponent', 'selector': 'app-single-team'},{'name': 'StatsComponent', 'selector': 'app-stats'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TagsTableComponent', 'selector': 'app-tags-table'},{'name': 'TeamPickerComponent', 'selector': 'app-team-picker'},{'name': 'TeamsComponent', 'selector': 'app-teams'},{'name': 'TeamsTableComponent', 'selector': 'app-teams-table'},{'name': 'TopbarComponent', 'selector': 'app-topbar'},{'name': 'VitalsComponent', 'selector': 'app-vitals'}];
+        var COMPONENT_TEMPLATE = '<div><div class="flex w-full gap-4">  <p-multiSelect    styleClass="flex-grow-1"    optionLabel="name"    [options]="(projects | async) ?? []"    [(ngModel)]="selectedProjects"    [filter]="true"    [disabled]="(isLoadingProjects | async) === true"    filterBy="name"    [showClear]="true"    [placeholder]="\'devices.select_projects\' | translate"    (ngModelChange)="selectProjects()"  />  <p-multiSelect    styleClass="flex-grow-1"    [options]="environments"    [(ngModel)]="selectedEnvironments"    [filter]="true"    [disabled]="(isLoadingProjects | async) === true"    [showClear]="true"    [placeholder]="\'devices.select_environments\' | translate"    (ngModelChange)="selectEnvironment()"  />  <p-multiSelect    styleClass="flex-grow-1"    optionLabel="version"    [options]="releases"    [(ngModel)]="selectedReleases"    [filter]="true"    [disabled]="(isLoadingProjects | async) === true"    filterBy="version"    [showClear]="true"    [placeholder]="\'devices.select_releases\' | translate"    (ngModelChange)="selectRelease()"  /></div><div class="flex w-full mt-4">  <app-query-input    class="flex-grow-1"    [allowedKeys]="queryKeys"    [allowedKeysDescription]="queryKeysDescription"    (queryResult)="onQueryChanged($event)"  /></div><p-table  [value]="(data | async) ?? []"  dataKey="logSourceId"  [lazy]="true"  (onLazyLoad)="loadPage($event)"  [totalRecords]="(currentPage | async)?.totalElements ?? 0"  [rowHover]="true"  [rows]="10"  [showCurrentPageReport]="true"  [rowsPerPageOptions]="[10, 25, 50]"  [loading]="isLoadingData"  [paginator]="true"  [currentPageReportTemplate]="\'table.pagination_template\' | translate"  styleClass="mt-4">  <ng-template pTemplate="header">    <tr>      <th pSortableColumn="logSourceId">        <div class="flex justify-content-between align-items-center">          {{ "devices.id" | translate }}          <p-sortIcon field="logSourceId" />        </div>      </th>      <th pSortableColumn="os">        <div class="flex justify-content-between align-items-center">          {{ "devices.os" | translate }}          <p-sortIcon field="os" />        </div>      </th>      <th pSortableColumn="environment">        <div class="flex justify-content-between align-items-center">          {{ "devices.environment" | translate }}          <p-sortIcon field="environment" />        </div>      </th>      <th pSortableColumn="release">        <div class="flex justify-content-between align-items-center">          {{ "devices.version" | translate }}          <p-sortIcon field="release" />        </div>      </th>      <th pSortableColumn="architecture">        <div class="flex justify-content-between align-items-center">          {{ "devices.architecture" | translate }}          <p-sortIcon field="architecture" />        </div>      </th>      <th pSortableColumn="ipAddress">        <div class="flex justify-content-between align-items-center">          {{ "devices.ip_address" | translate }}          <p-sortIcon field="ipAddress" />        </div>      </th>      <th pSortableColumn="macAddress">        <div class="flex justify-content-between align-items-center">          {{ "devices.mac_address" | translate }}          <p-sortIcon field="macAddress" />        </div>      </th>      <th pSortableColumn="online" style="width: 8rem">        <div class="flex justify-content-between align-items-center">          {{ "devices.online" | translate }}          <p-sortIcon field="online" />        </div>      </th>      <th pSortableColumn="updatedAt">        <div class="flex justify-content-between align-items-center">          {{ "devices.last_registration" | translate }}          <p-sortIcon field="updatedAt" />        </div>      </th>    </tr>  </ng-template>  <ng-template pTemplate="body" let-device>    <tr class="p-selectable-row">      <td>        {{ device?.logSourceId }}      </td>      <td>        {{ device?.os }}      </td>      <td>        {{ device?.environment }}      </td>      <td>        {{ device?.release.version }}      </td>      <td>        {{ device?.architecture }}      </td>      <td>        {{ device?.ipAddress }}      </td>      <td>        {{ device?.macAddress }}      </td>      <td>        <div class="flex align-items-center w-full justify-content-center">          @if (device.online) {            <i class="pi pi-check-circle text-green-500"></i>          } @else {            <i class="pi pi-times-circle text-red-500"></i>          }        </div>      </td>      <td>        {{ device?.updatedAt | date: "MMM d, yyyy - h:mm:ss a (UTC)" }}      </td>    </tr>  </ng-template>  <ng-template pTemplate="emptymessage">    <tr>      <td colspan="9">{{ "devices.no_devices_found" | translate }}</td>    </tr>  </ng-template></p-table></div>'
+    var COMPONENTS = [{'name': 'AccessDeniedComponent', 'selector': 'app-access-denied'},{'name': 'AlertsComponent', 'selector': 'app-alerts'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CloseComponent', 'selector': 'app-close'},{'name': 'ConfigComponent', 'selector': 'app-config'},{'name': 'CreateOrganizationComponent', 'selector': 'app-create-organization'},{'name': 'DebugFilesTableComponent', 'selector': 'app-debug-files-table'},{'name': 'DetailsComponent', 'selector': 'app-details'},{'name': 'DevicesComponent', 'selector': 'app-devices'},{'name': 'DocumentationComponent', 'selector': 'app-documentation'},{'name': 'EnvironmentsTableComponent', 'selector': 'app-environments-table'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'GuidesComponent', 'selector': 'app-guides'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InvitationComponent', 'selector': 'app-invitation'},{'name': 'IssuesComponent', 'selector': 'app-issues'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogsComponent', 'selector': 'app-logs'},{'name': 'MemberPickerComponent', 'selector': 'app-member-picker'},{'name': 'MembersComponent', 'selector': 'app-members'},{'name': 'MembersTableComponent', 'selector': 'app-members-table'},{'name': 'MenuitemComponent', 'selector': '[app-menuitem]'},{'name': 'MessagesComponent', 'selector': 'app-messages'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationsComponent', 'selector': 'app-notifications'},{'name': 'OrganizationComponent', 'selector': 'app-organization'},{'name': 'ProjectDetailsComponent', 'selector': 'app-project-details'},{'name': 'ProjectPickerComponent', 'selector': 'app-project-picker'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'ProjectsComponent', 'selector': 'app-projects-settings'},{'name': 'ProjectsTableComponent', 'selector': 'app-projects-table'},{'name': 'QueriesComponent', 'selector': 'app-queries'},{'name': 'QueryInputComponent', 'selector': 'app-query-input'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ReleasesComponent', 'selector': 'app-releases'},{'name': 'ReleasesTableComponent', 'selector': 'app-releases-table'},{'name': 'ReplaysComponent', 'selector': 'app-replays'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'ScreenLoadsComponent', 'selector': 'app-screen-loads'},{'name': 'SdksComponent', 'selector': 'app-sdks'},{'name': 'SecurityComponent', 'selector': 'app-security'},{'name': 'SessionsComponent', 'selector': 'app-sessions'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SingleProjectCardComponent', 'selector': 'app-single-project-card'},{'name': 'SingleProjectComponent', 'selector': 'app-single-project'},{'name': 'SingleTeamComponent', 'selector': 'app-single-team'},{'name': 'StatsComponent', 'selector': 'app-stats'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TagsTableComponent', 'selector': 'app-tags-table'},{'name': 'TeamPickerComponent', 'selector': 'app-team-picker'},{'name': 'TeamsComponent', 'selector': 'app-teams'},{'name': 'TeamsTableComponent', 'selector': 'app-teams-table'},{'name': 'TopbarComponent', 'selector': 'app-topbar'},{'name': 'VitalsComponent', 'selector': 'app-vitals'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'DevicesComponent'};
 </script>

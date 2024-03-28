@@ -1,0 +1,2384 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>loghub-cms documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">loghub-cms documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  QueryInputComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/shared/components/query-input/query-input.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-query-input</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">Standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>CommonModule</code>
+                            <code>ReactiveFormsModule</code>
+                            <code>FormsModule</code>
+                            <code>InputTextModule</code>
+                            <code>TranslateModule</code>
+                            <code>OverlayPanelModule</code>
+                            <code>ScrollPanelModule</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./query-input.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./query-input.component.scss</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#booleanOp" >booleanOp</a>
+                            </li>
+                            <li>
+                                <a href="#dateOp" >dateOp</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#inputField" >inputField</a>
+                            </li>
+                            <li>
+                                <a href="#isOp" >isOp</a>
+                            </li>
+                            <li>
+                                <a href="#isValidQuery" >isValidQuery</a>
+                            </li>
+                            <li>
+                                <a href="#lastKey" >lastKey</a>
+                            </li>
+                            <li>
+                                <a href="#lastSuggestion" >lastSuggestion</a>
+                            </li>
+                            <li>
+                                <a href="#logicalOp" >logicalOp</a>
+                            </li>
+                            <li>
+                                <a href="#numberOp" >numberOp</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#overlayPanel" >overlayPanel</a>
+                            </li>
+                            <li>
+                                <a href="#queryText" >queryText</a>
+                            </li>
+                            <li>
+                                <a href="#stringOp" >stringOp</a>
+                            </li>
+                            <li>
+                                <a href="#tokens" >tokens</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#allowedKeysList" >allowedKeysList</a>
+                            </li>
+                            <li>
+                                <a href="#allowedOpList" >allowedOpList</a>
+                            </li>
+                            <li>
+                                <a href="#appendKeyToQuery" >appendKeyToQuery</a>
+                            </li>
+                            <li>
+                                <a href="#appendOpToQuery" >appendOpToQuery</a>
+                            </li>
+                            <li>
+                                <a href="#appendParenthesisToQuery" >appendParenthesisToQuery</a>
+                            </li>
+                            <li>
+                                <a href="#currentOp" >currentOp</a>
+                            </li>
+                            <li>
+                                <a href="#isOnInOpInput" >isOnInOpInput</a>
+                            </li>
+                            <li>
+                                <a href="#isOnIsOpInput" >isOnIsOpInput</a>
+                            </li>
+                            <li>
+                                <a href="#isOnKeyInput" >isOnKeyInput</a>
+                            </li>
+                            <li>
+                                <a href="#isOnLogicalOpInput" >isOnLogicalOpInput</a>
+                            </li>
+                            <li>
+                                <a href="#isOnOpInput" >isOnOpInput</a>
+                            </li>
+                            <li>
+                                <a href="#isOnValueInput" >isOnValueInput</a>
+                            </li>
+                            <li>
+                                <a href="#isOpList" >isOpList</a>
+                            </li>
+                            <li>
+                                <a href="#isValidQueryCheck" >isValidQueryCheck</a>
+                            </li>
+                            <li>
+                                <a href="#logicalOpList" >logicalOpList</a>
+                            </li>
+                            <li>
+                                <a href="#onQueryTextChange" >onQueryTextChange</a>
+                            </li>
+                            <li>
+                                <a href="#openPanel" >openPanel</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#opList" >opList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#parseQuery" >parseQuery</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#suggestNextInput" >suggestNextInput</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#allowedKeys" >allowedKeys</a>
+                            </li>
+                            <li>
+                                <a href="#allowedKeysDescription" >allowedKeysDescription</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#queryResult" >queryResult</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="allowedKeys"></a>
+                        <b>allowedKeys</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Record&lt;string | string&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/shared/components/query-input/query-input.component.ts:39</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="allowedKeysDescription"></a>
+                        <b>allowedKeysDescription</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Record&lt;string | string&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/shared/components/query-input/query-input.component.ts:42</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section data-compodoc="block-outputs">
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="queryResult"></a>
+                        <b>queryResult</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/shared/components/query-input/query-input.component.ts:44</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="allowedKeysList"></a>
+                    <span class="name">
+                        <span ><b>allowedKeysList</b></span>
+                        <a href="#allowedKeysList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>allowedKeysList()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="238"
+                                    class="link-to-prism">src/app/shared/components/query-input/query-input.component.ts:238</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>string[]</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="allowedOpList"></a>
+                    <span class="name">
+                        <span ><b>allowedOpList</b></span>
+                        <a href="#allowedOpList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>allowedOpList()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="242"
+                                    class="link-to-prism">src/app/shared/components/query-input/query-input.component.ts:242</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>string[]</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="appendKeyToQuery"></a>
+                    <span class="name">
+                        <span ><b>appendKeyToQuery</b></span>
+                        <a href="#appendKeyToQuery"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>appendKeyToQuery(key: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="284"
+                                    class="link-to-prism">src/app/shared/components/query-input/query-input.component.ts:284</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>key</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="appendOpToQuery"></a>
+                    <span class="name">
+                        <span ><b>appendOpToQuery</b></span>
+                        <a href="#appendOpToQuery"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>appendOpToQuery(op: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="309"
+                                    class="link-to-prism">src/app/shared/components/query-input/query-input.component.ts:309</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>op</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="appendParenthesisToQuery"></a>
+                    <span class="name">
+                        <span ><b>appendParenthesisToQuery</b></span>
+                        <a href="#appendParenthesisToQuery"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>appendParenthesisToQuery()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="319"
+                                    class="link-to-prism">src/app/shared/components/query-input/query-input.component.ts:319</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="currentOp"></a>
+                    <span class="name">
+                        <span ><b>currentOp</b></span>
+                        <a href="#currentOp"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>currentOp()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="257"
+                                    class="link-to-prism">src/app/shared/components/query-input/query-input.component.ts:257</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Record&lt;string, string&gt;</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isOnInOpInput"></a>
+                    <span class="name">
+                        <span ><b>isOnInOpInput</b></span>
+                        <a href="#isOnInOpInput"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isOnInOpInput()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="81"
+                                    class="link-to-prism">src/app/shared/components/query-input/query-input.component.ts:81</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isOnIsOpInput"></a>
+                    <span class="name">
+                        <span ><b>isOnIsOpInput</b></span>
+                        <a href="#isOnIsOpInput"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isOnIsOpInput()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="74"
+                                    class="link-to-prism">src/app/shared/components/query-input/query-input.component.ts:74</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isOnKeyInput"></a>
+                    <span class="name">
+                        <span ><b>isOnKeyInput</b></span>
+                        <a href="#isOnKeyInput"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isOnKeyInput()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="60"
+                                    class="link-to-prism">src/app/shared/components/query-input/query-input.component.ts:60</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isOnLogicalOpInput"></a>
+                    <span class="name">
+                        <span ><b>isOnLogicalOpInput</b></span>
+                        <a href="#isOnLogicalOpInput"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isOnLogicalOpInput()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="88"
+                                    class="link-to-prism">src/app/shared/components/query-input/query-input.component.ts:88</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isOnOpInput"></a>
+                    <span class="name">
+                        <span ><b>isOnOpInput</b></span>
+                        <a href="#isOnOpInput"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isOnOpInput()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="67"
+                                    class="link-to-prism">src/app/shared/components/query-input/query-input.component.ts:67</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isOnValueInput"></a>
+                    <span class="name">
+                        <span ><b>isOnValueInput</b></span>
+                        <a href="#isOnValueInput"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isOnValueInput()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="95"
+                                    class="link-to-prism">src/app/shared/components/query-input/query-input.component.ts:95</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isOpList"></a>
+                    <span class="name">
+                        <span ><b>isOpList</b></span>
+                        <a href="#isOpList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isOpList()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="280"
+                                    class="link-to-prism">src/app/shared/components/query-input/query-input.component.ts:280</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>string[]</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isValidQueryCheck"></a>
+                    <span class="name">
+                        <span ><b>isValidQueryCheck</b></span>
+                        <a href="#isValidQueryCheck"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isValidQueryCheck()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="54"
+                                    class="link-to-prism">src/app/shared/components/query-input/query-input.component.ts:54</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logicalOpList"></a>
+                    <span class="name">
+                        <span ><b>logicalOpList</b></span>
+                        <a href="#logicalOpList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>logicalOpList()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="276"
+                                    class="link-to-prism">src/app/shared/components/query-input/query-input.component.ts:276</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>string[]</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onQueryTextChange"></a>
+                    <span class="name">
+                        <span ><b>onQueryTextChange</b></span>
+                        <a href="#onQueryTextChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onQueryTextChange()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="329"
+                                    class="link-to-prism">src/app/shared/components/query-input/query-input.component.ts:329</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openPanel"></a>
+                    <span class="name">
+                        <span ><b>openPanel</b></span>
+                        <a href="#openPanel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openPanel($event)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="234"
+                                    class="link-to-prism">src/app/shared/components/query-input/query-input.component.ts:234</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>$event</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="opList"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>opList</b></span>
+                        <a href="#opList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>opList(key: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="261"
+                                    class="link-to-prism">src/app/shared/components/query-input/query-input.component.ts:261</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>key</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Record&lt;string, string&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="parseQuery"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>parseQuery</b></span>
+                        <a href="#parseQuery"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>parseQuery()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="102"
+                                    class="link-to-prism">src/app/shared/components/query-input/query-input.component.ts:102</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>string[]</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="suggestNextInput"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>suggestNextInput</b></span>
+                        <a href="#suggestNextInput"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>suggestNextInput(tokens: string[])</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="118"
+                                    class="link-to-prism">src/app/shared/components/query-input/query-input.component.ts:118</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>tokens</td>
+                                            <td>
+                                                        <code>string[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="booleanOp"></a>
+                    <span class="name">
+                        <span ><b>booleanOp</b></span>
+                        <a href="#booleanOp"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Record&lt;string | string&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    &#x27;&#x3D;&#x27;: &#x27;query-input.equals_op&#x27;,
+    &#x27;!&#x3D;&#x27;: &#x27;query-input.not_equals_op&#x27;,
+    is: &#x27;query-input.is_op&#x27;,
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="220" class="link-to-prism">src/app/shared/components/query-input/query-input.component.ts:220</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dateOp"></a>
+                    <span class="name">
+                        <span ><b>dateOp</b></span>
+                        <a href="#dateOp"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Record&lt;string | string&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    &#x27;&#x3D;&#x27;: &#x27;query-input.equals_op&#x27;,
+    &#x27;!&#x3D;&#x27;: &#x27;query-input.not_equals_op&#x27;,
+    &#x27;&gt;&#x27;: &#x27;query-input.greater_op&#x27;,
+    &#x27;&gt;&#x3D;&#x27;: &#x27;query-input.greater_or_equals_op&#x27;,
+    &#x27;&lt;&#x27;: &#x27;query-input.less_op&#x27;,
+    &#x27;&lt;&#x3D;&#x27;: &#x27;query-input.less_or_equals_op&#x27;,
+    is: &#x27;query-input.is_op&#x27;,
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="211" class="link-to-prism">src/app/shared/components/query-input/query-input.component.ts:211</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="inputField"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>inputField</b></span>
+                        <a href="#inputField"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ElementRef</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;inputField&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/shared/components/query-input/query-input.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isOp"></a>
+                    <span class="name">
+                        <span ><b>isOp</b></span>
+                        <a href="#isOp"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Record&lt;string | string&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    null: &#x27;query-input.null&#x27;,
+    empty: &#x27;query-input.empty&#x27;,
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="229" class="link-to-prism">src/app/shared/components/query-input/query-input.component.ts:229</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isValidQuery"></a>
+                    <span class="name">
+                        <span ><b>isValidQuery</b></span>
+                        <a href="#isValidQuery"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/shared/components/query-input/query-input.component.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="lastKey"></a>
+                    <span class="name">
+                        <span ><b>lastKey</b></span>
+                        <a href="#lastKey"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/shared/components/query-input/query-input.component.ts:49</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="lastSuggestion"></a>
+                    <span class="name">
+                        <span ><b>lastSuggestion</b></span>
+                        <a href="#lastSuggestion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;key&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/shared/components/query-input/query-input.component.ts:52</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logicalOp"></a>
+                    <span class="name">
+                        <span ><b>logicalOp</b></span>
+                        <a href="#logicalOp"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Record&lt;string | string&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    &#x27;&amp;&#x27;: &#x27;query-input.and_op&#x27;,
+    &#x27;|&#x27;: &#x27;query-input.or_op&#x27;,
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="225" class="link-to-prism">src/app/shared/components/query-input/query-input.component.ts:225</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="numberOp"></a>
+                    <span class="name">
+                        <span ><b>numberOp</b></span>
+                        <a href="#numberOp"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Record&lt;string | string&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    &#x27;&#x3D;&#x27;: &#x27;query-input.equals_op&#x27;,
+    &#x27;!&#x3D;&#x27;: &#x27;query-input.not_equals_op&#x27;,
+    &#x27;&gt;&#x27;: &#x27;query-input.greater_op&#x27;,
+    &#x27;&gt;&#x3D;&#x27;: &#x27;query-input.greater_or_equals_op&#x27;,
+    &#x27;&lt;&#x27;: &#x27;query-input.less_op&#x27;,
+    &#x27;&lt;&#x3D;&#x27;: &#x27;query-input.less_or_equals_op&#x27;,
+    is: &#x27;query-input.is_op&#x27;,
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="202" class="link-to-prism">src/app/shared/components/query-input/query-input.component.ts:202</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="overlayPanel"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>overlayPanel</b></span>
+                        <a href="#overlayPanel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>OverlayPanel</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;op&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/shared/components/query-input/query-input.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="queryText"></a>
+                    <span class="name">
+                        <span ><b>queryText</b></span>
+                        <a href="#queryText"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/shared/components/query-input/query-input.component.ts:48</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="stringOp"></a>
+                    <span class="name">
+                        <span ><b>stringOp</b></span>
+                        <a href="#stringOp"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Record&lt;string | string&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    &#x27;&#x3D;&#x27;: &#x27;query-input.equals_op&#x27;,
+    &#x27;!&#x3D;&#x27;: &#x27;query-input.not_equals_op&#x27;,
+    &#x27;~&#x27;: &#x27;query-input.contains_op&#x27;,
+    &#x27;!~&#x27;: &#x27;query-input.contains_not_op&#x27;,
+    in: &#x27;query-input.in_op&#x27;,
+    is: &#x27;query-input.is_op&#x27;,
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="194" class="link-to-prism">src/app/shared/components/query-input/query-input.component.ts:194</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tokens"></a>
+                    <span class="name">
+                        <span ><b>tokens</b></span>
+                        <a href="#tokens"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/shared/components/query-input/query-input.component.ts:51</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { CommonModule } from &#x27;@angular/common&#x27;;
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  Output,
+  ViewChild,
+} from &#x27;@angular/core&#x27;;
+import { FormsModule, ReactiveFormsModule } from &#x27;@angular/forms&#x27;;
+import { TranslateModule } from &#x27;@ngx-translate/core&#x27;;
+import { InputTextModule } from &#x27;primeng/inputtext&#x27;;
+import { OverlayPanel, OverlayPanelModule } from &#x27;primeng/overlaypanel&#x27;;
+import { ScrollPanelModule } from &#x27;primeng/scrollpanel&#x27;;
+
+@Component({
+  selector: &#x27;app-query-input&#x27;,
+  standalone: true,
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    InputTextModule,
+    TranslateModule,
+    OverlayPanelModule,
+    ScrollPanelModule,
+  ],
+  templateUrl: &#x27;./query-input.component.html&#x27;,
+  styleUrl: &#x27;./query-input.component.scss&#x27;,
+})
+export class QueryInputComponent {
+  @ViewChild(&#x27;op&#x27;)
+  overlayPanel!: OverlayPanel;
+
+  @ViewChild(&#x27;inputField&#x27;)
+  inputField!: ElementRef;
+
+  @Input()
+  allowedKeys: Record&lt;string, string&gt; &#x3D; {};
+
+  @Input()
+  allowedKeysDescription: Record&lt;string, string&gt; &#x3D; {};
+
+  @Output() queryResult &#x3D; new EventEmitter&lt;string&gt;();
+
+  isValidQuery: boolean &#x3D; true;
+
+  queryText: string &#x3D; &#x27;&#x27;;
+  lastKey: string &#x3D; &#x27;&#x27;;
+
+  tokens: string[] &#x3D; []
+  lastSuggestion &#x3D; &#x27;key&#x27;
+
+  isValidQueryCheck() {
+    if (this.queryText.trim().length &#x3D;&#x3D;&#x3D; 0) {
+      return true;
+    } else return this.isValidQuery;
+  }
+
+  isOnKeyInput(): boolean {
+    if (this.queryText.trim().length &#x3D;&#x3D;&#x3D; 0) {
+      return true;
+    }
+    return this.lastSuggestion &#x3D;&#x3D;&#x3D; &#x27;key&#x27;;
+  }
+
+  isOnOpInput(): boolean {
+    if (this.queryText.trim().length &#x3D;&#x3D;&#x3D; 0) {
+      return false;
+    }
+    return this.lastSuggestion &#x3D;&#x3D;&#x3D; &#x27;op&#x27;;
+  }
+
+  isOnIsOpInput(): boolean {
+    if (this.queryText.trim().length &#x3D;&#x3D;&#x3D; 0) {
+      return false;
+    }
+    return this.lastSuggestion &#x3D;&#x3D;&#x3D; &#x27;is op&#x27;;
+  }
+
+  isOnInOpInput(): boolean {
+    if (this.queryText.trim().length &#x3D;&#x3D;&#x3D; 0) {
+      return false;
+    }
+    return this.lastSuggestion &#x3D;&#x3D;&#x3D; &#x27;in op&#x27;;
+  }
+
+  isOnLogicalOpInput(): boolean {
+    if (this.queryText.trim().length &#x3D;&#x3D;&#x3D; 0) {
+      return false;
+    }
+    return this.lastSuggestion &#x3D;&#x3D;&#x3D; &#x27;logical op&#x27;;
+  }
+
+  isOnValueInput(): boolean {
+    if (this.queryText.trim().length &#x3D;&#x3D;&#x3D; 0) {
+      return false;
+    }
+    return this.lastSuggestion &#x3D;&#x3D;&#x3D; &#x27;value&#x27;;
+  }
+
+  private parseQuery(): string[] {
+    const tokens: string[] &#x3D; [];
+    const pattern &#x3D;
+      /([^&amp;|]+)|([&amp;|])|([&#x3D;!&gt;&lt;~]+)|(&quot;[^&quot;]+&quot;)|([^,]+)|(\S+\s+in\s+\([^)]+\))/g;
+    let match: RegExpExecArray | null;
+
+    while ((match &#x3D; pattern.exec(this.queryText)) !&#x3D;&#x3D; null) {
+      const token &#x3D; match[0].trim(); // Trim whitespaces
+      if (token !&#x3D;&#x3D; &#x27;&#x27;) {
+        tokens.push(token);
+      }
+    }
+
+    return tokens;
+  }
+
+  private suggestNextInput(tokens: string[]): string {
+    // Suggest key since we have empty value
+    if (tokens.length &#x3D;&#x3D;&#x3D; 0) {
+      this.isValidQuery &#x3D; true;
+      return &#x27;key&#x27;;
+    }
+
+    const token &#x3D; tokens[tokens.length - 1].trim();
+    const parts &#x3D; token.split(/\s+/);
+    if (parts.length &#x3D;&#x3D;&#x3D; 0) {
+      this.isValidQuery &#x3D; true;
+      return &#x27;key&#x27;;
+    }
+    const key &#x3D; parts[0];
+
+    if (
+      !Object.keys(this.allowedKeys).some((keyToCheck) &#x3D;&gt; keyToCheck &#x3D;&#x3D; key)
+    ) {
+      this.isValidQuery &#x3D; false;
+      return &#x27;key&#x27;;
+    }
+
+    this.lastKey &#x3D; key;
+    if (parts.length &#x3D;&#x3D;&#x3D; 1) {
+      this.isValidQuery &#x3D; false;
+      return &#x27;op&#x27;;
+    }
+    const operator &#x3D; parts[1];
+
+    if (
+      !Object.keys(this.opList(key)).some((opToCheck) &#x3D;&gt; opToCheck &#x3D;&#x3D; operator)
+    ) {
+      this.isValidQuery &#x3D; false;
+      return &#x27;op&#x27;;
+    }
+
+    if (parts.length &#x3D;&#x3D; 2 &amp;&amp; parts[1].toLowerCase() &#x3D;&#x3D;&#x3D; &#x27;in&#x27;) {
+      this.isValidQuery &#x3D; false;
+      return &#x27;in op&#x27;;
+    } else if (parts.length &gt; 2 &amp;&amp; parts[1].toLowerCase() &#x3D;&#x3D;&#x3D; &#x27;in&#x27;) {
+      // We have longer in need to do additional checks
+      const openParent &#x3D; parts[2];
+      if (!openParent.startsWith(&#x27;(&#x27;)) {
+        this.isValidQuery &#x3D; false;
+        return &#x27;in op&#x27;;
+      }
+      if (!token.endsWith(&#x27;)&#x27;)) {
+        this.isValidQuery &#x3D; false;
+        return &#x27;in op&#x27;;
+      }
+      this.isValidQuery &#x3D; true;
+      return &#x27;logical op&#x27;;
+    } else if (parts.length &#x3D;&#x3D; 2 &amp;&amp; parts[1].toLowerCase() &#x3D;&#x3D;&#x3D; &#x27;is&#x27;) {
+      this.isValidQuery &#x3D; false;
+      return &#x27;is op&#x27;;
+    } else if (parts.length &gt; 2 &amp;&amp; parts[1].toLowerCase() &#x3D;&#x3D;&#x3D; &#x27;is&#x27;) {
+      const value &#x3D; parts[2];
+      if (value.toLowerCase() &#x3D;&#x3D;&#x3D; &#x27;null&#x27; || value.toLowerCase() &#x3D;&#x3D;&#x3D; &#x27;empty&#x27;) {
+        this.isValidQuery &#x3D; true;
+        return &#x27;logical op&#x27;;
+      } else {
+        this.isValidQuery &#x3D; false;
+        return &#x27;is op&#x27;;
+      }
+    }
+
+    if (parts.length &#x3D;&#x3D;&#x3D; 3) {
+      this.isValidQuery &#x3D; true;
+      return &#x27;logical op&#x27;;
+    }
+
+    // Suggest value by default
+    this.isValidQuery &#x3D; false;
+    return &#x27;value&#x27;;
+  }
+
+  stringOp: Record&lt;string, string&gt; &#x3D; {
+    &#x27;&#x3D;&#x27;: &#x27;query-input.equals_op&#x27;,
+    &#x27;!&#x3D;&#x27;: &#x27;query-input.not_equals_op&#x27;,
+    &#x27;~&#x27;: &#x27;query-input.contains_op&#x27;,
+    &#x27;!~&#x27;: &#x27;query-input.contains_not_op&#x27;,
+    in: &#x27;query-input.in_op&#x27;,
+    is: &#x27;query-input.is_op&#x27;,
+  };
+  numberOp: Record&lt;string, string&gt; &#x3D; {
+    &#x27;&#x3D;&#x27;: &#x27;query-input.equals_op&#x27;,
+    &#x27;!&#x3D;&#x27;: &#x27;query-input.not_equals_op&#x27;,
+    &#x27;&gt;&#x27;: &#x27;query-input.greater_op&#x27;,
+    &#x27;&gt;&#x3D;&#x27;: &#x27;query-input.greater_or_equals_op&#x27;,
+    &#x27;&lt;&#x27;: &#x27;query-input.less_op&#x27;,
+    &#x27;&lt;&#x3D;&#x27;: &#x27;query-input.less_or_equals_op&#x27;,
+    is: &#x27;query-input.is_op&#x27;,
+  };
+  dateOp: Record&lt;string, string&gt; &#x3D; {
+    &#x27;&#x3D;&#x27;: &#x27;query-input.equals_op&#x27;,
+    &#x27;!&#x3D;&#x27;: &#x27;query-input.not_equals_op&#x27;,
+    &#x27;&gt;&#x27;: &#x27;query-input.greater_op&#x27;,
+    &#x27;&gt;&#x3D;&#x27;: &#x27;query-input.greater_or_equals_op&#x27;,
+    &#x27;&lt;&#x27;: &#x27;query-input.less_op&#x27;,
+    &#x27;&lt;&#x3D;&#x27;: &#x27;query-input.less_or_equals_op&#x27;,
+    is: &#x27;query-input.is_op&#x27;,
+  };
+  booleanOp: Record&lt;string, string&gt; &#x3D; {
+    &#x27;&#x3D;&#x27;: &#x27;query-input.equals_op&#x27;,
+    &#x27;!&#x3D;&#x27;: &#x27;query-input.not_equals_op&#x27;,
+    is: &#x27;query-input.is_op&#x27;,
+  };
+  logicalOp: Record&lt;string, string&gt; &#x3D; {
+    &#x27;&amp;&#x27;: &#x27;query-input.and_op&#x27;,
+    &#x27;|&#x27;: &#x27;query-input.or_op&#x27;,
+  };
+  isOp: Record&lt;string, string&gt; &#x3D; {
+    null: &#x27;query-input.null&#x27;,
+    empty: &#x27;query-input.empty&#x27;,
+  };
+
+  openPanel($event: unknown) {
+    this.overlayPanel.show($event);
+  }
+
+  allowedKeysList(): string[] {
+    return Object.keys(this.allowedKeys);
+  }
+
+  allowedOpList(): string[] {
+    switch (this.allowedKeys[this.lastKey]) {
+      case &#x27;string&#x27;:
+        return Object.keys(this.stringOp);
+      case &#x27;number&#x27;:
+        return Object.keys(this.numberOp);
+      case &#x27;date&#x27;:
+        return Object.keys(this.dateOp);
+      case &#x27;boolean&#x27;:
+        return Object.keys(this.booleanOp);
+      default:
+        return [];
+    }
+  }
+
+  currentOp(): Record&lt;string, string&gt; {
+    return this.opList(this.lastKey);
+  }
+
+  private opList(key: string): Record&lt;string, string&gt; {
+    switch (this.allowedKeys[key]) {
+      case &#x27;string&#x27;:
+        return this.stringOp;
+      case &#x27;number&#x27;:
+        return this.numberOp;
+      case &#x27;date&#x27;:
+        return this.dateOp;
+      case &#x27;boolean&#x27;:
+        return this.booleanOp;
+      default:
+        return {};
+    }
+  }
+
+  logicalOpList(): string[] {
+    return Object.keys(this.logicalOp);
+  }
+
+  isOpList(): string[] {
+    return Object.keys(this.isOp);
+  }
+
+  appendKeyToQuery(key: string) {
+    this.queryText &#x3D; this.queryText.trim();
+    const tokens &#x3D; this.parseQuery();
+    let lastToken &#x3D; &#x27;&#x27;;
+    if (tokens.length &gt; 0) {
+      lastToken &#x3D; tokens[tokens.length - 1];
+    }
+    if (this.queryText.length !&#x3D;&#x3D; 0) {
+      if (lastToken !&#x3D;&#x3D; &#x27;&#x27; &amp;&amp; lastToken !&#x3D;&#x3D; &#x27;&amp;&#x27; &amp;&amp; lastToken !&#x3D;&#x3D; &#x27;|&#x27;) {
+        let result &#x3D; &#x27;&#x27;;
+        for (let i &#x3D; 0; i &lt; tokens.length - 1; i++) {
+          result +&#x3D; &#x60;${tokens[i]} &#x60;;
+        }
+        result +&#x3D; &#x60;${key} &#x60;;
+        this.queryText &#x3D; result;
+      } else {
+        this.queryText +&#x3D; &#x60; ${key} &#x60;;
+      }
+    } else {
+      this.queryText &#x3D; &#x60;${key} &#x60;;
+    }
+    this.lastKey &#x3D; key;
+    this.onQueryTextChange();
+  }
+
+  appendOpToQuery(op: string) {
+    this.queryText &#x3D; this.queryText.trim();
+    if (this.queryText.length !&#x3D;&#x3D; 0) {
+      this.queryText +&#x3D; &#x60; ${op} &#x60;;
+    } else {
+      this.queryText &#x3D; &#x60;${op} &#x60;;
+    }
+    this.onQueryTextChange();
+  }
+
+  appendParenthesisToQuery() {
+    this.queryText &#x3D; this.queryText.trim();
+    if (this.queryText.length !&#x3D;&#x3D; 0) {
+      this.queryText +&#x3D; &#x60; (value1, value2) &#x60;;
+    } else {
+      this.queryText &#x3D; &#x60;(value1, value2) &#x60;;
+    }
+    this.onQueryTextChange()
+  }
+
+  onQueryTextChange() {
+    this.tokens &#x3D; this.parseQuery();
+    this.lastSuggestion &#x3D; this.suggestNextInput(this.tokens);
+    if (this.queryText.length &#x3D;&#x3D; 0) {
+      this.queryResult.emit(this.queryText);
+    } else if(this.isValidQueryCheck()) {
+      this.queryResult.emit(this.queryText);
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;!-- eslint-disable @angular-eslint/template/click-events-have-key-events --&gt;
+&lt;!-- eslint-disable @angular-eslint/template/interactive-supports-focus --&gt;
+&lt;span class&#x3D;&quot;p-input-icon-left w-full&quot;&gt;
+  @if (isValidQueryCheck()) {
+    &lt;i class&#x3D;&quot;pi pi-check text-green-500&quot;&gt;&lt;/i&gt;
+  } @else {
+    &lt;i class&#x3D;&quot;pi pi-times text-red-500&quot;&gt;&lt;/i&gt;
+  }
+  &lt;input
+    #inputField
+    pInputText
+    class&#x3D;&quot;w-full&quot;
+    [placeholder]&#x3D;&quot;&#x27;query-input.search&#x27; | translate&quot;
+    (focus)&#x3D;&quot;openPanel($event)&quot;
+    [(ngModel)]&#x3D;&quot;queryText&quot;
+    (ngModelChange)&#x3D;&quot;onQueryTextChange()&quot;
+  /&gt;
+&lt;/span&gt;
+&lt;p-overlayPanel #op [style]&#x3D;&quot;{ overflow: &#x27;scroll&#x27;, &#x27;max-height&#x27;: &#x27;300px&#x27; }&quot;&gt;
+  &lt;ng-template pTemplate&#x3D;&quot;content&quot;&gt;
+    @if (isOnKeyInput()) {
+      &lt;h5&gt;{{ &quot;query-input.allowed_keys&quot; | translate }}&lt;/h5&gt;
+
+      @for (key of allowedKeysList(); track $index) {
+        &lt;div class&#x3D;&quot;mb-2 cursor-pointer&quot; (click)&#x3D;&quot;appendKeyToQuery(key)&quot;&gt;
+          &lt;span
+            &gt;&lt;b&gt;{{ key }}&lt;/b
+            &gt;: {{ allowedKeys[key] }}&lt;/span
+          &gt;
+          -
+          &lt;span class&#x3D;&quot;font-italic&quot;&gt;{{
+            allowedKeysDescription[key] | translate
+          }}&lt;/span&gt;
+        &lt;/div&gt;
+      }
+    }
+
+    @if (isOnOpInput()) {
+      &lt;h5&gt;{{ &quot;query-input.allowed_op&quot; | translate }}&lt;/h5&gt;
+
+      @for (op of allowedOpList(); track $index) {
+        &lt;div class&#x3D;&quot;mb-2 cursor-pointer&quot; (click)&#x3D;&quot;appendOpToQuery(op)&quot;&gt;
+          &lt;span
+            &gt;&lt;b&gt;{{ op }}&lt;/b&gt;&lt;/span
+          &gt;
+          - &lt;span class&#x3D;&quot;font-italic&quot;&gt;{{ currentOp()[op] | translate }}&lt;/span&gt;
+        &lt;/div&gt;
+      }
+    }
+
+    @if (isOnLogicalOpInput()) {
+      &lt;h5&gt;{{ &quot;query-input.allowed_op&quot; | translate }}&lt;/h5&gt;
+
+      @for (op of logicalOpList(); track $index) {
+        &lt;div class&#x3D;&quot;mb-2 cursor-pointer&quot; (click)&#x3D;&quot;appendOpToQuery(op)&quot;&gt;
+          &lt;span
+            &gt;&lt;b&gt;{{ op }}&lt;/b&gt;&lt;/span
+          &gt;
+          - &lt;span class&#x3D;&quot;font-italic&quot;&gt;{{ logicalOp[op] | translate }}&lt;/span&gt;
+        &lt;/div&gt;
+      }
+    }
+
+    @if (isOnValueInput()) {
+      @switch (allowedKeys[lastKey]) {
+        @case (&quot;string&quot;) {
+          &lt;h5&gt;{{ &quot;query-input.string_value&quot; | translate }}&lt;/h5&gt;
+          &lt;h6&gt;{{ &quot;query-input.example&quot; | translate }}&lt;/h6&gt;
+          &lt;ul&gt;
+            &lt;li&gt;foo&lt;/li&gt;
+            &lt;li&gt;fiz buzz&lt;/li&gt;
+          &lt;/ul&gt;
+        }
+        @case (&quot;number&quot;) {
+          &lt;h5&gt;{{ &quot;query-input.number_value&quot; | translate }}&lt;/h5&gt;
+          &lt;h6&gt;{{ &quot;query-input.example&quot; | translate }}&lt;/h6&gt;
+          &lt;ul&gt;
+            &lt;li&gt;1&lt;/li&gt;
+            &lt;li&gt;1.5&lt;/li&gt;
+          &lt;/ul&gt;
+        }
+        @case (&quot;date&quot;) {
+          &lt;h5&gt;{{ &quot;query-input.date_value&quot; | translate }}&lt;/h5&gt;
+          &lt;h6&gt;{{ &quot;query-input.example&quot; | translate }}&lt;/h6&gt;
+          &lt;ul&gt;
+            &lt;li&gt;2024-03-25T18:36:21.145Z&lt;/li&gt;
+          &lt;/ul&gt;
+        }
+        @case (&quot;boolean&quot;) {
+          &lt;h5&gt;{{ &quot;query-input.boolean_value&quot; | translate }}&lt;/h5&gt;
+
+          &lt;div class&#x3D;&quot;mb-2 cursor-pointer&quot; (click)&#x3D;&quot;appendOpToQuery(&#x27;true&#x27;)&quot;&gt;
+            &lt;span&gt;&lt;b&gt;true&lt;/b&gt;&lt;/span&gt;
+          &lt;/div&gt;
+
+          &lt;div class&#x3D;&quot;mb-2 cursor-pointer&quot; (click)&#x3D;&quot;appendOpToQuery(&#x27;false&#x27;)&quot;&gt;
+            &lt;span&gt;&lt;b&gt;false&lt;/b&gt;&lt;/span&gt;
+          &lt;/div&gt;
+        }
+      }
+    }
+
+    @if (isOnIsOpInput()) {
+      &lt;h5&gt;{{ &quot;query-input.allowed_op&quot; | translate }}&lt;/h5&gt;
+
+      @for (op of isOpList(); track $index) {
+        &lt;div class&#x3D;&quot;mb-2 cursor-pointer&quot; (click)&#x3D;&quot;appendOpToQuery(op)&quot;&gt;
+          &lt;span
+            &gt;&lt;b&gt;{{ op }}&lt;/b&gt;&lt;/span
+          &gt;
+          - &lt;span class&#x3D;&quot;font-italic&quot;&gt;{{ isOp[op] | translate }}&lt;/span&gt;
+        &lt;/div&gt;
+      }
+    }
+
+    @if (isOnInOpInput()) {
+      &lt;h5&gt;{{ &quot;query-input.allowed_op&quot; | translate }}&lt;/h5&gt;
+
+      &lt;div class&#x3D;&quot;mb-2 cursor-pointer&quot; (click)&#x3D;&quot;appendParenthesisToQuery()&quot;&gt;
+        &lt;span&gt;&lt;b&gt;(value1, value2)&lt;/b&gt;&lt;/span&gt;
+        -
+        &lt;span class&#x3D;&quot;font-italic&quot;&gt;{{
+          &quot;query-input.in_op_description&quot; | translate
+        }}&lt;/span&gt;
+      &lt;/div&gt;
+    }
+  &lt;/ng-template&gt;
+&lt;/p-overlayPanel&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><!-- eslint-disable @angular-eslint/template/click-events-have-key-events --><!-- eslint-disable @angular-eslint/template/interactive-supports-focus --><span class="p-input-icon-left w-full">  @if (isValidQueryCheck()) {    <i class="pi pi-check text-green-500"></i>  } @else {    <i class="pi pi-times text-red-500"></i>  }  <input    #inputField    pInputText    class="w-full"    [placeholder]="\'query-input.search\' | translate"    (focus)="openPanel($event)"    [(ngModel)]="queryText"    (ngModelChange)="onQueryTextChange()"  /></span><p-overlayPanel #op [style]="{ overflow: \'scroll\', \'max-height\': \'300px\' }">  <ng-template pTemplate="content">    @if (isOnKeyInput()) {      <h5>{{ "query-input.allowed_keys" | translate }}</h5>      @for (key of allowedKeysList(); track $index) {        <div class="mb-2 cursor-pointer" (click)="appendKeyToQuery(key)">          <span            ><b>{{ key }}</b            >: {{ allowedKeys[key] }}</span          >          -          <span class="font-italic">{{            allowedKeysDescription[key] | translate          }}</span>        </div>      }    }    @if (isOnOpInput()) {      <h5>{{ "query-input.allowed_op" | translate }}</h5>      @for (op of allowedOpList(); track $index) {        <div class="mb-2 cursor-pointer" (click)="appendOpToQuery(op)">          <span            ><b>{{ op }}</b></span          >          - <span class="font-italic">{{ currentOp()[op] | translate }}</span>        </div>      }    }    @if (isOnLogicalOpInput()) {      <h5>{{ "query-input.allowed_op" | translate }}</h5>      @for (op of logicalOpList(); track $index) {        <div class="mb-2 cursor-pointer" (click)="appendOpToQuery(op)">          <span            ><b>{{ op }}</b></span          >          - <span class="font-italic">{{ logicalOp[op] | translate }}</span>        </div>      }    }    @if (isOnValueInput()) {      @switch (allowedKeys[lastKey]) {        @case ("string") {          <h5>{{ "query-input.string_value" | translate }}</h5>          <h6>{{ "query-input.example" | translate }}</h6>          <ul>            <li>foo</li>            <li>fiz buzz</li>          </ul>        }        @case ("number") {          <h5>{{ "query-input.number_value" | translate }}</h5>          <h6>{{ "query-input.example" | translate }}</h6>          <ul>            <li>1</li>            <li>1.5</li>          </ul>        }        @case ("date") {          <h5>{{ "query-input.date_value" | translate }}</h5>          <h6>{{ "query-input.example" | translate }}</h6>          <ul>            <li>2024-03-25T18:36:21.145Z</li>          </ul>        }        @case ("boolean") {          <h5>{{ "query-input.boolean_value" | translate }}</h5>          <div class="mb-2 cursor-pointer" (click)="appendOpToQuery(\'true\')">            <span><b>true</b></span>          </div>          <div class="mb-2 cursor-pointer" (click)="appendOpToQuery(\'false\')">            <span><b>false</b></span>          </div>        }      }    }    @if (isOnIsOpInput()) {      <h5>{{ "query-input.allowed_op" | translate }}</h5>      @for (op of isOpList(); track $index) {        <div class="mb-2 cursor-pointer" (click)="appendOpToQuery(op)">          <span            ><b>{{ op }}</b></span          >          - <span class="font-italic">{{ isOp[op] | translate }}</span>        </div>      }    }    @if (isOnInOpInput()) {      <h5>{{ "query-input.allowed_op" | translate }}</h5>      <div class="mb-2 cursor-pointer" (click)="appendParenthesisToQuery()">        <span><b>(value1, value2)</b></span>        -        <span class="font-italic">{{          "query-input.in_op_description" | translate        }}</span>      </div>    }  </ng-template></p-overlayPanel></div>'
+    var COMPONENTS = [{'name': 'AccessDeniedComponent', 'selector': 'app-access-denied'},{'name': 'AlertsComponent', 'selector': 'app-alerts'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthComponent', 'selector': 'app-auth'},{'name': 'CloseComponent', 'selector': 'app-close'},{'name': 'ConfigComponent', 'selector': 'app-config'},{'name': 'CreateOrganizationComponent', 'selector': 'app-create-organization'},{'name': 'DebugFilesTableComponent', 'selector': 'app-debug-files-table'},{'name': 'DetailsComponent', 'selector': 'app-details'},{'name': 'DevicesComponent', 'selector': 'app-devices'},{'name': 'DocumentationComponent', 'selector': 'app-documentation'},{'name': 'EnvironmentsTableComponent', 'selector': 'app-environments-table'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgotPasswordComponent', 'selector': 'app-forgot-password'},{'name': 'GuidesComponent', 'selector': 'app-guides'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InvitationComponent', 'selector': 'app-invitation'},{'name': 'IssuesComponent', 'selector': 'app-issues'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogsComponent', 'selector': 'app-logs'},{'name': 'MemberPickerComponent', 'selector': 'app-member-picker'},{'name': 'MembersComponent', 'selector': 'app-members'},{'name': 'MembersTableComponent', 'selector': 'app-members-table'},{'name': 'MenuitemComponent', 'selector': '[app-menuitem]'},{'name': 'MessagesComponent', 'selector': 'app-messages'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotificationsComponent', 'selector': 'app-notifications'},{'name': 'OrganizationComponent', 'selector': 'app-organization'},{'name': 'ProjectDetailsComponent', 'selector': 'app-project-details'},{'name': 'ProjectPickerComponent', 'selector': 'app-project-picker'},{'name': 'ProjectsComponent', 'selector': 'app-projects'},{'name': 'ProjectsComponent', 'selector': 'app-projects-settings'},{'name': 'ProjectsTableComponent', 'selector': 'app-projects-table'},{'name': 'QueriesComponent', 'selector': 'app-queries'},{'name': 'QueryInputComponent', 'selector': 'app-query-input'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ReleasesComponent', 'selector': 'app-releases'},{'name': 'ReleasesTableComponent', 'selector': 'app-releases-table'},{'name': 'ReplaysComponent', 'selector': 'app-replays'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'ResourcesComponent', 'selector': 'app-resources'},{'name': 'ScreenLoadsComponent', 'selector': 'app-screen-loads'},{'name': 'SdksComponent', 'selector': 'app-sdks'},{'name': 'SecurityComponent', 'selector': 'app-security'},{'name': 'SessionsComponent', 'selector': 'app-sessions'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SingleProjectCardComponent', 'selector': 'app-single-project-card'},{'name': 'SingleProjectComponent', 'selector': 'app-single-project'},{'name': 'SingleTeamComponent', 'selector': 'app-single-team'},{'name': 'StatsComponent', 'selector': 'app-stats'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TagsTableComponent', 'selector': 'app-tags-table'},{'name': 'TeamPickerComponent', 'selector': 'app-team-picker'},{'name': 'TeamsComponent', 'selector': 'app-teams'},{'name': 'TeamsTableComponent', 'selector': 'app-teams-table'},{'name': 'TopbarComponent', 'selector': 'app-topbar'},{'name': 'VitalsComponent', 'selector': 'app-vitals'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'QueryInputComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'QueryInputComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

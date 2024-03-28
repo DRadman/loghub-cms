@@ -105,7 +105,7 @@
   <li class="breadcrumb-item">Interfaces</li>
   <li class="breadcrumb-item"
   >
-  ProjectDto</li>
+  LogSessionDto</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -129,7 +129,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/core/domain/dto/project.dto.ts</code>
+            <code>src/app/core/domain/dto/log-session.dto.ts</code>
         </p>
 
 
@@ -148,21 +148,33 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                        <a href="#environments" 
+                                        <a href="#crashFree" 
 >
-                                            environments
+                                            crashFree
                                         </a>
                                 </li>
                                 <li>
-                                        <a href="#name" 
+                                        <a href="#endTime" 
 >
-                                            name
+                                            endTime
                                         </a>
                                 </li>
                                 <li>
-                                        <a href="#platform" 
+                                        <a href="#logSourceId" 
 >
-                                            platform
+                                            logSourceId
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#networkSpeed" 
+>
+                                            networkSpeed
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#networkType" 
+>
+                                            networkType
                                         </a>
                                 </li>
                                 <li>
@@ -172,9 +184,15 @@
                                         </a>
                                 </li>
                                 <li>
-                                        <a href="#releases" 
+                                        <a href="#sessionId" 
 >
-                                            releases
+                                            sessionId
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#startTime" 
+>
+                                            startTime
                                         </a>
                                 </li>
                             </ul>
@@ -192,9 +210,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="environments"></a>
-                                        <span class="name "><b>environments</b>
-                                            <a href="#environments">
+                                        <a name="crashFree"></a>
+                                        <span class="name "><b>crashFree</b>
+                                            <a href="#crashFree">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -202,7 +220,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>environments:     <code>string[]</code>
+                                        <code>crashFree:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -210,7 +228,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>    <code>string[]</code>
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
                                         </td>
                                     </tr>
@@ -225,9 +243,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="name"></a>
-                                        <span class="name "><b>name</b>
-                                            <a href="#name">
+                                        <a name="endTime"></a>
+                                        <span class="name "><b>endTime</b>
+                                            <a href="#endTime">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -235,7 +253,40 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>name:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                        <code>endTime:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="logSourceId"></a>
+                                        <span class="name "><b>logSourceId</b>
+                                            <a href="#logSourceId">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>logSourceId:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -258,9 +309,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="platform"></a>
-                                        <span class="name "><b>platform</b>
-                                            <a href="#platform">
+                                        <a name="networkSpeed"></a>
+                                        <span class="name "><b>networkSpeed</b>
+                                            <a href="#networkSpeed">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -268,7 +319,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>platform:         <code><a href="../interfaces/PlatformDto.html" target="_self" >PlatformDto</a></code>
+                                        <code>networkSpeed:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -276,7 +327,40 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="../interfaces/PlatformDto.html" target="_self" >PlatformDto</a></code>
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="networkType"></a>
+                                        <span class="name "><b>networkType</b>
+                                            <a href="#networkType">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>networkType:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                                         </td>
                                     </tr>
@@ -324,9 +408,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="releases"></a>
-                                        <span class="name "><b>releases</b>
-                                            <a href="#releases">
+                                        <a name="sessionId"></a>
+                                        <span class="name "><b>sessionId</b>
+                                            <a href="#sessionId">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -334,7 +418,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>releases:     <code>ProjectReleaseDto[]</code>
+                                        <code>sessionId:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -342,7 +426,40 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>    <code>ProjectReleaseDto[]</code>
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="startTime"></a>
+                                        <span class="name "><b>startTime</b>
+                                            <a href="#startTime">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>startTime:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
 
                                         </td>
                                     </tr>
@@ -358,16 +475,17 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { PlatformDto } from &quot;./platform.dto&quot;;
-import { ProjectReleaseDto } from &quot;./project-release.dto&quot;;
-
-export interface ProjectDto {
-    projectId: string,
-    name: string,
-    platform: PlatformDto
-    environments: string[],
-    releases: ProjectReleaseDto[],
-}</code></pre>
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface LogSessionDto {
+  sessionId: string;
+  startTime: Date;
+  endTime: Date;
+  networkType: string;
+  networkSpeed: string;
+  crashFree: boolean;
+  projectId: string;
+  logSourceId: string;
+}
+</code></pre>
     </div>
 </div>
 
@@ -404,7 +522,7 @@ export interface ProjectDto {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
-            var COMPODOC_CURRENT_PAGE_URL = 'ProjectDto.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'LogSessionDto.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
