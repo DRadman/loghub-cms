@@ -1,0 +1,128 @@
+<!-- eslint-disable @angular-eslint/template/click-events-have-key-events -->
+<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
+<span class="p-input-icon-left w-full">
+  @if (isValidQueryCheck()) {
+    <i class="pi pi-check text-green-500"></i>
+  } @else {
+    <i class="pi pi-times text-red-500"></i>
+  }
+  <input
+    #inputField
+    pInputText
+    class="w-full"
+    [placeholder]="'query-input.search' | translate"
+    (focus)="openPanel($event)"
+    [(ngModel)]="queryText"
+    (ngModelChange)="onQueryTextChange()"
+  />
+</span>
+<p-overlayPanel #op [style]="{ overflow: 'scroll', 'max-height': '300px' }">
+  <ng-template pTemplate="content">
+    @if (isOnKeyInput()) {
+      <h5>{{ "query-input.allowed_keys" | translate }}</h5>
+
+      @for (key of allowedKeysList(); track $index) {
+        <div class="mb-2 cursor-pointer" (click)="appendKeyToQuery(key)">
+          <span
+            ><b>{{ key }}</b
+            >: {{ allowedKeys[key] }}</span
+          >
+          -
+          <span class="font-italic">{{
+            allowedKeysDescription[key] | translate
+          }}</span>
+        </div>
+      }
+    }
+
+    @if (isOnOpInput()) {
+      <h5>{{ "query-input.allowed_op" | translate }}</h5>
+
+      @for (op of allowedOpList(); track $index) {
+        <div class="mb-2 cursor-pointer" (click)="appendOpToQuery(op)">
+          <span
+            ><b>{{ op }}</b></span
+          >
+          - <span class="font-italic">{{ currentOp()[op] | translate }}</span>
+        </div>
+      }
+    }
+
+    @if (isOnLogicalOpInput()) {
+      <h5>{{ "query-input.allowed_op" | translate }}</h5>
+
+      @for (op of logicalOpList(); track $index) {
+        <div class="mb-2 cursor-pointer" (click)="appendOpToQuery(op)">
+          <span
+            ><b>{{ op }}</b></span
+          >
+          - <span class="font-italic">{{ logicalOp[op] | translate }}</span>
+        </div>
+      }
+    }
+
+    @if (isOnValueInput()) {
+      @switch (allowedKeys[lastKey]) {
+        @case ("string") {
+          <h5>{{ "query-input.string_value" | translate }}</h5>
+          <h6>{{ "query-input.example" | translate }}</h6>
+          <ul>
+            <li>foo</li>
+            <li>fiz buzz</li>
+          </ul>
+        }
+        @case ("number") {
+          <h5>{{ "query-input.number_value" | translate }}</h5>
+          <h6>{{ "query-input.example" | translate }}</h6>
+          <ul>
+            <li>1</li>
+            <li>1.5</li>
+          </ul>
+        }
+        @case ("date") {
+          <h5>{{ "query-input.date_value" | translate }}</h5>
+          <h6>{{ "query-input.example" | translate }}</h6>
+          <ul>
+            <li>2024-03-25T18:36:21.145Z</li>
+          </ul>
+        }
+        @case ("boolean") {
+          <h5>{{ "query-input.boolean_value" | translate }}</h5>
+
+          <div class="mb-2 cursor-pointer" (click)="appendOpToQuery('true')">
+            <span><b>true</b></span>
+          </div>
+
+          <div class="mb-2 cursor-pointer" (click)="appendOpToQuery('false')">
+            <span><b>false</b></span>
+          </div>
+        }
+      }
+    }
+
+    @if (isOnIsOpInput()) {
+      <h5>{{ "query-input.allowed_op" | translate }}</h5>
+
+      @for (op of isOpList(); track $index) {
+        <div class="mb-2 cursor-pointer" (click)="appendOpToQuery(op)">
+          <span
+            ><b>{{ op }}</b></span
+          >
+          - <span class="font-italic">{{ isOp[op] | translate }}</span>
+        </div>
+      }
+    }
+
+    @if (isOnInOpInput()) {
+      <h5>{{ "query-input.allowed_op" | translate }}</h5>
+
+      <div class="mb-2 cursor-pointer" (click)="appendParenthesisToQuery()">
+        <span><b>(value1, value2)</b></span>
+        -
+        <span class="font-italic">{{
+          "query-input.in_op_description" | translate
+        }}</span>
+      </div>
+    }
+  </ng-template>
+</p-overlayPanel>

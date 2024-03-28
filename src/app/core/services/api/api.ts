@@ -20,6 +20,8 @@ export const api = {
   filesUrl: environment.apiUrl + '/v1/files',
   authUrl: environment.apiUrl + '/v1/auth',
   roleUrl: environment.apiUrl + '/v1/role',
+  logSourceUrl: environment.apiUrl + '/v1/log-source',
+  logSessionUrl: environment.apiUrl + '/v1/log-session',
   authOptions: {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',

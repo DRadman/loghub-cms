@@ -1,1 +1,161 @@
-<p>devices works!</p>
+<div class="flex w-full gap-4">
+  <p-multiSelect
+    styleClass="flex-grow-1"
+    optionLabel="name"
+    [options]="(projects | async) ?? []"
+    [(ngModel)]="selectedProjects"
+    [filter]="true"
+    [disabled]="(isLoadingProjects | async) === true"
+    filterBy="name"
+    [showClear]="true"
+    [placeholder]="'devices.select_projects' | translate"
+    (ngModelChange)="selectProjects()"
+  />
+  <p-multiSelect
+    styleClass="flex-grow-1"
+    [options]="environments"
+    [(ngModel)]="selectedEnvironments"
+    [filter]="true"
+    [disabled]="(isLoadingProjects | async) === true"
+    [showClear]="true"
+    [placeholder]="'devices.select_environments' | translate"
+    (ngModelChange)="selectEnvironment()"
+  />
+  <p-multiSelect
+    styleClass="flex-grow-1"
+    optionLabel="version"
+    [options]="releases"
+    [(ngModel)]="selectedReleases"
+    [filter]="true"
+    [disabled]="(isLoadingProjects | async) === true"
+    filterBy="version"
+    [showClear]="true"
+    [placeholder]="'devices.select_releases' | translate"
+    (ngModelChange)="selectRelease()"
+  />
+</div>
+<div class="flex w-full mt-4">
+  <app-query-input
+    class="flex-grow-1"
+    [allowedKeys]="queryKeys"
+    [allowedKeysDescription]="queryKeysDescription"
+    (queryResult)="onQueryChanged($event)"
+  />
+</div>
+
+<p-table
+  [value]="(data | async) ?? []"
+  dataKey="logSourceId"
+  [lazy]="true"
+  (onLazyLoad)="loadPage($event)"
+  [totalRecords]="(currentPage | async)?.totalElements ?? 0"
+  [rowHover]="true"
+  [rows]="10"
+  [showCurrentPageReport]="true"
+  [rowsPerPageOptions]="[10, 25, 50]"
+  [loading]="isLoadingData"
+  [paginator]="true"
+  [currentPageReportTemplate]="'table.pagination_template' | translate"
+  styleClass="mt-4"
+>
+  <ng-template pTemplate="header">
+    <tr>
+      <th pSortableColumn="logSourceId">
+        <div class="flex justify-content-between align-items-center">
+          {{ "devices.id" | translate }}
+          <p-sortIcon field="logSourceId" />
+        </div>
+      </th>
+      <th pSortableColumn="os">
+        <div class="flex justify-content-between align-items-center">
+          {{ "devices.os" | translate }}
+          <p-sortIcon field="os" />
+        </div>
+      </th>
+      <th pSortableColumn="environment">
+        <div class="flex justify-content-between align-items-center">
+          {{ "devices.environment" | translate }}
+          <p-sortIcon field="environment" />
+        </div>
+      </th>
+      <th pSortableColumn="release">
+        <div class="flex justify-content-between align-items-center">
+          {{ "devices.version" | translate }}
+          <p-sortIcon field="release" />
+        </div>
+      </th>
+      <th pSortableColumn="architecture">
+        <div class="flex justify-content-between align-items-center">
+          {{ "devices.architecture" | translate }}
+          <p-sortIcon field="architecture" />
+        </div>
+      </th>
+      <th pSortableColumn="ipAddress">
+        <div class="flex justify-content-between align-items-center">
+          {{ "devices.ip_address" | translate }}
+          <p-sortIcon field="ipAddress" />
+        </div>
+      </th>
+      <th pSortableColumn="macAddress">
+        <div class="flex justify-content-between align-items-center">
+          {{ "devices.mac_address" | translate }}
+          <p-sortIcon field="macAddress" />
+        </div>
+      </th>
+      <th pSortableColumn="online" style="width: 8rem">
+        <div class="flex justify-content-between align-items-center">
+          {{ "devices.online" | translate }}
+          <p-sortIcon field="online" />
+        </div>
+      </th>
+      <th pSortableColumn="updatedAt">
+        <div class="flex justify-content-between align-items-center">
+          {{ "devices.last_registration" | translate }}
+          <p-sortIcon field="updatedAt" />
+        </div>
+      </th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-device>
+    <tr class="p-selectable-row">
+      <td>
+        {{ device?.logSourceId }}
+      </td>
+      <td>
+        {{ device?.os }}
+      </td>
+      <td>
+        {{ device?.environment }}
+      </td>
+      <td>
+        {{ device?.release.version }}
+      </td>
+      <td>
+        {{ device?.architecture }}
+      </td>
+      <td>
+        {{ device?.ipAddress }}
+      </td>
+      <td>
+        {{ device?.macAddress }}
+      </td>
+      <td>
+        <div class="flex align-items-center w-full justify-content-center">
+          @if (device.online) {
+            <i class="pi pi-check-circle text-green-500"></i>
+          } @else {
+            <i class="pi pi-times-circle text-red-500"></i>
+          }
+        </div>
+      </td>
+      <td>
+        {{ device?.updatedAt | date: "MMM d, yyyy - h:mm:ss a (UTC)" }}
+      </td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="emptymessage">
+    <tr>
+      <td colspan="9">{{ "devices.no_devices_found" | translate }}</td>
+    </tr>
+  </ng-template>
+</p-table>
