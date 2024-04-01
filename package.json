@@ -62,7 +62,7 @@
     "@types/node": "^20.11.19",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
-    "autoprefixer": "^10.4.18",
+    "autoprefixer": "^10.4.19",
     "cypress": "latest",
     "eslint": "^8.57.0",
     "jasmine-core": "~5.1.0",
