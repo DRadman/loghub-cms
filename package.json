@@ -34,7 +34,7 @@
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
     "@vercel/analytics": "^1.2.2",
-    "@vercel/speed-insights": "^1.0.9",
+    "@vercel/speed-insights": "^1.0.12",
     "chart.js": "^4.4.2",
     "express": "^4.19.2",
     "file-saver": "^2.0.5",
