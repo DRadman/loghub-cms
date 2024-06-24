@@ -29,7 +29,7 @@
     "@angular/router": "^17.3.2",
     "@angular/ssr": "^17.3.2",
     "@ngrx/effects": "^17.1.1",
-    "@ngrx/store": "^17.1.1",
+    "@ngrx/store": "^17.2.0",
     "@ngrx/store-devtools": "^17.1.1",
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
